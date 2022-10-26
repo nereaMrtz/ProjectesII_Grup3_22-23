@@ -14,6 +14,7 @@ namespace Project.Scripts.Sound
         [Range(0, 1)]
         [SerializeField] private float _volume;
         [SerializeField] private bool _loop;
+        [SerializeField] private bool _play;
 
         public AudioSource GetSource()
         {
@@ -63,6 +64,16 @@ namespace Project.Scripts.Sound
         public void SetLoop(bool loop)
         {
             _loop = loop;
+        }
+
+        public bool GetPlay()
+        {
+            return _play;
+        }
+
+        public void SetPLay(bool play)
+        {
+            _play = play;
         }
     }
 }

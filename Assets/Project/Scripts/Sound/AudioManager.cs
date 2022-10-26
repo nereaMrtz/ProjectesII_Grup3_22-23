@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Audio;
 using UnityEngine;
 
 namespace Project.Scripts.Sound
@@ -15,27 +16,36 @@ namespace Project.Scripts.Sound
                 sound.SetAudioSource(gameObject.AddComponent<AudioSource>());
                 sound.GetSource().clip = sound.GetClip();
                 sound.GetSource().volume = sound.GetVolume();
+                sound.GetSource().loop = sound.GetLoop();
+                if (sound.GetPlay())
+                {
+                    sound.GetSource().Play();
+                }
             }
         }
 
-        public void Play(string name)
+        public void UnPause(string name)
         {
-            Sound sound = Array.Find(_sounds, sound => sound.GetName() == name);
-            if (sound != null)
+            foreach (Sound sound in _sounds)
             {
-                return;
+                if (sound.GetName() != name)
+                {
+                    continue;
+                }
+                sound.GetSource().UnPause();
             }
-            sound.GetSource().Play();
         }
 
-        public void Stop(string name)
+        public void Pause(string name)
         {
-            Sound sound = Array.Find(_sounds, sound => sound.GetName() == name);
-            if (sound != null)
+            foreach (Sound sound in _sounds)
             {
-                return;
+                if (sound.GetName() != name)
+                {
+                    continue;
+                }
+                sound.GetSource().Pause();
             }
-            sound.GetSource().Stop();
         }
 
         // Update is called once per frame

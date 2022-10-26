@@ -22,7 +22,7 @@ namespace Project.Scripts.Character
 
         void Start()
         {
-            
+            _audioManager = FindObjectOfType<AudioManager>();
         }
 
         void Update()
@@ -59,13 +59,13 @@ namespace Project.Scripts.Character
 
             Vector2 movementDirection = new Vector3(movementX, movementY).normalized * _currentSpeed;
 
-            if (movementDirection.x != 0 && movementDirection.y != 0)
+            if (movementDirection.x != 0 || movementDirection.y != 0)
             {
-                _audioManager.Play(STEPS_SOUND_CLIP_NAME);
+                _audioManager.UnPause(STEPS_SOUND_CLIP_NAME);
             }
             else
             {
-                _audioManager.Stop(STEPS_SOUND_CLIP_NAME);
+                _audioManager.Pause(STEPS_SOUND_CLIP_NAME);
             }
             
             _physics2D.Move(transform, movementDirection);
