@@ -20,6 +20,11 @@ namespace Project.Scripts.Character
 
         private float _currentSpeed = 4;
 
+        private bool _canMoveLeft = true;
+        private bool _canMoveRight = true;
+        private bool _canMoveUp = true;
+        private bool _canMoveDown = true;
+
         void Start()
         {
             _audioManager = FindObjectOfType<AudioManager>();
@@ -40,19 +45,19 @@ namespace Project.Scripts.Character
             float movementX = 0;
             float movementY = 0;
             
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) && _canMoveLeft)
             {
                 movementX = -1;
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) && _canMoveRight)
             {
                 movementX = 1;
             }
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) && _canMoveUp)
             {
                 movementY = 1;
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.S) && _canMoveDown)
             {
                 movementY = -1;
             }
@@ -74,6 +79,34 @@ namespace Project.Scripts.Character
         private void Controls()
         {
             
+        }
+
+        private void OnCollisionStay2D(Collision2D collision2D)
+        {
+            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.right) <= 45f)
+            {
+                _canMoveLeft = false;
+            }
+            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.left) <= 45f)
+            {
+                _canMoveRight = false;
+            }
+            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.down) <= 45f)
+            {
+                _canMoveUp = false;
+            }
+            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.up) <= 45f)
+            {
+                _canMoveDown = false;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            _canMoveLeft = true;
+            _canMoveRight = true;
+            _canMoveUp = true;
+            _canMoveDown = true;
         }
     }
 }
