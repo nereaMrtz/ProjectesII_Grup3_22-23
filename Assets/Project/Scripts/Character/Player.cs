@@ -18,7 +18,7 @@ namespace Project.Scripts.Character
         
         [SerializeField] private ProjectPhysics2D.ProjectPhysics2D _physics2D;
 
-        private float _currentSpeed = 4;
+        public float _currentSpeed = 4;
 
         private bool _canMoveLeft = true;
         private bool _canMoveRight = true;
@@ -33,6 +33,9 @@ namespace Project.Scripts.Character
         void Update()
         {
             Controls();
+
+            if (Input.GetKey(KeyCode.Space))
+                _rigidbody2D.AddForce(Vector2.right * 10f, ForceMode2D.Impulse);
         }
 
         private void FixedUpdate()
@@ -62,7 +65,7 @@ namespace Project.Scripts.Character
                 movementY = -1;
             }
 
-            Vector2 movementDirection = new Vector3(movementX, movementY).normalized * _currentSpeed;
+            Vector2 movementDirection = new Vector3(movementX, movementY).normalized;
 
             if (movementDirection.x != 0 || movementDirection.y != 0)
             {
@@ -72,8 +75,8 @@ namespace Project.Scripts.Character
             {
                 _audioManager.Pause(STEPS_SOUND_CLIP_NAME);
             }
-            
-            _physics2D.Move(transform, movementDirection);
+
+            _rigidbody2D.AddForce(movementDirection * _currentSpeed, ForceMode2D.Force);
         }
 
         private void Controls()
