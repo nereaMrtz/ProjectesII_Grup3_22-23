@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Project.Scripts.ProjectPhysics2D;
 using Project.Scripts.Sound;
 using Unity.VisualScripting;
 
@@ -15,15 +14,8 @@ namespace Project.Scripts.Character
         [SerializeField] private AudioManager _audioManager;
         
         [SerializeField] private Rigidbody2D _rigidbody2D;
-        
-        [SerializeField] private ProjectPhysics2D.ProjectPhysics2D _physics2D;
 
-        public float _currentSpeed = 4;
-
-        private bool _canMoveLeft = true;
-        private bool _canMoveRight = true;
-        private bool _canMoveUp = true;
-        private bool _canMoveDown = true;
+        [SerializeField] private float _currentSpeed = 75;
 
         void Start()
         {
@@ -34,8 +26,10 @@ namespace Project.Scripts.Character
         {
             Controls();
 
-            if (Input.GetKey(KeyCode.Space))
-                _rigidbody2D.AddForce(Vector2.right * 10f, ForceMode2D.Impulse);
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                _rigidbody2D.AddForce(Vector2.right * 70f, ForceMode2D.Impulse);
+            }
         }
 
         private void FixedUpdate()
@@ -48,19 +42,19 @@ namespace Project.Scripts.Character
             float movementX = 0;
             float movementY = 0;
             
-            if (Input.GetKey(KeyCode.A) && _canMoveLeft)
+            if (Input.GetKey(KeyCode.A))
             {
                 movementX = -1;
             }
-            if (Input.GetKey(KeyCode.D) && _canMoveRight)
+            if (Input.GetKey(KeyCode.D))
             {
                 movementX = 1;
             }
-            if (Input.GetKey(KeyCode.W) && _canMoveUp)
+            if (Input.GetKey(KeyCode.W))
             {
                 movementY = 1;
             }
-            if (Input.GetKey(KeyCode.S) && _canMoveDown)
+            if (Input.GetKey(KeyCode.S))
             {
                 movementY = -1;
             }
@@ -82,34 +76,6 @@ namespace Project.Scripts.Character
         private void Controls()
         {
             
-        }
-
-        private void OnCollisionStay2D(Collision2D collision2D)
-        {
-            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.right) <= 45f)
-            {
-                _canMoveLeft = false;
-            }
-            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.left) <= 45f)
-            {
-                _canMoveRight = false;
-            }
-            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.down) <= 45f)
-            {
-                _canMoveUp = false;
-            }
-            if (Vector2.Angle(collision2D.contacts[0].normal, Vector2.up) <= 45f)
-            {
-                _canMoveDown = false;
-            }
-        }
-
-        private void OnCollisionExit2D(Collision2D other)
-        {
-            _canMoveLeft = true;
-            _canMoveRight = true;
-            _canMoveUp = true;
-            _canMoveDown = true;
         }
     }
 }
