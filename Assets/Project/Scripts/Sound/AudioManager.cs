@@ -44,6 +44,7 @@ namespace Project.Scripts.Sound
                 {
                     continue;
                 }
+                sound.GetSource().Play();
                 sound.GetSource().Pause();
             }
         }
