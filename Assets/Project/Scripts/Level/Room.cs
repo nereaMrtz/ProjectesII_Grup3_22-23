@@ -1,12 +1,12 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Project.Scripts.Level
 {
     public class Room : MonoBehaviour
     {
+        private const int PLAYER_LAYER = 6;
+        
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private BoxCollider2D _boxCollider2D;
@@ -15,43 +15,31 @@ namespace Project.Scripts.Level
 
         private float _timerToFadeOut;
 
-        private bool _playerEnters;
-
-
         private void Start()
         {
+            _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             _color = gameObject.GetComponent<SpriteRenderer>().color;
             _timerToFadeOut = 1;
         }
 
-        private void Update()
+        private IEnumerator FadeOut()
         {
-            if (_playerEnters)
+            while (_timerToFadeOut >= 0)
             {
-                FadeOut();
-            }
-        }
-
-        private void FadeOut()
-        {
-            if (_timerToFadeOut >= 0)
-            {
-                _timerToFadeOut -= 2 * Time.deltaTime;
+                _timerToFadeOut -= 1 * Time.deltaTime;
                 _color.a = _timerToFadeOut;
-                gameObject.GetComponent<SpriteRenderer>().color = _color;
+                _spriteRenderer.color = _color;
+                yield return null;
             }
-            else
-            {
-                Destroy(_spriteRenderer);
-                Destroy(_boxCollider2D);
-            }
+            Destroy(_spriteRenderer);
+            Destroy(_boxCollider2D);
         }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer == 6)
+            if (collider2D.gameObject.layer == PLAYER_LAYER)
             {
-                _playerEnters = true;
+                StartCoroutine(FadeOut());
             }
         }
     }

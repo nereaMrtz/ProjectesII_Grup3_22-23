@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Project.Scripts.Sound;
-using Unity.VisualScripting;
 
 namespace Project.Scripts.Character
 {

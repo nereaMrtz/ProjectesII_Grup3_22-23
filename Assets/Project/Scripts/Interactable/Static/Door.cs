@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 
@@ -10,13 +8,18 @@ namespace Project.Scripts.Interactable.Static
     public class Door : InteractableScript
     {
         private Transform _transform;
-        
-        [SerializeField] private Rigidbody2D _rigidbody2D;
+
+        private float _width;
+        private float _height;
 
         private bool _unlocked;
+        [SerializeField] private bool _hidesToSides; 
 
         private void Start()
         {
+            SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            _width = spriteRenderer.size.x;
+            _height = spriteRenderer.size.y;
             _transform = gameObject.transform;
         }
 
@@ -30,10 +33,22 @@ namespace Project.Scripts.Interactable.Static
 
         private IEnumerator Open()
         {
-
-            yield return new WaitForSeconds(0);
-            //yield return new WaitUntil();
+            Vector2 targetPosition;
+            
+            if (_hidesToSides)
+            {
+                targetPosition = new Vector2(_transform.position.x + _width, _transform.position.y);
+            }
+            else
+            {
+                targetPosition = new Vector2(_transform.position.x, _transform.position.y + _height);
+            }
+            
+            while (Vector3.Distance(_transform.position, targetPosition) > 0)
+            {
+                _transform.position = Vector2.MoveTowards(_transform.position, targetPosition, 2 * Time.deltaTime);
+                yield return null;
+            }
         }
     }
-    
 }
