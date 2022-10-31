@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Project.Scripts.Sound;
-using Unity.VisualScripting;
 
 namespace Project.Scripts.Character
 {
@@ -17,6 +14,9 @@ namespace Project.Scripts.Character
 
         [SerializeField] private float _currentSpeed = 75;
 
+        private float _movementX;
+        private float _movementY;
+
         void Start()
         {
             _audioManager = FindObjectOfType<AudioManager>();
@@ -25,41 +25,22 @@ namespace Project.Scripts.Character
         void Update()
         {
             Controls();
-
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                _rigidbody2D.AddForce(Vector2.right * 70f, ForceMode2D.Impulse);
-            }
         }
 
         private void FixedUpdate()
         {
             Movement();
+            
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                _rigidbody2D.AddForce(Vector2.right * 70f, ForceMode2D.Impulse);
+            }
         }
         
         private void Movement()
         {
-            float movementX = 0;
-            float movementY = 0;
-            
-            if (Input.GetKey(KeyCode.A))
-            {
-                movementX = -1;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                movementX = 1;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                movementY = 1;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                movementY = -1;
-            }
-
-            Vector2 movementDirection = new Vector3(movementX, movementY).normalized;
+            Vector2 movementDirection = new Vector3(_movementX, _movementY).normalized;
+            _rigidbody2D.AddForce(movementDirection * _currentSpeed, ForceMode2D.Force);
 
             if (movementDirection.x != 0 || movementDirection.y != 0)
             {
@@ -69,13 +50,33 @@ namespace Project.Scripts.Character
             {
                 _audioManager.Pause(STEPS_SOUND_CLIP_NAME);
             }
-
-            _rigidbody2D.AddForce(movementDirection * _currentSpeed, ForceMode2D.Force);
         }
 
         private void Controls()
         {
-            
+            MovementControls();
+        }
+
+        private void MovementControls()
+        {
+            _movementX = 0;
+            _movementY = 0;
+            if (Input.GetKey(KeyCode.A))
+            {
+                _movementX = -1;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                _movementX = 1;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                _movementY = 1;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                _movementY = -1;
+            }
         }
     }
 }
