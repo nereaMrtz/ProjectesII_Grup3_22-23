@@ -9,13 +9,11 @@ namespace Project.Scripts.Character
     {
         private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
 
-        private const int INTERACTABLE_LAYER = 7;
+        private const string INTERACTABLE_LAYER = "Interactable";
 
         [SerializeField] private AudioManager _audioManager;
         
         [SerializeField] private Rigidbody2D _rigidbody2D;
-
-        [SerializeField] private CircleCollider2D _interactableCollider;
 
         [SerializeField] private Inventory _inventory;
 
@@ -24,8 +22,11 @@ namespace Project.Scripts.Character
         private float _movementX;
         private float _movementY;
 
+        private LayerMask _interactableMask;
+
         void Start()
         {
+            _interactableMask = LayerMask.GetMask(INTERACTABLE_LAYER);
             _audioManager = FindObjectOfType<AudioManager>();
         }
 
@@ -69,9 +70,14 @@ namespace Project.Scripts.Character
 
         private void InteractControls() {
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, 128);
 
+                if (interactCast == true)
+                {
+                    interactCast.gameObject.GetComponent<InteractableScript>().Interact();
+                }
             }
         }
 
@@ -94,14 +100,6 @@ namespace Project.Scripts.Character
             if (Input.GetKey(KeyCode.S))
             {
                 _movementY = -1;
-            }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.layer == INTERACTABLE_LAYER)
-            {
-                collision.gameObject.GetComponent<InteractableScript>().Interact();
             }
         }
     }

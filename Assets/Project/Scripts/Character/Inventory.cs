@@ -1,31 +1,34 @@
+using Project.Scripts.Interactable.PickUps;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Project.Scripts.Character {
 
     public class Inventory : MonoBehaviour
-    { 
-    
-        private GameObject[] _inventoryPickUps;
+    {
+        [SerializeField] private InventorySlot[] _inventorySlots;
 
         private void Start()
         {
-            _inventoryPickUps = new GameObject[7];
+            _inventorySlots = new InventorySlot[7];
 
             for (int i = 0; i < transform.childCount; i++)
             {
-                _inventoryPickUps[i] = gameObject.transform.GetChild(i).gameObject;
+                _inventorySlots[i] = gameObject.transform.GetChild(i).gameObject.GetComponent<InventorySlot>();
             }
         }
 
-        void InsertPickUp(GameObject pickUp) {
-
-            for (int i = 0; i < _inventoryPickUps.Length; i++)
+        public bool InsertPickUp(PickUp pickUp)
+        {
+            foreach (InventorySlot inventorySlot in _inventorySlots)
             {
-                if (_inventoryPickUps[i] == null)
+                if (inventorySlot.GetPickUp() == null)
                 {
-                    _inventoryPickUps[i] = pickUp;
+                    inventorySlot.SetPickUp(pickUp);
+                    return true;
                 }
-            }        
+            }
+            return false;
         }    
     }
 }

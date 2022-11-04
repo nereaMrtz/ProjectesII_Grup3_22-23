@@ -1,12 +1,16 @@
+using Project.Scripts.Character;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.PickUps {
     public abstract class PickUp : InteractableScript
     {
-        public abstract void DoItYourself();
+        [SerializeField] private Inventory _playerInventory;
         public override void Interact()
         {
-            Destroy(gameObject);
+            if (_playerInventory.InsertPickUp(this))
+            {
+                
+            }
         }
     }
 }
