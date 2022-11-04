@@ -12,7 +12,7 @@ namespace Project.Scripts.Interactable.Static
         private float _width;
         private float _height;
 
-        private bool _unlocked;
+        [SerializeField] private bool _unlocked;
         [SerializeField] private bool _hidesToSides; 
 
         private void Start()
@@ -21,6 +21,14 @@ namespace Project.Scripts.Interactable.Static
             _width = spriteRenderer.size.x;
             _height = spriteRenderer.size.y;
             _transform = gameObject.transform;
+        }
+
+        private void Update()
+        {
+            if (_unlocked)
+            {
+                StartCoroutine(Open());
+            }
         }
 
         public override void Interact()
