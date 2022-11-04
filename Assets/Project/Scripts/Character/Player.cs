@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Project.Scripts.Sound;
+using Project.Scripts.Interactable;
 
 namespace Project.Scripts.Character
 {
@@ -8,17 +9,24 @@ namespace Project.Scripts.Character
     {
         private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
 
+        private const string INTERACTABLE_LAYER = "Interactable";
+
         [SerializeField] private AudioManager _audioManager;
         
         [SerializeField] private Rigidbody2D _rigidbody2D;
+
+        [SerializeField] private Inventory _inventory;
 
         [SerializeField] private float _currentSpeed = 75;
 
         private float _movementX;
         private float _movementY;
 
+        private LayerMask _interactableMask;
+
         void Start()
         {
+            _interactableMask = LayerMask.GetMask(INTERACTABLE_LAYER);
             _audioManager = FindObjectOfType<AudioManager>();
         }
 
@@ -51,10 +59,26 @@ namespace Project.Scripts.Character
                 _audioManager.Pause(STEPS_SOUND_CLIP_NAME);
             }
         }
+        
 
         private void Controls()
         {
             MovementControls();
+
+            InteractControls();
+        }
+
+        private void InteractControls() {
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, 128);
+
+                if (interactCast == true)
+                {
+                    interactCast.gameObject.GetComponent<InteractableScript>().Interact();
+                }
+            }
         }
 
         private void MovementControls()
