@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
+using Project.Scripts.Character;
 using UnityEngine;
 
 
 namespace Project.Scripts.Interactable.Static
 {
-    public class Door : InteractableScript
+    public class SimpleDoor : InteractableScript
     {
         private Transform _transform;
 
@@ -13,7 +14,9 @@ namespace Project.Scripts.Interactable.Static
         private float _height;
 
         [SerializeField] private bool _unlocked;
-        [SerializeField] private bool _hidesToSides; 
+        [SerializeField] private bool _hidesToSides;
+
+        [SerializeField] private GameObject _key;
 
         private void Start()
         {
@@ -28,15 +31,27 @@ namespace Project.Scripts.Interactable.Static
             if (_unlocked)
             {
                 StartCoroutine(Open());
+                _unlocked = false;
             }
         }
 
-        public override void Interact()
+        public override void Interact(Inventory inventory)
         {
-            if (_unlocked)
+            InventorySlot[] inventorySlots = inventory.GetInventorySlots();
+            
+            for (int i = 0; i < inventorySlots.Length; i++)
             {
-                StartCoroutine(Open());
+                GameObject key = inventorySlots[i].GetPickUp().gameObject;
+                if (key == _key)
+                {
+                    inventorySlots[i].EraseChildSprite();
+                    Destroy(key);
+                    StartCoroutine(Open());
+                    return;
+                }
             }
+            //SHOW POP UP
+            return;
         }
 
         private IEnumerator Open()

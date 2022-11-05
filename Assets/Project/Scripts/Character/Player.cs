@@ -72,11 +72,11 @@ namespace Project.Scripts.Character
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, 128);
+                Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, _interactableMask);
 
                 if (interactCast == true)
                 {
-                    interactCast.gameObject.GetComponent<InteractableScript>().Interact();
+                    interactCast.gameObject.GetComponent<InteractableScript>().Interact(_inventory);
                 }
             }
         }

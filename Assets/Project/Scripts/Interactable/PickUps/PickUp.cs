@@ -4,12 +4,14 @@ using UnityEngine;
 namespace Project.Scripts.Interactable.PickUps {
     public abstract class PickUp : InteractableScript
     {
-        [SerializeField] private Inventory _playerInventory;
-        public override void Interact()
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private BoxCollider2D _boxCollider2D;
+        public override void Interact(Inventory inventory)
         {
-            if (_playerInventory.InsertPickUp(this))
+            if (inventory.InsertPickUp(this))
             {
-                
+                Destroy(_spriteRenderer);
+                Destroy(_boxCollider2D);
             }
         }
     }

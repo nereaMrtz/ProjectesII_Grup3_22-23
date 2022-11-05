@@ -7,6 +7,6 @@ namespace Project.Scripts.Interactable.PickUps
 {
     public class Key : PickUp
     {
-    
+        
     }
 }

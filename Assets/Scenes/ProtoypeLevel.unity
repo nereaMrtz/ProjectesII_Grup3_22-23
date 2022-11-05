@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0847c02e3e9a3a64eb4f92c232ea4834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTransform: {fileID: 1749101668}
+  _playerTransform: {fileID: 1149397951}
 --- !u!1001 &951446472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1442,7 +1442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6489313193079056557, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: PlayerContainer
       objectReference: {fileID: 0}
     - target: {fileID: 6505075848570444462, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Name
@@ -1534,17 +1534,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
---- !u!114 &951446474 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 600614607090923962, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
-  m_PrefabInstance: {fileID: 951446472}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c63207f8bf40f47bcc4fa6e77272b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969118314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,6 +1870,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 8}
   m_EdgeRadius: 0
+--- !u!4 &1149397951 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1532732176809836768, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+  m_PrefabInstance: {fileID: 951446472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1250249820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,7 +2810,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac22c7c73f65da4c97737b66e06cfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInventory: {fileID: 951446474}
+  _spriteRenderer: {fileID: 1870921891}
+  _boxCollider2D: {fileID: 1870921890}
 --- !u!1 &1925199820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +2892,7 @@ GameObject:
   - component: {fileID: 2044526973}
   - component: {fileID: 2044526972}
   - component: {fileID: 2044526974}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3011,3 +3006,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unlocked: 0
   _hidesToSides: 1
+  _key: {fileID: 1870921888}

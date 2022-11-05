@@ -29,7 +29,12 @@ namespace Project.Scripts.Character {
                 }
             }
             return false;
-        }    
+        }
+
+        public InventorySlot[] GetInventorySlots()
+        {
+            return _inventorySlots;
+        }
     }
 }
     
