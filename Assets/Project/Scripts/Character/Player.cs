@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 using Project.Scripts.Sound;
-using Project.Scripts.Interactable;
+using Project.Scripts.Interactable.Static.NotRequiredInventory;
+using Project.Scripts.Interactable.Static.RequiredInventory;
 
 namespace Project.Scripts.Character
 {
@@ -9,7 +10,8 @@ namespace Project.Scripts.Character
     {
         private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
 
-        private const string INTERACTABLE_LAYER = "Interactable";
+        private const string REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
+        private const string NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER = "NotRequiredInventoryInteractable";
 
         [SerializeField] private AudioManager _audioManager;
         
@@ -22,11 +24,13 @@ namespace Project.Scripts.Character
         private float _movementX;
         private float _movementY;
 
-        private LayerMask _interactableMask;
-
+        private LayerMask _requiredInventoryInteractableMask;
+        private LayerMask _notRequiredInventoryInteractableMask;
+        
         void Start()
         {
-            _interactableMask = LayerMask.GetMask(INTERACTABLE_LAYER);
+            _requiredInventoryInteractableMask = LayerMask.GetMask(REQUIRED_INVENTORY_INTERACTABLE_LAYER);
+            _notRequiredInventoryInteractableMask = LayerMask.GetMask(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER);
             _audioManager = FindObjectOfType<AudioManager>();
         }
 
@@ -72,11 +76,18 @@ namespace Project.Scripts.Character
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, _interactableMask);
+                Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, _requiredInventoryInteractableMask + _notRequiredInventoryInteractableMask);
 
                 if (interactCast == true)
                 {
-                    interactCast.gameObject.GetComponent<InteractableScript>().Interact(_inventory);
+                    if (interactCast.gameObject.layer == LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER))
+                    {
+                        interactCast.gameObject.GetComponent<RequiredInventoryInteractable>().Interact(_inventory, _audioManager);
+                    }
+                    else if (interactCast.gameObject.layer == LayerMask.NameToLayer(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER))
+                    {
+                        interactCast.gameObject.GetComponent<NotRequiredInventoryInteractable>().Interact();
+                    }
                 }
             }
         }

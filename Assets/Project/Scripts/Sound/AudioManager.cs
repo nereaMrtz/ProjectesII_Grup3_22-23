@@ -5,11 +5,11 @@ namespace Project.Scripts.Sound
     public class AudioManager : MonoBehaviour
     {
 
-        [SerializeField] private Sound[] _sounds;
+        [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
 
         private void Awake()
         {
-            foreach (Sound sound in _sounds)
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
                 sound.SetAudioSource(gameObject.AddComponent<AudioSource>());
                 sound.GetSource().clip = sound.GetClip();
@@ -22,9 +22,21 @@ namespace Project.Scripts.Sound
             }
         }
 
+        public void Play(string name)
+        {
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
+            {
+                if (sound.GetName() != name)
+                {
+                    continue;
+                }
+                sound.GetSource().Play();
+            }
+        }
+
         public void UnPause(string name)
         {
-            foreach (Sound sound in _sounds)
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
                 if (sound.GetName() != name)
                 {
@@ -36,7 +48,7 @@ namespace Project.Scripts.Sound
 
         public void Pause(string name)
         {
-            foreach (Sound sound in _sounds)
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
                 if (sound.GetName() != name)
                 {
@@ -47,10 +59,19 @@ namespace Project.Scripts.Sound
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        public float ClipDuration(string name)
         {
-        
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
+            {
+                if (sound.GetName() != name)
+                {
+                    continue;
+                }
+
+                return sound.GetClip().length;
+            }
+
+            return 0;
         }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace Project.Scripts.Sound
+namespace Project.Scripts.NoMonoBehaviourClass
 {
     [System.Serializable]
     public class Sound

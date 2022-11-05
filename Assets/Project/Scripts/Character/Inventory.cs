@@ -1,6 +1,5 @@
 using Project.Scripts.Interactable.PickUps;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project.Scripts.Character {
 
