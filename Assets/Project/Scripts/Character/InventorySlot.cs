@@ -9,6 +9,8 @@ namespace Project.Scripts.Character
     public class InventorySlot : MonoBehaviour
     {
         [SerializeField] private Image _childSpriteRenderer;
+
+        [SerializeField] private Sprite _emptySlotChildSprite;
     
         [SerializeField] private PickUp _pickUp;
 
@@ -21,6 +23,11 @@ namespace Project.Scripts.Character
         public PickUp GetPickUp()
         {
             return _pickUp;
+        }
+
+        public void EraseChildSprite()
+        {
+            _childSpriteRenderer.sprite = _emptySlotChildSprite;
         }
     }
 }
