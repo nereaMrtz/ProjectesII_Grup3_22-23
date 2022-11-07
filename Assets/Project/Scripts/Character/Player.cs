@@ -3,6 +3,7 @@ using UnityEngine;
 using Project.Scripts.Sound;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
+using Project.Scripts.Managers;
 
 namespace Project.Scripts.Character
 {
@@ -18,6 +19,8 @@ namespace Project.Scripts.Character
         [SerializeField] private Rigidbody2D _rigidbody2D;
 
         [SerializeField] private Inventory _inventory;
+
+        [SerializeField] private DrugEffect _drugEffect;
 
         [SerializeField] private float _currentSpeed = 75;
 
@@ -68,6 +71,8 @@ namespace Project.Scripts.Character
         private void Controls()
         {
             MovementControls();
+            
+            DrugControls();
 
             InteractControls();
         }
@@ -89,6 +94,14 @@ namespace Project.Scripts.Character
                         interactCast.gameObject.GetComponent<NotRequiredInventoryInteractable>().Interact();
                     }
                 }
+            }
+        }
+
+        private void DrugControls()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                _drugEffect.ChangeState();
             }
         }
 
