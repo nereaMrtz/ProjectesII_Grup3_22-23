@@ -10,6 +10,7 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
     {
         [SerializeField] private Interactable.Static.NotRequiredInventory.Compass _compass;
         
+        [SerializeField] private GameObject _initialTile;
         [SerializeField] private GameObject _cross;
         [SerializeField] private GameObject _pressurePointPrefab;
         
@@ -24,9 +25,9 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
         private void Start()
         {
             Direction[] directions = _compass.GetDirections();
-            _offset = _cross.transform.position;
+            _offset = _initialTile.transform.position;
             _pressurePoints = new PressurePoint[directions.Length + 1];
-            _pressurePoints[0] = _cross.GetComponent<PressurePoint>();
+            _pressurePoints[0] = _initialTile.GetComponent<PressurePoint>();
             for (int i = 1; i < _pressurePoints.Length - 1; i++)
             {
                 _pressurePoints[i] = Instantiate(_pressurePointPrefab, transform).GetComponent<PressurePoint>();
@@ -39,7 +40,7 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
 
         private void Update()
         {
-            if (_cross.activeSelf && !_completed)
+            if (_initialTile.activeSelf && !_completed)
             {
                 CheckPressurePoints();
             }
@@ -113,6 +114,7 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
 
         public override void Unlock()
         {
+            _initialTile.SetActive(true);
             _cross.SetActive(true);
             _destinationTile.gameObject.SetActive(true);
             for (int i = 0; i < _pressurePoints.Length; i++)

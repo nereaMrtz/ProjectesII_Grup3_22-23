@@ -24,6 +24,7 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
                 _reward.transform.position = transform.position;
                 _reward.SetActive(true);
                 StartCoroutine(_pressurePoint.ChangeColor(_pressurePoint.GetColor()));
+                gameObject.layer = 0;
             }            
         }
 
