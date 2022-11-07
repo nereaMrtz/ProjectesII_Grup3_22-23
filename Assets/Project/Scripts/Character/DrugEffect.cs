@@ -5,7 +5,7 @@ namespace Project.Scripts.Character
 {
     public class DrugEffect : MonoBehaviour
     {
-        private bool _canChangeState;
+        private bool _canChangeState = true;
 
         public void ChangeState()
         {

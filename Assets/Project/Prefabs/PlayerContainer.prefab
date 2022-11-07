@@ -1908,8 +1908,8 @@ GameObject:
   - component: {fileID: 779331241048286419}
   - component: {fileID: 5091516442547385295}
   - component: {fileID: 8154448837211649097}
-  - component: {fileID: 3759979760590708955}
   - component: {fileID: 7650115156115303218}
+  - component: {fileID: 2664987724822043846}
   - component: {fileID: 8177849897641940989}
   m_Layer: 6
   m_Name: Player
@@ -2022,22 +2022,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &3759979760590708955
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5683628995989718924}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.55
 --- !u!114 &7650115156115303218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2053,7 +2037,20 @@ MonoBehaviour:
   _audioManager: {fileID: 0}
   _rigidbody2D: {fileID: 8154448837211649097}
   _inventory: {fileID: 600614607090923962}
+  _drugEffect: {fileID: 2664987724822043846}
   _currentSpeed: 75
+--- !u!114 &2664987724822043846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683628995989718924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c33b609823ce444bb08f4c7954b43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8177849897641940989
 MonoBehaviour:
   m_ObjectHideFlags: 0

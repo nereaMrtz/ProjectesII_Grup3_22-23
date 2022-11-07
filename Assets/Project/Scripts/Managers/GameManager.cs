@@ -6,7 +6,7 @@ namespace Project.Scripts.Managers
     {
         private static GameManager _instance;
 
-        private bool _drugged;
+        [SerializeField] private bool _drugged;
         
 
         private void Awake()

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Level
 {
-    public class DrugSubjectElement : MonoBehaviour
+    public abstract class DrugSubjectElement : MonoBehaviour
     {
         [SerializeField] private bool _canChange;
+
+        [SerializeField] protected ScenarioManager _scenarioManager;
 
         public bool GetCanChange()
         {
@@ -17,6 +20,8 @@ namespace Project.Scripts.Level
         {
             _canChange = canChange;
         }
+
+        public abstract void Accept(DrugSubjectElement drugSubjectElement);
     } 
 }
 

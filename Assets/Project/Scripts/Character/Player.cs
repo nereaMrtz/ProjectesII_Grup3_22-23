@@ -99,7 +99,10 @@ namespace Project.Scripts.Character
 
         private void DrugControls()
         {
-            _drugEffect.ChangeState();
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                _drugEffect.ChangeState();
+            }
         }
 
         private void MovementControls()
