@@ -26,9 +26,10 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
         private void Start()
         {
             SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            _width = spriteRenderer.size.x;
-            _height = spriteRenderer.size.y;
-            _transform = gameObject.transform;
+            Vector2 spriteRenderSize = spriteRenderer.size;
+            _width = spriteRenderSize.x;
+            _height = spriteRenderSize.y;
+            _transform = transform;
         }
 
         public override void Interact(Inventory inventory, AudioManager audioManager)
