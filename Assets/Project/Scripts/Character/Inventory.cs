@@ -18,11 +18,11 @@ namespace Project.Scripts.Character {
             }
         }
 
-        public bool InsertPickUp(RequiredInventoryInteractable pickUp)
+        public bool InsertPickUp(PickUp pickUp)
         {
             foreach (InventorySlot inventorySlot in _inventorySlots)
             {
-                if (inventorySlot.GetPickUp() == null)
+                if (inventorySlot.gameObject.transform.childCount < 3)
                 {
                     inventorySlot.SetPickUp(pickUp);
                     return true;
