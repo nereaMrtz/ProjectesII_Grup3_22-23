@@ -1,4 +1,5 @@
 using Project.Scripts.Interactable.PickUps;
+using Project.Scripts.Interactable.Static.RequiredInventory;
 using UnityEngine;
 
 namespace Project.Scripts.Character {
@@ -17,7 +18,7 @@ namespace Project.Scripts.Character {
             }
         }
 
-        public bool InsertPickUp(PickUp pickUp)
+        public bool InsertPickUp(RequiredInventoryInteractable pickUp)
         {
             foreach (InventorySlot inventorySlot in _inventorySlots)
             {

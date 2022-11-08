@@ -1,4 +1,5 @@
 using Project.Scripts.Interactable.PickUps;
+using Project.Scripts.Interactable.Static.RequiredInventory;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,15 +11,16 @@ namespace Project.Scripts.Character
 
         [SerializeField] private Sprite _emptySlotChildSprite;
     
-        [SerializeField] private PickUp _pickUp;
+        [SerializeField] private RequiredInventoryInteractable _pickUp;
 
-        public void SetPickUp(PickUp pickUp)
+        public void SetPickUp(RequiredInventoryInteractable pickUp)
         {
             _pickUp = pickUp;
             _childSpriteRenderer.sprite = _pickUp.gameObject.GetComponent<SpriteRenderer>().sprite;
+            pickUp.gameObject.transform.SetParent(transform);
         }
 
-        public PickUp GetPickUp()
+        public RequiredInventoryInteractable GetPickUp()
         {
             return _pickUp;
         }
