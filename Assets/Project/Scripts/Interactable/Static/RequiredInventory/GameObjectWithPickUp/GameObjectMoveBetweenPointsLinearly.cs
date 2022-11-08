@@ -12,7 +12,8 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
         
         [SerializeField] private Vector3[] _offsets;
 
-        [SerializeField] private bool _approach;
+        private bool _approach;
+        private bool _still;
         private void Start()
         {
             for (int i = 0; i < _offsets.Length; i++)
@@ -91,7 +92,9 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
             _approach = false;
             _pickUpAttached.gameObject.SetActive(true);
             gameObject.layer = LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE);
+            _still = true;
             yield return new WaitForSeconds(seconds);
+            _still = false;
             gameObject.layer = 0;
             _pickUpAttached.gameObject.SetActive(false);
             _targetPosition = _offsets[Random.Range(0, _offsets.Length - 1)];
@@ -105,6 +108,16 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
         public void SetApproach(bool approach)
         {
             _approach = approach;
+        }
+
+        public bool GetApproach()
+        {
+            return _approach;
+        }
+
+        public bool GetStill()
+        {
+            return _still;
         }
     }
 }

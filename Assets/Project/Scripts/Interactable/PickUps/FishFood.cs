@@ -8,11 +8,6 @@ namespace Project.Scripts.Interactable.PickUps
     {
         [SerializeField] private int _remainingUses;
 
-        public override void Interact(Inventory inventory, AudioManager audioManager)
-        {
-            base.Interact(inventory, audioManager);
-        }
-
         public void Use()
         {
             if (_remainingUses != 0)

@@ -1,5 +1,6 @@
 using System;
 using Project.Scripts.Puzzle.CrossCardinalDirections;
+using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.NotRequiredInventory
@@ -17,7 +18,7 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
             _pressurePoint = gameObject.GetComponent<PressurePoint>();
         }
 
-        public override void Interact()
+        public override void Interact(AudioManager audioManager)
         {
             if (_puzzleCompleted)
             {

@@ -87,12 +87,11 @@ namespace Project.Scripts.Character
                 {
                     if (interactCast.gameObject.layer == LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER))
                     {
-                        Debug.Log("Hola1");
                         interactCast.gameObject.GetComponent<RequiredInventoryInteractable>().Interact(_inventory, _audioManager);
                     }
                     else if (interactCast.gameObject.layer == LayerMask.NameToLayer(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER))
                     {
-                        interactCast.gameObject.GetComponent<NotRequiredInventoryInteractable>().Interact();
+                        interactCast.gameObject.GetComponent<NotRequiredInventoryInteractable>().Interact(_audioManager);
                     }
                 }
             }

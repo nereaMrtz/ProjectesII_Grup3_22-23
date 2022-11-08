@@ -13,7 +13,6 @@ namespace Project.Scripts.Interactable.PickUps {
         [SerializeField] protected CapsuleCollider2D _capsuleCollider2D;
         public override void Interact(Inventory inventory, AudioManager audioManager)
         {
-            Debug.Log("Hola2");
             if (inventory.InsertPickUp(this))
             {
                 audioManager.Play(LOOT_PICK_UP_SOUND);

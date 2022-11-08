@@ -1,4 +1,5 @@
 using Project.Scripts.NoMonoBehaviourClass;
+using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.NotRequiredInventory
@@ -7,7 +8,7 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
     {
         [SerializeField] private Direction[] _directions;
 
-        public override void Interact()
+        public override void Interact(AudioManager audioManager)
         {
             throw new System.NotImplementedException();
         }

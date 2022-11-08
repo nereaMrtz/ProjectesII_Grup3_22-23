@@ -24,6 +24,7 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
 
         private void Start()
         {
+            Unlock();
             Direction[] directions = _compass.GetDirections();
             _offset = _initialTile.transform.position;
             _pressurePoints = new PressurePoint[directions.Length + 1];
@@ -112,7 +113,7 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
             }
         }
 
-        public override void Unlock()
+        public void Unlock()
         {
             _initialTile.SetActive(true);
             _cross.SetActive(true);
