@@ -1,6 +1,7 @@
+using Project.Scripts.Puzzle;
 using UnityEngine;
 
-namespace Project.Scripts.Puzzle
+namespace Project.Scripts.Managers
 {
     public class PuzzleManager : MonoBehaviour
     {
@@ -11,7 +12,7 @@ namespace Project.Scripts.Puzzle
         private void Start()
         {
             _currentPuzzle = 0;
-            _puzzleScripts[_currentPuzzle].Unlock();
+            _puzzleScripts[_currentPuzzle].gameObject.SetActive(true);
         }
 
         private void Update()
@@ -25,7 +26,7 @@ namespace Project.Scripts.Puzzle
                 }
                 else
                 {
-                    _puzzleScripts[_currentPuzzle].Unlock();    
+                    _puzzleScripts[_currentPuzzle].gameObject.SetActive(true);    
                 }
             }
         }
