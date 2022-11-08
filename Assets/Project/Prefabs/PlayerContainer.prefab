@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childSpriteRenderer: {fileID: 3929461550951679930}
   _emptySlotChildSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _pickUp: {fileID: 0}
+  _pickUpGameObject: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &789928852741650678
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childSpriteRenderer: {fileID: 8275430293477566616}
   _emptySlotChildSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _pickUp: {fileID: 0}
+  _pickUpGameObject: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &977537852031058067
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventorySlots: []
+  _emptyPickUp: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &1244298241211680854
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childSpriteRenderer: {fileID: 9151186870677455804}
   _emptySlotChildSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _pickUp: {fileID: 0}
+  _pickUpGameObject: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &2157311360175689645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childSpriteRenderer: {fileID: 7056176208895823847}
   _emptySlotChildSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _pickUp: {fileID: 0}
+  _pickUpGameObject: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &3292818680286258151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childSpriteRenderer: {fileID: 6526953873228869947}
   _emptySlotChildSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _pickUp: {fileID: 0}
+  _pickUpGameObject: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &6108477443865385324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2854,7 +2855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childSpriteRenderer: {fileID: 8675353481274523113}
   _emptySlotChildSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _pickUp: {fileID: 0}
+  _pickUpGameObject: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &6593007382755087486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,7 +2994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childSpriteRenderer: {fileID: 4586099744879072773}
   _emptySlotChildSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _pickUp: {fileID: 0}
+  _pickUpGameObject: {fileID: 2001236064142805284, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
 --- !u!1 &8091623664485689333
 GameObject:
   m_ObjectHideFlags: 0

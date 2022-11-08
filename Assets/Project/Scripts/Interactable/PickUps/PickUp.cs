@@ -5,19 +5,20 @@ using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.PickUps {
-    public abstract class PickUp : RequiredInventoryInteractable
+    public class PickUp : RequiredInventoryInteractable
     {
         private const String LOOT_PICK_UP_SOUND = "Loot Pick Up Sound";
         
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private BoxCollider2D _boxCollider2D;
+        [SerializeField] protected SpriteRenderer _spriteRenderer;
+        [SerializeField] protected CapsuleCollider2D _capsuleCollider2D;
         public override void Interact(Inventory inventory, AudioManager audioManager)
         {
+            Debug.Log("Hola2");
             if (inventory.InsertPickUp(this))
             {
                 audioManager.Play(LOOT_PICK_UP_SOUND);
                 Destroy(_spriteRenderer);
-                Destroy(_boxCollider2D);
+                Destroy(_capsuleCollider2D);
             }
         }
     }

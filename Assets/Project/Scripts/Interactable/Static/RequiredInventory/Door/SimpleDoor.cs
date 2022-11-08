@@ -4,8 +4,7 @@ using Project.Scripts.Character;
 using Project.Scripts.Sound;
 using UnityEngine;
 
-
-namespace Project.Scripts.Interactable.Static.RequiredInventory
+namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 {
     public class SimpleDoor : RequiredInventoryInteractable
     {
@@ -38,11 +37,11 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
             
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                GameObject key = inventorySlots[i].GetPickUp().gameObject;
-                if (key == _key)
+                GameObject pickUp = inventorySlots[i].GetPickUp().gameObject;
+                if (pickUp == _key)
                 {
                     inventorySlots[i].EraseChildSprite();
-                    Destroy(key);
+                    Destroy(pickUp);
                     StartCoroutine(MoveDoor(audioManager));
                     return;
                 }

@@ -11,16 +11,16 @@ namespace Project.Scripts.Character
 
         [SerializeField] private Sprite _emptySlotChildSprite;
     
-        [SerializeField] private RequiredInventoryInteractable _pickUp;
+        [SerializeField] private PickUp _pickUp;
 
-        public void SetPickUp(RequiredInventoryInteractable pickUp)
+        public void SetPickUp(PickUp pickUp)
         {
             _pickUp = pickUp;
             _childSpriteRenderer.sprite = _pickUp.gameObject.GetComponent<SpriteRenderer>().sprite;
             pickUp.gameObject.transform.SetParent(transform);
         }
 
-        public RequiredInventoryInteractable GetPickUp()
+        public PickUp GetPickUp()
         {
             return _pickUp;
         }
