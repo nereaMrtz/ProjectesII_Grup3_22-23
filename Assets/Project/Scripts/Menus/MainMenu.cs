@@ -1,25 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject _newPanel;
+    [SerializeField] private GameObject _actualPanel;
     
-    public void PlayButton() { }
+    private bool _isActive;
 
-    public void OptionsButton() { }
+    public void PlayButton()
+    {
+        
+    }
 
-    public void CreditsButton() { }
+    public void ChangePanelButton()
+    {
+        if (_isActive == false)
+        {
+            _actualPanel.SetActive(false);
+            _newPanel.SetActive(true);
+
+            _isActive = true;
+        }
+
+        else
+        {
+            _actualPanel.SetActive(true);
+            _newPanel.SetActive(false);
+            
+            _isActive = false;
+        }
+    }
 
     public void ExitButton() {
         Debug.Log("Exit");
         Application.Quit();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
