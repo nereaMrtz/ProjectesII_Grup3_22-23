@@ -16,7 +16,7 @@ namespace Project.Scripts.Interactable.PickUps {
             if (inventory.InsertPickUp(this))
             {
                 audioManager.Play(LOOT_PICK_UP_SOUND);
-                Destroy(_spriteRenderer);
+                _spriteRenderer.enabled = false;
                 Destroy(_capsuleCollider2D);
             }
         }

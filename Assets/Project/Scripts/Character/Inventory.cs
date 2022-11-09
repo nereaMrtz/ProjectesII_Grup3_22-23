@@ -22,7 +22,7 @@ namespace Project.Scripts.Character {
         {
             foreach (InventorySlot inventorySlot in _inventorySlots)
             {
-                if (inventorySlot.gameObject.transform.childCount < 3)
+                if (inventorySlot.gameObject.transform.childCount < 2)
                 {
                     inventorySlot.SetPickUp(pickUp);
                     return true;
