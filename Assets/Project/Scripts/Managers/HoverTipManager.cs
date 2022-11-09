@@ -40,7 +40,7 @@ namespace Project.Scripts.Managers
 
             Vector2 sizeDelta = _tip.gameObject.GetComponent<RectTransform>().sizeDelta;
 
-            _hoverTip.sizeDelta = new Vector2(sizeDelta.x > 200 ? 200 : sizeDelta.x, _tip.preferredHeight);
+            _hoverTip.sizeDelta = new Vector2(sizeDelta.x > 500 ? 500 : sizeDelta.x, sizeDelta.y);
             Vector2 mouseAtWorldSpace = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _hoverTip.transform.position = new Vector2(mouseAtWorldSpace.x + OffsetX , mouseAtWorldSpace.y + OffsetY);
             _hoverTip.gameObject.SetActive(true);

@@ -6,30 +6,15 @@ using UnityEngine.EventSystems;
 
 namespace Project.Scripts.UI
 {
-    public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public abstract class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField] private GameObject _gameObjectAttached;
+        [SerializeField] protected GameObject _gameObjectAttached;
 
-        [SerializeField] private float timeToTipToAppear = 0.5f;
+        [SerializeField] protected float timeToTipToAppear = 0.5f;
 
-        private RectTransform _rectTransform;
-
-        private SpriteRenderer _spriteRendererOfGameObjectAttached;
+        protected RectTransform _rectTransform;
         
-        private String _tipText;
-
-        private void Start()
-        {
-            _spriteRendererOfGameObjectAttached = _gameObjectAttached.GetComponent<SpriteRenderer>();
-            _rectTransform = gameObject.GetComponent<RectTransform>();
-            _tipText = _gameObjectAttached.name;
-        }
-
-        private void Update()
-        {
-            transform.position = _gameObjectAttached.transform.position;
-            _rectTransform.sizeDelta = _spriteRendererOfGameObjectAttached.size * 32;
-        }
+        protected String _tipText;
 
         public void OnPointerEnter(PointerEventData eventData)
         {
