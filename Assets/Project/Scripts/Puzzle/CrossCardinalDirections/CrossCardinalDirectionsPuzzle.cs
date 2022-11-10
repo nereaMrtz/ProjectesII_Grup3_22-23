@@ -82,9 +82,7 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
             _pressurePoints[currentPressurePoint].SetCheck(false);
             for (int j = 0; j < _pressureCounter; j++)
             {
-                PressurePoint pressurePoint = _pressurePoints[j];
-                pressurePoint.SetCheck(false);
-                StartCoroutine(pressurePoint.ChangeColor(pressurePoint.GetColor()));
+                LiftTile(j);
             }
             _pressureCounter = 0;
         }
@@ -100,11 +98,10 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
 
             if (_pressureCounter == _pressurePoints.Length)
             {
+                StopAllCoroutines();
                 for (int i = 0; i < _pressurePoints.Length - 1; i++)
                 {
-                    PressurePoint pressurePoint = _pressurePoints[i];
-                    pressurePoint.SetCheck(false);
-                    StartCoroutine(pressurePoint.ChangeColor(pressurePoint.GetColor()));
+                    LiftTile(i);
                 }
 
                 StartCoroutine(_pressurePoints[_pressureCounter - 1].ChangeColor(new Color(1, 1, 1)));
@@ -113,7 +110,14 @@ namespace Project.Scripts.Puzzle.CrossCardinalDirections
             }
         }
 
-        public void Unlock()
+        private void LiftTile(int iteration)
+        {
+            PressurePoint pressurePoint = _pressurePoints[iteration];
+            pressurePoint.SetCheck(false);
+            StartCoroutine(pressurePoint.ChangeColor(pressurePoint.GetColor()));
+        }
+
+        private void Unlock()
         {
             _initialTile.SetActive(true);
             _cross.SetActive(true);

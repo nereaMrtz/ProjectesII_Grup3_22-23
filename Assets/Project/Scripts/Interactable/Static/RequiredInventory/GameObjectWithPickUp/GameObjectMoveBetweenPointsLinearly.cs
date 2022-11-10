@@ -8,7 +8,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
     public class GameObjectMoveBetweenPointsLinearly : GameObjectWithPickUpScript
     {
     
-        private const String REQUIRED_INVENTORY_INTERACTABLE = "RequiredInventoryInteractable";
+        private const String REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
         
         [SerializeField] private Vector3[] _offsets;
 
@@ -91,7 +91,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
         {
             _approach = false;
             _pickUpAttached.gameObject.SetActive(true);
-            gameObject.layer = LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE);
+            gameObject.layer = LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER);
             _still = true;
             yield return new WaitForSeconds(seconds);
             _still = false;
