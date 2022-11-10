@@ -84,7 +84,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             }
             else
             {
-                targetPosition = new Vector2(_transform.position.x, _transform.position.y + _height);
+                targetPosition = new Vector2(_transform.position.x, _transform.position.y - _height);
             }
 
             return targetPosition;
