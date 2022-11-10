@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Project.Scripts.Level
 {
-    public class Room : MonoBehaviour
+    public class RoomFadeOut : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
         

@@ -1,3 +1,4 @@
+using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Managers
@@ -7,6 +8,8 @@ namespace Project.Scripts.Managers
         private static GameManager _instance;
 
         [SerializeField] private bool _drugged;
+
+        [SerializeField] private AudioManager _audioManager;
 
         private void Awake()
         {
@@ -41,6 +44,7 @@ namespace Project.Scripts.Managers
         public void SetDrugged(bool drugged)
         {
             _drugged = drugged;
+            _audioManager.ChangePitch(drugged);
         }
 
         public bool IsDrugged()
