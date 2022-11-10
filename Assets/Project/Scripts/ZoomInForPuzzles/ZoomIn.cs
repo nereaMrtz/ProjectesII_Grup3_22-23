@@ -1,19 +1,18 @@
-using System.Collections;
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Sound;
+using UnityEngine;
 
-public class ZoomIn : NotRequiredInventoryInteractable
+namespace Project.Scripts.ZoomInForPuzzles
 {
-
-    [SerializeField] private GameObject Activate;
-
-    public override void Interact(AudioManager audioManager)
+    public class ZoomIn : NotRequiredInventoryInteractable
     {
-        Activate.SetActive(!Activate.activeSelf);
-    }
 
+        [SerializeField] private GameObject Activate;
+
+        public override void Interact(AudioManager audioManager)
+        {
+            Activate.SetActive(!Activate.activeSelf);
+        }
+
+    }
 }
