@@ -8,9 +8,11 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
     {
         [SerializeField] private Direction[] _directions;
 
+        [SerializeField] private GameObject _compassInstructions;
+
         public override void Interact(AudioManager audioManager)
         {
-            throw new System.NotImplementedException();
+            _compassInstructions.SetActive(true);
         }
 
         public Direction[] GetDirections()
