@@ -58,7 +58,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
 
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (inventorySlots[i].gameObject.transform.childCount < 2)
+                if (inventorySlots[i].GetPickUp().gameObject.name == "EmptyPickUp")
                 {
                     continue;
                 }

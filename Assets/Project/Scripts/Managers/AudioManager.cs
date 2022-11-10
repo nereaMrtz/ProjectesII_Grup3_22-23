@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Managers;
 using UnityEngine;
 
@@ -20,6 +21,18 @@ namespace Project.Scripts.Sound
                 {
                     sound.GetSource().Play();
                 }
+            }
+        }
+
+        private void Update()
+        {
+            if (GameManager.Instance.IsDrugged())
+            {
+                ChangePitch(true);
+            }
+            else
+            {
+                ChangePitch(false);
             }
         }
 

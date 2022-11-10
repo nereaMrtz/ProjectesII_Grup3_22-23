@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Interactable.Static.RequiredInventory;
 using UnityEngine;
@@ -12,6 +13,21 @@ namespace Project.Scripts.Character
         [SerializeField] private Sprite _emptySlotChildSprite;
     
         [SerializeField] private PickUp _pickUp;
+
+        [SerializeField] private PickUp _emptyInventorySlot;
+
+        private void Start()
+        {
+            _pickUp = _emptyInventorySlot;
+        }
+
+        private void Update()
+        {
+            if (_pickUp == null)
+            {
+                _pickUp = _emptyInventorySlot;
+            }
+        }
 
         public void SetPickUp(PickUp pickUp)
         {

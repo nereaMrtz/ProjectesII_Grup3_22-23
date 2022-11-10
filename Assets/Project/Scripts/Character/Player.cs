@@ -16,6 +16,8 @@ namespace Project.Scripts.Character
         [SerializeField] private AudioManager _audioManager;
         
         [SerializeField] private Rigidbody2D _rigidbody2D;
+        
+        [SerializeField] private GameObject _pauseMenuPanel;
 
         [SerializeField] private Inventory _inventory;
 
@@ -40,7 +42,12 @@ namespace Project.Scripts.Character
 
         void Update()
         {
-            if (_drugEffect.GetBetweenChangePeriod())
+            if ((Input.GetKey(KeyCode.Escape) && !_pauseMenuPanel.activeSelf))
+            {
+                _pauseMenuPanel.SetActive(true);
+            }
+            
+            if (_drugEffect.GetBetweenChangePeriod() || _pauseMenuPanel.activeSelf)
             {
                 return;
             }
