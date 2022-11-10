@@ -14,11 +14,13 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
 
         private void Start()
         {
-            //_reward.transform.position = transform.position;
+            _reward.transform.position = transform.position;
+            _reward.SetActive(true);
         }
 
         public override void Interact(AudioManager audioManager)
         {
+            //_reward.SetActive(true);
             //ACTIVAR ZOOM IN
             //CUANDO HA ESCRITO LA COMBINACION CORRECTA CERRAR EL CANVAS
         }

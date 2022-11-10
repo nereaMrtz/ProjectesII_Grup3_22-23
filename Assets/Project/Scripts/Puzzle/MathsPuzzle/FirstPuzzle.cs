@@ -1,16 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Project.Scripts.Puzzle.Password;
 using UnityEngine;
 
-public class FirstPuzzle : MonoBehaviour
+namespace Project.Scripts.Puzzle.MathsPuzzle
 {
-    [SerializeField] private GameObject prueba;
-    public void CheckAnswer(string answer)
+    public class FirstPuzzle : PasswordPuzzle
     {
-        int aux = int.Parse(answer);
+        [SerializeField] private GameObject prueba;
+        public void CheckAnswer(string answer)
+        {
+            int aux = int.Parse(answer);
 
-        if(aux == 11)
-            prueba.SetActive(!prueba.activeSelf);
+            if (aux == 11)
+            {
+                _completed = true;
+            }
+        }
     }
 }
