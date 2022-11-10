@@ -8,6 +8,10 @@ namespace Project.Scripts.Character {
     {
         [SerializeField] private InventorySlot[] _inventorySlots;
 
+        private PickUp _firstPickUpSelected;
+
+        private bool _itemSelected;
+
         private void Start()
         {
             _inventorySlots = new InventorySlot[7];
@@ -22,13 +26,26 @@ namespace Project.Scripts.Character {
         {
             foreach (InventorySlot inventorySlot in _inventorySlots)
             {
-                if (inventorySlot.gameObject.transform.childCount < 2)
+                if (inventorySlot.GetPickUp().gameObject.name == "EmptyInventorySlot")
                 {
                     inventorySlot.SetPickUp(pickUp);
                     return true;
                 }
             }
             return false;
+        }
+
+        public void SelectItem(int inventorySlot)
+        {
+            if (_itemSelected)
+            {
+                
+            }
+            else
+            {
+                _firstPickUpSelected = _inventorySlots[inventorySlot].GetPickUp();
+                _itemSelected = true;
+            }
         }
 
         public InventorySlot[] GetInventorySlots()

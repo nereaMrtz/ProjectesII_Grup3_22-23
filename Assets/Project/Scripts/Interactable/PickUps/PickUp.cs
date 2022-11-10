@@ -5,7 +5,7 @@ using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.PickUps {
-    public class PickUp : RequiredInventoryInteractable
+    public class PickUp : RequiredInventoryInteractable, ICombinePickUps
     {
         private const String LOOT_PICK_UP_SOUND = "Loot Pick Up Sound";
         
@@ -19,6 +19,11 @@ namespace Project.Scripts.Interactable.PickUps {
                 _spriteRenderer.enabled = false;
                 Destroy(_capsuleCollider2D);
             }
+        }
+
+        public PickUp CombinePickUps(PickUp pickUp)
+        {
+            throw new NotImplementedException();
         }
     }
 }
