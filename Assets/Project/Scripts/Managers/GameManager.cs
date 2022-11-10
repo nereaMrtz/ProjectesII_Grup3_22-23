@@ -9,8 +9,6 @@ namespace Project.Scripts.Managers
 
         [SerializeField] private bool _drugged;
 
-        [SerializeField] private AudioManager _audioManager;
-
         private void Awake()
         {
             if (_instance == null)
@@ -29,11 +27,12 @@ namespace Project.Scripts.Managers
         {
             
         }
-
-        // Update is called once per frame
         void Update()
         {
-        
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                
+            }
         }
         
         public static GameManager Instance
@@ -44,7 +43,6 @@ namespace Project.Scripts.Managers
         public void SetDrugged(bool drugged)
         {
             _drugged = drugged;
-            _audioManager.ChangePitch(drugged);
         }
 
         public bool IsDrugged()
