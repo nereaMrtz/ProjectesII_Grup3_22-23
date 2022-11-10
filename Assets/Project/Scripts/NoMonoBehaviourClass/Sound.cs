@@ -12,8 +12,13 @@ namespace Project.Scripts.NoMonoBehaviourClass
     
         [Range(0, 1)]
         [SerializeField] private float _volume;
+        [SerializeField] private float _druggedPitch;
+        
+        [SerializeField] private float _soberPitch;
+        
         [SerializeField] private bool _loop;
         [SerializeField] private bool _play;
+
 
         public AudioSource GetSource()
         {
@@ -73,6 +78,16 @@ namespace Project.Scripts.NoMonoBehaviourClass
         public void SetPLay(bool play)
         {
             _play = play;
+        }
+
+        public float GetSoberPitch()
+        {
+            return _soberPitch;
+        }
+
+        public float GetDruggedPitch()
+        {
+            return _druggedPitch;
         }
     }
 }

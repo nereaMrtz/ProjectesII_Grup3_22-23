@@ -21,6 +21,7 @@ namespace Project.Scripts.UI
         {
             if (_gameObjectAttached.transform.childCount < 2)
             {
+                _tipText = _gameObjectAttached.name;
                 return;   
             }
             _tipText = _gameObjectAttached.GetComponent<InventorySlot>().GetPickUp().name;

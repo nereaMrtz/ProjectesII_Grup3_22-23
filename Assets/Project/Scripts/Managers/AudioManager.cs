@@ -1,3 +1,4 @@
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Sound
@@ -72,6 +73,14 @@ namespace Project.Scripts.Sound
             }
 
             return 0;
+        }
+
+        public void ChangePitch(bool drugged)
+        {
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
+            {
+                sound.GetSource().pitch = drugged ? sound.GetDruggedPitch() : sound.GetSoberPitch();
+            }
         }
     }
 }

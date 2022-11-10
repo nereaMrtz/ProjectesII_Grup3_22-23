@@ -1,13 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Project.Scripts.Level
 {
-    public class Room : MonoBehaviour
+    public class RoomFadeOut : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
         
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private Image _spriteRenderer;
 
         [SerializeField] private BoxCollider2D _boxCollider2D;
 
@@ -17,7 +18,7 @@ namespace Project.Scripts.Level
 
         private void Start()
         {
-            _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            _spriteRenderer = gameObject.GetComponent<Image>();
             _color = gameObject.GetComponent<SpriteRenderer>().color;
             _timerToFadeOut = 1;
         }
