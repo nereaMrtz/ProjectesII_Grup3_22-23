@@ -7,7 +7,7 @@ namespace Project.Scripts.Character
 {
     public class InventorySlot : MonoBehaviour
     {
-        [SerializeField] private Image _childSpriteRenderer;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private Sprite _emptySlotChildSprite;
     
@@ -16,7 +16,10 @@ namespace Project.Scripts.Character
         public void SetPickUp(PickUp pickUp)
         {
             _pickUp = pickUp;
-            _childSpriteRenderer.sprite = _pickUp.gameObject.GetComponent<SpriteRenderer>().sprite;
+            _spriteRenderer.sprite = _pickUp.gameObject.GetComponent<SpriteRenderer>().sprite;
+            Vector2 size = _spriteRenderer.size;
+            size = new Vector2(35f, 35f);
+            _spriteRenderer.size = size;
             pickUp.gameObject.transform.SetParent(transform);
         }
 
@@ -27,7 +30,7 @@ namespace Project.Scripts.Character
 
         public void EraseChildSprite()
         {
-            _childSpriteRenderer.sprite = _emptySlotChildSprite;
+            _spriteRenderer.sprite = _emptySlotChildSprite;
         }
     }
 }

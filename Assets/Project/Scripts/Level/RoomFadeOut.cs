@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project.Scripts.Level
 {
@@ -8,7 +7,7 @@ namespace Project.Scripts.Level
     {
         private const int PLAYER_LAYER = 6;
         
-        [SerializeField] private Image _spriteRenderer;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private BoxCollider2D _boxCollider2D;
 
@@ -18,7 +17,7 @@ namespace Project.Scripts.Level
 
         private void Start()
         {
-            _spriteRenderer = gameObject.GetComponent<Image>();
+            _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             _color = gameObject.GetComponent<SpriteRenderer>().color;
             _timerToFadeOut = 1;
         }
