@@ -10,6 +10,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
     {
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
+        private const String INCORRECT_SOUND = "Incorrect Sound";
 
         [SerializeField] private GameObject _key;
         
@@ -37,6 +38,10 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             
             for (int i = 0; i < inventorySlots.Length; i++)
             {
+                if (inventorySlots[i].gameObject.transform.childCount < 2)
+                {
+                    continue;
+                }
                 GameObject pickUp = inventorySlots[i].GetPickUp().gameObject;
                 if (pickUp == _key)
                 {
@@ -46,8 +51,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
                     return;
                 }
             }
-            //SHOW POP UP
-            return;
+            audioManager.Play(INCORRECT_SOUND);
         }
 
         private IEnumerator MoveDoor(AudioManager audioManager)

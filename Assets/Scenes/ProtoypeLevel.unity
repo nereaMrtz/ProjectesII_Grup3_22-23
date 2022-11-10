@@ -2081,6 +2081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3928a1e61b1a3c7419d3a65713865f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioManager: {fileID: 1083671368}
   _fish: {fileID: 914534884}
   _fishFood: {fileID: 2076551654}
   _offsetToApproach: {x: 0.53, y: 7.05, z: 0}
@@ -2861,7 +2862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915921214}
   m_LocalRotation: {x: 0, y: 0.000000047647255, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3600008, y: 12.41, z: -10}
+  m_LocalPosition: {x: -2.520001, y: 14.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2975,11 +2976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1532732176809836768, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.36
+      value: -2.52
       objectReference: {fileID: 0}
     - target: {fileID: 1532732176809836768, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.41
+      value: 14.4
       objectReference: {fileID: 0}
     - target: {fileID: 1577100476607589239, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Name
@@ -3829,6 +3830,16 @@ MonoBehaviour:
     _play: 0
   - _audioClip: {fileID: 8300000, guid: abfc7ba1aa1af234c9387a32e5517c0c, type: 3}
     _name: Sheet Of Paper Sound
+    _volume: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: ad7063b7484852a4d8aa89066e4b491b, type: 3}
+    _name: Throw Up Sound
+    _volume: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 598e9deafbc57f94d9118066ec215033, type: 3}
+    _name: Take This Pill Sound
     _volume: 1
     _loop: 0
     _play: 0
@@ -6424,11 +6435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4073222
+      value: 1.2473221
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.890167
+      value: 10.880167
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.z

@@ -3,7 +3,6 @@ using UnityEngine;
 using Project.Scripts.Sound;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
-using Project.Scripts.Managers;
 
 namespace Project.Scripts.Character
 {
@@ -24,6 +23,8 @@ namespace Project.Scripts.Character
 
         [SerializeField] private float _currentSpeed = 75;
 
+        private Vector2 movementDirection;
+
         private float _movementX;
         private float _movementY;
 
@@ -39,11 +40,20 @@ namespace Project.Scripts.Character
 
         void Update()
         {
+            if (_drugEffect.GetBetweenChangePeriod())
+            {
+                return;
+            }
             Controls();
         }
 
         private void FixedUpdate()
         {
+            if (_drugEffect.GetBetweenChangePeriod())
+            {
+                _audioManager.Pause(STEPS_SOUND_CLIP_NAME);
+                return;
+            }
             Movement();
             
             if (Input.GetKeyUp(KeyCode.Space))
@@ -54,7 +64,7 @@ namespace Project.Scripts.Character
         
         private void Movement()
         {
-            Vector2 movementDirection = new Vector3(_movementX, _movementY).normalized;
+            movementDirection = new Vector3(_movementX, _movementY).normalized;
             _rigidbody2D.AddForce(movementDirection * _currentSpeed, ForceMode2D.Force);
 
             if (movementDirection.x != 0 || movementDirection.y != 0)
@@ -101,7 +111,7 @@ namespace Project.Scripts.Character
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                _drugEffect.ChangeState();
+                _drugEffect.ChangeState(_audioManager);
             }
         }
 

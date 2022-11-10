@@ -11,7 +11,12 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
     public class Fishbowl : RequiredInventoryInteractable
     {
         private const String PLAYER_LAYER = "Player";
-        private const String REQUIRED_INVENTORY_INTERACTABLE = "RequiredInventoryInteractable";
+        private const String REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
+        private const String INCORRECT_SOUND = "Incorrect Sound";
+        private const String FISHBOWL_BUBBLES_SOUND = "Fishbowl Bubbles Sound";
+        private const String FISH_FOOD_SOUND = "Fish Food Sound";
+
+        [SerializeField] private AudioManager _audioManager; 
         
         [SerializeField] private GameObjectMoveBetweenPointsLinearly _fish;
 
@@ -19,7 +24,9 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
 
         [SerializeField] private Vector3 _offsetToApproach;
 
-        private bool _near;
+        private bool _playerNear;
+        private bool _canSound;
+        
         void Start()
         {
             _offsetToApproach += transform.parent.position;
@@ -29,13 +36,18 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
         {
             if (_fish.GetApproach() || _fish.GetStill())
             {
+                if (_fish.GetStill() && _canSound)
+                {
+                    _audioManager.Play(FISHBOWL_BUBBLES_SOUND);
+                    _canSound = false;
+                }
                 gameObject.layer = 0;
             }
             else
             {
-                if (_near)
+                if (_playerNear)
                 {
-                    gameObject.layer = LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE);
+                    gameObject.layer = LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER);
                 }
             }
         }
@@ -46,20 +58,22 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
 
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (inventorySlots[i].GetPickUp().gameObject == null)
+                if (inventorySlots[i].gameObject.transform.childCount < 2)
                 {
-                    break;
+                    continue;
                 }
                 GameObject pickUp = inventorySlots[i].GetPickUp().gameObject;
                 if (pickUp == _fishFood)
                 {
+                    _canSound = true;
+                    _audioManager.Play(FISH_FOOD_SOUND);
                     _fishFood.GetComponent<FishFood>().Use();
                     _fish.SetTargetPosition(_offsetToApproach);
                     _fish.SetApproach(true);
                     return;
                 }
             }
-            //SHOW POP UP
+            audioManager.Play(INCORRECT_SOUND);
                 
                 
         }
@@ -73,7 +87,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
         {
             if (collider2D.gameObject.layer == LayerMask.NameToLayer(PLAYER_LAYER))
             {
-                _near = true;
+                _playerNear = true;
             }
         }
 
@@ -81,7 +95,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
         {
             if (collider2D.gameObject.layer == LayerMask.NameToLayer(PLAYER_LAYER))
             {
-                _near = false;
+                _playerNear = false;
                 gameObject.layer = 0;
             }
         }
