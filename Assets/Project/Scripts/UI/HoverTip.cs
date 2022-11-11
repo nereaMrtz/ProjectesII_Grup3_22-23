@@ -6,37 +6,31 @@ using UnityEngine.EventSystems;
 
 namespace Project.Scripts.UI
 {
-    public abstract class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public abstract class HoverTip : MonoBehaviour
     {
-        [SerializeField] protected GameObject _gameObjectAttached;
+        private const String PLAYER_TRIGER_TIP_LAYER = "Player Trigger Tip";
 
-        [SerializeField] protected float timeToTipToAppear = 0.5f;
+        [SerializeField] protected GameObject _gameObjectAttached;
 
         protected RectTransform _rectTransform;
         
         protected String _tipText;
 
-        public void OnPointerEnter(PointerEventData eventData)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            StopAllCoroutines();
-            StartCoroutine(StartTimer());
+            if (collision.gameObject.layer == LayerMask.GetMask(PLAYER_TRIGER_TIP_LAYER))
+            {
+                HoverTipManager.OnPlayerTriggerEnter(_tipText, _gameObjectAttached.transform.position);
+            }
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            StopAllCoroutines();
-            HoverTipManager.OnMouseLoseFocus();
+            if (collision.gameObject.layer == LayerMask.GetMask(PLAYER_TRIGER_TIP_LAYER))
+            {
+                HoverTipManager.OnPlayerTriggerEnter(_tipText, _gameObjectAttached.transform.position);
+            }
         }
 
-        private void ShowTip()
-        {
-            HoverTipManager.OnMouseHover(_tipText, Input.mousePosition);
-        }
-
-        private IEnumerator StartTimer()
-        {
-            yield return new WaitForSecondsRealtime(timeToTipToAppear);
-            ShowTip();
-        }
     }
 }
