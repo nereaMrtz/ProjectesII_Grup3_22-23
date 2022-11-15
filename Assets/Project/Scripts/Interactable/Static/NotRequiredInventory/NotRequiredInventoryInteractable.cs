@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.NotRequiredInventory
 {
-    public abstract class NotRequiredInventoryInteractable : MonoBehaviour
+    public abstract class NotRequiredInventoryInteractable : InteractableScript
     {
         public abstract void Interact(AudioManager audioManager);
     }

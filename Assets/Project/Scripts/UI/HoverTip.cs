@@ -8,28 +8,26 @@ namespace Project.Scripts.UI
 {
     public abstract class HoverTip : MonoBehaviour
     {
-        private const String PLAYER_TRIGER_TIP_LAYER = "Player Trigger Tip";
-
         [SerializeField] protected GameObject _gameObjectAttached;
 
-        protected RectTransform _rectTransform;
-        
-        protected String _tipText;
+        [SerializeField] protected String _tipText;
+        [SerializeField] protected String _longText;
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private RectTransform _rectTransform;
+
+        private void Start()
         {
-            if (collision.gameObject.layer == LayerMask.GetMask(PLAYER_TRIGER_TIP_LAYER))
-            {
-                HoverTipManager.OnPlayerTriggerEnter(_tipText, _gameObjectAttached.transform.position);
-            }
+            _rectTransform = gameObject.GetComponent<RectTransform>();
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+        public void OnView()
         {
-            if (collision.gameObject.layer == LayerMask.GetMask(PLAYER_TRIGER_TIP_LAYER))
-            {
-                HoverTipManager.OnPlayerTriggerEnter(_tipText, _gameObjectAttached.transform.position);
-            }
+            HoverTipManager.OnView(_tipText, _gameObjectAttached.transform.position);
+        }
+
+        public void OffView()
+        {
+            HoverTipManager.OffView();
         }
 
     }

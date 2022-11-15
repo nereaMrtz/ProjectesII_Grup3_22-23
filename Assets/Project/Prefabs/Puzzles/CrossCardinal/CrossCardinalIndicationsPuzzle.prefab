@@ -505,28 +505,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Compass
       objectReference: {fileID: 0}
-    - target: {fileID: 1056255906464077671, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
-      propertyPath: m_SpriteTilingProperty.drawMode
+    - target: {fileID: 3865321010836969991, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1056255906464077671, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
+    - target: {fileID: 3865321010836969991, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.009175537
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1056255906464077671, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
+    - target: {fileID: 3865321010836969991, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.009175537
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1056255906464077671, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056255906464077671, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 40
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1056255906464077671, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c86b86f35ad36b4da3936759b02802b, type: 3}
 --- !u!114 &4225083109016163354 stripped
 MonoBehaviour:

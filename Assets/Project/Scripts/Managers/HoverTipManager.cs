@@ -13,9 +13,9 @@ namespace Project.Scripts.Managers
         [SerializeField] private float OffsetY;
         [SerializeField] private float OffsetX;
 
-        public static Action<string, Vector2> OnPlayerTriggerEnter;
+        public static Action<string, Vector2> OnView;
         
-        public static Action OnPlayerTriggerExit;
+        public static Action OffView;
         
         void Start()
         {
@@ -24,14 +24,14 @@ namespace Project.Scripts.Managers
 
         private void OnEnable()
         {
-            OnPlayerTriggerEnter += ShowText;
-            OnPlayerTriggerExit += HideText;
+            OnView += ShowText;
+            OffView += HideText;
         }
 
         private void OnDisable()
         {
-            OnPlayerTriggerEnter -= ShowText;
-            OnPlayerTriggerExit -= HideText;
+            OnView -= ShowText;
+            OffView -= HideText;
         }
 
         private void ShowText(string text, Vector2 objectPosition)
