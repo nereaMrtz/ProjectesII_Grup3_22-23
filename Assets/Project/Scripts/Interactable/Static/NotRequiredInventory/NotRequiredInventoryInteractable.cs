@@ -9,5 +9,3 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
         public abstract void Interact(AudioManager audioManager);
     }
 }
-
-

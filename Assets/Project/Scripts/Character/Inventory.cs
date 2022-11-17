@@ -43,8 +43,13 @@ namespace Project.Scripts.Character {
             }
             else
             {
-                _firstPickUpSelected = _inventorySlots[inventorySlot].GetPickUp();
-                _itemSelected = true;
+                PickUp pickUpSelected = _inventorySlots[inventorySlot].GetPickUp();
+
+                if (pickUpSelected)
+                {
+                    _firstPickUpSelected = pickUpSelected;
+                    _itemSelected = true;    
+                }
             }
         }
 
@@ -54,4 +59,3 @@ namespace Project.Scripts.Character {
         }
     }
 }
-    

@@ -92,6 +92,8 @@ namespace Project.Scripts.Character
             DrugControls();
 
             InteractControls();
+
+            CombineItemsControl();
         }
 
         private void InteractControls() {
@@ -143,6 +145,37 @@ namespace Project.Scripts.Character
                 _movementY = -1;
             }
         }
+
+        private void CombineItemsControl()
+        {
+            if (Input.GetKey(KeyCode.Alpha1))
+            {
+                _inventory.SelectItem(1);
+            }
+            else if (Input.GetKey(KeyCode.Alpha2))
+            {
+                _inventory.SelectItem(2);
+            }
+            else if (Input.GetKey(KeyCode.Alpha3))
+            {
+                _inventory.SelectItem(3);
+            }
+            else if (Input.GetKey(KeyCode.Alpha4))
+            {
+                _inventory.SelectItem(4);
+            }
+            else if (Input.GetKey(KeyCode.Alpha5))
+            {
+                _inventory.SelectItem(5);
+            }
+            else if (Input.GetKey(KeyCode.Alpha6))
+            {
+                _inventory.SelectItem(6);
+            }
+            else if (Input.GetKey(KeyCode.Alpha7))
+            {
+                _inventory.SelectItem(7);
+            }
+        }
     }
 }
-
