@@ -9,10 +9,6 @@ namespace Project.Scripts.UI
 {
     public class ObjectTip : MonoBehaviour
     {
-        public static Action<string, Vector2> OnView;
-
-        public static Action OffView;
-
         [SerializeField] private RectTransform _hoverTip;
 
         [SerializeField] private TextMeshProUGUI _tip;
@@ -41,22 +37,6 @@ namespace Project.Scripts.UI
                 ShowText(_tipText, _gameObjectAttached.transform.position);
             }
         }
-
-        /*private void OnEnable()
-        {
-            if (_activateHover)
-            {
-                ShowText(_tipText, _gameObjectAttached.transform.position);
-            }
-        }
-
-        private void OnDisable()
-        {
-            if (_activateHover)
-            {
-                HideText();
-            }
-        }*/
 
         private void ShowText(string text, Vector2 objectPosition)
         {

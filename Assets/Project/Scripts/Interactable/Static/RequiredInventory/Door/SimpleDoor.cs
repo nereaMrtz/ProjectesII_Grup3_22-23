@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Project.Scripts.Character;
 using Project.Scripts.Sound;
+using Project.Scripts.UI;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
@@ -45,6 +46,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
                 GameObject pickUp = inventorySlots[i].GetPickUp().gameObject;
                 if (pickUp == _key)
                 {
+                    gameObject.transform.GetChild(0).gameObject.SetActive(false);
                     inventorySlots[i].EraseChildSprite();
                     Destroy(pickUp);
                     StartCoroutine(MoveDoor(audioManager));
