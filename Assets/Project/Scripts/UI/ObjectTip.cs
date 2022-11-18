@@ -4,12 +4,15 @@ using System.Collections;
 using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Project.Scripts.UI
 {
     public class ObjectTip : MonoBehaviour
     {
         [SerializeField] private RectTransform _hoverTip;
+
+        [SerializeField] private Image _image;
 
         [SerializeField] private TextMeshProUGUI _tip;
 
@@ -21,7 +24,7 @@ namespace Project.Scripts.UI
         [SerializeField] private String _tipText;
         [SerializeField] private String _longText;
 
-        [SerializeField] private bool _activateHover;
+        [SerializeField] private bool _activateTip;
 
         private bool _onView;        
 
@@ -32,15 +35,20 @@ namespace Project.Scripts.UI
 
         private void Update()
         {
-            if (_activateHover)
+            if (_gameObjectAttached.activeSelf && _activateTip)
             {
-                ShowText(_tipText, _gameObjectAttached.transform.position);
+                ShowText(_tipText, _gameObjectAttached.transform.position); 
+            }
+            else
+            {
+                HideText();
             }
         }
 
         private void ShowText(string text, Vector2 objectPosition)
         {
-            _tip.text = text;
+            _tip.text = text + "\nPress E to interact";
+            _image.color = new Color(0, 0, 0, 0.38f);
 
             Vector2 sizeDelta = _tip.gameObject.GetComponent<RectTransform>().sizeDelta;
 
@@ -52,8 +60,12 @@ namespace Project.Scripts.UI
         private void HideText()
         {
             _tip.text = default;
-            _hoverTip.gameObject.SetActive(false);
+            _image.color = new Color(0, 0, 0, 0);
         }
 
+        public void SetActivateTip(bool activateTip)
+        {
+            _activateTip = activateTip;
+        }
     }
 }

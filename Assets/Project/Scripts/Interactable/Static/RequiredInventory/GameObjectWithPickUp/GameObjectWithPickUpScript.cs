@@ -2,6 +2,7 @@ using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Sound;
+using Project.Scripts.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,7 +24,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
         protected Vector3 _targetPosition;
         protected Vector3 _lastTargetPosition;
 
-        private bool _interacted;
+        protected bool _interacted;
         protected bool _taked;
 
         public override void Interact(Inventory inventory, AudioManager audioManager)

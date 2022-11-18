@@ -15,6 +15,8 @@ namespace Project.Scripts.Character
 
         [SerializeField] private Image _changeStateEffect;
 
+        [SerializeField] private Image _filter;
+
         [SerializeField] private GameObject _throwUpPrefab;
 
         private GameObject _throwUp;
@@ -80,6 +82,14 @@ namespace Project.Scripts.Character
                 }
                 else
                 {
+                    if (GameManager.Instance.IsDrugged())
+                    {
+                        _filter.color = new Color(0.64f, 0, 0.33f, 0.23f);
+                    }
+                    else
+                    {
+                        _filter.color = new Color(0.64f, 0, 0.33f, 0);
+                    }
                     alpha.a = 1;
                 }
                 _changeStateEffect.color = new Color(alpha.r, alpha.g, alpha.b, alpha.a);
