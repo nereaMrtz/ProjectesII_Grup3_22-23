@@ -1,21 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Sound;
-using TMPro;
 
-public class Comments : NotRequiredInventoryInteractable
+
+namespace Project.Scripts.FeedbackComments
 {
-    [SerializeField] private GameObject dialogBox;
-    [SerializeField] private TextMeshProUGUI dialogText;
-    [SerializeField] private string text;
-   
-   
-    public override void Interact(AudioManager audioManager)
+    public class Comments : MonoBehaviour
     {
-        dialogBox.SetActive(!dialogBox.activeSelf);
+        [SerializeField] GameObject dialogBox;
 
+        public void ActivateDialogBox()
+        {
+            dialogBox.SetActive(!dialogBox.activeSelf);
+        }
+
+        public void SetComments(AudioManager audioManager)
+        {
+
+        }
+
+        public void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                ActivateDialogBox();
+            }
+        }
+
+        public void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                ActivateDialogBox();
+            }
+        }
     }
 }
