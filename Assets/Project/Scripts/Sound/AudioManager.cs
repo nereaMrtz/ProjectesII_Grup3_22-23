@@ -10,6 +10,7 @@ namespace Project.Scripts.Sound
         [SerializeField] private String _musicName;
         
         [SerializeField] private Sound[] _sounds;
+
         [SerializeField] private AudioMixer _audioMixer;
         
         [SerializeField] private Toggle _muteToggle;
@@ -24,6 +25,7 @@ namespace Project.Scripts.Sound
                 sound.GetSource().clip = sound.GetClip();
                 sound.GetSource().volume = sound.GetVolume();
                 sound.GetSource().loop = sound.GetLoop();
+                sound.GetSource().outputAudioMixerGroup = sound.GetAudioMixerGroup();
                 if (sound.GetPlay())
                 {
                     sound.GetSource().Play();
@@ -35,7 +37,7 @@ namespace Project.Scripts.Sound
         {
             if (volume < -50.0f)
             {
-                _audioMixer.SetFloat(_musicName, -80);
+                _audioMixer.SetFloat(_musicName, -80.0f);
                 _muteToggle.isOn = true;
             }
             else

@@ -4,33 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject _newPanel;
     [SerializeField] private GameObject _actualPanel;
-    
-    private bool _isActive;
 
     public void PlayButton()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void ChangePanelButton()
+    public void ChangePanelButton(GameObject menuToActivate)
     {
-        if (_isActive == false)
-        {
-            _actualPanel.SetActive(false);
-            _newPanel.SetActive(true);
-
-            _isActive = true;
-        }
-
-        else
-        {
-            _actualPanel.SetActive(true);
-            _newPanel.SetActive(false);
-            
-            _isActive = false;
-        }
+        menuToActivate.SetActive(true);
+        _actualPanel.SetActive(false);
+        _actualPanel = menuToActivate;
     }
 
     public void ExitButton() {
