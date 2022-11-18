@@ -1,11 +1,20 @@
+using System;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 namespace Project.Scripts.Sound
 {
     public class AudioManager : MonoBehaviour
     {
-
+        [SerializeField] private String _musicName;
+        
         [SerializeField] private Sound[] _sounds;
+        [SerializeField] private AudioMixer _audioMixer;
+        
+        [SerializeField] private Toggle _muteToggle;
+        
+        private float _lastVolumeValue;
 
         private void Awake()
         {
@@ -19,6 +28,34 @@ namespace Project.Scripts.Sound
                 {
                     sound.GetSource().Play();
                 }
+            }
+        }
+        
+        public void SetVolume(float volume)
+        {
+            if (volume < -50.0f)
+            {
+                _audioMixer.SetFloat(_musicName, -80);
+                _muteToggle.isOn = true;
+            }
+            else
+            {
+                _audioMixer.SetFloat(_musicName, volume);
+                _muteToggle.isOn = false;
+            }
+            _lastVolumeValue = volume;
+            
+        }
+    
+        public void Mute(bool mute)
+        {
+            if (mute)
+            {
+                _audioMixer.SetFloat(_musicName, -80);
+            }
+            else
+            {
+                _audioMixer.SetFloat(_musicName, _lastVolumeValue);
             }
         }
 
@@ -45,12 +82,6 @@ namespace Project.Scripts.Sound
                 sound.GetSource().Play();
                 sound.GetSource().Pause();
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
         }
     }
 }

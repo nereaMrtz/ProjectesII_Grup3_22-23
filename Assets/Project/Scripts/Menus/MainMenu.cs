@@ -37,10 +37,4 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Exit");
         Application.Quit();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
