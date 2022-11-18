@@ -36,6 +36,16 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
             {
                 return;
             }
+            
+            
+            if (_interacted && _still)
+            {
+                _objectTip.SetActivateTip(true);
+            }
+            else
+            {
+                _objectTip.SetActivateTip(false);
+            }
 
             if (Vector3.Distance(transform.position, _targetPosition) <= 0.01f)
             {
@@ -93,11 +103,13 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
             _approach = false;
             _pickUpAttached.gameObject.SetActive(true);
             gameObject.layer = LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER);
-            _objectTip.SetActivateTip(true);
             _still = true;
             yield return new WaitForSeconds(seconds);
             _still = false;
-            _objectTip.SetActivateTip(false);
+            if (_interacted)
+            {
+                _objectTip.SetActivateTip(false);
+            }
             gameObject.layer = 0;
             _pickUpAttached.gameObject.SetActive(false);
             _targetPosition = _offsets[Random.Range(0, _offsets.Length - 1)];

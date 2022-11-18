@@ -48,6 +48,10 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
                 {
                     gameObject.transform.GetChild(0).gameObject.SetActive(false);
                     inventorySlots[i].EraseChildSprite();
+                    for (int j = 0; j < pickUp.transform.childCount - 1; j++)
+                    {
+                        Destroy(pickUp.transform.GetChild(j).gameObject);
+                    }
                     Destroy(pickUp);
                     StartCoroutine(MoveDoor(audioManager));
                     return;

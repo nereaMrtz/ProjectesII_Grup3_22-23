@@ -61,7 +61,6 @@ namespace Project.Scripts.UI
         {
             _tip.text = default;
             _image.color = new Color(0, 0, 0, 0);
-            //_hoverTip.gameObject.SetActive(false);
         }
 
         public void SetActivateTip(bool activateTip)
