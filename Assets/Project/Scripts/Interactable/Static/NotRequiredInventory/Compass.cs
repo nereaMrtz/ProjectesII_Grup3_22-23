@@ -5,16 +5,10 @@ using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.NotRequiredInventory
 {
-    public class Compass : NotRequiredInventoryInteractable
+    public class Compass : MonoBehaviour
     {
         [SerializeField] private Direction[] _directions;
 
-        [SerializeField] private GameObject _compassInstructions;
-
-        public override void Interact(AudioManager audioManager)
-        {
-            _compassInstructions.SetActive(true);
-        }
         /*private void OnBecameVisible()
         {
             Debug.Log("Hola");

@@ -12,8 +12,10 @@ namespace Project.Scripts.ZoomInForPuzzles
         public override void Interact(AudioManager audioManager)
         {
             Activate.SetActive(!Activate.activeSelf);
-            
+
             GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
+
+            Debug.Log("holi");
         }
     }
 }
