@@ -2,24 +2,18 @@ using System;
 using System.Collections;
 using Project.Scripts.Character;
 using Project.Scripts.Sound;
-using Project.Scripts.UI;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 {
-    public class SimpleDoor : RequiredInventoryInteractable
+    public class SimpleDoor : UnlockableObject
     {
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
-        private const String INCORRECT_SOUND = "Incorrect Sound";
-
-        [SerializeField] private GameObject _key;
         
         private Transform _transform;
 
         [SerializeField] private bool _hidesToSides;
-
-        private bool _unlocked;
 
         private float _width;
         private float _height;
@@ -33,31 +27,14 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             _transform = transform;
         }
 
-        public override void Interact(Inventory inventory, AudioManager audioManager)
+        protected override void Unlock(AudioManager audioManager)
         {
-            InventorySlot[] inventorySlots = inventory.GetInventorySlots();
-            
-            for (int i = 0; i < inventorySlots.Length; i++)
-            {
-                if (inventorySlots[i].GetPickUp().gameObject.name == "EmptyInventorySlot")
-                {
-                    continue;
-                }
-                GameObject pickUp = inventorySlots[i].GetPickUp().gameObject;
-                if (pickUp == _key)
-                {
-                    gameObject.transform.GetChild(0).gameObject.SetActive(false);
-                    inventorySlots[i].EraseChildSprite();
-                    for (int j = 0; j < pickUp.transform.childCount - 1; j++)
-                    {
-                        Destroy(pickUp.transform.GetChild(j).gameObject);
-                    }
-                    Destroy(pickUp);
-                    StartCoroutine(MoveDoor(audioManager));
-                    return;
-                }
-            }
-            audioManager.Play(INCORRECT_SOUND);
+            StartCoroutine(MoveDoor(audioManager));
+        }
+
+        protected override void Lock(AudioManager audioManager)
+        {
+            throw new NotImplementedException();
         }
 
         private IEnumerator MoveDoor(AudioManager audioManager)
