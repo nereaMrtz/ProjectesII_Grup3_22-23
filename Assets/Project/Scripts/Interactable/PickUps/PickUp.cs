@@ -22,6 +22,8 @@ namespace Project.Scripts.Interactable.PickUps {
                 audioManager.Play(LOOT_PICK_UP_SOUND);
                 _spriteRenderer.enabled = false;
                 Destroy(_capsuleCollider2D);
+                
+                transform.GetChild(0).gameObject.SetActive(false);
             }
         }
 

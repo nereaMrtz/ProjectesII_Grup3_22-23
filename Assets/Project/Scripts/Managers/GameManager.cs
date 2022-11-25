@@ -7,7 +7,8 @@ namespace Project.Scripts.Managers
     {
         private static GameManager _instance;
 
-        [SerializeField] private bool _drugged;
+        private bool _drugged;
+        private bool _zoomInState; 
 
         private void Awake()
         {
@@ -21,8 +22,7 @@ namespace Project.Scripts.Managers
             }
             DontDestroyOnLoad(gameObject);
         }
-
-
+        
         void Start()
         {
             
@@ -45,10 +45,19 @@ namespace Project.Scripts.Managers
             _drugged = drugged;
         }
 
+        public void SetZoomInState(bool zoomInState)
+        {
+            _zoomInState = zoomInState;
+        }
+
         public bool IsDrugged()
         {
             return _drugged;
         }
 
+        public bool IsInZoomInState()
+        {
+            return _zoomInState;
+        }
     }
 }

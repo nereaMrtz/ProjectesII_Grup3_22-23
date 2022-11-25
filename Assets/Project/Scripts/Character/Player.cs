@@ -3,6 +3,7 @@ using UnityEngine;
 using Project.Scripts.Sound;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
+using Project.Scripts.Managers;
 
 namespace Project.Scripts.Character
 {
@@ -87,11 +88,14 @@ namespace Project.Scripts.Character
 
         private void Controls()
         {
-            MovementControls();
-            
-            DrugControls();
-
             InteractControls();
+
+            if (!GameManager.Instance.IsInZoomInState())
+            {
+                DrugControls();
+                
+                MovementControls();
+            }
         }
 
         private void InteractControls() {
