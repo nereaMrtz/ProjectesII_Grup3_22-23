@@ -6994,20 +6994,7 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 857225246}
-        m_TargetAssemblyTypeName: Project.Scripts.Puzzle.MathsPuzzle.FirstPuzzle,
-          Assembly-CSharp
-        m_MethodName: CheckAnswer
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 11
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -7224,11 +7211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90e4439674fd204783e056705c3f87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _correctPassword: 
-  prueba: {fileID: 1399252506}
+  _correctPassword: 11
   disableCollider: {fileID: 857225244}
   endPuzzle: {fileID: 1927761560}
   circle: {fileID: 1096381035}
+  inputField: {fileID: 853433928}
 --- !u!1 &858342971
 GameObject:
   m_ObjectHideFlags: 0
@@ -11415,11 +11402,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1399252506 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7175924608092678478, guid: 19a0f1cfd57f3bb45836eed89d02dbdf, type: 3}
-  m_PrefabInstance: {fileID: 7175924607452500722}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1410584503
 GameObject:
   m_ObjectHideFlags: 0
@@ -15856,7 +15838,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7175924608092678476, guid: 19a0f1cfd57f3bb45836eed89d02dbdf, type: 3}
   m_PrefabInstance: {fileID: 7175924607452500722}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399252506}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cc39334116e29f4186ad23ca472be57, type: 3}
@@ -17088,7 +17070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7175924608092678478, guid: 19a0f1cfd57f3bb45836eed89d02dbdf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7175924608092678479, guid: 19a0f1cfd57f3bb45836eed89d02dbdf, type: 3}
       propertyPath: m_RootOrder

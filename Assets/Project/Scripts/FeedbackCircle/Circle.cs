@@ -18,8 +18,6 @@ namespace Project.Scripts.FeedbackCircle
             biggerCircle.SetActive(!biggerCircle.activeSelf);
         }
 
-        
-
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -37,13 +35,11 @@ namespace Project.Scripts.FeedbackCircle
                 _animator.SetBool(SHOW_INVENTORY, false);
             }
         }
-   
 
-       public void EndCircle()
+        public void EndCircle()
         {
             quitCircle.SetActive(false);
         }
-    }  
-  
+    }
 }
 
