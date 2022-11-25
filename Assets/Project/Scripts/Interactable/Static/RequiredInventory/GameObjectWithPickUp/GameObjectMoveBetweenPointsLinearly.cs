@@ -40,11 +40,11 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
             
             if (_interacted && _still)
             {
-                _objectTip.SetActivateTip(true);
+                //_objectTip.SetActivateTip(true);
             }
             else
             {
-                _objectTip.SetActivateTip(false);
+                //_objectTip.SetActivateTip(false);
             }
 
             if (Vector3.Distance(transform.position, _targetPosition) <= 0.01f)
@@ -108,7 +108,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
             _still = false;
             if (_interacted)
             {
-                _objectTip.SetActivateTip(false);
+                //_objectTip.SetActivateTip(false);
             }
             gameObject.layer = 0;
             _pickUpAttached.gameObject.SetActive(false);
