@@ -9,8 +9,6 @@ namespace Project.Scripts.Interactable.PickUps {
     public class PickUp : RequiredInventoryInteractable, ICombinePickUps
     {
         private const String LOOT_PICK_UP_SOUND = "Loot Pick Up Sound";
-
-        [SerializeField] protected ObjectTip _objectTip;
         
         [SerializeField] protected SpriteRenderer _spriteRenderer;
         [SerializeField] protected CapsuleCollider2D _capsuleCollider2D;
@@ -18,7 +16,7 @@ namespace Project.Scripts.Interactable.PickUps {
         {
             if (inventory.InsertPickUp(this))
             {
-                Destroy(_objectTip.gameObject);
+                //Destroy(_objectTip.gameObject);
                 audioManager.Play(LOOT_PICK_UP_SOUND);
                 _spriteRenderer.enabled = false;
                 Destroy(_capsuleCollider2D);
