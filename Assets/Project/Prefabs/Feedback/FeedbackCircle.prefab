@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a506361cfc5728488bbe9791a70d443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biggerCircle: {fileID: 7289502477546192723}
-  inventory: {fileID: 0}
+  smallCircle: {fileID: 7289502477955363078}
+  BigCircle: {fileID: 7289502477546192723}
   quitCircle: {fileID: 7289502477935613738}
   _animator: {fileID: 0}
 --- !u!1 &7289502477955363078
@@ -177,7 +177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7289502477955363077
 Transform:
   m_ObjectHideFlags: 0
