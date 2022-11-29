@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &471432407370249753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 471432407370249759}
+  - component: {fileID: 471432407370249758}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &471432407370249759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471432407370249753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471432407370249758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471432407370249753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba48f23dd9f8fa4383cfc94ae792325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - _audioClip: {fileID: 8300000, guid: 8136cc258a407534c94e9b67a69cfb49, type: 3}
+    _name: Steps Sound
+    _volume: 1
+    _druggedPitch: -1
+    _soberPitch: 1
+    _loop: 1
+    _play: 1
+  - _audioClip: {fileID: 8300000, guid: 115a6fa024a9bbb408dd1a5288217a71, type: 3}
+    _name: Loot Pick Up Sound
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1.25
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: af9dac6a3a531e34a8508fd014b42f97, type: 3}
+    _name: Simple Door Sound
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1.25
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: cddbf74e957b2664d88f0e8246d22960, type: 3}
+    _name: Slide Simple Door Sound
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1.25
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: c7cce6495340474418c0c6548c777944, type: 3}
+    _name: Incorrect Sound
+    _volume: 0.1
+    _druggedPitch: 1
+    _soberPitch: 1.3
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: b598b2593d888eb45b2a473f41fddb79, type: 3}
+    _name: Press Button Or Tile Sound
+    _volume: 1
+    _druggedPitch: 0
+    _soberPitch: 0
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: a156667d4002c8a4a9c41a467d2ea6ee, type: 3}
+    _name: Fishbowl Bubbles Sound
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1.5
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 7987406c9c96dd848abf906fdb05ef8f, type: 3}
+    _name: Fish Food Sound
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1.2
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: a8de96c407222ff47a42dd445e3b76d8, type: 3}
+    _name: Open Safe Box Sound
+    _volume: 1
+    _druggedPitch: 0
+    _soberPitch: 0
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: abfc7ba1aa1af234c9387a32e5517c0c, type: 3}
+    _name: Sheet Of Paper Sound
+    _volume: 1
+    _druggedPitch: 0
+    _soberPitch: 0
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: ad7063b7484852a4d8aa89066e4b491b, type: 3}
+    _name: Throw Up Sound
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 598e9deafbc57f94d9118066ec215033, type: 3}
+    _name: Take This Pill Sound
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
