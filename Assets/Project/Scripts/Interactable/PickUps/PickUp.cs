@@ -21,7 +21,7 @@ namespace Project.Scripts.Interactable.PickUps {
                 _spriteRenderer.enabled = false;
                 Destroy(_capsuleCollider2D);
                 
-                transform.GetChild(0).gameObject.SetActive(false);
+                //transform.GetChild(0).gameObject.SetActive(false);
             }
         }
 
