@@ -14,8 +14,6 @@ namespace Project.Scripts.ZoomInForPuzzles
             Activate.SetActive(!Activate.activeSelf);
 
             GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
-
-            Debug.Log("holi");
         }
     }
 }

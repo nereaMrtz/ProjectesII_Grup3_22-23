@@ -21,7 +21,7 @@ namespace Project.Scripts.Level
             _canChange = canChange;
         }
 
-        public abstract void Accept(DrugSubjectElement drugSubjectElement);
+        public abstract void Accept();
     } 
 }
 
