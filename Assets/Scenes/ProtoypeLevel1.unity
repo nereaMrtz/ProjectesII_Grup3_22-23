@@ -4013,7 +4013,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyObject: {fileID: 0}
-  _hidesToSides: 1
+  _up: 0
+  _down: 0
+  _right: 0
+  _left: 0
 --- !u!61 &459990507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7125,7 +7128,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &894732879
@@ -7494,7 +7497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915921214}
   m_LocalRotation: {x: 0, y: 0.000000047647255, z: 0, w: 1}
-  m_LocalPosition: {x: -0.022307396, y: 0.22621, z: -10}
+  m_LocalPosition: {x: -0.010266781, y: 0.22621, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13079,7 +13082,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyObject: {fileID: 1968265129}
-  _hidesToSides: 0
+  _up: 0
+  _down: 0
+  _right: 0
+  _left: 0
 --- !u!61 &1677905658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15409,7 +15415,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyObject: {fileID: 1909212989}
-  _hidesToSides: 1
+  _up: 0
+  _down: 0
+  _right: 0
+  _left: 0
 --- !u!4 &2053766077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7175924608092678479, guid: 19a0f1cfd57f3bb45836eed89d02dbdf, type: 3}

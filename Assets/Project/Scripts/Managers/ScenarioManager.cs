@@ -37,44 +37,23 @@ namespace Project.Scripts.Managers
             for (int i = 0; i < drugSubjectElementsToChangePropertyChange.Length; i++)
             {
                 DrugSubjectElement drugSubjectElement = drugSubjectElementsToChangePropertyChange[i].GetComponent<DrugSubjectElement>();
-                drugSubjectElement.Accept(drugSubjectElement);
+                drugSubjectElement.Accept();
             }
         }
 
-        public void Visit(ScenarioManagerTrigger scenarioManagerTrigger, DrugSubjectElement drugSubjectElementsToChangePropertyChange)
+        public void Visit(ScenarioManagerTrigger scenarioManagerTrigger)
         {
-            for (int j = 0; j < _scenarioManagerTriggers.Count; j++)
-            {
-                if (drugSubjectElementsToChangePropertyChange == _scenarioManagerTriggers[j])
-                {
-                    scenarioManagerTrigger.SetCanChange(!scenarioManagerTrigger.GetCanChange());
-                    j = _scenarioManagerTriggers.Count;
-                }
-            }
+            scenarioManagerTrigger.SetCanChange(!scenarioManagerTrigger.GetCanChange());
         }
 
-        public void Visit(DruggedElement druggedElement, DrugSubjectElement drugSubjectElementsToChangePropertyChange)
+        public void Visit(DruggedElement druggedElement)
         {
-            for (int j = 0; j < _druggedElements.Length; j++)
-            {
-                if (drugSubjectElementsToChangePropertyChange == _druggedElements[j])
-                {
-                    druggedElement.SetCanChange(!druggedElement.GetCanChange());
-                    j = _druggedElements.Length;
-                }
-            }
+            druggedElement.SetCanChange(!druggedElement.GetCanChange());
         }
 
-        public void Visit(SoberElement soberElement, DrugSubjectElement drugSubjectElementsToChangePropertyChange)
+        public void Visit(SoberElement soberElement)
         {
-            for (int j = 0; j < _soberElements.Length; j++)
-            {
-                if (drugSubjectElementsToChangePropertyChange == _soberElements[j])
-                {
-                    soberElement.SetCanChange(!soberElement.GetCanChange());
-                    j = _soberElements.Length;
-                }
-            }
+            soberElement.SetCanChange(!soberElement.GetCanChange());
         }
         
         private void ActivateOrDeactivateDrugSubjectElementsGameObjects(DrugSubjectElement[] drugSubjectElements, bool drugged)

@@ -12,7 +12,7 @@ namespace Project.Scripts.Interactable.Static
 
         [SerializeField] private GameObject _keyObject;
         
-        private bool _unlocked;
+        protected bool _unlocked;
 
         public override void Interact(Inventory inventory, AudioManager audioManager)
         {
@@ -43,17 +43,5 @@ namespace Project.Scripts.Interactable.Static
         }
 
         protected abstract void Unlock(AudioManager audioManager);
-        
-        protected abstract void Lock(AudioManager audioManager);
-
-        public bool GetUnlocked()
-        {
-            return _unlocked;
-        }
-
-        public void SetUnlocked(bool unlock)
-        {
-            _unlocked = unlock;
-        }
     }
 }

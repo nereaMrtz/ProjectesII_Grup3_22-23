@@ -1,24 +1,34 @@
 using System;
 using System.Collections;
+using Project.Scripts.Interactable.Static;
+using Project.Scripts.Puzzle;
 using Project.Scripts.Sound;
 using UnityEngine;
 
-namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
+namespace Project.Scripts.PuzzleDependentObject
 {
-    public class SimpleDoor : UnlockableObject
+    public class PuzzleDoor : MonoBehaviour
     {
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
+
+        [SerializeField] private SpriteRenderer _spriteRenderer;
         
-        private Transform _transform;
+        [SerializeField] private PuzzleScript _puzzle;
 
         [SerializeField] private bool _up;
         [SerializeField] private bool _down;
         [SerializeField] private bool _right;
         [SerializeField] private bool _left;
 
+        private AudioManager _audioManager;
+
+        private Transform _transform;
+
         private float _width;
         private float _height;
+
+        private bool _moved;
 
         private void Start()
         {
@@ -27,28 +37,35 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             _width = spriteRenderSize.x;
             _height = spriteRenderSize.y;
             _transform = transform;
+            _audioManager = FindObjectOfType<AudioManager>();
         }
 
-        protected override void Unlock(AudioManager audioManager)
+        private void Update()
         {
-            StartCoroutine(MoveDoor(audioManager));
+            if (_puzzle.GetCompleted() && !_moved)
+            {
+                StartCoroutine(MoveDoor(_audioManager));
+            }
         }
 
         private IEnumerator MoveDoor(AudioManager audioManager)
         {
+            _moved = true;
+            _spriteRenderer.sortingOrder--;
             audioManager.Play(SIMPLE_DOOR_SOUND);
             yield return new WaitForSeconds(audioManager.ClipDuration(SIMPLE_DOOR_SOUND));
             audioManager.Play(SLIDE_SIMPLE_DOOR_SOUND);
-            
+
             Vector3 targetPosition = GetTargetPosition();
 
             float slideSoundDuration = audioManager.ClipDuration(SLIDE_SIMPLE_DOOR_SOUND);
             float distance = Vector2.Distance(_transform.position, targetPosition);
             float slideSpeed = distance / slideSoundDuration;
-            
+
             while (Vector3.Distance(_transform.position, targetPosition) > 0)
             {
-                float speed = slideSpeed * Time.deltaTime; 
+                Debug.Log("hola");
+                float speed = slideSpeed * Time.deltaTime;
                 _transform.position = Vector2.MoveTowards(_transform.position, targetPosition, speed);
                 yield return null;
             }
@@ -57,7 +74,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
         private Vector3 GetTargetPosition()
         {
             Vector2 targetPosition = default;
-            
+
             if (_right)
             {
                 targetPosition = new Vector2(_transform.position.x + _width, _transform.position.y);
@@ -69,7 +86,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             else if (_down)
             {
                 targetPosition = new Vector2(_transform.position.x, _transform.position.y - _height);
-                
+
             }
             else if (_up)
             {
@@ -78,5 +95,6 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
             return targetPosition;
         }
+
     }
 }
