@@ -15,8 +15,4 @@ public class PiggyBank : UnlockableObject
         _bill.sortingOrder = -1;
         _bill.gameObject.SetActive(true);
     }
-
-    protected override void Lock(AudioManager audioManager) 
-    {
-    }
 }
