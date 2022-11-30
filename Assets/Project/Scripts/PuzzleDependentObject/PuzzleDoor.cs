@@ -1,21 +1,25 @@
 using System;
 using System.Collections;
+using Project.Scripts.Interactable.Static;
+using Project.Scripts.Puzzle;
 using Project.Scripts.Sound;
 using UnityEngine;
 
-namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
+namespace Project.Scripts.PuzzleDependentObject
 {
-    public class SimpleDoor : UnlockableObject
+    public class PuzzleDoor : UnlockableObject
     {
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
-        
-        private Transform _transform;
+
+        [SerializeField] private PuzzleScript _puzzle;
 
         [SerializeField] private bool _up;
         [SerializeField] private bool _down;
         [SerializeField] private bool _right;
         [SerializeField] private bool _left;
+
+        private Transform _transform;
 
         private float _width;
         private float _height;
@@ -29,10 +33,19 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             _transform = transform;
         }
 
+        private void Update()
+        {
+            if (_puzzle.GetCompleted())
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         protected override void Unlock(AudioManager audioManager)
         {
             StartCoroutine(MoveDoor(audioManager));
         }
+
 
         private IEnumerator MoveDoor(AudioManager audioManager)
         {
@@ -53,7 +66,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
                 yield return null;
             }
         }
-
+        
         private Vector3 GetTargetPosition()
         {
             Vector2 targetPosition = default;
@@ -78,5 +91,6 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
             return targetPosition;
         }
+        
     }
 }

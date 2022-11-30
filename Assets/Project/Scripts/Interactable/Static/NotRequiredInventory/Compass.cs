@@ -9,18 +9,6 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
     {
         [SerializeField] private Direction[] _directions;
 
-        /*private void OnBecameVisible()
-        {
-            Debug.Log("Hola");
-            //HoverTipManager.OnPlayerTriggerEnter(_tipText, _gameObjectAttached.transform.position);
-        }
-
-        private void OnBecameInvisible()
-        {
-            Debug.Log("Adios");
-            //HoverTipManager.OnPlayerTriggerExit();
-        }*/
-
         public Direction[] GetDirections()
         {
             return _directions;
