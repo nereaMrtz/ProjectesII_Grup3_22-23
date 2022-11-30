@@ -14,6 +14,8 @@ public class HoursHand : MonoBehaviour
     [SerializeField] private float _minHours = 85f;
     [SerializeField] private float _maxHours = 95f;
 
+    [SerializeField] private GameObject _panel;
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.D))
@@ -39,10 +41,10 @@ public class HoursHand : MonoBehaviour
         if ((Mathf.Abs(minutes.rotation.eulerAngles.z) >= _minMinutes && Mathf.Abs(minutes.rotation.eulerAngles.z) <= _maxMinutes) && 
             (Mathf.Abs(hours.rotation.eulerAngles.z) >= _minHours && Mathf.Abs(hours.rotation.eulerAngles.z) <= _maxHours))
         {
-            Debug.Log("hola putita");
-            // Desactivar pop up
+            _panel.SetActive(false);
             
-            // Aparecer martillo
+            GameManager.Instance.SetZoomInState(false);
+            
             _hammer.SetActive(true);
         }
     }
