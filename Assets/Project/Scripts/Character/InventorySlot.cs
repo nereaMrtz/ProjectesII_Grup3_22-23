@@ -49,6 +49,11 @@ namespace Project.Scripts.Character
             _spriteRenderer.sprite = _emptySlotChildSprite;
             _spriteRenderer.size = new Vector2(1, 1);
         }
+
+        public void ErasePickUp()
+        {
+            _pickUp = _emptyInventorySlot;
+        }
     }
 }
 
