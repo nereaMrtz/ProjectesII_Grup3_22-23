@@ -11,6 +11,8 @@ namespace Project.Scripts.Interactable.Static
         private const String INCORRECT_SOUND = "Incorrect Sound";
 
         [SerializeField] private GameObject _keyObject;
+
+        [SerializeField] private bool _destroyObject;
         
         protected bool _unlocked;
 
@@ -33,7 +35,11 @@ namespace Project.Scripts.Interactable.Static
                     {
                         Destroy(pickUp.transform.GetChild(j).gameObject);
                     }
-                    Destroy(pickUp);
+
+                    if (_destroyObject)
+                    {
+                        Destroy(pickUp);
+                    }
                     Unlock(audioManager);
                     _unlocked = true;
                     return;
