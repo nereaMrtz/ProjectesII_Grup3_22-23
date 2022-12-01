@@ -8,22 +8,21 @@ namespace Project.Scripts.FeedbackCircle
 {
     public class Circle : MonoBehaviour
     {
-        private const string SHOW_INVENTORY = "ShowInventory";
-        [SerializeField] private GameObject biggerCircle;
+        [SerializeField] private GameObject smallCircle;
         [SerializeField] private GameObject quitCircle;
-        [SerializeField] private Animator _animator;
 
-        public void ActiveCircle()
+        public void ActiveSmallCircle()
         {
-            biggerCircle.SetActive(!biggerCircle.activeSelf);
+            smallCircle.SetActive(!smallCircle.activeSelf);
+       
         }
-
+  
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                ActiveCircle();
-                _animator.SetBool(SHOW_INVENTORY, true);
+                ActiveSmallCircle();
+           
             }
         }
 
@@ -31,8 +30,7 @@ namespace Project.Scripts.FeedbackCircle
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                ActiveCircle();
-                _animator.SetBool(SHOW_INVENTORY, false);
+                ActiveSmallCircle();
             }
         }
 
