@@ -12,6 +12,7 @@ namespace Project.Scripts.Interactable.PickUps {
         
         [SerializeField] protected SpriteRenderer _spriteRenderer;
         [SerializeField] protected CapsuleCollider2D _capsuleCollider2D;
+        [SerializeField] private BoxCollider2D _commentTrigger;
         public override void Interact(Inventory inventory, AudioManager audioManager)
         {
             if (inventory.InsertPickUp(this))
@@ -20,6 +21,7 @@ namespace Project.Scripts.Interactable.PickUps {
                 audioManager.Play(LOOT_PICK_UP_SOUND);
                 _spriteRenderer.enabled = false;
                 _capsuleCollider2D.enabled = false;
+                _commentTrigger.enabled = false;
                 
                 //transform.GetChild(0).gameObject.SetActive(false);
             }
