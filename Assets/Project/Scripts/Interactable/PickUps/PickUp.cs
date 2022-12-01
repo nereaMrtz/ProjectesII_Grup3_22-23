@@ -11,8 +11,12 @@ namespace Project.Scripts.Interactable.PickUps {
         private const String LOOT_PICK_UP_SOUND = "Loot Pick Up Sound";
         
         [SerializeField] protected SpriteRenderer _spriteRenderer;
+        
         [SerializeField] protected CapsuleCollider2D _capsuleCollider2D;
+        
         [SerializeField] private BoxCollider2D _commentTrigger;
+
+        [SerializeField] private GameObject _circleFeedback;
         public override void Interact(Inventory inventory, AudioManager audioManager)
         {
             if (inventory.InsertPickUp(this))
@@ -22,6 +26,7 @@ namespace Project.Scripts.Interactable.PickUps {
                 _spriteRenderer.enabled = false;
                 _capsuleCollider2D.enabled = false;
                 _commentTrigger.enabled = false;
+                _circleFeedback.SetActive(false);
                 
                 //transform.GetChild(0).gameObject.SetActive(false);
             }
