@@ -1,31 +1,27 @@
 using UnityEngine;
 
-public class Button : MonoBehaviour
+namespace Project.Scripts.Interactable.Buttons
 {
-    [SerializeField] private GameObject _actualPanel;
-    [SerializeField] private GameObject _panelToActivate;
-    [SerializeField] private GameObject _auxiliarPanel;
-
-    public void ChangePanelButton()
+    public class Button : MonoBehaviour
     {
-        _panelToActivate.SetActive(true);
-        _actualPanel.SetActive(false);
-        _actualPanel = _panelToActivate;
-    }
+        [SerializeField] private GameObject _actualPanel;
+        [SerializeField] private GameObject _panelToActivate;
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
+        private GameObject _currentActivePanel;
+
+        public void Update()
         {
-            if (_panelToActivate.activeSelf)
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                _panelToActivate.SetActive(false);
+                ChangePanelButton();
             }
-            else if (!_panelToActivate.activeSelf)
-            {
-                _panelToActivate.SetActive(true);
-                _actualPanel.SetActive(false);
-            }
+        }
+
+        private void ChangePanelButton()
+        {
+            _panelToActivate.SetActive(true);
+            _actualPanel.SetActive(false);
+            (_actualPanel, _panelToActivate) = (_panelToActivate, _actualPanel);
         }
     }
 }
