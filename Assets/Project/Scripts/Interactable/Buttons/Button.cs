@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Project.Scripts.Interactable.Static;
 using UnityEngine;
 
 public class Button : MonoBehaviour
@@ -21,12 +17,15 @@ public class Button : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if(_panelToActivate.activeSelf == true)
+            if (_panelToActivate.activeSelf)
+            {
                 _panelToActivate.SetActive(false);
-
-            else if(_panelToActivate.activeSelf == false)
+            }
+            else if (!_panelToActivate.activeSelf)
+            {
                 _panelToActivate.SetActive(true);
                 _actualPanel.SetActive(false);
+            }
         }
     }
 }

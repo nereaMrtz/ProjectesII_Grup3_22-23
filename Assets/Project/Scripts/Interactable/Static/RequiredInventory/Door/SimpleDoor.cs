@@ -9,16 +9,20 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
     {
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
-        
-        private Transform _transform;
+
+        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private bool _up;
         [SerializeField] private bool _down;
         [SerializeField] private bool _right;
         [SerializeField] private bool _left;
-
+        
+        private Transform _transform;
+        
         private float _width;
         private float _height;
+
+        private bool _moved;
 
         private void Start()
         {
@@ -36,6 +40,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
         private IEnumerator MoveDoor(AudioManager audioManager)
         {
+            _spriteRenderer.sortingOrder--;
             audioManager.Play(SIMPLE_DOOR_SOUND);
             yield return new WaitForSeconds(audioManager.ClipDuration(SIMPLE_DOOR_SOUND));
             audioManager.Play(SLIDE_SIMPLE_DOOR_SOUND);
