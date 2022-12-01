@@ -8,6 +8,7 @@ public class BiggerCircle : MonoBehaviour
     private const string SHOW_INVENTORY = "ShowInventory";
     [SerializeField] private GameObject bigCircle;
     [SerializeField] private Animator _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     public void ActiveSmallCircle()
     {
@@ -21,6 +22,7 @@ public class BiggerCircle : MonoBehaviour
         {
             ActiveSmallCircle();
             _animator.SetBool(SHOW_INVENTORY, true);
+            _spriteRenderer.enabled = false;
 
         }
     }
@@ -31,6 +33,7 @@ public class BiggerCircle : MonoBehaviour
         {
             ActiveSmallCircle();
             _animator.SetBool(SHOW_INVENTORY, false);
+            _spriteRenderer.enabled = true;
         }
     }
 }

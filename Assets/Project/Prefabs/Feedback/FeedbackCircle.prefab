@@ -263,9 +263,9 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.8, y: 0.8}
-    newSize: {x: 20, y: 20}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
@@ -285,3 +285,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigCircle: {fileID: 7289502477546192723}
   _animator: {fileID: 0}
+  _spriteRenderer: {fileID: 7289502477955363083}
