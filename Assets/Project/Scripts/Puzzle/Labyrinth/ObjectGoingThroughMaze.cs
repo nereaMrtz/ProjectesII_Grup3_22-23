@@ -5,85 +5,63 @@ namespace Project.Scripts.Puzzle.Labyrinth
 {
     public class ObjectGoingThroughMaze : MonoBehaviour
     {
-        [SerializeField] private Cell _startCell;
-        [SerializeField] private Cell _endCell;
-        
-        private Cell _currentCell;
-        private Cell _intendedCell;
-        
-        private bool _move;
-        
-        // Start is called before the first frame update
-        void Start()
-        {
-            _move = true;
-            _currentCell = _startCell;
-        }
+        [SerializeField] private Rigidbody2D _rigidbody2D;
 
+        [SerializeField] private Vector3 _initialPosition;
+        [SerializeField] private Vector3 _targetPosition;
+
+        [SerializeField] private float _speed;
+
+        private Vector3 _movementDirection;
+
+        private float _velocityY;
+        private float _velocityX;
+        
         // Update is called once per frame
         void Update()
         {
-            if (_move)
-            {
-                Controls();    
-            }
+            Controls();
+        }
+
+        private void FixedUpdate()
+        {
+            MoveObject();
         }
 
         public bool CheckEndCell()
         {
-            return _currentCell == _endCell;
+            return transform.position == _targetPosition;
         }
 
         private void Controls()
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKey(KeyCode.W))
             {
-                _intendedCell = _currentCell.GetUpCell();
-                if (_intendedCell != null)
-                {
-                    Debug.Log("Hola1");
-                    StartCoroutine(MoveObject(_intendedCell.gameObject.transform.position));
-                }
+                _velocityY = 1;
             }
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A))
             {
-                _intendedCell = _currentCell.GetLeftCell();
-                if (_intendedCell != null)
-                {
-                    Debug.Log("Hola2");
-                    StartCoroutine(MoveObject(_intendedCell.gameObject.transform.position));
-                }
+                _velocityX = -1;
             }
-            else if (Input.GetKeyDown(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D))
             {
-                _intendedCell = _currentCell.GetRightCell();
-                if (_intendedCell != null)
-                {
-                    Debug.Log("Hola3");
-                    StartCoroutine(MoveObject(_intendedCell.gameObject.transform.position));
-                }
+                _velocityX = 1;
             }
-            else if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S))
             {
-                _intendedCell = _currentCell.GetDownCell();
-                if (_intendedCell != null)
-                {
-                    Debug.Log("Hola4");
-                    StartCoroutine(MoveObject(_intendedCell.gameObject.transform.position));
-                }
+                _velocityY = -1;
             }
-        }
+            else
+            {
+                _velocityX = 0;
+                _velocityY = 0;
+            }
+        }        
 
-        private IEnumerator MoveObject(Vector3 targetPosition)
+        private void MoveObject()
         {
-            _move = false;
-            while (Vector3.Distance(transform.position, targetPosition) > 0)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime);
-                yield return null;
-            }
-            _currentCell = _intendedCell;
-            _move = true;
+            _movementDirection = new Vector3(_velocityX, _velocityY).normalized;
+            _rigidbody2D.AddForce(_movementDirection * _speed, ForceMode2D.Force);            
         }
     }
 }
