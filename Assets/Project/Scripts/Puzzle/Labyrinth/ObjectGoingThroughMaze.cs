@@ -7,17 +7,16 @@ namespace Project.Scripts.Puzzle.Labyrinth
     {
         [SerializeField] private Rigidbody2D _rigidbody2D;
 
-        [SerializeField] private Vector3 _initialPosition;
         [SerializeField] private Vector3 _targetPosition;
 
         [SerializeField] private float _speed;
+        [SerializeField] private float _range;
 
         private Vector3 _movementDirection;
 
         private float _velocityY;
         private float _velocityX;
         
-        // Update is called once per frame
         void Update()
         {
             Controls();
@@ -30,38 +29,41 @@ namespace Project.Scripts.Puzzle.Labyrinth
 
         public bool CheckEndCell()
         {
-            return transform.position == _targetPosition;
+            return Vector3.Distance(transform.localPosition, _targetPosition) < _range;
         }
 
         private void Controls()
         {
             if (Input.GetKey(KeyCode.W))
             {
-                _velocityY = 1;
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                _velocityX = -1;
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                _velocityX = 1;
+                _velocityY = _speed;
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                _velocityY = -1;
+                _velocityY = -_speed;
+            }
+            else
+            {
+                _velocityY = 0;
+            }
+            
+            if (Input.GetKey(KeyCode.A))
+            {
+                _velocityX = -_speed;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                _velocityX = _speed;
             }
             else
             {
                 _velocityX = 0;
-                _velocityY = 0;
             }
         }        
 
         private void MoveObject()
         {
-            _movementDirection = new Vector3(_velocityX, _velocityY).normalized;
-            _rigidbody2D.AddForce(_movementDirection * _speed, ForceMode2D.Force);            
+            _rigidbody2D.velocity = new Vector2(_velocityX, _velocityY);        
         }
     }
 }
