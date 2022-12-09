@@ -78,7 +78,7 @@ namespace Project.Scripts.FeedbackComments
             foreach (char character in textToShow.ToCharArray())
             {
                 screenText.text += character;
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.025f);
             }
             writtingText = false;
         }

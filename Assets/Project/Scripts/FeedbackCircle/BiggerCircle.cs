@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,11 +10,16 @@ public class BiggerCircle : MonoBehaviour
     [SerializeField] private GameObject bigCircle;
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private CircleCollider2D _circleCollider2D;
 
-    public void ActiveSmallCircle()
+    private void Start()
+    {
+        _circleCollider2D.offset = -transform.parent.localPosition;
+    }
+
+    private void ActiveSmallCircle()
     {
         bigCircle.SetActive(!bigCircle.activeSelf);
-
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

@@ -1,7 +1,4 @@
 using Project.Scripts.ProjectMaths;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -19,9 +16,10 @@ namespace Project.Scripts.FeedbackCircle
         private void Start()
         {
             maxDistance = circleCollider.radius;
+            circleCollider.offset = -transform.localPosition;
         }
 
-        public void ActiveSmallCircle()
+        private void ActiveSmallCircle()
         {
             smallCircle.SetActive(!smallCircle.activeSelf);
        
@@ -50,19 +48,15 @@ namespace Project.Scripts.FeedbackCircle
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 float alpha = CustomMath.Map(currentDistance, 2, maxDistance, 1, 0.2f);
-
                 currentDistance = Vector3.Distance(transform.position, collision.transform.position);
                 Color circleColor = smallCircleRenderer.color;
                 circleColor = new Color(circleColor.r, circleColor.g, circleColor.b, alpha);
                 smallCircleRenderer.color = circleColor;
             }
         }
-
-
     }
 }
 
