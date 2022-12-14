@@ -104,7 +104,7 @@ namespace Project.Scripts.Character
             {
                 Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, _requiredInventoryInteractableMask + _notRequiredInventoryInteractableMask);
 
-                if (interactCast == true)
+                if (interactCast)
                 {
                     if (interactCast.gameObject.layer == LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER))
                     {
