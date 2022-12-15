@@ -10,16 +10,19 @@ namespace Project.Scripts.FeedbackComments
     {
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject pressKey;
+
         private Queue<string> dialogs = new Queue<string>();
         DialogText text;
         [SerializeField] TextMeshProUGUI screenText;
+
         bool OnDialog = false;
         bool writtingText = false;
 
         private IEnumerator _coroutine;
-
+        private float time = 0.05f;
         private void Update()
         {
+
             if (GameManager.Instance.IsInZoomInState()) 
             {
                 pressKey.SetActive(false);
@@ -29,6 +32,11 @@ namespace Project.Scripts.FeedbackComments
             {
                 pressKey.SetActive(false);
                 NextSentence();
+            }
+            if (OnDialog && Input.GetKeyDown(KeyCode.R) && writtingText)
+            {
+                time = 0.01f;
+
             }
         }
 
@@ -52,12 +60,16 @@ namespace Project.Scripts.FeedbackComments
 
         public void NextSentence()
         {
+
+
             if (dialogs.Count == 0)   //Si se ha acabado el dialogo, cerramos el cartel
             {
                 CloseDialogBox();
                 OnDialog = false;
                 return;
             }
+
+            time = 0.05f;
 
             string actualSentence = dialogs.Dequeue();
             screenText.text = actualSentence;
@@ -81,8 +93,9 @@ namespace Project.Scripts.FeedbackComments
             foreach (char character in textToShow.ToCharArray())
             {
                 screenText.text += character;
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(time);
             }
+
             pressKey.SetActive(true);
             writtingText = false;
         }
