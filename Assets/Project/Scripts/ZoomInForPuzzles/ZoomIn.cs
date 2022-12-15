@@ -7,7 +7,7 @@ namespace Project.Scripts.ZoomInForPuzzles
 {
     public class ZoomIn : NotRequiredInventoryInteractable
     {
-        [SerializeField] private GameObject Activate;
+        [SerializeField] protected GameObject Activate;
 
         public override void Interact(AudioManager audioManager)
         {
