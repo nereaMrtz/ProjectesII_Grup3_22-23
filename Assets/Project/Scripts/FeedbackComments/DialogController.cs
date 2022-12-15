@@ -9,6 +9,7 @@ namespace Project.Scripts.FeedbackComments
     public class DialogController : MonoBehaviour
     {
         [SerializeField] private Animator anim;
+        [SerializeField] private GameObject pressKey;
         private Queue<string> dialogs = new Queue<string>();
         DialogText text;
         [SerializeField] TextMeshProUGUI screenText;
@@ -21,10 +22,12 @@ namespace Project.Scripts.FeedbackComments
         {
             if (GameManager.Instance.IsInZoomInState()) 
             {
+                pressKey.SetActive(false);
                 CloseDialogBox();
             }
             if (OnDialog && Input.GetKeyDown(KeyCode.R) && !writtingText)
             {
+                pressKey.SetActive(false);
                 NextSentence();
             }
         }
@@ -80,6 +83,7 @@ namespace Project.Scripts.FeedbackComments
                 screenText.text += character;
                 yield return new WaitForSeconds(0.05f);
             }
+            pressKey.SetActive(true);
             writtingText = false;
         }
     }
