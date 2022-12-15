@@ -15,6 +15,7 @@ public class HoursHand : MonoBehaviour
     [SerializeField] private float _maxHours = 95f;
 
     [SerializeField] private GameObject _panel;
+    [SerializeField] private GameObject _canvasPanel;
 
     private void Update()
     {
@@ -46,6 +47,8 @@ public class HoursHand : MonoBehaviour
             GameManager.Instance.SetZoomInState(false);
             
             _hammer.SetActive(true);
+            
+            _canvasPanel.SetActive(false);
         }
     }
 }
