@@ -1,5 +1,7 @@
 using System;
+using System.Security.Cryptography;
 using Project.Scripts.Character;
+using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Managers;
 using Project.Scripts.Sound;
 using UnityEngine;
@@ -14,30 +16,18 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToW
         [SerializeField] private GameObject _gameObjectToPlace;
 
         [SerializeField] private Vector2 _offset;
-        
+
         public override void Interact(Inventory inventory, AudioManager audioManager)
         {
             InventorySlot[] inventorySlots = inventory.GetInventorySlots();
             
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                //if (inventorySlots[i].GetPickUp().gameObject.name == "EmptyInventorySlot")
-                //{
-                  //  continue;
-                //}
                 GameObject pickUp = inventorySlots[i].GetPickUp().gameObject;
                 if (pickUp == _gameObjectToPlace)
                 {
-                    //gameObject.transform.GetChild(0).gameObject.SetActive(false);
-                    
                     inventorySlots[i].EraseChildSprite();
                     
-                    //for (int j = 0; j < pickUp.transform.childCount - 1; j++)
-                    //{
-                     //   Destroy(pickUp.transform.GetChild(j).gameObject);
-                    //}
-                    
-                    //SerializedField hemos quitado el pickup y hemos puesto emptySlot
                     inventorySlots[i].ErasePickUp();
                     
                     pickUp.gameObject.transform.SetParent(transform);
@@ -47,11 +37,19 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToW
                     Vector2 _sumPosition = new Vector2(gameObject.transform.position.x + _offset.x, gameObject.transform.position.y + _offset.y);
                     
                     pickUp.gameObject.transform.position = _sumPosition;
+                    
+                    Destroy(pickUp.GetComponent<PickUp>());
+                    
+                    Destroy(pickUp.GetComponent<CapsuleCollider2D>());
+                    
+                    ActivateBehaviour();
 
                     return;
                 }
             }
             audioManager.Play(INCORRECT_SOUND);
         }
+
+        public abstract void ActivateBehaviour();
     }
 }
