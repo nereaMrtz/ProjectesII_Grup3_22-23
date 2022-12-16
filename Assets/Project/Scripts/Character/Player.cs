@@ -4,6 +4,8 @@ using Project.Scripts.Sound;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
 using Project.Scripts.Managers;
+using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 namespace Project.Scripts.Character
 {
@@ -24,6 +26,10 @@ namespace Project.Scripts.Character
 
         [SerializeField] private DrugEffect _drugEffect;
 
+        [SerializeField] private Transform _targetTransform;
+
+        [SerializeField] private NavMeshAgent _agent;
+
         [SerializeField] private float _currentSpeed = 75;
 
         private Vector2 movementDirection;
@@ -39,7 +45,11 @@ namespace Project.Scripts.Character
             _requiredInventoryInteractableMask = LayerMask.GetMask(REQUIRED_INVENTORY_INTERACTABLE_LAYER);
             _notRequiredInventoryInteractableMask = LayerMask.GetMask(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER);
             _audioManager = FindObjectOfType<AudioManager>();
+            _agent.updateRotation = false;
+            _agent.updateUpAxis = false;
         }
+        
+        
 
         void Update()
         {
@@ -63,11 +73,6 @@ namespace Project.Scripts.Character
                 return;
             }
             Movement();
-            
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                _rigidbody2D.AddForce(Vector2.right * 70f, ForceMode2D.Impulse);
-            }
         }
         
         private void Movement()
@@ -128,24 +133,7 @@ namespace Project.Scripts.Character
 
         private void MovementControls()
         {
-            _movementX = 0;
-            _movementY = 0;
-            if (Input.GetKey(KeyCode.A))
-            {
-                _movementX = -1;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                _movementX = 1;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                _movementY = 1;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                _movementY = -1;
-            }
+            _agent.SetDestination(_targetTransform.position);
         }
     }
 }
