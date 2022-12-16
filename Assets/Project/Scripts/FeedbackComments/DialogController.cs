@@ -33,10 +33,9 @@ namespace Project.Scripts.FeedbackComments
                 pressKey.SetActive(false);
                 NextSentence();
             }
-            if (OnDialog && Input.GetKeyDown(KeyCode.R) && writtingText)
+            else if (OnDialog && Input.GetKeyDown(KeyCode.R) && writtingText)
             {
-                time = 0.01f;
-
+                time = 0.001f;
             }
         }
 
