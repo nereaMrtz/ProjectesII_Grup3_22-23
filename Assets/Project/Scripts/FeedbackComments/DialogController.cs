@@ -25,12 +25,10 @@ namespace Project.Scripts.FeedbackComments
 
             if (GameManager.Instance.IsInZoomInState()) 
             {
-                pressKey.SetActive(false);
                 CloseDialogBox();
             }
             if (OnDialog && Input.GetKeyDown(KeyCode.R) && !writtingText)
             {
-                pressKey.SetActive(false);
                 NextSentence();
             }
             else if (OnDialog && Input.GetKeyDown(KeyCode.R) && writtingText)
@@ -82,6 +80,7 @@ namespace Project.Scripts.FeedbackComments
             screenText.text = "";
             screenText.enabled = false;
             StopCoroutine(_coroutine);
+            pressKey.SetActive(false);
             anim.SetBool("dialogBox", false);
         }
 

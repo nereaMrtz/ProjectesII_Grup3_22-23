@@ -13,12 +13,20 @@ namespace Project.Scripts.FeedbackCircle
         [SerializeField] private GameObject quitCircle;
         [SerializeField] private SpriteRenderer smallCircleRenderer;
         [SerializeField] private CircleCollider2D circleCollider;
+        [SerializeField] private Vector3 _offset;
         private float maxDistance;
         private float currentDistance;
+        private Vector3 _currentPosition;
 
         private void Start()
         {
             maxDistance = circleCollider.radius;
+            _currentPosition = transform.localPosition;            
+        }
+
+        private void Update()
+        {
+            transform.localPosition = new Vector2(_currentPosition.x + _offset.x, _currentPosition.y + _offset.y);
         }
 
         public void ActiveSmallCircle()

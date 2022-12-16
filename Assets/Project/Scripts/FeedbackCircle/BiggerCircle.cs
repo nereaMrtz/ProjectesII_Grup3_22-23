@@ -13,6 +13,7 @@ public class BiggerCircle : MonoBehaviour
     public void ActiveSmallCircle()
     {
         bigCircle.SetActive(!bigCircle.activeSelf);
+        Debug.Log("hola");
 
     }
 
