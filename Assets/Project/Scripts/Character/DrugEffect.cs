@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using Project.Scripts.Managers;
 using Project.Scripts.ProjectMaths;
-using Project.Scripts.Sound;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,16 +1,25 @@
-using System;
-using Project.Scripts.Managers;
 using UnityEngine;
 
-namespace Project.Scripts.Sound
+namespace Project.Scripts.Managers
 {
     public class AudioManager : MonoBehaviour
     {
 
+        private static AudioManager _instance;
+        
         [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
-
         private void Awake()
         {
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            DontDestroyOnLoad(gameObject);
+            
             foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
                 sound.SetAudioSource(gameObject.AddComponent<AudioSource>());
@@ -22,6 +31,11 @@ namespace Project.Scripts.Sound
                     sound.GetSource().Play();
                 }
             }
+        }
+        
+        public static AudioManager Instance
+        {
+            get { return _instance; }
         }
 
         private void Update()

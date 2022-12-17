@@ -1,6 +1,5 @@
 using System;
 using Project.Scripts.Managers;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 public class HoursHand : MonoBehaviour

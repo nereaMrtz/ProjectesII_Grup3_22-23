@@ -1,7 +1,6 @@
 using System;
 using Project.Scripts.Character;
 using Project.Scripts.Managers;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToWorldSpace

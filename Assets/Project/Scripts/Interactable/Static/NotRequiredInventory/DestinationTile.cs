@@ -1,6 +1,6 @@
 using System;
+using Project.Scripts.Managers;
 using Project.Scripts.Puzzle.CrossCardinalDirections;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.NotRequiredInventory

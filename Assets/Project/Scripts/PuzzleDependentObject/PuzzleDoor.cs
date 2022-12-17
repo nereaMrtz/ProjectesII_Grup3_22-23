@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using Project.Scripts.Interactable.Static;
+using Project.Scripts.Managers;
 using Project.Scripts.Puzzle;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.PuzzleDependentObject

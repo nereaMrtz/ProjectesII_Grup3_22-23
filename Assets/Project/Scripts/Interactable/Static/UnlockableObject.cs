@@ -1,7 +1,7 @@
 using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.Static.RequiredInventory;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static

@@ -1,6 +1,5 @@
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Managers;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.ZoomInForPuzzles

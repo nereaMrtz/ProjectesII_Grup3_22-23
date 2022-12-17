@@ -5,8 +5,6 @@ namespace Project.Scripts.Character
 {
     public class TargetPathFinder : MonoBehaviour
     {
-
-        // Update is called once per frame
         void Update()
         {
             if (Input.GetMouseButton(0))

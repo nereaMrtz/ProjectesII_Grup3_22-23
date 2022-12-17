@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using Project.Scripts.Sound;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
 using Project.Scripts.Managers;
@@ -47,6 +46,7 @@ namespace Project.Scripts.Character
             _audioManager = FindObjectOfType<AudioManager>();
             _agent.updateRotation = false;
             _agent.updateUpAxis = false;
+            _targetTransform.position = transform.position;
         }
         
         

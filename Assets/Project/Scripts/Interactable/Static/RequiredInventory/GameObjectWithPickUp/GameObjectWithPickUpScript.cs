@@ -1,7 +1,7 @@
 using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using Project.Scripts.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;

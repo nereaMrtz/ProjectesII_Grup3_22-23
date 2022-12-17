@@ -2,7 +2,7 @@ using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPickUp;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

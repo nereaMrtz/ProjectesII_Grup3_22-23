@@ -1,4 +1,4 @@
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.PiggyBank

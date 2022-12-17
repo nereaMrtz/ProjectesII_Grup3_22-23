@@ -1,6 +1,6 @@
 using System;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Puzzle.OrderButtonPuzzle

@@ -1,4 +1,3 @@
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Managers
@@ -21,18 +20,6 @@ namespace Project.Scripts.Managers
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(gameObject);
-        }
-        
-        void Start()
-        {
-            
-        }
-        void Update()
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                
-            }
         }
         
         public static GameManager Instance
