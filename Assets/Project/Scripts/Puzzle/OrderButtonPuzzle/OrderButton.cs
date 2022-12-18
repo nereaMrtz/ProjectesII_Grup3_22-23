@@ -13,9 +13,10 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
 
         private bool _pressed;
         
-        public override void Interact(AudioManager audioManager)
+        public override void Interact()
         {
             _pressed = true;
+            //TODO: PRESS BUTTON SOUND
         }
 
         public void ChangeColor(Color color)

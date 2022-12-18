@@ -8,7 +8,7 @@ namespace Project.Scripts.ZoomInForPuzzles
     {
         [SerializeField] protected GameObject Activate;
 
-        public override void Interact(AudioManager audioManager)
+        public override void Interact()
         {
             Activate.SetActive(!Activate.activeSelf);
 

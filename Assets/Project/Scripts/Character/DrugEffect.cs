@@ -13,9 +13,9 @@ namespace Project.Scripts.Character
         private const String TAKE_THIS_PILL_SOUND_CLIP_NAME = "Take This Pill Sound";
 
         [SerializeField] private Image _changeStateEffect;
-
         [SerializeField] private Image _filter;
 
+        [SerializeField] private GameObject _drugFilterpanel;
         [SerializeField] private GameObject _throwUpPrefab;
 
         private GameObject _throwUp;
@@ -29,19 +29,20 @@ namespace Project.Scripts.Character
             _throwUp.SetActive(false);
         }
 
-        public void ChangeState(AudioManager audioManager)
+        public void ChangeState()
         {
             if (_canChangeState)
             {
+                _drugFilterpanel.SetActive(true);
                 if (GameManager.Instance.IsDrugged())
                 {
-                    audioManager.Play(THROW_UP_SOUND_CLIP_NAME);
-                    StartCoroutine(ChangeStateEffect(audioManager.ClipDuration(THROW_UP_SOUND_CLIP_NAME), true));
+                    AudioManager.Instance.Play(THROW_UP_SOUND_CLIP_NAME);
+                    StartCoroutine(ChangeStateEffect(AudioManager.Instance.ClipDuration(THROW_UP_SOUND_CLIP_NAME), true));
                 }
                 else
                 {
-                    audioManager.Play(TAKE_THIS_PILL_SOUND_CLIP_NAME);
-                    StartCoroutine(ChangeStateEffect(audioManager.ClipDuration(TAKE_THIS_PILL_SOUND_CLIP_NAME), false));
+                    AudioManager.Instance.Play(TAKE_THIS_PILL_SOUND_CLIP_NAME);
+                    StartCoroutine(ChangeStateEffect(AudioManager.Instance.ClipDuration(TAKE_THIS_PILL_SOUND_CLIP_NAME), false));
                 }
                 GameManager.Instance.SetDrugged(!GameManager.Instance.IsDrugged()); 
             }
@@ -94,6 +95,7 @@ namespace Project.Scripts.Character
                 _changeStateEffect.color = new Color(alpha.r, alpha.g, alpha.b, alpha.a);
                 yield return null;
             }
+            _drugFilterpanel.SetActive(false);
             _betweenChangePeriod = false;
         }
 

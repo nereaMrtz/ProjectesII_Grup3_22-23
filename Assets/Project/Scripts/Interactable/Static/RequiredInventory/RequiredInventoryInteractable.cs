@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory
 {
-    public abstract class RequiredInventoryInteractable : MonoBehaviour
+    public abstract class RequiredInventoryInteractable : InteractableScript
     {
-        public abstract void Interact(Inventory inventory, AudioManager audioManager);
+        public abstract void Interact(Inventory inventory);
     }    
 }

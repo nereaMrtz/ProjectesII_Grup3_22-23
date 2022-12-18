@@ -10,9 +10,9 @@ namespace Project.Scripts.ZoomInForPuzzles
 
         private Transform _initialFollowTransform;
         
-        public override void Interact(AudioManager audioManager)
+        public override void Interact()
         {
-            base.Interact(audioManager);
+            base.Interact();
 
             if (Activate.activeSelf)
             {

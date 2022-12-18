@@ -1207,7 +1207,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1532732176809836768}
   - component: {fileID: 779331241048286419}
-  - component: {fileID: 8154448837211649097}
   - component: {fileID: 7650115156115303218}
   - component: {fileID: 2664987724822043846}
   - component: {fileID: 8177849897641940989}
@@ -1286,27 +1285,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &8154448837211649097
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5683628995989718924}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 17
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!114 &7650115156115303218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,14 +1297,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed5808c177a02f4195605588a1ccb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioManager: {fileID: 0}
-  _rigidbody2D: {fileID: 8154448837211649097}
   _pauseMenuPanel: {fileID: 0}
   _inventory: {fileID: 600614607090923962}
   _drugEffect: {fileID: 2664987724822043846}
   _targetTransform: {fileID: 0}
   _agent: {fileID: 576736199987795759}
-  _currentSpeed: 75
 --- !u!114 &2664987724822043846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,6 +1316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _changeStateEffect: {fileID: 4225905429201287297}
   _filter: {fileID: 2834270010735096268}
+  _drugFilterpanel: {fileID: 4951252876375219082}
   _throwUpPrefab: {fileID: 5872732399812762864, guid: be1d8e0486560e84fa5c0f4d2ff069ed, type: 3}
 --- !u!114 &8177849897641940989
 MonoBehaviour:
@@ -1363,16 +1339,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 5683628995989718924}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.32582998
+  m_Radius: 3
   m_Speed: 4
   m_Acceleration: 120
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 0.65165997
+  m_Height: 1
   m_BaseOffset: 0.32582998
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

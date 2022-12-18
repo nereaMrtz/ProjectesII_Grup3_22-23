@@ -18,7 +18,7 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
             _reward.SetActive(true);
         }
 
-        public override void Interact(AudioManager audioManager)
+        public override void Interact()
         {
             //_reward.SetActive(true);
             //ACTIVAR ZOOM IN

@@ -16,7 +16,7 @@ namespace Project.Scripts.Interactable.Static
         
         protected bool _unlocked;
 
-        public override void Interact(Inventory inventory, AudioManager audioManager)
+        public override void Interact(Inventory inventory)
         {
             Debug.Log("Hola1");
             InventorySlot[] inventorySlots = inventory.GetInventorySlots();
@@ -41,14 +41,14 @@ namespace Project.Scripts.Interactable.Static
                         Destroy(pickUp);
                     }
                     Debug.Log("Hola2");
-                    Unlock(audioManager);
+                    Unlock();
                     _unlocked = true;
                     return;
                 }
             }
-            audioManager.Play(INCORRECT_SOUND);
+            AudioManager.Instance.Play(INCORRECT_SOUND);
         }
 
-        protected abstract void Unlock(AudioManager audioManager);
+        protected abstract void Unlock();
     }
 }
