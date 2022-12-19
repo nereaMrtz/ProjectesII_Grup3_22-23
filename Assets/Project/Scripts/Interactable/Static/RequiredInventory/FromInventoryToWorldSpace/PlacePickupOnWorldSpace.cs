@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Managers;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToWorldSpace
@@ -16,8 +15,8 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToW
         [SerializeField] private GameObject _gameObjectToPlace;
 
         [SerializeField] private Vector2 _offset;
-
-        public override void Interact(Inventory inventory, AudioManager audioManager)
+        
+        public override void Interact(Inventory inventory)
         {
             InventorySlot[] inventorySlots = inventory.GetInventorySlots();
             
@@ -47,7 +46,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToW
                     return;
                 }
             }
-            audioManager.Play(INCORRECT_SOUND);
+            AudioManager.Instance.Play(INCORRECT_SOUND);
         }
 
         public abstract void ActivateBehaviour();

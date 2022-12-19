@@ -1,6 +1,5 @@
 using Cinemachine;
 using Project.Scripts.Managers;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.ZoomInForPuzzles
@@ -11,9 +10,9 @@ namespace Project.Scripts.ZoomInForPuzzles
 
         private Transform _initialFollowTransform;
         
-        public override void Interact(AudioManager audioManager)
+        public override void Interact()
         {
-            base.Interact(audioManager);
+            base.Interact();
 
             if (Activate.activeSelf)
             {

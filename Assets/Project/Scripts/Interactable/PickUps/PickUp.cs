@@ -1,7 +1,7 @@
 using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.Static.RequiredInventory;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using Project.Scripts.UI;
 using UnityEngine;
 
@@ -17,19 +17,20 @@ namespace Project.Scripts.Interactable.PickUps {
         [SerializeField] private BoxCollider2D _commentTrigger;
 
         [SerializeField] private GameObject _circleFeedback;
-        public override void Interact(Inventory inventory, AudioManager audioManager)
+        public override void Interact(Inventory inventory)
         {
-            if (inventory.InsertPickUp(this))
+            if (!inventory.InsertPickUp(this))
             {
-                //Destroy(_objectTip.gameObject);
-                audioManager.Play(LOOT_PICK_UP_SOUND);
-                _spriteRenderer.enabled = false;
-                _capsuleCollider2D.enabled = false;
-                _commentTrigger.enabled = false;
-                _circleFeedback.SetActive(false);
-                
-                //transform.GetChild(0).gameObject.SetActive(false);
+                return;    
             }
+            //Destroy(_objectTip.gameObject);
+            AudioManager.Instance.Play(LOOT_PICK_UP_SOUND);
+            _spriteRenderer.enabled = false;
+            _capsuleCollider2D.enabled = false;
+            _commentTrigger.enabled = false;
+            _circleFeedback.SetActive(false);
+                
+            //transform.GetChild(0).gameObject.SetActive(false);
         }
 
         public PickUp CombinePickUps(PickUp pickUp)

@@ -1,6 +1,5 @@
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Managers;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.ZoomInForPuzzles
@@ -9,7 +8,7 @@ namespace Project.Scripts.ZoomInForPuzzles
     {
         [SerializeField] protected GameObject Activate;
 
-        public override void Interact(AudioManager audioManager)
+        public override void Interact()
         {
             Activate.SetActive(!Activate.activeSelf);
 

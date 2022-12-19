@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
@@ -33,21 +33,21 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             _transform = transform;
         }
 
-        protected override void Unlock(AudioManager audioManager)
+        protected override void Unlock()
         {
-            StartCoroutine(MoveDoor(audioManager));
+            StartCoroutine(MoveDoor());
         }
 
-        private IEnumerator MoveDoor(AudioManager audioManager)
+        private IEnumerator MoveDoor()
         {
             _spriteRenderer.sortingOrder--;
-            audioManager.Play(SIMPLE_DOOR_SOUND);
-            yield return new WaitForSeconds(audioManager.ClipDuration(SIMPLE_DOOR_SOUND));
-            audioManager.Play(SLIDE_SIMPLE_DOOR_SOUND);
+            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
+            yield return new WaitForSeconds(AudioManager.Instance.ClipDuration(SIMPLE_DOOR_SOUND));
+            AudioManager.Instance.Play(SLIDE_SIMPLE_DOOR_SOUND);
             
             Vector3 targetPosition = GetTargetPosition();
 
-            float slideSoundDuration = audioManager.ClipDuration(SLIDE_SIMPLE_DOOR_SOUND);
+            float slideSoundDuration = AudioManager.Instance.ClipDuration(SLIDE_SIMPLE_DOOR_SOUND);
             float distance = Vector2.Distance(_transform.position, targetPosition);
             float slideSpeed = distance / slideSoundDuration;
             
@@ -55,6 +55,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
             {
                 float speed = slideSpeed * Time.deltaTime; 
                 _transform.position = Vector2.MoveTowards(_transform.position, targetPosition, speed);
+                NavMeshManager.Instance.Bake();
                 yield return null;
             }
         }

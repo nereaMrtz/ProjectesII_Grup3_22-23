@@ -2,7 +2,7 @@ using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPickUp;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -52,7 +52,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
             }
         }
 
-        public override void Interact(Inventory inventory, AudioManager audioManager)
+        public override void Interact(Inventory inventory)
         {
             InventorySlot[] inventorySlots = inventory.GetInventorySlots();
 
@@ -73,7 +73,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory
                     return;
                 }
             }
-            audioManager.Play(INCORRECT_SOUND);
+            AudioManager.Instance.Play(INCORRECT_SOUND);
                 
                 
         }

@@ -1,11 +1,11 @@
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static
 {
     public abstract class LockableObject : UnlockableObject
     {
-        protected override void Unlock(AudioManager audioManager)
+        protected override void Unlock()
         {
             throw new System.NotImplementedException();
         }

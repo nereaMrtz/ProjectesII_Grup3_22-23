@@ -1,3 +1,4 @@
+using Project.Scripts.Character;
 using Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToWorldSpace;
 using UnityEngine;
 

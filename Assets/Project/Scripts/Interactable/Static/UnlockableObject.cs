@@ -1,7 +1,7 @@
 using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.Static.RequiredInventory;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static
@@ -16,7 +16,7 @@ namespace Project.Scripts.Interactable.Static
         
         protected bool _unlocked;
 
-        public override void Interact(Inventory inventory, AudioManager audioManager)
+        public override void Interact(Inventory inventory)
         {
             InventorySlot[] inventorySlots = inventory.GetInventorySlots();
             
@@ -42,16 +42,14 @@ namespace Project.Scripts.Interactable.Static
                         
                         Destroy(pickUp);
                     }
-                    
-                    Unlock(audioManager);
-                    
+                    Unlock();
                     _unlocked = true;
                     
                     return;
                 }
             }
-            audioManager.Play(INCORRECT_SOUND);
+            AudioManager.Instance.Play(INCORRECT_SOUND);
         }
-        protected abstract void Unlock(AudioManager audioManager);
+        protected abstract void Unlock();
     }
 }
