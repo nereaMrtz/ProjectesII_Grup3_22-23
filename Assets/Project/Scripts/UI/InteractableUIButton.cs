@@ -22,11 +22,6 @@ namespace Project.Scripts.UI
             _player = player;
         }
 
-        public GameObject GetGameObjectAttached()
-        {
-            return _gameObjectAttached;
-        }
-
         public void Interact()
         {
             _player.SetGameObjectAndHisDistanceToInteract(_gameObjectAttached, _distanceToInteract);

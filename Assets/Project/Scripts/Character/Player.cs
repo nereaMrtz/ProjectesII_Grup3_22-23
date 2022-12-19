@@ -78,7 +78,6 @@ namespace Project.Scripts.Character
                 _moving = false;
                 _targetTransform.position = transform.position;
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
-                Debug.Log("Short Distance or Too close");
                 return;   
             }
             
@@ -87,7 +86,6 @@ namespace Project.Scripts.Character
 
             if (!_interactionStarted)
             {
-                Debug.Log("Not Interacting");
                 return;
             }
             
@@ -97,7 +95,7 @@ namespace Project.Scripts.Character
             {
                 InteractWithObject();
             }
-            else if (_lastTargetPosition != _targetTransform.position)
+            else if (_targetTransform.position != _gameObjectToInteract.transform.position)
             {
                 _interactionStarted = false;
                 _gameObjectToInteract = null;
@@ -132,10 +130,10 @@ namespace Project.Scripts.Character
         
         public void SetGameObjectAndHisDistanceToInteract(GameObject gameObjectToInteract, float distanceToInteract)
         {
-            Debug.Log("StartInteraction");
             _interactionStarted = true;
             _gameObjectToInteract = gameObjectToInteract;
             _distanceToInteractWithObject = distanceToInteract;
+            _targetTransform.position = _gameObjectToInteract.transform.position;
         }
 
         public void SetLastTargetPosition(Vector3 lastTargetPosition)
