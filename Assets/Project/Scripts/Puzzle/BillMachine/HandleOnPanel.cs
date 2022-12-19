@@ -1,14 +1,14 @@
 ﻿using System.Collections;
-using Project.Scripts.Sound;
+using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using UnityEngine;
 
-namespace Project.Scripts.Interactable.Static.NotRequiredInventory
+namespace Project.Scripts.Puzzle.BillMachine
 {
     public class HandleOnPanel: NotRequiredInventoryInteractable
     {
         [SerializeField] private GameObject _machine;
         [SerializeField] private Animator _handlerAnimator;
-        public override void Interact(AudioManager audioManager)
+        public override void Interact()
         {
             // Mover palanca
             _handlerAnimator.enabled = true;
