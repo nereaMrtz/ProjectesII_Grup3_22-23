@@ -89,8 +89,6 @@ namespace Project.Scripts.Character
                 return;
             }
             
-            Debug.Log(Vector2.Distance(transform.position, _gameObjectToInteract.transform.position));
-            
             if (Vector2.Distance(transform.position, _gameObjectToInteract.transform.position) < _distanceToInteractWithObject)
             {
                 InteractWithObject();
@@ -113,6 +111,8 @@ namespace Project.Scripts.Character
                 _gameObjectToInteract.GetComponent<NotRequiredInventoryInteractable>().Interact();
             }
 
+            _targetTransform.position = transform.position;
+            _gameObjectToInteract = null;
             _interactionStarted = false;
         }
 
