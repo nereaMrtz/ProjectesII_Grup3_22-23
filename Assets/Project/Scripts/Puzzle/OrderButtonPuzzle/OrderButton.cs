@@ -11,7 +11,7 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
-        private bool _pressed;
+        [SerializeField] private bool _pressed;
         
         public override void Interact()
         {

@@ -376,9 +376,10 @@ MonoBehaviour:
   _scenarioInteractableCanvas: {fileID: 1507864418}
   _pointPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _player: {fileID: 806921448}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _pressOrder: 1
   _spriteRenderer: {fileID: 8962333}
+  _pressed: 0
 --- !u!1 &22123762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,7 +2230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.247796
+      value: 3.712203
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12262,14 +12263,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orderButtons:
-  - {fileID: 1793686802}
   - {fileID: 8962334}
-  - {fileID: 743839541}
-  - {fileID: 1091668052}
   - {fileID: 1530275766}
+  - {fileID: 743839541}
+  - {fileID: 1793686802}
+  - {fileID: 1091668052}
   _correctCombination: 12345
-  _currentPressedButtonCounter: 0
   _currentCombination: 
+  _currentPressedButtonCounter: 0
 --- !u!1 &668214110
 GameObject:
   m_ObjectHideFlags: 0
@@ -12785,9 +12786,10 @@ MonoBehaviour:
   _scenarioInteractableCanvas: {fileID: 1507864418}
   _pointPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _player: {fileID: 806921448}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _pressOrder: 3
   _spriteRenderer: {fileID: 743839540}
+  _pressed: 0
 --- !u!1 &755878574
 GameObject:
   m_ObjectHideFlags: 0
@@ -13145,7 +13147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1532732176809836768, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.32
+      value: -1.36
       objectReference: {fileID: 0}
     - target: {fileID: 1532732176809836768, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14200,7 +14202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917261959}
   m_LocalRotation: {x: 0, y: 0.000000047647255, z: 0, w: 1}
-  m_LocalPosition: {x: -9.041223, y: -0.88322514, z: -9.950615}
+  m_LocalPosition: {x: -0.08122313, y: -0.88322514, z: -9.950615}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14471,6 +14473,7 @@ MonoBehaviour:
   _minHours: 85
   _maxHours: 95
   _panel: {fileID: 1039882586}
+  _canvasPanel: {fileID: 0}
 --- !u!1 &990138187
 GameObject:
   m_ObjectHideFlags: 0
@@ -14824,9 +14827,10 @@ MonoBehaviour:
   _scenarioInteractableCanvas: {fileID: 1507864418}
   _pointPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _player: {fileID: 806921448}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _pressOrder: 5
   _spriteRenderer: {fileID: 1091668051}
+  _pressed: 0
 --- !u!1 &1107223980
 GameObject:
   m_ObjectHideFlags: 0
@@ -17370,9 +17374,10 @@ MonoBehaviour:
   _scenarioInteractableCanvas: {fileID: 1507864418}
   _pointPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _player: {fileID: 806921448}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _pressOrder: 2
   _spriteRenderer: {fileID: 1530275765}
+  _pressed: 0
 --- !u!1 &1538583673
 GameObject:
   m_ObjectHideFlags: 0
@@ -18748,9 +18753,10 @@ MonoBehaviour:
   _scenarioInteractableCanvas: {fileID: 1507864418}
   _pointPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _player: {fileID: 806921448}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _pressOrder: 4
   _spriteRenderer: {fileID: 1793686801}
+  _pressed: 0
 --- !u!1 &1800029541
 GameObject:
   m_ObjectHideFlags: 0
