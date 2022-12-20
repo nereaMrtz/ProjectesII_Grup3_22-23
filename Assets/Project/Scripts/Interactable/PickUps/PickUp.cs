@@ -10,8 +10,6 @@ namespace Project.Scripts.Interactable.PickUps {
     {
         private const String LOOT_PICK_UP_SOUND = "Loot Pick Up Sound";
         
-        [SerializeField] protected SpriteRenderer _spriteRenderer;
-        
         [SerializeField] protected CapsuleCollider2D _capsuleCollider2D;
         
         [SerializeField] private BoxCollider2D _commentTrigger;
