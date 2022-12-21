@@ -31,14 +31,12 @@ namespace Project.Scripts.Character
 
         [SerializeField] private NavMeshAgent _agent;
 
-        [SerializeField] private GameObject _gameObjectToInteract;
-
-        private Vector3 _lastTargetPosition;
+        private GameObject _gameObjectToInteract;
         
         private float _distanceToInteractWithObject;
 
         private bool _moving;
-        [SerializeField] private bool _interactionStarted; 
+        private bool _interactionStarted; 
         
         void Start()
         {
@@ -134,11 +132,6 @@ namespace Project.Scripts.Character
             _gameObjectToInteract = gameObjectToInteract;
             _distanceToInteractWithObject = distanceToInteract;
             _targetTransform.position = _gameObjectToInteract.transform.position;
-        }
-
-        public void SetLastTargetPosition(Vector3 lastTargetPosition)
-        {
-            _lastTargetPosition = lastTargetPosition;
         }
     }
 }

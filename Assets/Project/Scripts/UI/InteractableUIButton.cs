@@ -1,9 +1,10 @@
 using Project.Scripts.Character;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Project.Scripts.UI
 {
-    public class InteractableUIButton : MonoBehaviour
+    public class InteractableUIButton : MonoBehaviour, IPointerDownHandler
     {
         private GameObject _gameObjectAttached;
 
@@ -20,6 +21,11 @@ namespace Project.Scripts.UI
         public void SetPlayer(Player player)
         {
             _player = player;
+        }
+        
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            Interact();
         }
 
         public void Interact()

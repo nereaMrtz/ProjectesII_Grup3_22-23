@@ -13078,6 +13078,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 163665326747878913, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 300505269481005151, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13158,6 +13162,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 1885190322655837741, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2301217876443170634, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -13165,6 +13173,10 @@ PrefabInstance:
     - target: {fileID: 2434625452188807320, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476504253433508415, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2495698795855328873, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Camera
@@ -13185,6 +13197,10 @@ PrefabInstance:
     - target: {fileID: 2834270010735096268, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896061964850444860, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4106334502976631836, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: _target
@@ -13214,6 +13230,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 917261961}
+    - target: {fileID: 5331962912749181457, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800224754315300673, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5800518631762666760, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13313,6 +13337,10 @@ PrefabInstance:
     - target: {fileID: 6489313193079056557, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838182572204291877, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7295519007750237912, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Camera
@@ -15749,12 +15777,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _scenarioInteractableCanvas: {fileID: 0}
-  _interactableAreaPrefab: {fileID: 0}
-  _pointPrefab: {fileID: 0}
-  _player: {fileID: 0}
+  _scenarioInteractableCanvas: {fileID: 1507864418}
+  _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
+  _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
+  _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1216682039}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _capsuleCollider2D: {fileID: 1216682037}
   _commentTrigger: {fileID: 1216682036}
   _circleFeedback: {fileID: 0}
@@ -19750,7 +19778,7 @@ MonoBehaviour:
   _scenarioInteractableCanvas: {fileID: 1507864418}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
-  _player: {fileID: 0}
+  _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1887749327}
   _distanceToInteract: 0
   _capsuleCollider2D: {fileID: 1887749325}
