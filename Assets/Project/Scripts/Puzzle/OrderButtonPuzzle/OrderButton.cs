@@ -1,6 +1,4 @@
-using System;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
-using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Puzzle.OrderButtonPuzzle
@@ -8,8 +6,6 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
     public class OrderButton : NotRequiredInventoryInteractable
     {
         [SerializeField] private int _pressOrder;
-
-        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private bool _pressed;
         

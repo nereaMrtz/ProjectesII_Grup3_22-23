@@ -15,20 +15,19 @@ namespace Project.Scripts.Interactable.PickUps {
         [SerializeField] private BoxCollider2D _commentTrigger;
 
         [SerializeField] private GameObject _circleFeedback;
+        
         public override void Interact(Inventory inventory)
         {
             if (!inventory.InsertPickUp(this))
             {
                 return;    
             }
-            //Destroy(_objectTip.gameObject);
             AudioManager.Instance.Play(LOOT_PICK_UP_SOUND);
             _spriteRenderer.enabled = false;
             _capsuleCollider2D.enabled = false;
             _commentTrigger.enabled = false;
             _circleFeedback.SetActive(false);
-                
-            //transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
         }
 
         public PickUp CombinePickUps(PickUp pickUp)
