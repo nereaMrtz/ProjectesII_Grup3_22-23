@@ -1,39 +1,43 @@
+using System;
 using Cinemachine;
 using Project.Scripts.Managers;
+using Project.Scripts.Puzzle;
 using UnityEngine;
 
 namespace Project.Scripts.ZoomInForPuzzles
 {
-    public class ZoomInChangeCamera : ZoomInPuzzle
+    public class ZoomInChangeCamera : ZoomIn
     {
-        [SerializeField] private CinemachineVirtualCamera _cinemachineVirtualCamera;
+        private const String OVER_WORLD_CAMERA_STATE = "OverWorldCamera"; 
+        private const String PUZZLE_CAMERA_STATE = "PuzzleCamera"; 
+        
+        [SerializeField] private PuzzleScript _puzzle;
 
-        private Transform _initialFollowTransform;
+        [SerializeField] private Animator _cameraSwitcherAnimator;
+
+        private bool _overWorldCamera = true;
         
         public override void Interact()
         {
             base.Interact();
 
-            if (Activate.activeSelf)
-            {
-                _initialFollowTransform = _cinemachineVirtualCamera.Follow;
-                _cinemachineVirtualCamera.Follow = null;
-                _cinemachineVirtualCamera.transform.position = 
-                    new Vector3(Activate.transform.position.x, Activate.transform.position.y, _cinemachineVirtualCamera.transform.position.z);
-            }
-            else
-            {
-                _cinemachineVirtualCamera.Follow = _initialFollowTransform;
-            }
+            SwitchCamera();
         }
 
         void Update()
         {
             if (!_puzzle.GetCompleted()) return;
             gameObject.layer = 0;
-            _cinemachineVirtualCamera.Follow = _initialFollowTransform;
+            SwitchCamera();
             GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
             Destroy(this);
+        }
+
+        private void SwitchCamera()
+        {
+            _cameraSwitcherAnimator.Play(_overWorldCamera ? PUZZLE_CAMERA_STATE : OVER_WORLD_CAMERA_STATE);
+
+            _overWorldCamera = !_overWorldCamera;
         }
     }
 }

@@ -5,7 +5,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Project.Scripts.ZoomInForPuzzles
 {
-    public class DraggablePuzzleObject : MonoBehaviour
+    public abstract class DraggablePuzzleObject : MonoBehaviour
     {
         enum TypeOfDrag
         {
@@ -15,13 +15,13 @@ namespace Project.Scripts.ZoomInForPuzzles
 
         [SerializeField] private TypeOfDrag _typeOfDrag;
 
-        [SerializeField] private GameObject _gameObjectOffset;
+        [SerializeField] protected GameObject _gameObjectReference;
 
         private Vector3 _screenOffsetPoint;
 
         private void OnMouseDown()
         {
-            _screenOffsetPoint = Camera.main.WorldToScreenPoint(_gameObjectOffset.transform.position);
+            _screenOffsetPoint = Camera.main.WorldToScreenPoint(_gameObjectReference.transform.position);
         }
 
         private void OnMouseDrag()
@@ -35,8 +35,8 @@ namespace Project.Scripts.ZoomInForPuzzles
                     float angle = -Quaternion.FromToRotation(vector, Vector3.up).eulerAngles.z;
                     
                     Vector3 directionVector = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.up;
-                    transform.localPosition = _gameObjectOffset.transform.localPosition +
-                                              (transform.localPosition - _gameObjectOffset.transform.localPosition).magnitude * directionVector;
+                    transform.localPosition = _gameObjectReference.transform.localPosition +
+                                              (transform.localPosition - _gameObjectReference.transform.localPosition).magnitude * directionVector;
                     
                     
                     Quaternion targetRotation = Quaternion.Euler(new Vector3(0,0,angle));
