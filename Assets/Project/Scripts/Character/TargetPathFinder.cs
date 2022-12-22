@@ -12,7 +12,6 @@ namespace Project.Scripts.Character
             {
                 return;
             }
-            _player.SetLastTargetPosition(transform.position);
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePosition.x, mousePosition.y, 0);
         }
