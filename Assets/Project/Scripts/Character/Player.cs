@@ -6,6 +6,7 @@ using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
 using Project.Scripts.Managers;
 using Project.Scripts.UI;
+using Unity.VisualScripting;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;

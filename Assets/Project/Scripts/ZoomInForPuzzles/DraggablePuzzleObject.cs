@@ -1,9 +1,11 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Project.Scripts.ZoomInForPuzzles
 {
-    public class DraggablePuzzleObject : MonoBehaviour, IPointerDownHandler
+    public class DraggablePuzzleObject : MonoBehaviour
     {
         enum TypeOfDrag
         {
@@ -11,28 +13,47 @@ namespace Project.Scripts.ZoomInForPuzzles
             MOVE
         };
 
-        [SerializeField] private TypeOfDrag typeOfDrag;
+        [SerializeField] private TypeOfDrag _typeOfDrag;
 
-        [SerializeField] private Vector3 _position;
+        [SerializeField] private GameObject _gameObjectOffset;
 
-        [Range(-360,360)]
-        [SerializeField] private float _rotation;
-        
-        // Start is called before the first frame update
-        void Start()
+        private Vector3 _screenOffsetPoint;
+
+        private void OnMouseDown()
         {
-        
+            _screenOffsetPoint = Camera.main.WorldToScreenPoint(_gameObjectOffset.transform.position);
         }
 
-        // Update is called once per frame
-        void Update()
+        private void OnMouseDrag()
         {
-        
-        }
+            switch (_typeOfDrag)
+            {
+                case TypeOfDrag.ROTATE:
 
-        public void OnPointerDown(PointerEventData eventData)
+                    Vector3 vector = Input.mousePosition - _screenOffsetPoint;
+
+                    float angle = -Quaternion.FromToRotation(vector, Vector3.up).eulerAngles.z;
+                    
+                    Vector3 directionVector = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.up;
+                    transform.localPosition = _gameObjectOffset.transform.localPosition +
+                                              (transform.localPosition - _gameObjectOffset.transform.localPosition).magnitude * directionVector;
+                    
+                    
+                    Quaternion targetRotation = Quaternion.Euler(new Vector3(0,0,angle));
+                    transform.localRotation = targetRotation;
+                    break;
+                
+                case TypeOfDrag.MOVE:
+                    transform.position = Vector2.MoveTowards(transform.position, GetMouseWorldCoordinates(),10 * Time.deltaTime );
+                    break;
+            }
+        }
+        
+        private Vector3 GetMouseWorldCoordinates()
         {
-            throw new System.NotImplementedException();
+            Vector3 mousePosition = Input.mousePosition;
+
+            return Camera.main.ScreenToWorldPoint(mousePosition);
         }
     }
 }
