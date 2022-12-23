@@ -1,3 +1,4 @@
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -5,7 +6,6 @@ namespace Project.Scripts.Character
 {
     public class TargetPathFinder : MonoBehaviour
     {
-        [SerializeField] private Player _player;
         void Update()
         {
             if (!Input.GetMouseButton(0))

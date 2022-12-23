@@ -12,7 +12,10 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.PiggyBank
             _spriteRenderer.sortingOrder = -2;
             _bill.sortingOrder = -2;
             _bill.gameObject.SetActive(true);
+            GetComponent<SpriteRenderer>().enabled = false;
             _boxCollider2D.enabled = false;
+            _interactableAreaPanel.SetActive(false);
+            _pointButton.SetActive(false);
         }
     }
 }
