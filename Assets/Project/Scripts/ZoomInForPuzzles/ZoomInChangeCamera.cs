@@ -28,10 +28,6 @@ namespace Project.Scripts.ZoomInForPuzzles
         {
             if (!_puzzle.GetCompleted()) return;
             gameObject.layer = 0;
-            SwitchCamera();
-            ChangeZoomInState();
-            _puzzle.gameObject.SetActive(false);
-            Destroy(this);
         }
 
         public void SwitchCamera()

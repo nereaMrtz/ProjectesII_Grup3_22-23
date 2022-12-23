@@ -41,6 +41,7 @@ namespace Project.Scripts.Character
         
         void Start()
         {
+            NavMeshManager.Instance.Bake();
             _agent.updateRotation = false;
             _agent.updateUpAxis = false;
             _targetTransform.position = transform.position;

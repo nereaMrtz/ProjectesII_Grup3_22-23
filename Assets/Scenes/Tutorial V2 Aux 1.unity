@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -1874,6 +1875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 0}
@@ -2738,6 +2740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -13275,6 +13278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -13375,6 +13379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -13498,6 +13503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -13984,6 +13990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 0}
@@ -14057,19 +14064,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300505269481005151, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 300505269481005151, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 300505269481005151, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.999908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 300505269481005151, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21.605652
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 576736199987795759, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AutoRepath
@@ -14141,19 +14148,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885593547575169393, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 885593547575169393, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 885593547575169393, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.999908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 885593547575169393, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -237.66217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 977537852031058067, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Name
@@ -14177,7 +14184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2301217876443170634, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2434625452188807320, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_IsActive
@@ -14221,19 +14228,19 @@ PrefabInstance:
       objectReference: {fileID: 1108774094441576203, guid: bd4d5e8067f0eb348b3b379d7fd5a467, type: 3}
     - target: {fileID: 4823365008140426722, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4823365008140426722, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4823365008140426722, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.999908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4823365008140426722, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -280.87347
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4951252876375219082, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_IsActive
@@ -14257,51 +14264,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800518631762666760, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5800518631762666760, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5800518631762666760, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.999908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5800518631762666760, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -108.02826
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5838707223764905554, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5838707223764905554, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5838707223764905554, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.999908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5838707223764905554, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -194.45087
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6257966098192556238, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6257966098192556238, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6257966098192556238, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.999908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6257966098192556238, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -151.23956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6489313193079056556, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_RootOrder
@@ -14401,19 +14408,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8235609496235824813, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8235609496235824813, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8235609496235824813, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.999908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8235609496235824813, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64.816956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8340254637555099027, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: _pickUp
@@ -15851,6 +15858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -16406,6 +16414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -16488,6 +16497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -17204,6 +17214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 1, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -17287,6 +17298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -17395,6 +17407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 0}
@@ -17797,6 +17810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -18666,6 +18680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -19651,6 +19666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -19826,6 +19842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -20824,6 +20841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -21114,6 +21132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -21202,6 +21221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -21602,6 +21622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -21717,6 +21738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -22336,6 +22358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -22988,6 +23011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -23208,6 +23232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}

@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -526,112 +527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actualPanel: {fileID: 557933684}
   _panelToActivate: {fileID: 1629740993}
---- !u!1001 &99493848
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1709721474}
-    m_Modifications:
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9898248
-      objectReference: {fileID: 0}
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.5949125
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192723, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613738, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Name
-      value: FeedbackCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613738, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.x
-      value: 1.4553709
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.y
-      value: 4.668929
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0012164116
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Offset.y
-      value: -1.8325596
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477955363078, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477955363083, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8176548127485655583, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
---- !u!4 &99493849 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-  m_PrefabInstance: {fileID: 99493848}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &133518302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,9 +1769,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
-  _player: {fileID: 0}
+  _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 296837521}
   _distanceToInteract: 0
   _gameObjectToPlace: {fileID: 1683661368}
@@ -2275,6 +2171,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3078127, y: 0.6137489}
   m_EdgeRadius: 0
+--- !u!1 &393432756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5683628995989718924, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+  m_PrefabInstance: {fileID: 806921443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &397038275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,7 +2619,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 451246509}
   - {fileID: 802404850}
   - {fileID: 1216682040}
   m_Father: {fileID: 2116559793}
@@ -2738,6 +2638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -11729,168 +11630,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &451246508
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 445016125}
-    m_Modifications:
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.x
-      value: 0.76586246
-      objectReference: {fileID: 0}
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.y
-      value: 0.95632464
-      objectReference: {fileID: 0}
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.45405245
-      objectReference: {fileID: 0}
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.015500456
-      objectReference: {fileID: 0}
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4579645536978951502, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192721, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192721, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192721, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_DrawMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192722, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192722, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192722, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0031
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192722, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477546192723, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613736, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613738, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Name
-      value: FeedbackCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.x
-      value: 1.699295
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.y
-      value: 1.8713497
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.61313534
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613743, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.25335032
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477955363077, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477955363077, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477955363078, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477955363083, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477955363083, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8176548127485655583, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
---- !u!4 &451246509 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-  m_PrefabInstance: {fileID: 451246508}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &487698075
 GameObject:
   m_ObjectHideFlags: 0
@@ -12258,7 +11997,7 @@ GameObject:
   - component: {fileID: 571567470}
   - component: {fileID: 571567469}
   - component: {fileID: 571567468}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SCENARIO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12313,7 +12052,7 @@ CompositeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13275,6 +13014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -13375,6 +13115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -13498,6 +13239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -13893,7 +13635,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 445016125}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &802404851
 MonoBehaviour:
@@ -13984,14 +13726,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
-  _player: {fileID: 0}
-  _spriteRenderer: {fileID: 0}
-  _distanceToInteract: 0
-  Activate: {fileID: 0}
-  _puzzle: {fileID: 0}
-  _cameraSwitcherAnimator: {fileID: 0}
+  _player: {fileID: 806921448}
+  _spriteRenderer: {fileID: 803167392}
+  _distanceToInteract: 1
+  Activate: {fileID: 204067193}
+  _puzzle: {fileID: 204067196}
+  _cameraSwitcherAnimator: {fileID: 1707275106}
 --- !u!212 &803167392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14468,12 +14211,49 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7650115156115303218, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
   m_PrefabInstance: {fileID: 806921443}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 393432756}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aed5808c177a02f4195605588a1ccb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &806921452
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393432756}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.22
+--- !u!50 &806921456
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393432756}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &819213814
 GameObject:
   m_ObjectHideFlags: 0
@@ -15851,6 +15631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -16406,6 +16187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -16488,6 +16270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -17204,6 +16987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 1, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -17287,6 +17071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -17395,6 +17180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 0}
@@ -17797,6 +17583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -17869,7 +17656,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 445016125}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1227416652
 GameObject:
@@ -18666,6 +18453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -19000,6 +18788,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421280535}
+  - component: {fileID: 1421280536}
+  - component: {fileID: 1421280537}
   m_Layer: 0
   m_Name: ThirdRoom
   m_TagString: Untagged
@@ -19028,6 +18818,45 @@ Transform:
   m_Father: {fileID: 571567467}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1421280536
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421280534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.4859707, y: 5.480697}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.967009, y: 6.9663286}
+  m_EdgeRadius: 0
+--- !u!114 &1421280537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421280534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2efbba3cac604478d2c07082781f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIButtons: []
 --- !u!1 &1432742913
 GameObject:
   m_ObjectHideFlags: 0
@@ -19456,6 +19285,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491411695}
+  - component: {fileID: 1491411696}
+  - component: {fileID: 1491411697}
   m_Layer: 0
   m_Name: SecondRoom
   m_TagString: Untagged
@@ -19487,6 +19318,45 @@ Transform:
   m_Father: {fileID: 571567467}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1491411696
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491411694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.746639, y: -7.515725}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15.499568, y: 6.96633}
+  m_EdgeRadius: 0
+--- !u!114 &1491411697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491411694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2efbba3cac604478d2c07082781f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIButtons: []
 --- !u!1 &1507864414
 GameObject:
   m_ObjectHideFlags: 0
@@ -19651,6 +19521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -19826,6 +19697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -20824,6 +20696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -21053,8 +20926,7 @@ Transform:
   m_LocalPosition: {x: -12.526, y: 3.953, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 99493849}
+  m_Children: []
   m_Father: {fileID: 2119756864}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21081,7 +20953,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709721473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -21114,6 +20986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -21130,7 +21003,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00206995, y: -0.04076326}
@@ -21202,6 +21075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -21602,6 +21476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -21717,6 +21592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -22336,6 +22212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -22841,7 +22718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7574304536637141915, guid: 967e52b0210f052479e4f8962c6d67ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 967e52b0210f052479e4f8962c6d67ad, type: 3}
@@ -22988,6 +22865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _scenarioInteractableCanvas: {fileID: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
   _interactableAreaPrefab: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
@@ -23208,6 +23086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _scenarioInteractableCanvas: {fileID: 1507864418}
+  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
   _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
@@ -23563,6 +23442,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119756864}
+  - component: {fileID: 2119756865}
+  - component: {fileID: 2119756866}
   m_Layer: 0
   m_Name: FirstRoom
   m_TagString: Untagged
@@ -23592,6 +23473,45 @@ Transform:
   m_Father: {fileID: 571567467}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2119756865
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119756863}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -10.254043, y: 0.5717516}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.499033, y: 8.142212}
+  m_EdgeRadius: 0
+--- !u!114 &2119756866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119756863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2efbba3cac604478d2c07082781f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIButtons: []
 --- !u!1 &2122964368
 GameObject:
   m_ObjectHideFlags: 0
@@ -23769,6 +23689,10 @@ PrefabInstance:
       propertyPath: _distanceToInteract
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4371218780234836094, guid: c7521e4ee2c7e5f4981b8285c1f3fb75, type: 3}
+      propertyPath: _modifyUIBUttonActiveSelf
+      value: 
+      objectReference: {fileID: 2119756866}
     - target: {fileID: 4371218780234836094, guid: c7521e4ee2c7e5f4981b8285c1f3fb75, type: 3}
       propertyPath: _scenarioInteractableCanvas
       value: 
