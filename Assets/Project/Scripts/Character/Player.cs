@@ -32,12 +32,12 @@ namespace Project.Scripts.Character
 
         [SerializeField] private NavMeshAgent _agent;
 
-        [SerializeField] private GameObject _gameObjectToInteract;
+        private GameObject _gameObjectToInteract;
         
         private float _distanceToInteractWithObject;
 
         private bool _moving;
-        [SerializeField] private bool _interactionStarted; 
+        private bool _interactionStarted; 
         
         void Start()
         {
