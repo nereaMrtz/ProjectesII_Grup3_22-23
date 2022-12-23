@@ -10,7 +10,6 @@ namespace Project.Scripts.Character
         {
             if (GameManager.Instance.IsInZoomInState())
             {
-                Debug.Log("Zoom In");
                 return;
             }
             if (!Input.GetMouseButton(0))
