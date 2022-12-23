@@ -11,17 +11,24 @@ namespace Project.Scripts.Interactable.Buttons
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            /*if (Input.GetKeyDown(KeyCode.F))
             {
                 ChangePanelButton();
-            }
+            }*/
         }
 
-        private void ChangePanelButton()
+        public void ChangePanelButton()
         {
-            _panelToActivate.SetActive(true);
             _actualPanel.SetActive(false);
+            _panelToActivate.SetActive(true);
             (_actualPanel, _panelToActivate) = (_panelToActivate, _actualPanel);
+            
+            // Desactivat caminar player
+        }
+
+        public void ExitButton()
+        {
+            _actualPanel.SetActive(false);
         }
     }
 }
