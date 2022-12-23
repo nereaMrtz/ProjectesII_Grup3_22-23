@@ -29,16 +29,20 @@ namespace Project.Scripts.ZoomInForPuzzles
             if (!_puzzle.GetCompleted()) return;
             gameObject.layer = 0;
             SwitchCamera();
+            ChangeZoomInState();
             _puzzle.gameObject.SetActive(false);
-            GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
             Destroy(this);
         }
 
-        private void SwitchCamera()
+        public void SwitchCamera()
         {
             _cameraSwitcherAnimator.Play(_overWorldCamera ? PUZZLE_CAMERA_STATE : OVER_WORLD_CAMERA_STATE);
-
             _overWorldCamera = !_overWorldCamera;
+        }
+
+        public void ChangeZoomInState()
+        {
+            GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
         }
     }
 }
