@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Project.Scripts.UI
 {
-    public class InteractableUIButton : MonoBehaviour, IPointerDownHandler
+    public class InteractableUIButton : MonoBehaviour
     {
         private GameObject _gameObjectAttached;
 
@@ -23,10 +23,10 @@ namespace Project.Scripts.UI
             _player = player;
         }
         
-        public void OnPointerDown(PointerEventData eventData)
+        /*public void OnPointerDown(PointerEventData eventData)
         {
             Interact();
-        }
+        }*/
 
         public void Interact()
         {

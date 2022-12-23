@@ -64,7 +64,7 @@ namespace Project.Scripts.PuzzleDependentObject
 
             while (Vector3.Distance(_transform.position, targetPosition) > 0)
             {
-                Debug.Log("hola");
+                NavMeshManager.Instance.Bake();
                 float speed = slideSpeed * Time.deltaTime;
                 _transform.position = Vector2.MoveTowards(_transform.position, targetPosition, speed);
                 yield return null;
