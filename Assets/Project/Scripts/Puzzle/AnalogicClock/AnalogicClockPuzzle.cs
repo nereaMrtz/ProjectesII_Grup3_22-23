@@ -1,6 +1,4 @@
-using System;
 using Project.Scripts.Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Project.Scripts.Puzzle.AnalogicClock
@@ -21,17 +19,10 @@ namespace Project.Scripts.Puzzle.AnalogicClock
             if ((Mathf.Abs(minutes.rotation.eulerAngles.z) >= _minMinutes && Mathf.Abs(minutes.rotation.eulerAngles.z) <= _maxMinutes) && 
                 (Mathf.Abs(hours.rotation.eulerAngles.z) >= _minHours && Mathf.Abs(hours.rotation.eulerAngles.z) <= _maxHours))
             {
-                GameManager.Instance.SetZoomInState(false);
-            
                 _hammer.SetActive(true);
 
                 _completed = true;
             }
-        }
-
-        private void OnMouseDown()
-        {
-            Debug.Log("Hola");
         }
     }
 }

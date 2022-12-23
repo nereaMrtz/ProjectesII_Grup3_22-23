@@ -14,6 +14,9 @@ namespace Project.Scripts.Interactable
         [SerializeField] private GameObject _interactableAreaPrefab;
         [SerializeField] private GameObject _pointPrefab;
 
+        protected GameObject _interactableAreaPanel;
+        protected GameObject _pointButton;
+
         [SerializeField] private Player _player;
         
         [SerializeField] protected SpriteRenderer _spriteRenderer;
@@ -23,14 +26,14 @@ namespace Project.Scripts.Interactable
         private RectTransform _rectTransform;
         void Awake()
         {
-            GameObject interactableArea = Instantiate(_interactableAreaPrefab, _scenarioInteractableCanvas.transform);
-            interactableArea.name = "InteractableSignal" + gameObject.name;
-            _rectTransform = interactableArea.GetComponent<RectTransform>();
-            InteractableUIButton interactableUIButton = interactableArea.GetComponent<InteractableUIButton>();
+            _interactableAreaPanel = Instantiate(_interactableAreaPrefab, _scenarioInteractableCanvas.transform);
+            _interactableAreaPanel.name = "InteractableSignal" + gameObject.name;
+            _rectTransform = _interactableAreaPanel.GetComponent<RectTransform>();
+            InteractableUIButton interactableUIButton = _interactableAreaPanel.GetComponent<InteractableUIButton>();
             interactableUIButton.SetGameObjectAndHisDistanceToInteract(gameObject, _distanceToInteract);
             interactableUIButton.SetPlayer(_player);
-            GameObject point = Instantiate(_pointPrefab, transform);
-            point.transform.position += _pointOffset;
+            _pointButton = Instantiate(_pointPrefab, transform);
+            _pointButton.transform.position += _pointOffset;
         }
 
         void Update()

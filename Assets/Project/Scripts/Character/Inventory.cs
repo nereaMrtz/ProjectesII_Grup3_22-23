@@ -8,7 +8,7 @@ namespace Project.Scripts.Character {
     {
         [SerializeField] private InventorySlot[] _inventorySlots;
 
-        private PickUp _firstPickUpSelected;
+        //private PickUp _firstPickUpSelected;
 
         private bool _itemSelected;
 
@@ -35,7 +35,7 @@ namespace Project.Scripts.Character {
             return false;
         }
 
-        public void SelectItem(int inventorySlot)
+        /*public void SelectItem(int inventorySlot)
         {
             if (_itemSelected)
             {
@@ -46,7 +46,7 @@ namespace Project.Scripts.Character {
                 _firstPickUpSelected = _inventorySlots[inventorySlot].GetPickUp();
                 _itemSelected = true;
             }
-        }
+        }*/
 
         public InventorySlot[] GetInventorySlots()
         {

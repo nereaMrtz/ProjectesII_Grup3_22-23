@@ -29,6 +29,7 @@ namespace Project.Scripts.ZoomInForPuzzles
             if (!_puzzle.GetCompleted()) return;
             gameObject.layer = 0;
             SwitchCamera();
+            _puzzle.gameObject.SetActive(false);
             GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
             Destroy(this);
         }
