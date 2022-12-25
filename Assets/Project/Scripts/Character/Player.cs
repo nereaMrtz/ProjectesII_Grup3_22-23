@@ -1,17 +1,10 @@
 using System;
-using System.Collections;
-using System.Numerics;
 using UnityEngine;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
 using Project.Scripts.Managers;
-using Project.Scripts.UI;
-using Unity.VisualScripting;
 using UnityEngine.AI;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Project.Scripts.Character
 {
@@ -32,15 +25,16 @@ namespace Project.Scripts.Character
 
         [SerializeField] private NavMeshAgent _agent;
 
-        [SerializeField] private GameObject _gameObjectToInteract;
+        private GameObject _gameObjectToInteract;
         
         private float _distanceToInteractWithObject;
 
-        private bool _moving;
-        [SerializeField] private bool _interactionStarted; 
+        private bool _moving = true;
+        private bool _interactionStarted; 
         
         void Start()
         {
+            NavMeshManager.Instance.Bake();
             _agent.updateRotation = false;
             _agent.updateUpAxis = false;
             _targetTransform.position = transform.position;
@@ -48,12 +42,13 @@ namespace Project.Scripts.Character
 
         void Update()
         {
+            
             if ((Input.GetKey(KeyCode.Escape) && !_pauseMenuPanel.activeSelf))
             {
                 _pauseMenuPanel.SetActive(true);
             }
             
-            if (_drugEffect.GetBetweenChangePeriod() || _pauseMenuPanel.activeSelf)
+            if (_drugEffect.IsChangingPeriod() || _pauseMenuPanel.activeSelf)
             {
                 return;
             }
@@ -65,24 +60,36 @@ namespace Project.Scripts.Character
         {
             if (GameManager.Instance.IsInZoomInState())
             {
+                _targetTransform.position = transform.position;
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
                 return;
             }
 
-            float distanceBetweenPlayerAndTargetPosition =
-                Vector2.Distance(transform.position, _targetTransform.position);
+            MovementController();
             
-            if (distanceBetweenPlayerAndTargetPosition < 0.01f || (_moving && _agent.velocity.magnitude == 0))
+            InteractionController();
+        }
+
+        private void MovementController()
+        {
+            if (_agent.velocity.magnitude != 0)
+            {
+                _moving = true;
+                AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
+            }
+            else if (_moving && _agent.velocity.magnitude == 0)
             {
                 _moving = false;
-                _targetTransform.position = transform.position;
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _targetTransform.position = transform.position;
                 return;   
             }
             
             Movement();
-            AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
+        }
 
+        private void InteractionController()
+        {
             if (!_interactionStarted)
             {
                 return;
@@ -94,8 +101,8 @@ namespace Project.Scripts.Character
             }
             else if (_targetTransform.position != _gameObjectToInteract.transform.position)
             {
-                _interactionStarted = false;
                 _gameObjectToInteract = null;
+                _interactionStarted = false;
             }
         }
 
@@ -123,7 +130,6 @@ namespace Project.Scripts.Character
 
         private void Movement()
         {
-            _moving = true;
             _agent.SetDestination(_targetTransform.position);
         }
         
@@ -133,7 +139,7 @@ namespace Project.Scripts.Character
             _gameObjectToInteract = gameObjectToInteract;
             _distanceToInteractWithObject = distanceToInteract;
             _targetTransform.position = _gameObjectToInteract.transform.position;
+            GameManager.Instance.SetInteractableClicked(true);
         }
     }
 }
-

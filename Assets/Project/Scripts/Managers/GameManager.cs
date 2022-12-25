@@ -7,7 +7,8 @@ namespace Project.Scripts.Managers
         private static GameManager _instance;
 
         private bool _drugged;
-        private bool _zoomInState; 
+        private bool _zoomInState;
+        private bool _interactableClicked;
 
         private void Awake()
         {
@@ -31,20 +32,31 @@ namespace Project.Scripts.Managers
         {
             _drugged = drugged;
         }
-
-        public void SetZoomInState(bool zoomInState)
-        {
-            _zoomInState = zoomInState;
-        }
-
+        
         public bool IsDrugged()
         {
             return _drugged;
         }
 
+        public void SetZoomInState(bool zoomInState)
+        {
+            _zoomInState = zoomInState;
+        }
+        
         public bool IsInZoomInState()
         {
             return _zoomInState;
         }
+
+        public void SetInteractableClicked(bool interactableClicked)
+        {
+            _interactableClicked = interactableClicked;
+        }
+
+        public bool IsInteractableClicked()
+        {
+            return _interactableClicked;
+        }
+
     }
 }
