@@ -125,13 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc16f8a1a523afd4680a862fbc16d41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointOffset: {x: 0, y: 0, z: 0}
-  _scenarioInteractableCanvas: {fileID: 0}
-  _interactableAreaPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
-  _pointPrefab: {fileID: 5484754770571487863, guid: 29194d3c24590004dbbf8d5850990c2e, type: 3}
+  _pointOffset: {x: 0, y: 1, z: 0}
+  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 4371218780234836092}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _keyObject: {fileID: 0}
   _destroyObject: 0
   _spriteRenderer: {fileID: 4371218780234836092}

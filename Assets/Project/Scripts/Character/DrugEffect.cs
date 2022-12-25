@@ -99,7 +99,7 @@ namespace Project.Scripts.Character
             _betweenChangePeriod = false;
         }
 
-        public bool GetBetweenChangePeriod()
+        public bool IsChangingPeriod()
         {
             return _betweenChangePeriod;
         }
