@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Character;
 using Project.Scripts.Level;
 using UnityEngine;
@@ -6,9 +7,14 @@ namespace Project.Scripts.Interactable
 {
     public abstract class InteractableScript : MonoBehaviour
     {
+        private const String SHADER_THICKNESS_VALUE = "_Thickness"; 
+        
         [SerializeField] private Vector3 _pointOffset;
 
         [SerializeField] private ModifyUIButtonActiveSelf _modifyUIBUttonActiveSelf;
+
+        [SerializeField] private Material _customShaderMaterial;
+        [SerializeField] private Material _defaultshaderMaterial;
         
         [SerializeField] private GameObject _pointPrefab;
         
@@ -21,6 +27,11 @@ namespace Project.Scripts.Interactable
         [SerializeField] private float _distanceToInteract;
 
         private RectTransform _rectTransform;
+
+        private float _thicknessValue;
+
+        private bool _shaderChanged;
+            
         void Awake()
         {
             _pointButton = Instantiate(_pointPrefab, transform);
@@ -32,6 +43,37 @@ namespace Project.Scripts.Interactable
         private void OnMouseDown()
         {
             Interact();            
+        }
+
+        private void OnMouseEnter()
+        {
+            _shaderChanged = _pointButton.activeSelf;
+            if (!_shaderChanged)
+            {
+                return;
+            }
+            _spriteRenderer.material = _customShaderMaterial;
+        }
+
+        private void OnMouseOver()
+        {
+            if (_thicknessValue >= 0.05f || !_shaderChanged)
+            {
+                return;
+            }
+            _thicknessValue += Time.deltaTime;
+            _spriteRenderer.material.SetFloat(SHADER_THICKNESS_VALUE, _thicknessValue);
+        }
+
+        private void OnMouseExit()
+        {
+            if (!_shaderChanged)
+            {
+                return;
+            }
+            _thicknessValue = 0;
+            _spriteRenderer.material.SetFloat(SHADER_THICKNESS_VALUE, _thicknessValue);
+            _spriteRenderer.material = _defaultshaderMaterial;
         }
 
         private void Interact()

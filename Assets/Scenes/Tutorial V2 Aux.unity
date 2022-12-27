@@ -239,6 +239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 8962333}
@@ -1767,6 +1769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 296837521}
@@ -2634,6 +2638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
+  _defaultshaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 445016128}
@@ -12936,6 +12942,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 734191946}
@@ -13035,6 +13043,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 734191946}
@@ -13157,6 +13167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 743839540}
@@ -13642,6 +13654,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 803167392}
@@ -14103,6 +14117,14 @@ PrefabInstance:
     - target: {fileID: 8856872069502983149, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164152752676145356, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164152752676145356, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
@@ -15540,6 +15562,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 1003593885}
@@ -16094,6 +16118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1091668051}
@@ -16175,6 +16201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 0}
@@ -16890,6 +16918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 1, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1179604427}
@@ -16972,6 +17002,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 0}
@@ -17079,6 +17111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 1195724290}
@@ -17480,6 +17514,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1216682039}
@@ -18150,6 +18186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1384896310}
@@ -19115,6 +19153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 1511643334}
@@ -19289,6 +19329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1530275765}
@@ -20286,6 +20328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 1683661374}
@@ -20550,7 +20594,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 61, y: 61}
+    oldSize: {x: 78.125, y: 78.125}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -20641,6 +20685,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
+  _defaultshaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1709721479}
@@ -21040,6 +21086,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1793686801}
@@ -21154,6 +21202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 1802389480}
@@ -21772,6 +21822,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1887749327}
@@ -22423,6 +22475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 2021497921}
@@ -22642,6 +22696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
   _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _customShaderMaterial: {fileID: 0}
+  _defaultshaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 2105322272}
