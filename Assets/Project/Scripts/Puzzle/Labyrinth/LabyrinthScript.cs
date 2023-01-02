@@ -5,9 +5,9 @@ namespace Project.Scripts.Puzzle.Labyrinth
 {
     public class LabyrinthScript : PuzzleScript
     {
-        [SerializeField] private ObjectGoingThroughMaze _objectGoingThroughMaze;
+        [SerializeField] protected ObjectGoingThroughMaze _objectGoingThroughMaze;
 
-        private void Update()
+        protected void Update()
         {
             _completed = _objectGoingThroughMaze.CheckEndCell();
         }

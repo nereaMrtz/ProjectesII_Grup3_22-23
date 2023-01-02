@@ -14,7 +14,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.PiggyBank
             _bill.gameObject.SetActive(true);
             GetComponent<SpriteRenderer>().enabled = false;
             _boxCollider2D.enabled = false;
-            _pointButton.SetActive(false);
+            GetPointButton().SetActive(false);
         }
     }
 }

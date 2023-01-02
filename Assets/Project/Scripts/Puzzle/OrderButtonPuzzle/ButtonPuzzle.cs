@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Project.Scripts.Puzzle.OrderButtonPuzzle
 {
@@ -10,10 +12,23 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
         [SerializeField] private OrderButton[] _orderButtons;
 
         [SerializeField] private String _correctCombination;
-
         [SerializeField] private String _currentCombination;
 
         [SerializeField] private int _currentPressedButtonCounter;
+
+        [SerializeField] private GameObject[] _numbers;
+
+        private Vector3[] _offsetOfNumbers;
+
+        private void Start()
+        {
+            _offsetOfNumbers = new Vector3[_numbers.Length];
+            for (int i = 0; i < _offsetOfNumbers.Length; i++)
+            {
+                _offsetOfNumbers[i] = _numbers[i].transform.position;
+            }
+        }
+
         void Update()
         {
             CheckButtonPress();
@@ -31,6 +46,7 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
                 }
                 _currentCombination = "";
                 _currentPressedButtonCounter = 0;
+                ChangePressOrder();
             }
             else
             {
@@ -63,6 +79,33 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
                 _currentCombination += _orderButtons[i].GetPressOrder();
                 CheckCombination(orderButton);
             }
+        }
+
+        private void ChangePressOrder()
+        {
+            List<int> availableNumbers = new List<int>();
+
+            for (int i = 0; i < _orderButtons.Length; i++)
+            {
+                availableNumbers.Add(i + 1);
+            }
+            
+            for (int i = 0; i < _orderButtons.Length; i++)
+            {
+                int numberPicked = PickNumberFromList(availableNumbers);
+                _orderButtons[i].SetPressOrder(numberPicked);
+                _numbers[numberPicked - 1].transform.position = _offsetOfNumbers[i];
+            }
+        }
+
+        private int PickNumberFromList(List<int> availableNumbers)
+        {
+            int randomNumber = Random.Range(0, availableNumbers.Count);
+
+            int numberPicked = availableNumbers[randomNumber];
+            availableNumbers.RemoveAt(randomNumber);
+
+            return numberPicked;
         }
     }
 }

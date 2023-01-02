@@ -1,5 +1,5 @@
 using System;
-using Cinemachine;
+using Project.Scripts.Interactable.Static.RequiredInventory;
 using Project.Scripts.Managers;
 using Project.Scripts.Puzzle;
 using UnityEngine;
@@ -8,12 +8,12 @@ namespace Project.Scripts.ZoomInForPuzzles
 {
     public class ZoomInChangeCamera : ZoomIn
     {
-        private const String OVER_WORLD_CAMERA_STATE = "OverWorldCamera"; 
-        private const String PUZZLE_CAMERA_STATE = "PuzzleCamera"; 
+        protected const String OVER_WORLD_CAMERA_STATE = "OverWorldCamera"; 
+        protected const String PUZZLE_CAMERA_STATE = "PuzzleCamera"; 
         
-        [SerializeField] private PuzzleScript _puzzle;
+        [SerializeField] protected PuzzleScript _puzzle;
 
-        [SerializeField] private Animator _cameraSwitcherAnimator;
+        [SerializeField] protected Animator _cameraSwitcherAnimator;
 
         private bool _overWorldCamera = true;
         

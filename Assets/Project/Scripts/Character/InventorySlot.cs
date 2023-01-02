@@ -32,6 +32,7 @@ namespace Project.Scripts.Character
         public void SetPickUp(PickUp pickUp)
         {
             _pickUp = pickUp;
+            pickUp.GetPointButton().SetActive(false);
             _spriteRenderer.sprite = _pickUp.gameObject.GetComponent<SpriteRenderer>().sprite;
             Vector2 size = _spriteRenderer.size;
             size = new Vector2(35f, 35f);
