@@ -9,6 +9,7 @@ namespace Project.Scripts.Managers
         private bool _drugged;
         private bool _zoomInState;
         private bool _interactableClicked;
+        private bool _clickOnEdge;
 
         private void Awake()
         {
@@ -57,6 +58,5 @@ namespace Project.Scripts.Managers
         {
             return _interactableClicked;
         }
-
     }
 }

@@ -21,6 +21,10 @@ namespace Project.Scripts.Character
                 GameManager.Instance.SetInteractableClicked(false);
                 return;   
             }
+            if (GameManager.Instance.IsClickingOnEdge())
+            {
+                return;
+            }
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePosition.x, mousePosition.y, 0);
         }
