@@ -11,7 +11,7 @@ namespace Project.Scripts.Interactable
         
         [SerializeField] private Vector3 _pointOffset;
 
-        [SerializeField] private ModifyUIButtonActiveSelf _modifyUIBUttonActiveSelf;
+        [SerializeField] private ModifyUIButtonActiveSelf _modifyUIButtonActiveSelf;
 
         [SerializeField] private Material _customShaderMaterial;
         [SerializeField] private Material _defaultShaderMaterial;
@@ -37,7 +37,7 @@ namespace Project.Scripts.Interactable
             _pointButton = Instantiate(_pointPrefab, transform);
             _pointButton.transform.position += _pointOffset;
             _pointButton.SetActive(false);
-            _modifyUIBUttonActiveSelf.AddUIButton(_pointButton);
+            _modifyUIButtonActiveSelf.AddUIButton(_pointButton);
         }
 
         private void OnMouseDown()

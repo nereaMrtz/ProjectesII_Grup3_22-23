@@ -1,12 +1,9 @@
-using System.Collections;
-using Project.Scripts.ZoomInForPuzzles;
-using Project.Scripts.ZoomInForPuzzles.DraggableObject;
-using Project.Scripts.ZoomInForPuzzles.DraggableObject.MovableThroughNodes;
+using Project.Scripts.ZoomInForPuzzles.DraggableObject.Movable;
 using UnityEngine;
 
 namespace Project.Scripts.Puzzle.Labyrinth
 {
-    public class ObjectGoingThroughMaze : MovableThroughNodesObject
+    public class ObjectGoingThroughMaze : MovableObject
     {
         [SerializeField] private float _range;
 

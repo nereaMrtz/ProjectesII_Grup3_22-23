@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
   _defaultShaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -2375,11 +2375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.351227
+      value: -32.811226
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.8546743
+      value: 0.49467444
       objectReference: {fileID: 0}
     - target: {fileID: 4556754038117123291, guid: 3ee737e2424856f4b994b0682aee80ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2637,7 +2637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _modifyUIButtonActiveSelf: {fileID: 2119756866}
   _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
   _defaultShaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -11754,7 +11754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bcba4160d8c694eae65f0151511387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDrag: 0
   _gameObjectReference: {fileID: 913877548}
   _hoursHand: {fileID: 0}
 --- !u!1 &525940732
@@ -12947,7 +12946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _modifyUIButtonActiveSelf: {fileID: 1421280537}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -13048,7 +13047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _modifyUIButtonActiveSelf: {fileID: 1421280537}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -13172,7 +13171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
   _defaultShaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -13535,7 +13534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bcba4160d8c694eae65f0151511387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDrag: 0
   _gameObjectReference: {fileID: 913877548}
   _hoursHand: {fileID: 789053331}
 --- !u!1 &802404849
@@ -13624,9 +13622,9 @@ GameObject:
   - component: {fileID: 803167390}
   - component: {fileID: 803167392}
   - component: {fileID: 803167394}
-  - component: {fileID: 803167391}
+  - component: {fileID: 803167395}
   - component: {fileID: 803167393}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: LabyrinthPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13648,29 +13646,6 @@ Transform:
   m_Father: {fileID: 1638517188}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &803167391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803167389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b689cb1b6841f904abbcf0bf4c7b0526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
-  _customShaderMaterial: {fileID: 0}
-  _defaultShaderMaterial: {fileID: 0}
-  _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
-  _player: {fileID: 806921448}
-  _spriteRenderer: {fileID: 803167392}
-  _distanceToInteract: 1
-  Activate: {fileID: 204067193}
-  _puzzle: {fileID: 204067196}
-  _cameraSwitcherAnimator: {fileID: 1707275106}
 --- !u!212 &803167392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13765,6 +13740,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &803167395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803167389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bdab5afb5fd314bb5d31de826511ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 1421280537}
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
+  _player: {fileID: 806921448}
+  _spriteRenderer: {fileID: 803167392}
+  _distanceToInteract: 1
+  Activate: {fileID: 204067193}
+  _puzzle: {fileID: 204067196}
+  _cameraSwitcherAnimator: {fileID: 1707275106}
+  _keyObject: {fileID: 2021497920}
+  _gameObjectToActivate: {fileID: 1012093090}
 --- !u!1001 &806921443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13882,11 +13882,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1532732176809836768, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.76
+      value: -6.22
       objectReference: {fileID: 0}
     - target: {fileID: 1532732176809836768, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.88
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 1885190322655837741, guid: 5e1338bbb66a5c0439b8dd06d805fa33, type: 3}
       propertyPath: m_Navigation.m_Mode
@@ -15101,7 +15101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917261959}
   m_LocalRotation: {x: 0, y: 0.000000047647255, z: 0, w: 1}
-  m_LocalPosition: {x: -4.481223, y: 4.9167747, z: -9.950616}
+  m_LocalPosition: {x: -4.941223, y: -0.44322515, z: -9.950616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15645,7 +15645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
@@ -15736,7 +15736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1012093091
 Transform:
   m_ObjectHideFlags: 0
@@ -15764,8 +15764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9192d82df7566c24484be19ae23e8a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDrag: 1
-  _gameObjectReference: {fileID: 614247333}
+  _destinations:
+  - {fileID: 614247333}
   _range: 0.2
 --- !u!50 &1012093093
 Rigidbody2D:
@@ -16201,7 +16201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
   _defaultShaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -16284,7 +16284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
@@ -17002,14 +17002,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 1, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _modifyUIButtonActiveSelf: {fileID: 1421280537}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1179604427}
   _distanceToInteract: 1
-  _keyObject: {fileID: 0}
+  _keyObject: {fileID: 1887749321}
   _destroyObject: 1
   _coin: {fileID: 2021497920}
 --- !u!114 &1179604430
@@ -17102,7 +17102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
@@ -17211,7 +17211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -17462,67 +17462,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actualPanel: {fileID: 1629740993}
   _panelToActivate: {fileID: 0}
---- !u!1001 &1205492547
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2105322268}
-    m_Modifications:
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613738, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_Name
-      value: FeedbackCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289502477935613738, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
 --- !u!1 &1216682034
 GameObject:
   m_ObjectHideFlags: 0
@@ -17614,7 +17553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _modifyUIButtonActiveSelf: {fileID: 0}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -18286,7 +18225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _modifyUIButtonActiveSelf: {fileID: 2119756866}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -19253,7 +19192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
@@ -19429,7 +19368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
   _defaultShaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -20428,7 +20367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
@@ -20785,7 +20724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 2119756866}
+  _modifyUIButtonActiveSelf: {fileID: 2119756866}
   _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
   _defaultShaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -21008,11 +20947,6 @@ Transform:
   m_Father: {fileID: 1421280535}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1760163079 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-  m_PrefabInstance: {fileID: 1205492547}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767373013
 GameObject:
   m_ObjectHideFlags: 0
@@ -21186,7 +21120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 2100000, guid: 187088f3d1f366b4f9ec2f85dc6415a6, type: 2}
   _defaultShaderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -21302,7 +21236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 0}
@@ -21922,7 +21856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1491411697}
+  _modifyUIButtonActiveSelf: {fileID: 1491411697}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -22575,13 +22509,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 1421280537}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
-  _pointPrefab: {fileID: 0}
-  _player: {fileID: 0}
+  _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
+  _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 2021497921}
-  _distanceToInteract: 0
+  _distanceToInteract: 1
   _capsuleCollider2D: {fileID: 2021497923}
   _commentTrigger: {fileID: 2021497924}
 --- !u!1 &2045891157
@@ -22778,8 +22712,7 @@ Transform:
   m_LocalPosition: {x: 1.7099999, y: 3.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1760163079}
+  m_Children: []
   m_Father: {fileID: 883175167}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22796,7 +22729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 0.5, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 1421280537}
+  _modifyUIButtonActiveSelf: {fileID: 1421280537}
   _customShaderMaterial: {fileID: 0}
   _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
@@ -23394,6 +23327,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4371218780234836094, guid: c7521e4ee2c7e5f4981b8285c1f3fb75, type: 3}
       propertyPath: _modifyUIBUttonActiveSelf
+      value: 
+      objectReference: {fileID: 2119756866}
+    - target: {fileID: 4371218780234836094, guid: c7521e4ee2c7e5f4981b8285c1f3fb75, type: 3}
+      propertyPath: _modifyUIButtonActiveSelf
       value: 
       objectReference: {fileID: 2119756866}
     - target: {fileID: 4371218780234836094, guid: c7521e4ee2c7e5f4981b8285c1f3fb75, type: 3}

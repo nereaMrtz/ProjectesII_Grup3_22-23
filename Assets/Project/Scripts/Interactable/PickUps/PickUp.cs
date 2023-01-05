@@ -2,7 +2,6 @@ using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.Static.RequiredInventory;
 using Project.Scripts.Managers;
-using Project.Scripts.UI;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.PickUps {

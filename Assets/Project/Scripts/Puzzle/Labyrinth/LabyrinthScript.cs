@@ -5,7 +5,12 @@ namespace Project.Scripts.Puzzle.Labyrinth
 {
     public class LabyrinthScript : PuzzleScript
     {
-        [SerializeField] protected ObjectGoingThroughMaze _objectGoingThroughMaze;
+        [SerializeField] private ObjectGoingThroughMaze _objectGoingThroughMaze;
+
+        private void OnDisable()
+        {
+            throw new NotImplementedException();
+        }
 
         protected void Update()
         {
