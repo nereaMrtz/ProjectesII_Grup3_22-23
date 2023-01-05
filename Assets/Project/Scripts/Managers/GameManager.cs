@@ -7,7 +7,8 @@ namespace Project.Scripts.Managers
         private static GameManager _instance;
 
         private bool _drugged;
-        private bool _zoomInState; 
+        private bool _zoomInState;
+        private bool _clickOnEdge;
 
         private void Awake()
         {
@@ -45,6 +46,16 @@ namespace Project.Scripts.Managers
         public bool IsInZoomInState()
         {
             return _zoomInState;
+        }
+
+        public bool IsClickingOnEdge()
+        {
+            return _clickOnEdge;
+        }
+
+        public void SetClickOnEdge(bool clickOnEdge)
+        {
+            _clickOnEdge = clickOnEdge;
         }
     }
 }
