@@ -6,7 +6,7 @@ namespace Project.Scripts.Level {
     public class ModifyUIButtonActiveSelf : MonoBehaviour
     {
 
-        [SerializeField] private List<GameObject> _UIButtons = new List<GameObject>();
+        [SerializeField] private List<GameObject> _UIButtons;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

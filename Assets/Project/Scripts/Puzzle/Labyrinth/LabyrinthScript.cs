@@ -7,7 +7,12 @@ namespace Project.Scripts.Puzzle.Labyrinth
     {
         [SerializeField] private ObjectGoingThroughMaze _objectGoingThroughMaze;
 
-        private void Update()
+        private void OnDisable()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void Update()
         {
             _completed = _objectGoingThroughMaze.CheckEndCell();
         }

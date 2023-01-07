@@ -27,7 +27,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToW
                 {
                     inventorySlots[i].EraseChildSprite();
                     
-                    inventorySlots[i].ErasePickUp();
+                    //inventorySlots[i].ErasePickUp();
                     
                     pickUp.gameObject.transform.SetParent(transform);
                     pickUp.gameObject.GetComponent<SpriteRenderer>().enabled = true;

@@ -11,14 +11,14 @@ namespace Project.Scripts.Interactable
         
         [SerializeField] private Vector3 _pointOffset;
 
-        [SerializeField] private ModifyUIButtonActiveSelf _modifyUIBUttonActiveSelf;
+        [SerializeField] private ModifyUIButtonActiveSelf _modifyUIButtonActiveSelf;
 
         [SerializeField] private Material _customShaderMaterial;
-        [SerializeField] private Material _defaultshaderMaterial;
+        [SerializeField] private Material _defaultShaderMaterial;
         
         [SerializeField] private GameObject _pointPrefab;
         
-        protected GameObject _pointButton;
+        private GameObject _pointButton;
 
         [SerializeField] private Player _player;
         
@@ -37,7 +37,7 @@ namespace Project.Scripts.Interactable
             _pointButton = Instantiate(_pointPrefab, transform);
             _pointButton.transform.position += _pointOffset;
             _pointButton.SetActive(false);
-            _modifyUIBUttonActiveSelf.AddUIButton(_pointButton);
+            _modifyUIButtonActiveSelf.AddUIButton(_pointButton);
         }
 
         private void OnMouseDown()
@@ -73,12 +73,17 @@ namespace Project.Scripts.Interactable
             }
             _thicknessValue = 0;
             _spriteRenderer.material.SetFloat(SHADER_THICKNESS_VALUE, _thicknessValue);
-            _spriteRenderer.material = _defaultshaderMaterial;
+            _spriteRenderer.material = _defaultShaderMaterial;
         }
 
         private void Interact()
         {
             _player.SetGameObjectAndHisDistanceToInteract(gameObject, _distanceToInteract);
+        }
+
+        public GameObject GetPointButton()
+        {
+            return _pointButton;
         }
     }
 }

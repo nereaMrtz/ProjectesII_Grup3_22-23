@@ -25,6 +25,11 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
             return _pressOrder;
         }
 
+        public void SetPressOrder(int pressOrder)
+        {
+            _pressOrder = pressOrder;
+        }
+
         public bool IsPressed()
         {
             return _pressed;
