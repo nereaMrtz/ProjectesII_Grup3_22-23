@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,13 +42,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.16477089, y: 0.8894074}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 353, y: 3072, z: 1985, w: 353}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -76,20 +76,2091 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Room_Builder_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 3359
+        width: 195
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc8a47164134974a951bd07ea01d92f
+      internalID: 1956891984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 3379
+        width: 63
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b06a8c6eb3b41943955bc5104be646f
+      internalID: 557796057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 3359
+        width: 99
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d240273153199241a1fdd62a7dea3bc
+      internalID: -2102516261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 3296
+        width: 322
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a1ac4b4071b6a4dbf3cbcc4a12ddca
+      internalID: -2115187500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 3296
+        width: 322
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40d361dd1f24114390e9af4e1c603c2
+      internalID: 1540421883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 3263
+        width: 392
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2376c207b9e11844daeb49fa3a95a506
+      internalID: 1150163859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 3428
+        width: 187
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5edaf552eb2b4dc4788c85464162bf38
+      internalID: 1239246096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 3326
+        width: 34
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f85bc12bdea154e8a935684b88860f
+      internalID: 1764935231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 3391
+        width: 63
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c67c1ecf8f979488029c136b8b91d6
+      internalID: -908012471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 3399
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2603ee78c4532345bd6620354cad035
+      internalID: 74629021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 3393
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a084140c07701ba43a99a5fa37e68c1c
+      internalID: 984621350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 3360
+        width: 90
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec52956f0aa30c541a3cb56dcfbe82af
+      internalID: 1696194831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 3359
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd5d3e62f121bb4eb6f0de2fcca81f0
+      internalID: -1580988631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 3359
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce700728b0713b4ea79611f3c16c78a
+      internalID: 468776916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 3359
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f7561c4193c40428c154d545b18789
+      internalID: 1495350853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 3287
+        width: 53
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91659c58f6d9e2a4dbae4fa1cab2b5b1
+      internalID: -1923795521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 3198
+        width: 195
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770feddbebd5bf5429035ba1e09fd41e
+      internalID: -1035277623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 3219
+        width: 63
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e9d6840b393174c8ac671d8e33e07f
+      internalID: 271670550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 3198
+        width: 99
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33582ab7e14bde84692bbf0d4322e25f
+      internalID: 711357107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 3214
+        width: 24
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0c7eba52edf644da1e24b2039fdb50
+      internalID: 192099858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 3222
+        width: 51
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2f3ea44ac6a8446b5add5ad89953ac
+      internalID: -806858563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 3226
+        width: 80
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40daddab5864da64d986f41660e23505
+      internalID: -1229565850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 3263
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a71a1b49b49737469c347c25ee8c412
+      internalID: -158162233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 3263
+        width: 83
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0abbf256acd3744ebd6b582ebd9e624
+      internalID: 903453794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 3222
+        width: 61
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91304b6652a29de43965f77bdb3d855e
+      internalID: 1846733674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 3141
+        width: 156
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89992906b771084468e219a61298f1dd
+      internalID: 1647918796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3255
+        width: 68
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60369be90ccd7b445b07629547788d2a
+      internalID: 1132950611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 3255
+        width: 85
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f0f718f8e0f354cadea2f84980ef2e
+      internalID: 1603670713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 3198
+        width: 164
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4406dbc83d29c53438742d7d6284c683
+      internalID: 1076699198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 3246
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b3184217b9d8f4baafad0bb604a56f
+      internalID: 869696933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 3246
+        width: 63
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc303e17c67a804e9ae810b7dee10ff
+      internalID: -2135425416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 3216
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba3e10aee0337649941dedf9b4cdf33
+      internalID: 1326394568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 3214
+        width: 82
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa70d9d824eb7e4696a5944f2e0ed58
+      internalID: -1891466648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 3210
+        width: 101
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6a82f5edd737e40bb84487c3edd0c0
+      internalID: -1280252694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 3166
+        width: 36
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2c7e9fafcc90c4b921c3337a476c3a
+      internalID: -1516226314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 3166
+        width: 34
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4d6408d1fc9b144b0c82c94c041235
+      internalID: 1518546186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 3149
+        width: 138
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc61811900287074b9cfb527b780d372
+      internalID: 1440780080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 3171
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee52066f365cf0a42a20259235a01f4f
+      internalID: -165328028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 3175
+        width: 151
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37115c4b7c740a54aae800e0428da2b4
+      internalID: 1282515094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3139
+        width: 322
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f322bd36ebda43342acdd5e7c7e0a264
+      internalID: 1450312691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tururururu
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 3072
+        width: 96
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b26e3e26b160354fa876fb5ef575bad
+      internalID: 782997733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 3139
+        width: 322
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabdf9927a7fd4f458cefc4dc3649601
+      internalID: 1382635336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 2110
+        y: 3057
+        width: 322
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4267b060a4d6ca84c9cebf20f772d65c
+      internalID: 1207295149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1982
+        width: 322
+        height: 1155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec376841e0b85446a440ee1564275df
+      internalID: 816790325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 2047
+        width: 322
+        height: 1090
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b2335336dbbd94b819ac13edb0708f
+      internalID: 424833082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1982
+        width: 98
+        height: 1155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc241356e208c244894d4513ef107e8
+      internalID: -1497958290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1982
+        width: 99
+        height: 1155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2798963928aca9a45a013c0e3f67523c
+      internalID: 1938184410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 1982
+        width: 99
+        height: 1155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6254c05c84eca5e4daf82f629208e756
+      internalID: -895449266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 1982
+        width: 98
+        height: 1155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11759fb2f337c8f4f89cc09ffde99508
+      internalID: 2063073198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 3107
+        width: 194
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548f7df3ab061524fa476928e611d679
+      internalID: -405030530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 3038
+        width: 42
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccfda9b281ac484e8ddb9d38eed797c
+      internalID: 1178406188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 3038
+        width: 43
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3fcfed97e5aa18488a492ca77d49ade
+      internalID: 1125003307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 3043
+        width: 290
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cdac76085f2ce4f865d0f7d1f09bbf
+      internalID: 931933946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 3076
+        width: 194
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1f3e067c7cc8c48bbaf7bb228058fe
+      internalID: -2146645964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 3011
+        width: 194
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca4a04272074d6488f9ef77193aaaf4
+      internalID: -844552725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2143
+        width: 450
+        height: 899
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f090a6b986555a428b484d186b58d69
+      internalID: -2144223715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2979
+        width: 194
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73273d14575f5c74ab4b3bbbd18000aa
+      internalID: 2044291057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2946
+        width: 194
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9047208f0d835d40865c349dd11b8e0
+      internalID: 1653101755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2883
+        width: 194
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9dbd0284e4f36458ebd0de436ab1dd
+      internalID: 1669275263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2851
+        width: 194
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc76e725b4709341a94cfa245b21204
+      internalID: -999503469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2819
+        width: 194
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593a37aa6417d7647b6d49380c79897c
+      internalID: -1543125396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2786
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74361d738bd1cd34fa032f1d684548be
+      internalID: 64442830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 2786
+        width: 61
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d51c560aa0b054a8c7e88ebf33d806
+      internalID: 2074534970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 2786
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3653c96bc6f332d4bae2a3618c679687
+      internalID: -1410928580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2659
+        width: 194
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f837000c6db6924dbef381aa672d921
+      internalID: 2106400158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 2696
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86724c4d89bff444f90f4e40b3340c5e
+      internalID: -709917832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2631
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe313d81fc06e25479bd04cb10f5cf2b
+      internalID: -1073325970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 2631
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20c0692c01b64642b24c63c2efcf04b
+      internalID: 910499219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 2631
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f41151d841985940859f9665d36235b
+      internalID: -1776827131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 2631
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0220a2450125288459e02b05bc91f8f6
+      internalID: 53158506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2597
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f337878884201b04eaace4b3723905b9
+      internalID: -1285166342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 2597
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20412d08aafa14248805e7d0b33c8b9d
+      internalID: -174776029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 2597
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7699b825d9c6e44acd1bfe5c30ede4
+      internalID: 1120322724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 2597
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3aa4624f6ec844483ed566751f7d42
+      internalID: 101367280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2466
+        width: 99
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e099b099fe80cea43825d786c4a5c832
+      internalID: -194828414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 2466
+        width: 99
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b059235af80744cacb850ef8adb106
+      internalID: 1218296129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2439
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72addad040bb424428a0b017eaf2a179
+      internalID: 241618323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 2439
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4e61cbbb685ad419b648732eaadb42
+      internalID: 1781186624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2405
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ef282d166f42a4483616974f6dec2f
+      internalID: 1275418612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 2405
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366aec78f7c5890499b1f36c9081e3df
+      internalID: -1378374268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2275
+        width: 99
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bff7456097caf64dbe81090d8c6614e
+      internalID: -906846034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 2214
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5bdbe8962cd9c46a35718e57e6290b
+      internalID: 107764590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 2233
+        width: 94
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e023588b4147f7a4b904fa3bc82ccdf1
+      internalID: 291494177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2175
+        width: 194
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9b04509e9f0834fb8e868dc070a2b1
+      internalID: 1013396857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2110
+        width: 194
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34cbe0678948cb4438e4eeee3df98c3c
+      internalID: 1039050083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 1952
+        width: 259
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46bb4eb232899240b126ff934031947
+      internalID: -61652330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1374
+        width: 1345
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bb68b18bfaa384fb80804f0112e704
+      internalID: 419422283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1567
+        width: 770
+        height: 354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4cc93876a6242478a87d1b5b8cbde7
+      internalID: -771642960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1342
+        width: 770
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26128135cf28d744b91a524ea0c76aeb
+      internalID: -1960938405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1119
+        width: 770
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4798f7bc33e8a1540ae1c3716a4e279f
+      internalID: 1025769321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 894
+        width: 770
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a7dc706d8d81c4f93e02c3f5a67b2e
+      internalID: -1696813999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 223
+        width: 770
+        height: 642
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64b37f7f27b6c049be38b947a18e8cb
+      internalID: -1829107913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 0
+        width: 770
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69aaad88700ebc447ae1ac69830c790b
+      internalID: 158415682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Room_Builder_32x32_20: -806858563
+      Room_Builder_32x32_63: 2074534970
+      Room_Builder_32x32_79: 1275418612
+      Room_Builder_32x32_19: 192099858
+      Room_Builder_32x32_78: 1781186624
+      Room_Builder_32x32_16: -1035277623
+      Room_Builder_32x32_39: 1450312691
+      Room_Builder_32x32_70: 53158506
+      Room_Builder_32x32_48: -895449266
+      Room_Builder_32x32_24: 1846733674
+      Room_Builder_32x32_91: -1696813999
+      Room_Builder_32x32_8: -908012471
+      Room_Builder_32x32_15: -1923795521
+      Room_Builder_32x32_6: 1239246096
+      Room_Builder_32x32_25: 1647918796
+      Room_Builder_32x32_36: 1440780080
+      Room_Builder_32x32_23: 903453794
+      Room_Builder_32x32_52: 1125003307
+      Room_Builder_32x32_3: -2115187500
+      Room_Builder_32x32_92: -1829107913
+      Room_Builder_32x32_0: 1956891984
+      Room_Builder_32x32_73: 1120322724
+      Room_Builder_32x32_50: -405030530
+      Room_Builder_32x32_85: 1039050083
+      Room_Builder_32x32_43: 816790325
+      Room_Builder_32x32_82: 107764590
+      Room_Builder_32x32_37: -165328028
+      Room_Builder_32x32_75: -194828414
+      Room_Builder_32x32_87: 419422283
+      Room_Builder_32x32_55: -844552725
+      Room_Builder_32x32_58: 1653101755
+      Room_Builder_32x32_71: -1285166342
+      Room_Builder_32x32_26: 1132950611
+      Room_Builder_32x32_4: 1540421883
+      Room_Builder_32x32_7: 1764935231
+      Room_Builder_32x32_49: 2063073198
+      Room_Builder_32x32_60: -999503469
+      Room_Builder_32x32_31: 1326394568
+      Room_Builder_32x32_51: 1178406188
+      Room_Builder_32x32_69: -1776827131
+      Room_Builder_32x32_62: 64442830
+      Room_Builder_32x32_72: -174776029
+      tururururu: 782997733
+      Room_Builder_32x32_64: -1410928580
+      Room_Builder_32x32_57: 2044291057
+      Room_Builder_32x32_90: 1025769321
+      Room_Builder_32x32_76: 1218296129
+      Room_Builder_32x32_53: 931933946
+      Room_Builder_32x32_21: -1229565850
+      Room_Builder_32x32_44: -1526533373
+      Room_Builder_32x32_83: 291494177
+      Room_Builder_32x32_11: 1696194831
+      Room_Builder_32x32_10: 984621350
+      Room_Builder_32x32_67: -1073325970
+      Room_Builder_32x32_35: 1518546186
+      Room_Builder_32x32_38: 1282515094
+      Room_Builder_32x32_9: 74629021
+      Room_Builder_32x32_54: -2146645964
+      Room_Builder_32x32_84: 1013396857
+      Room_Builder_32x32_45: 424833082
+      Room_Builder_32x32_86: -61652330
+      Room_Builder_32x32_77: 241618323
+      Room_Builder_32x32_22: -158162233
+      Room_Builder_32x32_12: -1580988631
+      Room_Builder_32x32_68: 910499219
+      Room_Builder_32x32_13: 468776916
+      Room_Builder_32x32_42: 1207295149
+      Room_Builder_32x32_41: 1382635336
+      Room_Builder_32x32_30: -2135425416
+      Room_Builder_32x32_61: -1543125396
+      Room_Builder_32x32_34: -1516226314
+      Room_Builder_32x32_56: -2144223715
+      Room_Builder_32x32_27: 1603670713
+      Room_Builder_32x32_29: 869696933
+      Room_Builder_32x32_80: -1378374268
+      Room_Builder_32x32_32: -1891466648
+      Room_Builder_32x32_14: 1495350853
+      Room_Builder_32x32_88: -771642960
+      Room_Builder_32x32_81: -906846034
+      Room_Builder_32x32_89: -1960938405
+      Room_Builder_32x32_93: 158415682
+      Room_Builder_32x32_66: -709917832
+      Room_Builder_32x32_46: -1497958290
+      Room_Builder_32x32_28: 1076699198
+      Room_Builder_32x32_2: -2102516261
+      Room_Builder_32x32_47: 1938184410
+      Room_Builder_32x32_74: 101367280
+      Room_Builder_32x32_59: 1669275263
+      Room_Builder_32x32_65: 2106400158
+      Room_Builder_32x32_1: 557796057
+      Room_Builder_32x32_33: -1280252694
+      Room_Builder_32x32_17: 271670550
+      Room_Builder_32x32_5: 1150163859
+      Room_Builder_32x32_18: 711357107
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
