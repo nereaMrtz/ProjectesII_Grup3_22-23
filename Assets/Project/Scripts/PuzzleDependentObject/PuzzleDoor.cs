@@ -12,31 +12,23 @@ namespace Project.Scripts.PuzzleDependentObject
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
 
+        private const String OPEN_TRIGGER_STATE = "Open";
+        private const String CLOSE_TRIGGER_STATE = "Close";
+
         [SerializeField] private SpriteRenderer _spriteRenderer;
+
+        [SerializeField] private Animator _animator;
         
         [SerializeField] private PuzzleScript _puzzle;
 
-        [SerializeField] private bool _up;
-        [SerializeField] private bool _down;
-        [SerializeField] private bool _right;
-        [SerializeField] private bool _left;
-
+        [SerializeField] private BoxCollider2D _boxCollider2D;
+        
         private AudioManager _audioManager;
-
-        private Transform _transform;
-
-        private float _width;
-        private float _height;
 
         private bool _moved;
 
         private void Start()
         {
-            SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            Vector2 spriteRenderSize = spriteRenderer.size;
-            _width = spriteRenderSize.x;
-            _height = spriteRenderSize.y;
-            _transform = transform;
             _audioManager = FindObjectOfType<AudioManager>();
         }
 
@@ -44,57 +36,17 @@ namespace Project.Scripts.PuzzleDependentObject
         {
             if (_puzzle.GetCompleted() && !_moved)
             {
-                StartCoroutine(MoveDoor(_audioManager));
+                MoveDoor(_audioManager);
             }
         }
 
-        private IEnumerator MoveDoor(AudioManager audioManager)
+        private void MoveDoor(AudioManager audioManager)
         {
             _moved = true;
             _spriteRenderer.sortingOrder--;
             audioManager.Play(SIMPLE_DOOR_SOUND);
-            yield return new WaitForSeconds(audioManager.ClipDuration(SIMPLE_DOOR_SOUND));
-            audioManager.Play(SLIDE_SIMPLE_DOOR_SOUND);
-
-            Vector3 targetPosition = GetTargetPosition();
-
-            float slideSoundDuration = audioManager.ClipDuration(SLIDE_SIMPLE_DOOR_SOUND);
-            float distance = Vector2.Distance(_transform.position, targetPosition);
-            float slideSpeed = distance / slideSoundDuration;
-
-            while (Vector3.Distance(_transform.position, targetPosition) > 0)
-            {
-                NavMeshManager.Instance.Bake();
-                float speed = slideSpeed * Time.deltaTime;
-                _transform.position = Vector2.MoveTowards(_transform.position, targetPosition, speed);
-                yield return null;
-            }
+            _animator.SetTrigger(OPEN_TRIGGER_STATE);
+            NavMeshManager.Instance.Bake();
         }
-
-        private Vector3 GetTargetPosition()
-        {
-            Vector2 targetPosition = default;
-
-            if (_right)
-            {
-                targetPosition = new Vector2(_transform.position.x + _width, _transform.position.y);
-            }
-            else if (_left)
-            {
-                targetPosition = new Vector2(_transform.position.x - _width, _transform.position.y);
-            }
-            else if (_down)
-            {
-                targetPosition = new Vector2(_transform.position.x, _transform.position.y - _height);
-
-            }
-            else if (_up)
-            {
-                targetPosition = new Vector2(_transform.position.x, _transform.position.y + _height);
-            }
-
-            return targetPosition;
-        }
-
     }
 }
