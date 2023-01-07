@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4371218780234836093}
   - component: {fileID: 4371218780234836094}
   - component: {fileID: 8740456273362405012}
+  - component: {fileID: 5071763805908023173}
   m_Layer: 7
   m_Name: SideViewDoor
   m_TagString: Untagged
@@ -126,18 +127,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointOffset: {x: 0, y: 1, z: 0}
-  _modifyUIBUttonActiveSelf: {fileID: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _pointPrefab: {fileID: 7426762348972771704, guid: 18c9c0ae300e605419321057c5d44968, type: 3}
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 4371218780234836092}
   _distanceToInteract: 1
   _keyObject: {fileID: 0}
   _destroyObject: 0
+  _animator: {fileID: 5071763805908023173}
+  _boxCollider2D: {fileID: 4371218780234836093}
   _spriteRenderer: {fileID: 4371218780234836092}
-  _up: 1
-  _down: 0
-  _right: 0
-  _left: 0
 --- !u!114 &8740456273362405012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +155,23 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!95 &5071763805908023173
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371218780234836088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb98a2b30527156489d85730f716c517, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
