@@ -58,5 +58,15 @@ namespace Project.Scripts.Managers
         {
             return _interactableClicked;
         }
+        
+        public bool IsClickingOnEdge() 
+        { 
+            return _clickOnEdge; 
+        } 
+ 
+        public void SetClickOnEdge(bool clickOnEdge) 
+        { 
+            _clickOnEdge = clickOnEdge; 
+        } 
     }
 }
