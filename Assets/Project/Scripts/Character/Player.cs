@@ -25,7 +25,7 @@ namespace Project.Scripts.Character
 
         [SerializeField] private NavMeshAgent _agent;
 
-        [SerializeField] private GameObject _gameObjectToInteract;
+        private GameObject _gameObjectToInteract;
         
         private float _distanceToInteractWithObject;
 
