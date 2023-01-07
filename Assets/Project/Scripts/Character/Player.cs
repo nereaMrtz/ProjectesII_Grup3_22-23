@@ -12,6 +12,8 @@ namespace Project.Scripts.Character
     {
         private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
 
+        private Animator anim;
+
         private const string REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
         private const string NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER = "NotRequiredInventoryInteractable";
         
@@ -75,11 +77,13 @@ namespace Project.Scripts.Character
             if (_agent.velocity.magnitude != 0)
             {
                 _moving = true;
+                anim.SetBool("isMoving", true);
                 AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
             }
             else if (_moving && _agent.velocity.magnitude == 0)
             {
                 _moving = false;
+                anim.SetBool("isMoving", false);
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
                 _targetTransform.position = transform.position;
                 return;   
