@@ -1,25 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class MainMenu : MonoBehaviour
+
+namespace Project.Scripts.Menus
 {
-    [SerializeField] private GameObject _actualPanel;
-
-    public void PlayButton()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
-    }
+        [SerializeField] private GameObject _actualPanel;
 
-    public void ChangePanelButton(GameObject menuToActivate)
-    {
-        menuToActivate.SetActive(true);
-        _actualPanel.SetActive(false);
-        _actualPanel = menuToActivate;
-    }
+        public void PlayButton()
+        {
+            SceneManager.LoadScene(1);
+        }
 
-    public void ExitButton() {
-        Debug.Log("Exit");
-        Application.Quit();
+        public void ChangePanelButton(GameObject menuToActivate)
+        {
+            menuToActivate.SetActive(true);
+            _actualPanel.SetActive(false);
+            _actualPanel = menuToActivate;
+        }
+
+        public void ExitButton() {
+            Debug.Log("Exit");
+            Application.Quit();
+        }
     }
 }
