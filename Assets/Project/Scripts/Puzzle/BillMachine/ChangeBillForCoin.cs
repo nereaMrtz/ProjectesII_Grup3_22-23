@@ -10,7 +10,6 @@ namespace Project.Scripts.Puzzle.BillMachine
         protected override void Unlock()
         {
             _coin.SetActive(true);
-
             gameObject.layer = 0;
         }
     }

@@ -35,11 +35,13 @@ namespace Project.Scripts.Character
             {
                 if (GameManager.Instance.IsDrugged())
                 {
+                    AudioManager.Instance.ChangePitch(true);
                     AudioManager.Instance.Play(THROW_UP_SOUND_CLIP_NAME);
                     StartCoroutine(ChangeStateEffect(AudioManager.Instance.ClipDuration(THROW_UP_SOUND_CLIP_NAME), true));
                 }
                 else
                 {
+                    AudioManager.Instance.ChangePitch(false);
                     AudioManager.Instance.Play(TAKE_THIS_PILL_SOUND_CLIP_NAME);
                     StartCoroutine(ChangeStateEffect(AudioManager.Instance.ClipDuration(TAKE_THIS_PILL_SOUND_CLIP_NAME), false));
                 }

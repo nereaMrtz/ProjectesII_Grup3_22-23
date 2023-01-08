@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1301,7 +1301,6 @@ MonoBehaviour:
   _drugEffect: {fileID: 2664987724822043846}
   _targetTransform: {fileID: 5407769253579182284}
   _agent: {fileID: 576736199987795759}
-  _gameObjectToInteract: {fileID: 0}
 --- !u!114 &2664987724822043846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,7 +1315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _changeStateEffect: {fileID: 4225905429201287297}
   _filter: {fileID: 2834270010735096268}
-  _drugFilterpanel: {fileID: 4951252876375219082}
+  _drugFilterPanel: {fileID: 0}
   _throwUpPrefab: {fileID: 5872732399812762864, guid: be1d8e0486560e84fa5c0f4d2ff069ed, type: 3}
 --- !u!195 &576736199987795759
 NavMeshAgent:
