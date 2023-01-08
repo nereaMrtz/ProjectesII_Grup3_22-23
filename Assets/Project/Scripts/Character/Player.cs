@@ -125,7 +125,9 @@ namespace Project.Scripts.Character
 
         public void DrugControls()
         {
+            AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
             _targetTransform.position = transform.position;
+            Movement();
             _drugEffect.ChangeState();
         }
 

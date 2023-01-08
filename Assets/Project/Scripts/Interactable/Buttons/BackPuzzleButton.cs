@@ -12,7 +12,7 @@ namespace Project.Scripts.Interactable.Buttons
 
         public void BackButton()
         {
-            if (_puzzle)
+            if (_puzzle.GetCompleted())
             {
                 _animator.enabled = true;
             }
