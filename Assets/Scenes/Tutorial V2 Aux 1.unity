@@ -256,7 +256,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 142535254}
+  - {fileID: 1600211674}
   m_Father: {fileID: 42944669}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -548,54 +550,54 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1134550240}
     m_ColliderPaths:
-    - - X: -100756112
-        Y: 54762164
-      - X: -106620224
-        Y: 54762164
-      - X: -106620224
-        Y: -45817780
-      - X: -100756112
-        Y: -45817780
+    - - X: -100751536
+        Y: 54759888
+      - X: -106615384
+        Y: 54759888
+      - X: -106615384
+        Y: -45815492
+      - X: -100751536
+        Y: -45815492
   - m_Collider: {fileID: 265730}
     m_ColliderPaths:
-    - - X: 106620216
+    - - X: 106615384
         Y: 60000000
-      - X: -106620216
+      - X: -106615384
         Y: 60000000
-      - X: -106620216
-        Y: 54135892
-      - X: 106620216
-        Y: 54135892
+      - X: -106615384
+        Y: 54136152
+      - X: 106615384
+        Y: 54136152
   - m_Collider: {fileID: 562288788}
     m_ColliderPaths:
-    - - X: 106620216
-        Y: 54689880
-      - X: 100756104
-        Y: 54689880
-      - X: 100756104
-        Y: -45962352
-      - X: 106620216
-        Y: -45962352
+    - - X: 106615384
+        Y: 54687608
+      - X: 100751536
+        Y: 54687608
+      - X: 100751536
+        Y: -45960060
+      - X: 106615384
+        Y: -45960060
   - m_Collider: {fileID: 3347805}
     m_ColliderPaths:
-    - - X: 106620216
-        Y: -45472992
-      - X: -106620216
-        Y: -45472992
-      - X: -106620216
-        Y: -60133276
-      - X: 106620216
-        Y: -60133276
+    - - X: 106615384
+        Y: -45473652
+      - X: -106615384
+        Y: -45473652
+      - X: -106615384
+        Y: -60133272
+      - X: 106615384
+        Y: -60133272
   m_CompositePaths:
     m_Paths:
-    - - {x: 10.661992, y: -6.0133276}
-      - {x: 10.661992, y: 6}
-      - {x: -10.662022, y: 5.999971}
-      - {x: -10.661992, y: -6.0133276}
-    - - {x: 10.07561, y: -4.54727}
-      - {x: -10.075611, y: -4.54727}
-      - {x: -10.075582, y: 5.4135895}
-      - {x: 10.07561, y: 5.41356}
+    - - {x: 10.661509, y: -6.013327}
+      - {x: 10.661509, y: 6}
+      - {x: -10.661538, y: 5.999971}
+      - {x: -10.661509, y: -6.013327}
+    - - {x: 10.075153, y: -4.547336}
+      - {x: -10.075153, y: -4.547336}
+      - {x: -10.075124, y: 5.413615}
+      - {x: 10.075153, y: 5.4135857}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &42944672
@@ -836,6 +838,7 @@ GameObject:
   - component: {fileID: 88279065}
   - component: {fileID: 88279064}
   - component: {fileID: 88279063}
+  - component: {fileID: 88279066}
   m_Layer: 7
   m_Name: Open piggy bank
   m_TagString: Untagged
@@ -872,6 +875,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7d379fe1ba24f46b4521f548eb249a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _keyObject: {fileID: 0}
+  _destroyObject: 0
+  _bill: {fileID: 0}
+  _boxCollider2D: {fileID: 0}
 --- !u!61 &88279064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -882,14 +897,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 89.1875, y: 80.0625}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.558156, y: 0.558156}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -950,6 +965,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &88279066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88279061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d2192dc17866a4dae049792e11d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+    textArray:
+    - Probando
+    - 123123...
+    - ....
+  screenText: {fileID: 0}
+  clickSprite: {fileID: 1600211670}
 --- !u!1 &95474576
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1033,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d002744961ed644cbccbd08496b4915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _orderButtons: []
+  _correctCombination: 
+  _currentCombination: 
+  _currentPressedButtonCounter: 0
+  _numbers: []
 --- !u!1 &97904972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1371,141 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &142535253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142535254}
+  - component: {fileID: 142535256}
+  - component: {fileID: 142535255}
+  m_Layer: 0
+  m_Name: dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &142535254
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142535253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3347804}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &142535255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142535253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: bddd1541ef01a044a8caad6cac248b92, type: 2}
+  m_sharedMaterial: {fileID: 6725277340669995553, guid: bddd1541ef01a044a8caad6cac248b92, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &142535256
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142535253}
+  m_CullTransparentMesh: 1
 --- !u!1 &160974552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,6 +2290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fcd9937f0661f438b9000b84b0e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text:
+    textArray: []
 --- !u!61 &225648214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2170,6 +2346,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &225648217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2515,6 +2699,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17423ead6320df746b660d85a8418d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _gameObjectToPlace: {fileID: 0}
+  _offset: {x: 0, y: 0}
 --- !u!61 &242453510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2684,6 +2878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectGoingThroughMaze: {fileID: 901436118}
+  _gameObjectToActivate: {fileID: 0}
 --- !u!212 &250945945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3232,6 +3427,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd4d038cdda6f741b5d64a11fea58f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _pressOrder: 0
+  _pressed: 0
 --- !u!58 &329072140
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3993,6 +4198,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &418371192
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4572,6 +4785,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd4d038cdda6f741b5d64a11fea58f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _pressOrder: 0
+  _pressed: 0
 --- !u!58 &454161521
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5125,6 +5348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fcd9937f0661f438b9000b84b0e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text:
+    textArray: []
 --- !u!61 &534205847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5142,7 +5367,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 40, y: 22.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.37889385, y: 0.18944693}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -5179,6 +5404,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &534205850
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5747,6 +5980,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd4d038cdda6f741b5d64a11fea58f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _pressOrder: 0
+  _pressed: 0
 --- !u!58 &570894464
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5884,6 +6127,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!70 &572797534
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6394,7 +6645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bcba4160d8c694eae65f0151511387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDrag: 0
   _gameObjectReference: {fileID: 1875314209}
   _hoursHand: {fileID: 0}
 --- !u!61 &655285657
@@ -6808,6 +7058,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f18b44f6ec46748b7c6cdbea9812e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  Activate: {fileID: 0}
 --- !u!61 &732758961
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7183,6 +7442,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17423ead6320df746b660d85a8418d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _gameObjectToPlace: {fileID: 0}
+  _offset: {x: 0, y: 0}
 --- !u!212 &780102956
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7534,6 +7803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fcd9937f0661f438b9000b84b0e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text:
+    textArray: []
 --- !u!61 &819052863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7588,6 +7859,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &819052866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7685,6 +7964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fcd9937f0661f438b9000b84b0e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text:
+    textArray: []
 --- !u!61 &822437958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7784,6 +8065,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!70 &832903495
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7955,6 +8244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5193de1b87b882d4a8eff52afdb2fd09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canChange: 0
+  _scenarioManager: {fileID: 0}
 --- !u!212 &852849256
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8004,7 +8295,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &883984544
@@ -8138,8 +8429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9192d82df7566c24484be19ae23e8a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDrag: 1
-  _gameObjectReference: {fileID: 562307442}
+  _destinations: []
   _range: 0.2
 --- !u!50 &901436119
 Rigidbody2D:
@@ -9085,6 +9375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fcd9937f0661f438b9000b84b0e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text:
+    textArray: []
 --- !u!114 &1068510215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9097,6 +9389,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b689cb1b6841f904abbcf0bf4c7b0526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  Activate: {fileID: 0}
+  _puzzle: {fileID: 0}
+  _cameraSwitcherAnimator: {fileID: 0}
 --- !u!61 &1068510216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9188,7 +9491,7 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1070975318
@@ -9472,6 +9775,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bdab5afb5fd314bb5d31de826511ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  Activate: {fileID: 0}
+  _puzzle: {fileID: 0}
+  _cameraSwitcherAnimator: {fileID: 0}
+  _keyObject: {fileID: 0}
+  _gameObjectToActivate: {fileID: 0}
 --- !u!61 &1082281074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9604,6 +9920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2efbba3cac604478d2c07082781f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UIButtons: []
 --- !u!61 &1094778257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9682,6 +9999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2efbba3cac604478d2c07082781f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UIButtons: []
 --- !u!61 &1112793565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9754,6 +10072,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd4d038cdda6f741b5d64a11fea58f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _pressOrder: 0
+  _pressed: 0
 --- !u!58 &1114601476
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10654,8 +10982,7 @@ Transform:
   m_LocalPosition: {x: -47.51, y: 6.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2015282405}
+  m_Children: []
   m_Father: {fileID: 1094778255}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10697,6 +11024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fcd9937f0661f438b9000b84b0e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text:
+    textArray: []
 --- !u!70 &1233067227
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10725,6 +11054,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &1233067229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11004,6 +11341,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3123a0e23892fe8479d205433a88c517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _keyObject: {fileID: 0}
+  _destroyObject: 0
+  _coin: {fileID: 0}
 --- !u!61 &1255867439
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11506,6 +11854,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd4d038cdda6f741b5d64a11fea58f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _pressOrder: 0
+  _pressed: 0
 --- !u!58 &1357836245
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12117,7 +12475,7 @@ SpriteRenderer:
   m_Size: {x: 9, y: 9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1401849636
@@ -12352,6 +12710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5193de1b87b882d4a8eff52afdb2fd09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canChange: 0
+  _scenarioManager: {fileID: 0}
 --- !u!212 &1455077044
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12401,7 +12761,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1468296999
@@ -12524,6 +12884,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &1492247515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12883,6 +13251,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1600211670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600211674}
+  - component: {fileID: 1600211673}
+  - component: {fileID: 1600211672}
+  - component: {fileID: 1600211671}
+  m_Layer: 5
+  m_Name: pressClick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &1600211671
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600211670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b65b41ebbb6541c49a91eb44ee4e4f7f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1600211672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600211670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 21b343b46256f82439856c883c78ff5e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1600211673
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600211670}
+  m_CullTransparentMesh: 1
+--- !u!224 &1600211674
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600211670}
+  m_LocalRotation: {x: -0, y: -0.000000047647255, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6.852779}
+  m_LocalScale: {x: 0.962001, y: 0.962001, z: 0.962001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3347804}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.82032907, y: 0.21043591}
+  m_AnchorMax: {x: 0.82032907, y: 0.21043591}
+  m_AnchoredPosition: {x: 291.24554, y: 145.15517}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1602400909
 GameObject:
   m_ObjectHideFlags: 0
@@ -13074,7 +13539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bcba4160d8c694eae65f0151511387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDrag: 0
   _gameObjectReference: {fileID: 1875314209}
   _hoursHand: {fileID: 1622260684}
 --- !u!61 &1622260687
@@ -13439,8 +13903,7 @@ Transform:
   m_LocalPosition: {x: -11.31, y: 6.34, z: 0}
   m_LocalScale: {x: 2.8015888, y: 1.4028707, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1927541798}
+  m_Children: []
   m_Father: {fileID: 128949040}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13482,6 +13945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fcd9937f0661f438b9000b84b0e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text:
+    textArray: []
 --- !u!70 &1675776187
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13510,6 +13975,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55b218b47def749b552257e616e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &1675776189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13843,6 +14316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5193de1b87b882d4a8eff52afdb2fd09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canChange: 0
+  _scenarioManager: {fileID: 0}
 --- !u!212 &1803678026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13892,7 +14367,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1815118551
@@ -14092,6 +14567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2efbba3cac604478d2c07082781f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UIButtons: []
 --- !u!61 &1842002863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14194,6 +14670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5193de1b87b882d4a8eff52afdb2fd09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canChange: 0
+  _scenarioManager: {fileID: 0}
 --- !u!212 &1885239437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14243,7 +14721,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1887660626
@@ -14512,6 +14990,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17423ead6320df746b660d85a8418d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _gameObjectToPlace: {fileID: 0}
+  _offset: {x: 0, y: 0}
 --- !u!212 &1926481102
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14705,11 +15193,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
---- !u!4 &1927541798 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-  m_PrefabInstance: {fileID: 1927541797}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1936791874
 GameObject:
   m_ObjectHideFlags: 0
@@ -14755,6 +15238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5193de1b87b882d4a8eff52afdb2fd09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canChange: 0
+  _scenarioManager: {fileID: 0}
 --- !u!212 &1936791877
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14804,7 +15289,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1952045110
@@ -24106,6 +24591,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10ae96f2e724ee8b673ee24cf5a1afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _machine: {fileID: 0}
+  _handlerAnimator: {fileID: 0}
 --- !u!61 &2006703699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24144,6 +24639,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba7cd271cce6eb4da07b32956c34742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pointOffset: {x: 0, y: 0, z: 0}
+  _modifyUIButtonActiveSelf: {fileID: 0}
+  _pointPrefab: {fileID: 0}
+  _player: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
+  _gameObjectToPlace: {fileID: 0}
+  _offset: {x: 0, y: 0}
+  _panel: {fileID: 0}
 --- !u!212 &2006703701
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24337,11 +24843,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
---- !u!4 &2015282405 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7289502477935613737, guid: 41b5a75cdab96ec4d9fccc1df9a66b71, type: 3}
-  m_PrefabInstance: {fileID: 2015282404}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029860036
 GameObject:
   m_ObjectHideFlags: 0
