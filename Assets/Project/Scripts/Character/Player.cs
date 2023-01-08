@@ -43,12 +43,6 @@ namespace Project.Scripts.Character
         void Update()
         {
             
-            if ((Input.GetKey(KeyCode.Escape) && !_pauseMenuPanel.activeSelf))
-            {
-                _pauseMenuPanel.SetActive(true);
-                GameManager.Instance.SetPause(true);
-            }
-            
             if (_drugEffect.IsChangingPeriod() || _pauseMenuPanel.activeSelf)
             {
                 return;
@@ -129,6 +123,12 @@ namespace Project.Scripts.Character
             _targetTransform.position = transform.position;
             Movement();
             _drugEffect.ChangeState();
+        }
+
+        public void Pause()
+        {
+            _pauseMenuPanel.SetActive(true);
+            GameManager.Instance.SetPause(true);
         }
 
         private void Movement()

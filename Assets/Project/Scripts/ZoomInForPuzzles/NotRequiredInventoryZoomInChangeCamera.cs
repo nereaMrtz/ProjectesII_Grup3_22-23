@@ -27,6 +27,7 @@ namespace Project.Scripts.ZoomInForPuzzles
         {
             if (!_puzzle.GetCompleted()) return;
             gameObject.layer = 0;
+            _pointButton.SetActive(false);
         }
 
         public void SwitchCamera()

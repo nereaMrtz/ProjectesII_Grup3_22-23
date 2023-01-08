@@ -8,6 +8,9 @@ namespace Project.Scripts.Interactable
     public abstract class InteractableScript : MonoBehaviour
     {
         private const String SHADER_THICKNESS_VALUE = "_Thickness"; 
+
+        private const string REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
+        private const string NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER = "NotRequiredInventoryInteractable";
         
         [SerializeField] private Vector3 _pointOffset;
 
@@ -24,7 +27,7 @@ namespace Project.Scripts.Interactable
         private Material _customShaderMaterial;
         private Material _defaultShaderMaterial;
 
-        private GameObject _pointButton;
+        protected GameObject _pointButton;
         
         private RectTransform _rectTransform;
 
@@ -41,6 +44,19 @@ namespace Project.Scripts.Interactable
             _customShaderMaterial =
                 Resources.Load<Material>("Materials/Shaders/Shader Graphs_SpriteOutline");
             _defaultShaderMaterial = _spriteRenderer.material;
+        }
+
+        private void Update()
+        {
+            if (gameObject.layer != LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER)
+                && gameObject.layer != LayerMask.NameToLayer(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER))
+            {
+                _pointButton.SetActive(false);
+            }
+            else
+            {
+                _pointButton.SetActive(true);
+            }
         }
 
         private void OnMouseDown()

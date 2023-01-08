@@ -1,14 +1,19 @@
+using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToWorldSpace;
+using Project.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Puzzle
 {
     public class Hook : PlacePickupOnWorldSpace
     {
+        private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
         public override void ActivateBehaviour()
         {
-            throw new System.NotImplementedException();
+            AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+            SceneManager.LoadScene(3);
         }
     }
 }
