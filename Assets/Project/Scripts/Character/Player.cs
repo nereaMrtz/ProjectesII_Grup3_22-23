@@ -125,8 +125,8 @@ namespace Project.Scripts.Character
 
         public void DrugControls()
         {
-            _drugEffect.ChangeState();
             _targetTransform.position = transform.position;
+            _drugEffect.ChangeState();
         }
 
         private void Movement()

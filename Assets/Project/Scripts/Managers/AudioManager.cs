@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -36,7 +37,15 @@ namespace Project.Scripts.Managers
                 }
             }
         }
-        
+
+        private void Update()
+        {
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
+            {
+                sound.GetSource().volume = sound.GetVolume();
+            }
+        }
+
         public static AudioManager Instance
         {
             get { return _instance; }
