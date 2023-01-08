@@ -14,6 +14,10 @@ namespace Project.Scripts.Level {
             {
                 for (int i = 0; i < _UIButtons.Count; i++)
                 {
+                    if (_UIButtons[i] == null)
+                    {
+                        continue;
+                    }
                     _UIButtons[i].SetActive(true);
                 }
             }
@@ -25,6 +29,10 @@ namespace Project.Scripts.Level {
             {
                 for (int i = 0; i < _UIButtons.Count; i++)
                 {
+                    if (_UIButtons[i] == null)
+                    {
+                        continue;
+                    }
                     _UIButtons[i].SetActive(false);
                 }
             }

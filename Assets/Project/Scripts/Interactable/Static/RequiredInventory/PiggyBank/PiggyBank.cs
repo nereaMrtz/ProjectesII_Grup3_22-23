@@ -9,11 +9,9 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.PiggyBank
         [SerializeField] private BoxCollider2D _boxCollider2D;
         protected override void Unlock() // Lo q pasara cuando el player tenga en el inventario el martillo
         {
-            _spriteRenderer.sortingOrder = -2;
-            _bill.sortingOrder = -2;
             _bill.gameObject.SetActive(true);
             GetComponent<SpriteRenderer>().enabled = false;
-            _boxCollider2D.enabled = false;
+            Destroy(_boxCollider2D);
             GetPointButton().SetActive(false);
         }
     }

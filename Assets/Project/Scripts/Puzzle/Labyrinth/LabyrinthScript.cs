@@ -7,9 +7,17 @@ namespace Project.Scripts.Puzzle.Labyrinth
     {
         [SerializeField] private ObjectGoingThroughMaze _objectGoingThroughMaze;
 
+        [SerializeField] private GameObject _gameObjectToActivate;
+
         protected void Update()
         {
             _completed = _objectGoingThroughMaze.CheckEndCell();
+
+            if (!_completed)
+            {
+                return;
+            }
+            _gameObjectToActivate.SetActive(true);
         }
     }
 }

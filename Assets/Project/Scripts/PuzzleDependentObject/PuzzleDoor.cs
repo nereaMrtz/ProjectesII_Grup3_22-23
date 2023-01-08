@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Project.Scripts.PuzzleDependentObject
 {
-    public class PuzzleDoor : MonoBehaviour
+    public class PuzzleDoor : PuzzleDependentObjectScript
     {
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
@@ -15,37 +15,47 @@ namespace Project.Scripts.PuzzleDependentObject
         private const String OPEN_TRIGGER_STATE = "Open";
         private const String CLOSE_TRIGGER_STATE = "Close";
 
+        private const String HORIZONTAL_OPENING_DOOR_STATE = "HorizontalOpeningDoor";
+
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private Animator _animator;
-        
-        [SerializeField] private PuzzleScript _puzzle;
-
-        [SerializeField] private BoxCollider2D _boxCollider2D;
-        
-        private AudioManager _audioManager;
 
         private bool _moved;
 
-        private void Start()
+        protected override void ActionBehaviour()
         {
-            _audioManager = FindObjectOfType<AudioManager>();
-        }
-
-        private void Update()
-        {
-            if (_puzzle.GetCompleted() && !_moved)
+            if (_moved)
             {
-                MoveDoor(_audioManager);
+                return;
             }
+            MoveDoor();
         }
 
-        private void MoveDoor(AudioManager audioManager)
+        private void MoveDoor()
         {
             _moved = true;
-            _spriteRenderer.sortingOrder--;
-            audioManager.Play(SIMPLE_DOOR_SOUND);
+            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(OPEN_TRIGGER_STATE);
+            StartCoroutine(BakeScenario(ReturnAnimationClipByName(HORIZONTAL_OPENING_DOOR_STATE).length));
+        }
+        
+
+        private AnimationClip ReturnAnimationClipByName(string name)
+        {
+            for (int i = 0; i < _animator.runtimeAnimatorController.animationClips.Length; i++)
+            {
+                if (_animator.runtimeAnimatorController.animationClips[i].name == name)
+                {
+                    return _animator.runtimeAnimatorController.animationClips[i];
+                }
+            }
+            return null;
+        }
+
+        private IEnumerator BakeScenario(float time)
+        {
+            yield return new WaitForSeconds(time);
             NavMeshManager.Instance.Bake();
         }
     }
