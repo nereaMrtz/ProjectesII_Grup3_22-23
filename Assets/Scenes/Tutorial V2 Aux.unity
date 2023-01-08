@@ -243,6 +243,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 8962333}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _pressOrder: 1
   _pressed: 0
 --- !u!1 &20104086
@@ -1649,6 +1651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectGoingThroughMaze: {fileID: 1012093092}
+  _gameObjectToActivate: {fileID: 2131738549}
 --- !u!212 &204067197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2328,6 +2331,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 296837521}
   _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _gameObjectToPlace: {fileID: 0}
   _offset: {x: 0.56, y: 0}
 --- !u!61 &296837520
@@ -3303,6 +3308,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 445016128}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _keyObject: {fileID: 1384896305}
   _destroyObject: 1
   _bill: {fileID: 1216682039}
@@ -13409,7 +13416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.09994298, y: -1.9192064}
+  m_AnchoredPosition: {x: -0.12, y: -1.9192064}
   m_SizeDelta: {x: 1152, y: 598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727302577
@@ -13611,6 +13618,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 734191946}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _gameObjectToPlace: {fileID: 2105322267}
   _offset: {x: 0.33, y: 0}
   _panel: {fileID: 734191943}
@@ -13710,6 +13719,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 734191946}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _machine: {fileID: 1179604425}
   _handlerAnimator: {fileID: 2105322273}
 --- !u!1 &743839537
@@ -13832,6 +13843,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 743839540}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _pressOrder: 3
   _pressed: 0
 --- !u!1 &749730701
@@ -14253,6 +14266,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 803167392}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   Activate: {fileID: 2051885500}
   _puzzle: {fileID: 204067196}
   _cameraSwitcherAnimator: {fileID: 1707275106}
@@ -16873,17 +16888,57 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1091369960}
+    m_ColliderPaths:
+    - - X: 106590912
+        Y: -45476988
+      - X: -106590912
+        Y: -45476988
+      - X: -106590912
+        Y: -60133236
+      - X: 106590912
+        Y: -60133236
+  - m_Collider: {fileID: 1727039705}
+    m_ColliderPaths:
+    - - X: 106590912
+        Y: 60000000
+      - X: -106590912
+        Y: 60000000
+      - X: -106590912
+        Y: 54137500
+      - X: 106590912
+        Y: 54137500
+  - m_Collider: {fileID: 1167874388}
+    m_ColliderPaths:
+    - - X: -100728400
+        Y: 54748324
+      - X: -106590904
+        Y: 54748324
+      - X: -106590904
+        Y: -45803976
+      - X: -100728400
+        Y: -45803976
+  - m_Collider: {fileID: 1743257595}
+    m_ColliderPaths:
+    - - X: 106590912
+        Y: 54676064
+      - X: 100728408
+        Y: 54676064
+      - X: 100728408
+        Y: -45948504
+      - X: 106590912
+        Y: -45948504
   m_CompositePaths:
     m_Paths:
-    - - {x: 10.667924, y: -6.0133348}
-      - {x: 10.667924, y: 6}
-      - {x: -10.6679535, y: 5.999971}
-      - {x: -10.667924, y: -6.0133348}
-    - - {x: 10.081216, y: -4.5464616}
-      - {x: -10.081216, y: -4.5464616}
-      - {x: -10.081186, y: 5.4132624}
-      - {x: 10.081216, y: 5.413233}
+    - - {x: 10.659061, y: -6.013324}
+      - {x: 10.659061, y: 6}
+      - {x: -10.659091, y: 5.999971}
+      - {x: -10.659061, y: -6.013324}
+    - - {x: 10.072841, y: -4.54767}
+      - {x: -10.07284, y: -4.54767}
+      - {x: -10.07281, y: 5.41375}
+      - {x: 10.072841, y: 5.413721}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1055675160
@@ -17288,6 +17343,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1091668051}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _pressOrder: 5
   _pressed: 0
 --- !u!1 &1100036977
@@ -18093,14 +18150,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4715145, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1179604429
 MonoBehaviour:
@@ -18120,6 +18177,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1179604427}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _keyObject: {fileID: 1887749321}
   _destroyObject: 1
   _coin: {fileID: 2021497920}
@@ -18327,6 +18386,8 @@ MonoBehaviour:
   _player: {fileID: 0}
   _spriteRenderer: {fileID: 1195724290}
   _distanceToInteract: 0
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   Activate: {fileID: 0}
 --- !u!61 &1195724289
 BoxCollider2D:
@@ -18491,6 +18552,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1216682039}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &1216682039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18887,7 +18950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1287486668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19271,7 +19334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1384896306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19306,6 +19369,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1384896310}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &1384896310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20255,6 +20320,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1530275765}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _pressOrder: 2
   _pressed: 0
 --- !u!1 &1538583673
@@ -21107,7 +21174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 2133438518, guid: ee889688ccd30f84c8251f585755882b, type: 3}
+  m_Sprite: {fileID: -1544372707, guid: ee889688ccd30f84c8251f585755882b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21115,7 +21182,7 @@ SpriteRenderer:
   m_Size: {x: 9, y: 9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1629740996
@@ -21804,6 +21871,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1709721479}
   _distanceToInteract: 1.4
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   Activate: {fileID: 1608460812}
   _puzzle: {fileID: 1629740996}
   _cameraSwitcherAnimator: {fileID: 1707275106}
@@ -22534,6 +22603,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1793686801}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
   _pressOrder: 4
   _pressed: 0
 --- !u!1 &1817443735
@@ -23046,6 +23117,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 1887749327}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &1887749327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24064,6 +24137,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 2021497921}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!1 &2045891157
 GameObject:
   m_ObjectHideFlags: 0
@@ -24314,6 +24389,8 @@ MonoBehaviour:
   _player: {fileID: 806921448}
   _spriteRenderer: {fileID: 2105322272}
   _distanceToInteract: 1
+  _customShaderMaterial: {fileID: 0}
+  _defaultShaderMaterial: {fileID: 0}
 --- !u!212 &2105322272
 SpriteRenderer:
   m_ObjectHideFlags: 0

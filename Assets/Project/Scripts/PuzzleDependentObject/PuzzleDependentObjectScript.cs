@@ -13,15 +13,7 @@ namespace Project.Scripts.PuzzleDependentObject
         {
             if (!_puzzle.GetCompleted())
             {
-                if (gameObject.name == "Picture")
-                {
-                    Debug.Log("No");
-                }
                 return;
-            }
-            if (gameObject.name == "Picture")
-            {
-                Debug.Log("Yes");
             }
             ActionBehaviour();
         }
