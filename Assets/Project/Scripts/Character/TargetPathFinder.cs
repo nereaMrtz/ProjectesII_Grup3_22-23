@@ -8,11 +8,7 @@ namespace Project.Scripts.Character
     {
         void Update()
         {
-            if (GameManager.Instance.IsInZoomInState())
-            {
-                return;
-            }
-            if (!Input.GetMouseButtonDown(0))
+            if (GameManager.Instance.IsPause() || GameManager.Instance.IsInZoomInState() || !Input.GetMouseButtonDown(0))
             {
                 return;
             }
