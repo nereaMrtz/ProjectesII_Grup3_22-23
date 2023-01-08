@@ -9,7 +9,7 @@ namespace Project.Scripts.Puzzle.Labyrinth
 
         public bool CheckEndCell()
         {
-            return Vector3.Distance(transform.localPosition, _destinations[0].transform.position) < _range;
+            return Vector3.Distance(transform.localPosition, _destinations[0].transform.localPosition) < _range;
         }
     }
 }

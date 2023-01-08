@@ -10,23 +10,14 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
         
-        private const String OPEN_TRIGGER_STATE = "Open";
-        private const String CLOSE_TRIGGER_STATE = "Close";
+        private const String OPEN_TRIGGER = "Open";
+        private const String CLOSE_TRIGGER = "Close";
+
+        private const String VERTICAL_OPENING_DOOR_STATE = "VerticalOpeningDoor";
 
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private BoxCollider2D _boxCollider2D;
-        
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-        
-        private Transform _transform;
-
         private bool _moved;
-
-        private void Start()
-        {
-            _transform = transform;
-        }
 
         protected override void Unlock()
         {
@@ -35,9 +26,27 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
         private void MoveDoor()
         {
-            _spriteRenderer.sortingOrder--;
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
-            _animator.SetTrigger(OPEN_TRIGGER_STATE);
+            _animator.SetTrigger(OPEN_TRIGGER);
+            StartCoroutine(BakeScenario(ReturnAnimationClipByName(VERTICAL_OPENING_DOOR_STATE).length));
+            gameObject.layer = 0;
+        }
+
+        private AnimationClip ReturnAnimationClipByName(string name)
+        {
+            for (int i = 0; i < _animator.runtimeAnimatorController.animationClips.Length; i++)
+            {
+                if (_animator.runtimeAnimatorController.animationClips[i].name == name)
+                {
+                    return _animator.runtimeAnimatorController.animationClips[i];
+                }
+            }
+            return null;
+        }
+
+        private IEnumerator BakeScenario(float time)
+        {
+            yield return new WaitForSeconds(time);
             NavMeshManager.Instance.Bake();
         }
     }

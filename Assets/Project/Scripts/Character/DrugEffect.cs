@@ -15,7 +15,7 @@ namespace Project.Scripts.Character
         [SerializeField] private Image _changeStateEffect;
         [SerializeField] private Image _filter;
 
-        [SerializeField] private GameObject _drugFilterpanel;
+        [SerializeField] private GameObject _drugFilterPanel;
         [SerializeField] private GameObject _throwUpPrefab;
 
         private GameObject _throwUp;
@@ -33,7 +33,6 @@ namespace Project.Scripts.Character
         {
             if (_canChangeState)
             {
-                _drugFilterpanel.SetActive(true);
                 if (GameManager.Instance.IsDrugged())
                 {
                     AudioManager.Instance.Play(THROW_UP_SOUND_CLIP_NAME);
@@ -95,7 +94,6 @@ namespace Project.Scripts.Character
                 _changeStateEffect.color = new Color(alpha.r, alpha.g, alpha.b, alpha.a);
                 yield return null;
             }
-            _drugFilterpanel.SetActive(false);
             _betweenChangePeriod = false;
         }
 

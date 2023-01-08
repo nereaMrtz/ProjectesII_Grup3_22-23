@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5be131930f2519945be3cfa0c7306cd5
+guid: 4ae3f29fc15b0264ebca6738112a8b57
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,211 +104,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1
+      name: Horizontal Door Animation 1
       rect:
         serializedVersion: 2
-        x: 178
-        y: 604
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 14
+        y: 30
+        width: 40
+        height: 72
+      alignment: 9
+      pivot: {x: 0.05, y: 0.027777778}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1af1193553d3c074d97ab1e2b12877bf
-      internalID: -1591460230
+      spriteID: 3f2bd0407a5f1fd42a5358c532931d44
+      internalID: -1448575543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2
+      name: Horizontal Door Animation 3
       rect:
         serializedVersion: 2
-        x: 475
-        y: 601
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 102
+        y: 29
+        width: 27
+        height: 78
+      alignment: 9
+      pivot: {x: 0.074074075, y: 0.025641026}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3a452d4f7e241140a19e1ee4e9e03fc
-      internalID: -1313059502
+      spriteID: c8101070389c74e48aee2f67c1b8258f
+      internalID: 1561111907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3
+      name: Horizontal Door Animation 4
       rect:
         serializedVersion: 2
-        x: 816
-        y: 562
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 142
+        y: 30
+        width: 22
+        height: 84
+      alignment: 9
+      pivot: {x: 0.09090909, y: 0.023809524}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df43eab946ef96440b5a244d160e7756
-      internalID: 81684724
+      spriteID: 300aec1176afb3d4f95d28fe0388d495
+      internalID: -287011485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4
+      name: Horizontal Door Animation 5
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 562
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 174
+        y: 30
+        width: 10
+        height: 86
+      alignment: 9
+      pivot: {x: 0.2, y: 0.023255814}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7723d8a57963df40a78eba8a575f581
-      internalID: 1253328689
+      spriteID: ff3a78b9e8b2e214ba3875489fb45784
+      internalID: -229177677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 5
+      name: Horizontal Door Animation 2
       rect:
         serializedVersion: 2
-        x: 1541
-        y: 557
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 62
+        y: 29
+        width: 30
+        height: 72
+      alignment: 9
+      pivot: {x: 0.06666667, y: 0.027777778}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea7589ea75c1b4f44b76b94e9b1125f7
-      internalID: -1236824996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 6
-      rect:
-        serializedVersion: 2
-        x: 190
-        y: 121
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b48b389ac80c94f4796a48bb47052fe4
-      internalID: -168648636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 7
-      rect:
-        serializedVersion: 2
-        x: 541
-        y: 96
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13379788d9c8db641923bfeabb805ff4
-      internalID: -636702842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8
-      rect:
-        serializedVersion: 2
-        x: 911
-        y: 122
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c921cbeea3688d4a9d8c11b780003cb
-      internalID: -1807498507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9
-      rect:
-        serializedVersion: 2
-        x: 1293
-        y: 92
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f383b922ab681147aef23cfb61950eb
-      internalID: -819182662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 0
-      rect:
-        serializedVersion: 2
-        x: 1671
-        y: 125
-        width: 174
-        height: 311
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1c614b1ed041bc45ba98115a44dcc51
-      internalID: 1595259299
+      spriteID: 6560bdd97092a1f48896eb909ed7351d
+      internalID: -1431841216
       vertices: []
       indices: 
       edges: []
@@ -324,16 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      3: 81684724
-      8: -1807498507
-      0: 1595259299
-      2: -1313059502
-      6: -168648636
-      9: -819182662
-      4: 1253328689
-      5: -1236824996
-      1: -1591460230
-      7: -636702842
+      Horizontal Door Animation 2: -1431841216
+      Horizontal Door Animation 3: 1561111907
+      Horizontal Door Animation 5: -229177677
+      Horizontal Door Animation 1: -1448575543
+      Horizontal Door Animation 4: -287011485
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

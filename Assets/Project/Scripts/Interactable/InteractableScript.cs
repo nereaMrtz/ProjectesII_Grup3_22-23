@@ -13,19 +13,19 @@ namespace Project.Scripts.Interactable
 
         [SerializeField] private ModifyUIButtonActiveSelf _modifyUIButtonActiveSelf;
 
-        [SerializeField] private Material _customShaderMaterial;
-        [SerializeField] private Material _defaultShaderMaterial;
-        
         [SerializeField] private GameObject _pointPrefab;
-        
-        private GameObject _pointButton;
 
         [SerializeField] private Player _player;
         
         [SerializeField] protected SpriteRenderer _spriteRenderer;
 
         [SerializeField] private float _distanceToInteract;
+        
+        [SerializeField] private Material _customShaderMaterial;
+        [SerializeField] private Material _defaultShaderMaterial;
 
+        private GameObject _pointButton;
+        
         private RectTransform _rectTransform;
 
         private float _thicknessValue;
@@ -38,6 +38,9 @@ namespace Project.Scripts.Interactable
             _pointButton.transform.position += _pointOffset;
             _pointButton.SetActive(false);
             _modifyUIButtonActiveSelf.AddUIButton(_pointButton);
+            _customShaderMaterial =
+                Resources.Load<Material>("Materials/Shaders/Shader Graphs_SpriteOutline");
+            _defaultShaderMaterial = _spriteRenderer.material;
         }
 
         private void OnMouseDown()
@@ -47,6 +50,10 @@ namespace Project.Scripts.Interactable
 
         private void OnMouseEnter()
         {
+            if (gameObject.layer == 0)
+            {
+                return;
+            }
             _shaderChanged = _pointButton.activeSelf;
             if (!_shaderChanged)
             {
