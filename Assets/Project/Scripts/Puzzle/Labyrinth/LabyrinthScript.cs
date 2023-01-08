@@ -17,6 +17,7 @@ namespace Project.Scripts.Puzzle.Labyrinth
             {
                 return;
             }
+            _onComplete.Invoke();
             _gameObjectToActivate.SetActive(true);
         }
     }

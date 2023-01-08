@@ -10,6 +10,7 @@ namespace Project.Scripts.ZoomInForPuzzles
     {
         protected const String OVER_WORLD_CAMERA_STATE = "OverWorldCamera";
         protected const String PUZZLE_CAMERA_STATE = "PuzzleCamera";
+        private const String COIN_SOUND = "Coin";
         
         [SerializeField] protected PuzzleScript _puzzle;
 
@@ -44,6 +45,7 @@ namespace Project.Scripts.ZoomInForPuzzles
                 {
                     continue;
                 }
+                AudioManager.Instance.Play(COIN_SOUND);
                 _gameObjectToActivate.SetActive(true);
                 return;
             }

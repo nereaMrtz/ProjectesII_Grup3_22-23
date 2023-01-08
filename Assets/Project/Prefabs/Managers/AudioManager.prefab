@@ -47,6 +47,7 @@ MonoBehaviour:
   _master: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
   _sounds:
   - _audioClip: {fileID: 8300000, guid: 8136cc258a407534c94e9b67a69cfb49, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Steps Sound
     _volume: 1
     _druggedPitch: -1
@@ -54,6 +55,7 @@ MonoBehaviour:
     _loop: 1
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 115a6fa024a9bbb408dd1a5288217a71, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Loot Pick Up Sound
     _volume: 1
     _druggedPitch: 1
@@ -61,6 +63,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: af9dac6a3a531e34a8508fd014b42f97, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Simple Door Sound
     _volume: 1
     _druggedPitch: 1
@@ -68,6 +71,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: cddbf74e957b2664d88f0e8246d22960, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Slide Simple Door Sound
     _volume: 1
     _druggedPitch: 1
@@ -75,6 +79,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: c7cce6495340474418c0c6548c777944, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Incorrect Sound
     _volume: 0.1
     _druggedPitch: 1
@@ -82,6 +87,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: b598b2593d888eb45b2a473f41fddb79, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Press Button Or Tile Sound
     _volume: 1
     _druggedPitch: 0
@@ -89,6 +95,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: a156667d4002c8a4a9c41a467d2ea6ee, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Fishbowl Bubbles Sound
     _volume: 1
     _druggedPitch: 1
@@ -96,6 +103,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 7987406c9c96dd848abf906fdb05ef8f, type: 3}
+    _audioMixerGroup: {fileID: 0}
     _name: Fish Food Sound
     _volume: 1
     _druggedPitch: 1
@@ -103,6 +111,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: a8de96c407222ff47a42dd445e3b76d8, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Open Safe Box Sound
     _volume: 1
     _druggedPitch: 0
@@ -110,6 +119,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: abfc7ba1aa1af234c9387a32e5517c0c, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Sheet Of Paper Sound
     _volume: 1
     _druggedPitch: 0
@@ -117,6 +127,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: ad7063b7484852a4d8aa89066e4b491b, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Throw Up Sound
     _volume: 1
     _druggedPitch: 1
@@ -124,6 +135,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 598e9deafbc57f94d9118066ec215033, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Take This Pill Sound
     _volume: 1
     _druggedPitch: 1
@@ -131,6 +143,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 635772b892b357a448c7b10fdb221a02, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Buttons Menu
     _volume: 1
     _druggedPitch: 1
@@ -138,6 +151,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 7e798be2511573646885196ecdbdc7de, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Broken piggy
     _volume: 1
     _druggedPitch: 1
@@ -145,6 +159,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 9ab7bb34f6b60b947b7a0b332181b548, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: tic
     _volume: 1
     _druggedPitch: 1
@@ -152,6 +167,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 25dd34ab13480914fa1e45d6146be37a, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: tac
     _volume: 1
     _druggedPitch: 1
@@ -159,13 +175,15 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: d0e056427996d254e91c15daee90d800, type: 3}
-    _name: Bill
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: BillMachine
     _volume: 1
     _druggedPitch: 1
     _soberPitch: 1
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 988ba9452dcc2304fb3603e2cc273173, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Coin
     _volume: 1
     _druggedPitch: 1
@@ -173,6 +191,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: b5829d9813731d44f9e87afe8ba1460b, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Palanca
     _volume: 1
     _druggedPitch: 1
@@ -180,6 +199,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 14685251affefe44995b346028dbead7, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Ambiente
     _volume: 1
     _druggedPitch: 1
@@ -187,6 +207,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 900c9046ffa0af242aba0f842524a701, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Voice
     _volume: 1
     _druggedPitch: 1
@@ -194,6 +215,7 @@ MonoBehaviour:
     _loop: 0
     _play: 0
   - _audioClip: {fileID: 8300000, guid: 0153c70245877d44ba07e055e9e40925, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Correcto
     _volume: 1
     _druggedPitch: 1

@@ -1,6 +1,7 @@
 using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -8,6 +9,7 @@ namespace Project.Scripts.Puzzle.Labyrinth
 {
     public class LabyrinthWithInventoryObject : LabyrinthScript
     {
+        
         [SerializeField] private PickUp _objectNeeded;
 
         [SerializeField] private Inventory _inventory;
@@ -22,6 +24,7 @@ namespace Project.Scripts.Puzzle.Labyrinth
             
             for (int i = 0; i < inventorySlots.Length; i++)
             {
+                Debug.Log("holi");
                 if (inventorySlots[i].GetPickUp().gameObject.name == "EmptyInventorySlot")
                 {
                     continue;

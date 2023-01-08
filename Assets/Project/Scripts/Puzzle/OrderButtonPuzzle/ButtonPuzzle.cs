@@ -62,6 +62,7 @@ namespace Project.Scripts.Puzzle.OrderButtonPuzzle
                 {
                     orderButton.ChangeColor(new Color(0.02f, 1f, 0f));
                 }
+                //_onComplete.Invoke();
                 _completed = true;
             }
         }

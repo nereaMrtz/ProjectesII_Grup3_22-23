@@ -1,4 +1,3 @@
-using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Puzzle.AnalogicClock
@@ -22,6 +21,8 @@ namespace Project.Scripts.Puzzle.AnalogicClock
                 _hammer.SetActive(true);
 
                 _completed = true;
+                
+                _onComplete.Invoke();
             }
         }
     }
