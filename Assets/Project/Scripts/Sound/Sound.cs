@@ -76,5 +76,3 @@ namespace Project.Scripts.Sound
         }
     }
 }
-
-
