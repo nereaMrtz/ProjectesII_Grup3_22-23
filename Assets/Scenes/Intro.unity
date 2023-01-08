@@ -341,12 +341,12 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: 2
+  m_lineSpacing: 66
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -407,9 +407,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
     textArray:
-    - "\xBFD\xF3... D\xF3nde estoy?"
-    - No veo na hulio...
-    - "...kien aapagao la lus\xBF?"
+    - "Bienvenido preso n\xFAmero 22917,"
+    - "como ya te comentamos, hemos descubierto una nueva droga que est\xE1 circulando
+      por la ciudad,"
+    - "pero a\xFAn desconocemos algunos de sus efectos. "
+    - Recibimos cartas de algunos presos queriendo colaborar con los laboratorios
+    - "y ponerse a prueba bajo esta droga a cambio de una reducci\xF3n de la condena."
+    - "Te pondremos a prueba de manera f\xEDsica y mental, "
+    - "buena suerte 22917.\r"
   screenText: {fileID: 400540403}
   clickSprite: {fileID: 1600211670}
 --- !u!4 &888338564
