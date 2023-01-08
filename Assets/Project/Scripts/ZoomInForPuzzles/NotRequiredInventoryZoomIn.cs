@@ -12,6 +12,11 @@ namespace Project.Scripts.ZoomInForPuzzles
         {
             Activate.SetActive(!Activate.activeSelf);
 
+            ChangeZoomInState();
+        }
+
+        public void ChangeZoomInState()
+        {
             GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
         }
     }

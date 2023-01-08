@@ -34,10 +34,5 @@ namespace Project.Scripts.ZoomInForPuzzles
             _cameraSwitcherAnimator.Play(_overWorldCamera ? PUZZLE_CAMERA_STATE : OVER_WORLD_CAMERA_STATE);
             _overWorldCamera = !_overWorldCamera;
         }
-
-        public void ChangeZoomInState()
-        {
-            GameManager.Instance.SetZoomInState(!GameManager.Instance.IsInZoomInState());
-        }
     }
 }
