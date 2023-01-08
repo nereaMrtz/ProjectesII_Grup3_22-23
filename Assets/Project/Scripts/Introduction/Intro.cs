@@ -12,10 +12,11 @@ namespace Project.Scripts.Introduction
         public DialogText text;
         [SerializeField] TextMeshProUGUI screenText;
         [SerializeField] private GameObject clickSprite;
+        [SerializeField] bool onIntro;
 
         bool OnDialog = false;
         bool writtingText = false;
-        bool onIntro = true;
+       
 
         private IEnumerator _coroutine;
         private float time = 0.05f;
@@ -27,7 +28,6 @@ namespace Project.Scripts.Introduction
 
         private void Update()
         {
-
                 time = 0.05f;
 
             if (OnDialog && Input.GetMouseButtonDown(0) && !writtingText)
@@ -64,7 +64,8 @@ namespace Project.Scripts.Introduction
             {
                 CloseDialogBox();
                 OnDialog = false;
-                SceneManager.LoadScene(2);
+                if(onIntro)
+                    SceneManager.LoadScene(2);
                 return;
             }
 
