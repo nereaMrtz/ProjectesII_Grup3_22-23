@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2712047919213835171}
   - component: {fileID: 5642851922996008289}
   - component: {fileID: 1247468291802232562}
+  - component: {fileID: 3066546255257087155}
   m_Layer: 0
   m_Name: FrontViewDoor
   m_TagString: Untagged
@@ -126,10 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ecb54196a024b4bb3c3029c7423c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _puzzle: {fileID: 0}
   _spriteRenderer: {fileID: 2712047919213835169}
   _animator: {fileID: 1247468291802232562}
-  _puzzle: {fileID: 0}
-  _boxCollider2D: {fileID: 2712047919213835170}
 --- !u!114 &5642851922996008289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +166,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3066546255257087155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712047919213835173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c72d60d70ed2f4da41ea0e10539643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+    textArray: []
+  screenText: {fileID: 0}
+  clickSprite: {fileID: 0}
+  button: {fileID: 0}
