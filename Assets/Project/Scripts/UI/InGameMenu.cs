@@ -1,4 +1,5 @@
 using System;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,14 +15,14 @@ namespace Project.Scripts.UI
 
         private bool _active;
 
-        private void Start()
+        private void OnEnable()
         {
             _currentActivePanel = gameObject;
-            _pauseMenuPanel.SetActive(false);
         }
 
         public void ResumeButton()
         {
+            GameManager.Instance.SetPause(false);
             _pauseMenuPanel.SetActive(false);
             Time.timeScale = 1;
         }

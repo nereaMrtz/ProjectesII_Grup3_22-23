@@ -10,6 +10,7 @@ namespace Project.Scripts.Managers
         private bool _zoomInState;
         private bool _interactableClicked;
         private bool _clickOnEdge;
+        private bool _pause;
 
         private void Awake()
         {
@@ -67,6 +68,16 @@ namespace Project.Scripts.Managers
         public void SetClickOnEdge(bool clickOnEdge) 
         { 
             _clickOnEdge = clickOnEdge; 
-        } 
+        }
+
+        public void SetPause(bool pause)
+        {
+            _pause = pause;
+        }
+
+        public bool IsPause()
+        {
+            return _pause;
+        }
     }
 }

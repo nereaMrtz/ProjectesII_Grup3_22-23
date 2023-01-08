@@ -46,6 +46,7 @@ namespace Project.Scripts.Character
             if ((Input.GetKey(KeyCode.Escape) && !_pauseMenuPanel.activeSelf))
             {
                 _pauseMenuPanel.SetActive(true);
+                GameManager.Instance.SetPause(true);
             }
             
             if (_drugEffect.IsChangingPeriod() || _pauseMenuPanel.activeSelf)
