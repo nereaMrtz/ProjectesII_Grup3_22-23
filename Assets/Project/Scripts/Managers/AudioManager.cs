@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Project.Scripts.Managers
 {
@@ -6,6 +7,8 @@ namespace Project.Scripts.Managers
     {
 
         private static AudioManager _instance;
+
+        [SerializeField] private AudioMixerGroup _master;
         
         [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
         private void Awake()
@@ -23,6 +26,7 @@ namespace Project.Scripts.Managers
             foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
                 sound.SetAudioSource(gameObject.AddComponent<AudioSource>());
+                sound.GetSource().outputAudioMixerGroup = sound.GetAudioMixerGroup();
                 sound.GetSource().clip = sound.GetClip();
                 sound.GetSource().volume = sound.GetVolume();
                 sound.GetSource().loop = sound.GetLoop();
@@ -36,18 +40,6 @@ namespace Project.Scripts.Managers
         public static AudioManager Instance
         {
             get { return _instance; }
-        }
-
-        private void Update()
-        {
-            if (GameManager.Instance.IsDrugged())
-            {
-                ChangePitch(true);
-            }
-            else
-            {
-                ChangePitch(false);
-            }
         }
 
         public void Play(string name)

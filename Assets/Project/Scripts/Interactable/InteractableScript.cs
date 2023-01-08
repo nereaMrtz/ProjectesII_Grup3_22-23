@@ -21,8 +21,8 @@ namespace Project.Scripts.Interactable
 
         [SerializeField] private float _distanceToInteract;
         
-        [SerializeField] private Material _customShaderMaterial;
-        [SerializeField] private Material _defaultShaderMaterial;
+        private Material _customShaderMaterial;
+        private Material _defaultShaderMaterial;
 
         private GameObject _pointButton;
         
