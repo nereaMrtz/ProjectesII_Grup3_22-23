@@ -27,10 +27,17 @@ namespace Project.Scripts.Introduction
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+
+                time = 0.05f;
+
+            if (OnDialog && Input.GetMouseButtonDown(0) && !writtingText)
             {
                 clickSprite.SetActive(false);
                 NextSentence();
+            }
+            if (OnDialog && Input.GetMouseButtonDown(0) && writtingText)
+            {
+                time = 0.001f;
             }
         }
 
@@ -52,7 +59,7 @@ namespace Project.Scripts.Introduction
             NextSentence();
         }
         public void NextSentence()
-        { 
+        {
             if (dialogs.Count == 0)   //Si se ha acabado el dialogo, cerramos el cartel
             {
                 CloseDialogBox();
