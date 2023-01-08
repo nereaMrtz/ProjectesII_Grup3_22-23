@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
+using Project.Scripts.UI;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPickUp
 {
     public class GameObjectMoveBetweenPointsLinearly : GameObjectWithPickUpScript
     {
-    
         private const String REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
         
         [SerializeField] private Vector3[] _offsets;
@@ -34,6 +35,16 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
             if (_offsets.Length == 0)
             {
                 return;
+            }
+            
+            
+            if (_interacted && _still)
+            {
+                //_objectTip.SetActivateTip(true);
+            }
+            else
+            {
+                //_objectTip.SetActivateTip(false);
             }
 
             if (Vector3.Distance(transform.position, _targetPosition) <= 0.01f)
@@ -95,6 +106,10 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
             _still = true;
             yield return new WaitForSeconds(seconds);
             _still = false;
+            if (_interacted)
+            {
+                //_objectTip.SetActivateTip(false);
+            }
             gameObject.layer = 0;
             _pickUpAttached.gameObject.SetActive(false);
             _targetPosition = _offsets[Random.Range(0, _offsets.Length - 1)];

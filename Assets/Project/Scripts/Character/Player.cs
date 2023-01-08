@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
-using Project.Scripts.Sound;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.Interactable.Static.RequiredInventory;
+using Project.Scripts.Managers;
+using UnityEngine.AI;
+using Vector2 = UnityEngine.Vector2;
 
 namespace Project.Scripts.Character
 {
@@ -12,10 +14,6 @@ namespace Project.Scripts.Character
 
         private const string REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
         private const string NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER = "NotRequiredInventoryInteractable";
-
-        [SerializeField] private AudioManager _audioManager;
-        
-        [SerializeField] private Rigidbody2D _rigidbody2D;
         
         [SerializeField] private GameObject _pauseMenuPanel;
 
@@ -23,126 +21,128 @@ namespace Project.Scripts.Character
 
         [SerializeField] private DrugEffect _drugEffect;
 
-        [SerializeField] private float _currentSpeed = 75;
+        [SerializeField] private Transform _targetTransform;
 
-        private Vector2 movementDirection;
+        [SerializeField] private NavMeshAgent _agent;
 
-        private float _movementX;
-        private float _movementY;
+        private GameObject _gameObjectToInteract;
+        
+        private float _distanceToInteractWithObject;
 
-        private LayerMask _requiredInventoryInteractableMask;
-        private LayerMask _notRequiredInventoryInteractableMask;
+        private bool _moving = true;
+        private bool _interactionStarted; 
         
         void Start()
         {
-            _requiredInventoryInteractableMask = LayerMask.GetMask(REQUIRED_INVENTORY_INTERACTABLE_LAYER);
-            _notRequiredInventoryInteractableMask = LayerMask.GetMask(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER);
-            _audioManager = FindObjectOfType<AudioManager>();
+            NavMeshManager.Instance.Bake();
+            _agent.updateRotation = false;
+            _agent.updateUpAxis = false;
+            _targetTransform.position = transform.position;
         }
 
         void Update()
         {
-            if ((Input.GetKey(KeyCode.Escape) && !_pauseMenuPanel.activeSelf))
-            {
-                _pauseMenuPanel.SetActive(true);
-            }
             
-            if (_drugEffect.GetBetweenChangePeriod() || _pauseMenuPanel.activeSelf)
+            if (_drugEffect.IsChangingPeriod() || _pauseMenuPanel.activeSelf)
             {
                 return;
             }
+            
             Controls();
         }
 
-        private void FixedUpdate()
-        {
-            if (_drugEffect.GetBetweenChangePeriod())
-            {
-                _audioManager.Pause(STEPS_SOUND_CLIP_NAME);
-                return;
-            }
-            Movement();
-            
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                _rigidbody2D.AddForce(Vector2.right * 70f, ForceMode2D.Impulse);
-            }
-        }
-        
-        private void Movement()
-        {
-            movementDirection = new Vector3(_movementX, _movementY).normalized;
-            _rigidbody2D.AddForce(movementDirection * _currentSpeed, ForceMode2D.Force);
-
-            if (movementDirection.x != 0 || movementDirection.y != 0)
-            {
-                _audioManager.UnPause(STEPS_SOUND_CLIP_NAME);
-            }
-            else
-            {
-                _audioManager.Pause(STEPS_SOUND_CLIP_NAME);
-            }
-        }
-        
-
         private void Controls()
         {
-            MovementControls();
+            if (GameManager.Instance.IsInZoomInState())
+            {
+                _targetTransform.position = transform.position;
+                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                return;
+            }
+
+            MovementController();
             
-            DrugControls();
-
-            InteractControls();
+            InteractionController();
         }
 
-        private void InteractControls() {
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Collider2D interactCast = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1, _requiredInventoryInteractableMask + _notRequiredInventoryInteractableMask);
-
-                if (interactCast == true)
-                {
-                    if (interactCast.gameObject.layer == LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER))
-                    {
-                        interactCast.gameObject.GetComponent<RequiredInventoryInteractable>().Interact(_inventory, _audioManager);
-                    }
-                    else if (interactCast.gameObject.layer == LayerMask.NameToLayer(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER))
-                    {
-                        interactCast.gameObject.GetComponent<NotRequiredInventoryInteractable>().Interact(_audioManager);
-                    }
-                }
-            }
-        }
-
-        private void DrugControls()
+        private void MovementController()
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (_agent.velocity.magnitude != 0)
             {
-                _drugEffect.ChangeState(_audioManager);
+                _moving = true;
+                AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
+            }
+            else if (_moving && _agent.velocity.magnitude == 0)
+            {
+                _moving = false;
+                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _targetTransform.position = transform.position;
+                return;   
+            }
+            
+            Movement();
+        }
+
+        private void InteractionController()
+        {
+            if (!_interactionStarted)
+            {
+                return;
+            }
+            
+            if (Vector2.Distance(transform.position, _gameObjectToInteract.transform.position) < _distanceToInteractWithObject)
+            {
+                InteractWithObject();
+            }
+            else if (_targetTransform.position != _gameObjectToInteract.transform.position)
+            {
+                _gameObjectToInteract = null;
+                _interactionStarted = false;
             }
         }
 
-        private void MovementControls()
+        private void InteractWithObject() {
+            
+            if (_gameObjectToInteract.layer == LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER))
+            {
+                _gameObjectToInteract.GetComponent<RequiredInventoryInteractable>().Interact(_inventory);
+            }
+            else if (_gameObjectToInteract.layer == LayerMask.NameToLayer(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER))
+            {
+                _gameObjectToInteract.GetComponent<NotRequiredInventoryInteractable>().Interact();
+            }
+
+            _targetTransform.position = transform.position;
+            _gameObjectToInteract = null;
+            _interactionStarted = false;
+        }
+
+        public void DrugControls()
         {
-            _movementX = 0;
-            _movementY = 0;
-            if (Input.GetKey(KeyCode.A))
-            {
-                _movementX = -1;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                _movementX = 1;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                _movementY = 1;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                _movementY = -1;
-            }
+            AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+            _targetTransform.position = transform.position;
+            Movement();
+            _drugEffect.ChangeState();
+        }
+
+        public void Pause()
+        {
+            _pauseMenuPanel.SetActive(true);
+            GameManager.Instance.SetPause(true);
+        }
+
+        private void Movement()
+        {
+            _agent.SetDestination(_targetTransform.position);
+        }
+        
+        public void SetGameObjectAndHisDistanceToInteract(GameObject gameObjectToInteract, float distanceToInteract)
+        {
+            _interactionStarted = true;
+            _gameObjectToInteract = gameObjectToInteract;
+            _distanceToInteractWithObject = distanceToInteract;
+            _targetTransform.position = _gameObjectToInteract.transform.position;
+            GameManager.Instance.SetInteractableClicked(true);
         }
     }
 }
-

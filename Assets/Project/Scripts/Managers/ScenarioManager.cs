@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Project.Scripts.Level;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace Project.Scripts.Managers
 {
     public class ScenarioManager : MonoBehaviour
     {
+        private const String THROW_UP_SOUND_CLIP_NAME = "Throw Up Sound";
+        private const String TAKE_THIS_PILL_SOUND_CLIP_NAME = "Take This Pill Sound";
 
         [SerializeField] private DrugSubjectElement[] _druggedElements;
         [SerializeField] private DrugSubjectElement[] _soberElements;
@@ -27,9 +30,9 @@ namespace Project.Scripts.Managers
                 return;
             }
             _drugged = !_drugged;
-            ActivateOrDeactivateDrugSubjectElementsGameObjects(_druggedElements, _drugged);
-            ActivateOrDeactivateDrugSubjectElementsGameObjects(_soberElements, !_drugged);
-            ActivateOrDeactivateScenarioManagerTriggersGameObjects();
+            StartCoroutine(_drugged
+                ? DelayChange(AudioManager.Instance.ClipDuration(THROW_UP_SOUND_CLIP_NAME))
+                : DelayChange(AudioManager.Instance.ClipDuration(TAKE_THIS_PILL_SOUND_CLIP_NAME)));
         }
 
         public void SwitchDrugSubjectElementsChangeProperty(GameObject[] drugSubjectElementsToChangePropertyChange)
@@ -37,46 +40,33 @@ namespace Project.Scripts.Managers
             for (int i = 0; i < drugSubjectElementsToChangePropertyChange.Length; i++)
             {
                 DrugSubjectElement drugSubjectElement = drugSubjectElementsToChangePropertyChange[i].GetComponent<DrugSubjectElement>();
-                drugSubjectElement.Accept(drugSubjectElement);
+                drugSubjectElement.Accept();
             }
         }
 
-        public void Visit(ScenarioManagerTrigger scenarioManagerTrigger, DrugSubjectElement drugSubjectElementsToChangePropertyChange)
+        public void Visit(ScenarioManagerTrigger scenarioManagerTrigger)
         {
-            for (int j = 0; j < _scenarioManagerTriggers.Count; j++)
-            {
-                if (drugSubjectElementsToChangePropertyChange == _scenarioManagerTriggers[j])
-                {
-                    scenarioManagerTrigger.SetCanChange(!scenarioManagerTrigger.GetCanChange());
-                    j = _scenarioManagerTriggers.Count;
-                }
-            }
+            scenarioManagerTrigger.SetCanChange(!scenarioManagerTrigger.GetCanChange());
         }
 
-        public void Visit(DruggedElement druggedElement, DrugSubjectElement drugSubjectElementsToChangePropertyChange)
+        public void Visit(DruggedElement druggedElement)
         {
-            for (int j = 0; j < _druggedElements.Length; j++)
-            {
-                if (drugSubjectElementsToChangePropertyChange == _druggedElements[j])
-                {
-                    druggedElement.SetCanChange(!druggedElement.GetCanChange());
-                    j = _druggedElements.Length;
-                }
-            }
+            druggedElement.SetCanChange(!druggedElement.GetCanChange());
         }
 
-        public void Visit(SoberElement soberElement, DrugSubjectElement drugSubjectElementsToChangePropertyChange)
+        public void Visit(SoberElement soberElement)
         {
-            for (int j = 0; j < _soberElements.Length; j++)
-            {
-                if (drugSubjectElementsToChangePropertyChange == _soberElements[j])
-                {
-                    soberElement.SetCanChange(!soberElement.GetCanChange());
-                    j = _soberElements.Length;
-                }
-            }
+            soberElement.SetCanChange(!soberElement.GetCanChange());
         }
-        
+
+        private IEnumerator DelayChange(float time)
+        {
+            yield return new WaitForSeconds(time / 2);
+            ActivateOrDeactivateDrugSubjectElementsGameObjects(_druggedElements, _drugged);
+            ActivateOrDeactivateDrugSubjectElementsGameObjects(_soberElements, !_drugged);
+            ActivateOrDeactivateScenarioManagerTriggersGameObjects();
+        }
+
         private void ActivateOrDeactivateDrugSubjectElementsGameObjects(DrugSubjectElement[] drugSubjectElements, bool drugged)
         {
             for (int i = 0; i < drugSubjectElements.Length; i++)

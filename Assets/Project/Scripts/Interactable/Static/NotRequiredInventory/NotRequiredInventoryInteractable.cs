@@ -1,12 +1,12 @@
 using System;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static.NotRequiredInventory
 {
-    public abstract class NotRequiredInventoryInteractable : MonoBehaviour
+    public abstract class NotRequiredInventoryInteractable : InteractableScript
     {
-        public abstract void Interact(AudioManager audioManager);
+        public abstract void Interact();
     }
 }
 

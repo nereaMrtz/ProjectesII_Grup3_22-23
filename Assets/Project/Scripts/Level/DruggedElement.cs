@@ -4,9 +4,9 @@ namespace Project.Scripts.Level
 {
     public class DruggedElement : DrugSubjectElement
     {
-        public override void Accept(DrugSubjectElement drugSubjectElement)
+        public override void Accept()
         {
-            _scenarioManager.Visit(this, drugSubjectElement);
+            _scenarioManager.Visit(this);
         }
     }
 }

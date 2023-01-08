@@ -1,7 +1,8 @@
 using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
-using Project.Scripts.Sound;
+using Project.Scripts.Managers;
+using Project.Scripts.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,20 +24,20 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPi
         protected Vector3 _targetPosition;
         protected Vector3 _lastTargetPosition;
 
-        private bool _interacted;
+        protected bool _interacted;
         protected bool _taked;
 
-        public override void Interact(Inventory inventory, AudioManager audioManager)
+        public override void Interact(Inventory inventory)
         {
             if (!_interacted)
             {
                 _interacted = true;
                 _pickUpAttached.gameObject.layer = LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE);
-                _pickUpAttached.Interact(inventory, audioManager);
+                _pickUpAttached.Interact(inventory);
             }
             else
             {
-                base.Interact(inventory, audioManager);
+                base.Interact(inventory);
                 _taked = true;
             }
         }

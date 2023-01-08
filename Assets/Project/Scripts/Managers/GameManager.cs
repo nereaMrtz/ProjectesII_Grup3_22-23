@@ -1,4 +1,3 @@
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Managers
@@ -7,7 +6,11 @@ namespace Project.Scripts.Managers
     {
         private static GameManager _instance;
 
-        [SerializeField] private bool _drugged;
+        private bool _drugged;
+        private bool _zoomInState;
+        private bool _interactableClicked;
+        private bool _clickOnEdge;
+        private bool _pause;
 
         private void Awake()
         {
@@ -21,19 +24,6 @@ namespace Project.Scripts.Managers
             }
             DontDestroyOnLoad(gameObject);
         }
-
-
-        void Start()
-        {
-            
-        }
-        void Update()
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                
-            }
-        }
         
         public static GameManager Instance
         {
@@ -44,11 +34,50 @@ namespace Project.Scripts.Managers
         {
             _drugged = drugged;
         }
-
+        
         public bool IsDrugged()
         {
             return _drugged;
         }
 
+        public void SetZoomInState(bool zoomInState)
+        {
+            _zoomInState = zoomInState;
+        }
+        
+        public bool IsInZoomInState()
+        {
+            return _zoomInState;
+        }
+
+        public void SetInteractableClicked(bool interactableClicked)
+        {
+            _interactableClicked = interactableClicked;
+        }
+
+        public bool IsInteractableClicked()
+        {
+            return _interactableClicked;
+        }
+        
+        public bool IsClickingOnEdge() 
+        { 
+            return _clickOnEdge; 
+        } 
+ 
+        public void SetClickOnEdge(bool clickOnEdge) 
+        { 
+            _clickOnEdge = clickOnEdge; 
+        }
+
+        public void SetPause(bool pause)
+        {
+            _pause = pause;
+        }
+
+        public bool IsPause()
+        {
+            return _pause;
+        }
     }
 }

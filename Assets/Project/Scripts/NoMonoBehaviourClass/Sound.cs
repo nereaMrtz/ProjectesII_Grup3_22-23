@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 namespace Project.Scripts.NoMonoBehaviourClass
@@ -8,12 +9,15 @@ namespace Project.Scripts.NoMonoBehaviourClass
     {
         private AudioSource _source;
         [SerializeField] private AudioClip _audioClip;
+
+        [SerializeField] private AudioMixerGroup _audioMixerGroup;
+        
         [SerializeField] private string _name;
     
         [Range(0, 1)]
         [SerializeField] private float _volume;
-        [SerializeField] private float _druggedPitch;
         
+        [SerializeField] private float _druggedPitch;
         [SerializeField] private float _soberPitch;
         
         [SerializeField] private bool _loop;
@@ -38,6 +42,16 @@ namespace Project.Scripts.NoMonoBehaviourClass
         public void SetAudioClip(AudioClip audioClip)
         {
             _audioClip = audioClip;
+        }
+
+        public void SetAudioMixerGroup(AudioMixerGroup audioMixerGroup)
+        {
+            _audioMixerGroup = audioMixerGroup;
+        }
+
+        public AudioMixerGroup GetAudioMixerGroup()
+        {
+            return _audioMixerGroup;
         }
 
         public float GetVolume()

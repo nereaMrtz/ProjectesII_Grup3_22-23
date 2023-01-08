@@ -1,19 +1,33 @@
 using System;
-using Project.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.Audio;
 
-namespace Project.Scripts.Sound
+namespace Project.Scripts.Managers
 {
     public class AudioManager : MonoBehaviour
     {
 
-        [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
+        private static AudioManager _instance;
 
+        [SerializeField] private AudioMixerGroup _master;
+        
+        [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
         private void Awake()
         {
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            DontDestroyOnLoad(gameObject);
+            
             foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
                 sound.SetAudioSource(gameObject.AddComponent<AudioSource>());
+                sound.GetSource().outputAudioMixerGroup = sound.GetAudioMixerGroup();
                 sound.GetSource().clip = sound.GetClip();
                 sound.GetSource().volume = sound.GetVolume();
                 sound.GetSource().loop = sound.GetLoop();
@@ -26,14 +40,15 @@ namespace Project.Scripts.Sound
 
         private void Update()
         {
-            if (GameManager.Instance.IsDrugged())
+            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
-                ChangePitch(true);
+                sound.GetSource().volume = sound.GetVolume();
             }
-            else
-            {
-                ChangePitch(false);
-            }
+        }
+
+        public static AudioManager Instance
+        {
+            get { return _instance; }
         }
 
         public void Play(string name)

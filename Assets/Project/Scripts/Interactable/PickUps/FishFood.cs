@@ -1,5 +1,4 @@
 using Project.Scripts.Character;
-using Project.Scripts.Sound;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable.PickUps

@@ -32,6 +32,7 @@ namespace Project.Scripts.Character
         public void SetPickUp(PickUp pickUp)
         {
             _pickUp = pickUp;
+            pickUp.GetPointButton().SetActive(false);
             _spriteRenderer.sprite = _pickUp.gameObject.GetComponent<SpriteRenderer>().sprite;
             Vector2 size = _spriteRenderer.size;
             size = new Vector2(35f, 35f);
@@ -46,8 +47,14 @@ namespace Project.Scripts.Character
 
         public void EraseChildSprite()
         {
+            _pickUp = _emptyInventorySlot;
             _spriteRenderer.sprite = _emptySlotChildSprite;
             _spriteRenderer.size = new Vector2(1, 1);
+        }
+
+        public void ErasePickUp()
+        {
+            _pickUp = _emptyInventorySlot;
         }
     }
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using Project.Scripts.Managers;
 using Project.Scripts.ProjectMaths;
-using Project.Scripts.Sound;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +13,9 @@ namespace Project.Scripts.Character
         private const String TAKE_THIS_PILL_SOUND_CLIP_NAME = "Take This Pill Sound";
 
         [SerializeField] private Image _changeStateEffect;
+        [SerializeField] private Image _filter;
 
+        [SerializeField] private GameObject _drugFilterPanel;
         [SerializeField] private GameObject _throwUpPrefab;
 
         private GameObject _throwUp;
@@ -28,19 +29,21 @@ namespace Project.Scripts.Character
             _throwUp.SetActive(false);
         }
 
-        public void ChangeState(AudioManager audioManager)
+        public void ChangeState()
         {
             if (_canChangeState)
             {
                 if (GameManager.Instance.IsDrugged())
                 {
-                    audioManager.Play(THROW_UP_SOUND_CLIP_NAME);
-                    StartCoroutine(ChangeStateEffect(audioManager.ClipDuration(THROW_UP_SOUND_CLIP_NAME), true));
+                    AudioManager.Instance.ChangePitch(true);
+                    AudioManager.Instance.Play(THROW_UP_SOUND_CLIP_NAME);
+                    StartCoroutine(ChangeStateEffect(AudioManager.Instance.ClipDuration(THROW_UP_SOUND_CLIP_NAME), true));
                 }
                 else
                 {
-                    audioManager.Play(TAKE_THIS_PILL_SOUND_CLIP_NAME);
-                    StartCoroutine(ChangeStateEffect(audioManager.ClipDuration(TAKE_THIS_PILL_SOUND_CLIP_NAME), false));
+                    AudioManager.Instance.ChangePitch(false);
+                    AudioManager.Instance.Play(TAKE_THIS_PILL_SOUND_CLIP_NAME);
+                    StartCoroutine(ChangeStateEffect(AudioManager.Instance.ClipDuration(TAKE_THIS_PILL_SOUND_CLIP_NAME), false));
                 }
                 GameManager.Instance.SetDrugged(!GameManager.Instance.IsDrugged()); 
             }
@@ -80,6 +83,14 @@ namespace Project.Scripts.Character
                 }
                 else
                 {
+                    if (GameManager.Instance.IsDrugged())
+                    {
+                        _filter.color = new Color(0.64f, 0, 0.33f, 0.23f);
+                    }
+                    else
+                    {
+                        _filter.color = new Color(0.64f, 0, 0.33f, 0);
+                    }
                     alpha.a = 1;
                 }
                 _changeStateEffect.color = new Color(alpha.r, alpha.g, alpha.b, alpha.a);
@@ -88,7 +99,7 @@ namespace Project.Scripts.Character
             _betweenChangePeriod = false;
         }
 
-        public bool GetBetweenChangePeriod()
+        public bool IsChangingPeriod()
         {
             return _betweenChangePeriod;
         }
