@@ -1,17 +1,15 @@
-using Project.Scripts.Interactable.Static;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1._1
-{
-    public class Button1_1 : MonoBehaviour
+namespace Project.Scripts.Levels._1._1._7 {
+
+    public class Button1_7 : MonoBehaviour
     {
         protected const String PLAYER_LAYER = "Player";
 
         [SerializeField] protected Animator _animator;
-        
-        [SerializeField] protected UnlockableObject _door;
 
         protected bool _pressed;
 
@@ -26,14 +24,24 @@ namespace Project.Scripts.Levels._1._1._1
                 return;
             }
 
-            PressButton();
-            _door.Unlock();
+            ChangeButtonState();
         }
 
-        protected void PressButton()
+        private void OnTriggerExit2D(Collider2D collider2D)
         {
-            _pressed = true;
+            if (collider2D.gameObject.layer != LayerMask.NameToLayer(PLAYER_LAYER))
+            {
+                return;
+            }
+
+            ChangeButtonState();
+        }
+
+        protected void ChangeButtonState()
+        {
+            _pressed = !_pressed;
             _animator.SetTrigger("Press");
         }
     }
+
 }

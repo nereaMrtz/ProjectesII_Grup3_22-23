@@ -6,8 +6,6 @@ namespace Project.Scripts.Interactable.Static.NotRequiredInventory
 {
     public class SafeBox : NotRequiredInventoryInteractable
     {
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-
         [SerializeField] private Sprite _openBoxSprite;
         
         [SerializeField] private GameObject _reward;

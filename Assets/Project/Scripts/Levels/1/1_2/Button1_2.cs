@@ -36,7 +36,7 @@ namespace Project.Scripts.Levels._1._1._2
             _pressCounter++;
             if (_pressCounter == 3)
             {
-                _door.MoveDoor();
+                _door.Unlock();
             }
             PressButton();
         }
