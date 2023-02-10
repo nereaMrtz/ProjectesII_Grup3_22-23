@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace Project.Scripts.Levels._1._1._1
 {
-    public class Button : MonoBehaviour
+    public class Button1_1 : MonoBehaviour
     {
         private const String PLAYER_LAYER = "Player";
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
+
+        [SerializeField] private Animator _animator;
         
         [SerializeField] private Door _door;
 
@@ -38,28 +40,11 @@ namespace Project.Scripts.Levels._1._1._1
 
             _check = true;
             _door.MoveDoor();
+            PressButton();
         }
-        
-        public IEnumerator ChangeColor(Color color)
-        {
-            bool exit = false;
-            
-            while (!exit)
-            {
-                if (_spriteRenderer.color == color)
-                {
-                    _currentTimeToChangeColor = _timeToChangeColor;
-                    exit = true;
-                }
-                else
-                {
-                    _spriteRenderer.color = Color.Lerp(_spriteRenderer.color, color,
-                        Time.deltaTime / _currentTimeToChangeColor);
-                    _currentTimeToChangeColor -= Time.deltaTime;
-                }
 
-                yield return null;
-            }
+        private void PressButton() {
+            _animator.SetTrigger("Press");
         }
     }
 }
