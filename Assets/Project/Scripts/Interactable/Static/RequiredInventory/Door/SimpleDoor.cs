@@ -19,7 +19,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
         private bool _moved;
 
-        protected override void Unlock()
+        public override void Unlock()
         {
             MoveDoor();
         }
