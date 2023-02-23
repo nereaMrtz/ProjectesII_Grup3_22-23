@@ -1,6 +1,7 @@
 using Project.Scripts.Levels._1._1._1;
 using System.Collections;
 using System.Collections.Generic;
+using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1._1._2

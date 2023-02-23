@@ -1,9 +1,8 @@
-using Project.Scripts.Interactable.Static;
 using System;
-using System.Collections;
+using Project.Scripts.Interactable.Static;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1._1
+namespace Project.Scripts.Levels._1._1_1
 {
     public class Button1_1 : MonoBehaviour
     {
