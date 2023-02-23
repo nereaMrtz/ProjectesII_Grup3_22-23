@@ -22,7 +22,6 @@ namespace Project.Scripts.Character
 
         void Update()
         {
-            
             if (_pauseMenuPanel.activeSelf)
             {
                 return;
@@ -72,6 +71,14 @@ namespace Project.Scripts.Character
 
         private void Movement() {
             movementDirection = new Vector3(_movementX, _movementY).normalized;
+            if (movementDirection != new Vector2(0,0))
+            {
+                AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
+            }
+            else
+            {
+                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+            }
             _rigidbody2D.AddForce(movementDirection * _currentSpeed, ForceMode2D.Force);
         }
 
@@ -79,6 +86,16 @@ namespace Project.Scripts.Character
         {
             _pauseMenuPanel.SetActive(true);
             GameManager.Instance.SetPause(true);
+        }
+
+        public float GetMovementX()
+        {
+            return _movementX;
+        }
+
+        public float GetMovementY()
+        {
+            return _movementY;
         }
     }
 }
