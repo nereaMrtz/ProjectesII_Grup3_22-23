@@ -28,7 +28,6 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(OPEN_TRIGGER);
-            StartCoroutine(BakeScenario(ReturnAnimationClipByName(VERTICAL_OPENING_DOOR_STATE).length));
             gameObject.layer = 0;
         }
 
@@ -42,12 +41,6 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
                 }
             }
             return null;
-        }
-
-        private IEnumerator BakeScenario(float time)
-        {
-            yield return new WaitForSeconds(time);
-            NavMeshManager.Instance.Bake();
         }
     }
 }

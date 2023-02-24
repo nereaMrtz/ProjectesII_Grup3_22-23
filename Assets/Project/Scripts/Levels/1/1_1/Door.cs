@@ -1,10 +1,9 @@
 using System;
-using System.Collections;
 using Project.Scripts.Interactable.Static;
 using Project.Scripts.Managers;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1._1
+namespace Project.Scripts.Levels._1._1_1
 {
     public class Door : UnlockableObject
     {
@@ -14,13 +13,16 @@ namespace Project.Scripts.Levels._1._1._1
         private const String HORIZONTAL_OPENING_DOOR_STATE = "HorizontalOpeningDoor";
         private const String HORIZONTAL_CLOSING_DOOR_STATE = "HorizontalClosingDoor";
         
-        [SerializeField] private Animator _animator;
+        [SerializeField] protected Animator _animator;
+
+        [SerializeField] private PolygonCollider2D[] _polygonCollider2Ds;
+
+        private int _currentPolygonColliderIndex;
         
         public override void Unlock()
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(OPEN_TRIGGER);
-            StartCoroutine(BakeScenario(ReturnAnimationClipByName(HORIZONTAL_OPENING_DOOR_STATE).length));
             gameObject.layer = 0;
         }
 
@@ -28,7 +30,6 @@ namespace Project.Scripts.Levels._1._1._1
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(CLOSE_TRIGGER);
-            StartCoroutine(BakeScenario(ReturnAnimationClipByName(HORIZONTAL_CLOSING_DOOR_STATE).length));
             gameObject.layer = 0;
         }
 
@@ -43,11 +44,12 @@ namespace Project.Scripts.Levels._1._1._1
             }
             return null;
         }
-        
-        private IEnumerator BakeScenario(float time)
+
+        public void ChangePolygonCollider(int index)
         {
-            yield return new WaitForSeconds(time);
-            NavMeshManager.Instance.Bake();
+            _polygonCollider2Ds[index].enabled = true;
+            _polygonCollider2Ds[_currentPolygonColliderIndex].enabled = false;
+            _currentPolygonColliderIndex = index;
         }
     }
 }
