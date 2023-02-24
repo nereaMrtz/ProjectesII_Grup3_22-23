@@ -39,6 +39,11 @@ namespace Project.Scripts.Introduction
             {
                 time = 0.001f;
             }
+
+            if (OnDialog && Input.GetKey(KeyCode.Space))
+            {
+                SceneManager.LoadScene(2);
+            }
         }
 
         public void SetDialog(DialogText objectText)
