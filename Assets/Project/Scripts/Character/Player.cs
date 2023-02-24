@@ -22,6 +22,9 @@ namespace Project.Scripts.Character
 
         void Update()
         {
+            _movementX = 0;
+            _movementY = 0;
+            
             if (_pauseMenuPanel.activeSelf)
             {
                 return;
@@ -48,9 +51,6 @@ namespace Project.Scripts.Character
 
         private void MovementController()
         {
-            _movementX = 0;
-            _movementY = 0;
-
             if (Input.GetKey(KeyCode.A))
             {
                 _movementX += -1;

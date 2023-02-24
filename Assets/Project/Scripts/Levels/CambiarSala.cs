@@ -9,6 +9,13 @@ public class CambiarSala : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-            SceneManager.LoadScene(_sala);
+        {
+            ChangeScene();   
+        }
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(_sala);
     }
 }
