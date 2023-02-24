@@ -10,10 +10,17 @@ namespace Project.Scripts.Menus
         private const String SETTINGS_MENU_NAME = "Settings Menu";
         
         [SerializeField] private String _musicName;
+        [SerializeField] private Slider _slider;
         [SerializeField] private AudioMixer _audioMixer;
         [SerializeField] private Toggle _muteToggle;
     
         private float _lastVolumeValue;
+
+        private void OnEnable()
+        {
+            _audioMixer.GetFloat(_musicName, out var volumeValue);
+            _slider.value = volumeValue;
+        }
 
         public void FullScreenToggle(bool fullScreen)
         {
