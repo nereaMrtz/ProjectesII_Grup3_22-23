@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 using Project.Scripts.Managers;
-using Vector2 = UnityEngine.Vector2;
+using Project.Scripts.NoMonoBehaviourClass;
+using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Character
 {
@@ -15,7 +16,9 @@ namespace Project.Scripts.Character
 
         [SerializeField] private float _currentSpeed = 75;
 
-        private Vector2 movementDirection;
+        //[SerializeField] private PlayerMovement _playerMovement;
+
+        private Vector2 _movementDirection;
 
         private float _movementX;
         private float _movementY;
@@ -51,27 +54,48 @@ namespace Project.Scripts.Character
 
         private void MovementController()
         {
-            if (Input.GetKey(KeyCode.A))
+            if (SceneManager.GetActiveScene().buildIndex == 5)
             {
-                _movementX += -1;
+                if (Input.GetKey(KeyCode.A))
+                {
+                    _movementX += 1;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    _movementX += -1;
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    _movementY += -1;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    _movementY += 1;
+                }
             }
-            if (Input.GetKey(KeyCode.D))
-            {
-                _movementX += 1;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                _movementY += 1;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                _movementY += -1;
-            }
+            else {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    _movementX += -1;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    _movementX += 1;
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    _movementY += 1;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    _movementY += -1;
+                }
+            }            
         }
 
         private void Movement() {
-            movementDirection = new Vector3(_movementX, _movementY).normalized;
-            if (movementDirection != new Vector2(0,0))
+            _movementDirection = new Vector3(_movementX, _movementY).normalized;
+            if (_movementDirection != new Vector2(0,0))
             {
                 AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
             }
@@ -79,7 +103,7 @@ namespace Project.Scripts.Character
             {
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
             }
-            _rigidbody2D.AddForce(movementDirection * _currentSpeed, ForceMode2D.Force);
+            _rigidbody2D.AddForce(_movementDirection * _currentSpeed, ForceMode2D.Force);
         }
 
         public void Pause()
@@ -96,6 +120,11 @@ namespace Project.Scripts.Character
         public float GetMovementY()
         {
             return _movementY;
+        }
+
+        public Rigidbody2D GetRigidbody2D() {
+        
+            return _rigidbody2D;
         }
     }
 }
