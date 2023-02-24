@@ -22,7 +22,7 @@ namespace Project.Scripts.Menus
         
         public void SetVolume(float volume)
         {
-            if (volume < -50.0f)
+            if (volume <= -50.0f)
             {
                 _audioMixer.SetFloat(_musicName, -80);
                 _muteToggle.isOn = true;
