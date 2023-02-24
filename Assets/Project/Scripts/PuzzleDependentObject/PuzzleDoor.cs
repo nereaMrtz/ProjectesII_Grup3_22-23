@@ -37,7 +37,6 @@ namespace Project.Scripts.PuzzleDependentObject
             _moved = true;
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(OPEN_TRIGGER_STATE);
-            StartCoroutine(BakeScenario(ReturnAnimationClipByName(HORIZONTAL_OPENING_DOOR_STATE).length));
         }
         
 
@@ -51,12 +50,6 @@ namespace Project.Scripts.PuzzleDependentObject
                 }
             }
             return null;
-        }
-
-        private IEnumerator BakeScenario(float time)
-        {
-            yield return new WaitForSeconds(time);
-            NavMeshManager.Instance.Bake();
         }
     }
 }
