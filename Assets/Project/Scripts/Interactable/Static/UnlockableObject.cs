@@ -9,5 +9,10 @@ namespace Project.Scripts.Interactable.Static
         
         protected bool _unlocked;        
         public abstract void Unlock();
+
+        public bool IsUnlocked()
+        {
+            return _unlocked;
+        }
     }
 }

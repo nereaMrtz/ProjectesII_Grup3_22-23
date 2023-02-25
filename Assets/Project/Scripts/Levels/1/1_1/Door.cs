@@ -10,8 +10,6 @@ namespace Project.Scripts.Levels._1._1_1
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
         private const String OPEN_TRIGGER = "Open";
         private const String CLOSE_TRIGGER = "Close";
-        private const String HORIZONTAL_OPENING_DOOR_STATE = "HorizontalOpeningDoor";
-        private const String HORIZONTAL_CLOSING_DOOR_STATE = "HorizontalClosingDoor";
         
         [SerializeField] protected Animator _animator;
 
@@ -24,6 +22,7 @@ namespace Project.Scripts.Levels._1._1_1
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(OPEN_TRIGGER);
             gameObject.layer = 0;
+            _unlocked = true;
         }
 
         public void CloseDoor()
@@ -31,6 +30,7 @@ namespace Project.Scripts.Levels._1._1_1
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(CLOSE_TRIGGER);
             gameObject.layer = 0;
+            _unlocked = false;
         }
 
         private AnimationClip ReturnAnimationClipByName(string name)
