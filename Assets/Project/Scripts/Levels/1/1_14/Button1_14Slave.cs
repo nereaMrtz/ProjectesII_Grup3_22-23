@@ -1,24 +1,27 @@
 using System;
 using Project.Scripts.Interactable.Static;
+using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_1
+namespace Project.Scripts.Levels._1._1_14
 {
-    public class Button1_1 : MonoBehaviour
+    public class Button1_14Slave : MonoBehaviour
     {
-        [SerializeField] protected Animator _animator;
-        
-        [SerializeField] protected UnlockableObject _door;
 
-        [SerializeField] protected bool _pressed;
+        [SerializeField] private Animator _animator;
 
-        private void OnTriggerEnter2D(Collider2D collider2D)
+        [SerializeField] private Button1_14Main _main;
+
+        [SerializeField] private UnlockableObject _door;
+
+        private bool _pressed;
+        private void OnMouseDown()
         {
-            if (collider2D.gameObject.layer != 6)
+            ButtonAction();
+            if (!_main.IsPressed())
             {
                 return;
             }
-            ButtonAction();
             if (_door.IsUnlocked())
             {
                 return;
@@ -26,16 +29,12 @@ namespace Project.Scripts.Levels._1._1_1
             _door.Unlock();
         }
 
-        private void OnTriggerExit2D(Collider2D collider2D)
+        private void OnMouseUp()
         {
-            if (collider2D.gameObject.layer != 6)
-            {
-                return;
-            }
             ButtonAction();
         }
 
-        protected void ButtonAction()
+        private void ButtonAction()
         {
             _pressed = !_pressed;
             ButtonAnimation();
