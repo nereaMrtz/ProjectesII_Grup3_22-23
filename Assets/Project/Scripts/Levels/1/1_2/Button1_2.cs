@@ -1,56 +1,34 @@
-using Project.Scripts.Levels._1._1._1;
-using System.Collections;
-using System.Collections.Generic;
 using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1._2
+namespace Project.Scripts.Levels._1._1_2
 {
     public class Button1_2 : Button1_1
     {
 
         private int _pressCounter;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (_pressCounter > 2)
+            if (collider2D.gameObject.layer != 6)
             {
                 return;
             }
-            if (collider2D.gameObject.layer != LayerMask.NameToLayer(PLAYER_LAYER))
-            {
-                return;
-            }
-
             _pressCounter++;
             if (_pressCounter == 3)
             {
                 _door.Unlock();
             }
-            PressButton();
+            ButtonAction();
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer != LayerMask.NameToLayer(PLAYER_LAYER))
+            if (collider2D.gameObject.layer != 6)
             {
                 return;
             }
-
-            _pressed = false;
-            _animator.SetTrigger("Press");
+            ButtonAction();
         }
     }
 }

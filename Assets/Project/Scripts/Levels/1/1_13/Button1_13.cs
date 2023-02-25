@@ -1,16 +1,12 @@
-using System;
-using Project.Scripts.Interactable.Static;
+using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_1
+namespace Project.Scripts.Levels._1._1_13
 {
-    public class Button1_1 : MonoBehaviour
+    public class Button1_13 : Button1_1
     {
-        [SerializeField] protected Animator _animator;
-        
-        [SerializeField] protected UnlockableObject _door;
-
-        [SerializeField]protected bool _pressed;
+        private float _currentTime;
+        [SerializeField] private float _timeToOpenDoor;
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
@@ -19,6 +15,21 @@ namespace Project.Scripts.Levels._1._1_1
                 return;
             }
             ButtonAction();
+        }
+
+        private void OnTriggerStay2D(Collider2D collider2D)
+        {
+            if (collider2D.gameObject.layer != 6)
+            {
+                return;
+            }
+
+            _currentTime += Time.deltaTime;
+
+            if (!(_currentTime >= _timeToOpenDoor))
+            {
+                return;
+            }
             if (_door.IsUnlocked())
             {
                 return;
@@ -33,17 +44,7 @@ namespace Project.Scripts.Levels._1._1_1
                 return;
             }
             ButtonAction();
-        }
-
-        protected void ButtonAction()
-        {
-            _pressed = !_pressed;
-            ButtonAnimation();
-        }
-
-        private void ButtonAnimation()
-        {
-            _animator.SetTrigger("Press");
+            _currentTime = 0;
         }
     }
 }
