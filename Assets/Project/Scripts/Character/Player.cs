@@ -16,7 +16,10 @@ namespace Project.Scripts.Character
 
         [SerializeField] private float _currentSpeed = 75;
 
-        //[SerializeField] private PlayerMovement _playerMovement;
+        //public Rigidbody2D rgb;
+        public Animator animator;
+
+        private Vector2 movementDirection;
 
         private Vector2 _movementDirection;
 
@@ -32,7 +35,11 @@ namespace Project.Scripts.Character
             {
                 return;
             }
-            
+
+            animator.SetFloat("Horizontal", _movementX);
+            animator.SetFloat("Vertical", _movementY);
+            animator.SetFloat("Speed", movementDirection.sqrMagnitude);
+
             Controls();
         }
 
