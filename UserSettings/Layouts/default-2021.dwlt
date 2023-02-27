@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 350}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -50,8 +50,12 @@ MonoBehaviour:
   m_MinSize: {x: 875, y: 300}
 =======
     height: 1037
+<<<<<<< HEAD
   m_MinSize: {x: 875, y: 350}
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> 71dcc57... movement fixed
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -132,8 +136,12 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 17
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+  controlID: 18
+>>>>>>> 71dcc57... movement fixed
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,6 +161,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1225
 <<<<<<< HEAD
     height: 939
@@ -161,12 +170,19 @@ MonoBehaviour:
   vertical: 1
   controlID: 125
 =======
+=======
+    width: 866
+>>>>>>> 71dcc57... movement fixed
     height: 987
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 18
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+  controlID: 98
+>>>>>>> 71dcc57... movement fixed
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,13 +193,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1225
 <<<<<<< HEAD
     height: 581
@@ -196,13 +213,19 @@ MonoBehaviour:
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+    width: 866
+    height: 509
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+>>>>>>> 71dcc57... movement fixed
   m_Panes:
   - {fileID: 14}
-  - {fileID: 15}
   - {fileID: 16}
   - {fileID: 13}
-  m_Selected: 3
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,7 +276,7 @@ MonoBehaviour:
     height: 358
 =======
     y: 509
-    width: 1225
+    width: 866
     height: 478
 >>>>>>> b68f39a... player movement animation done (idle not working)
   m_MinSize: {x: 101, y: 121}
@@ -314,8 +337,9 @@ MonoBehaviour:
   - {fileID: 11}
   m_Position:
     serializedVersion: 2
-    x: 1225
+    x: 866
     y: 0
+<<<<<<< HEAD
     width: 314
     height: 939
   m_MinSize: {x: 100, y: 200}
@@ -326,6 +350,14 @@ MonoBehaviour:
 --- !u!114 &12
 =======
   controlID: 65
+=======
+    width: 603
+    height: 987
+  m_MinSize: {x: 100, y: 200}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 19
+>>>>>>> 71dcc57... movement fixed
 --- !u!114 &10
 >>>>>>> b68f39a... player movement animation done (idle not working)
 MonoBehaviour:
@@ -337,21 +369,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneHierarchyWindow
+  m_Name: AnimatorControllerTool
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 314
     height: 496
   m_MinSize: {x: 202, y: 221}
+=======
+    width: 603
+    height: 521
+  m_MinSize: {x: 102, y: 121}
+>>>>>>> 71dcc57... movement fixed
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 20}
-  m_Selected: 0
+  - {fileID: 15}
+  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -369,9 +408,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 496
     width: 314
     height: 443
+=======
+    y: 521
+    width: 603
+    height: 466
+>>>>>>> 71dcc57... movement fixed
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 21}
@@ -389,13 +434,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1539
+    x: 1469
     y: 0
+<<<<<<< HEAD
     width: 381
 <<<<<<< HEAD
     height: 939
@@ -403,6 +449,9 @@ MonoBehaviour:
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 24}
 =======
+=======
+    width: 451
+>>>>>>> 71dcc57... movement fixed
     height: 987
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -440,7 +489,7 @@ MonoBehaviour:
 =======
     x: 0
     y: 73
-    width: 1224
+    width: 865
     height: 488
 >>>>>>> b68f39a... player movement animation done (idle not working)
   m_ViewDataDictionary: {fileID: 0}
@@ -480,7 +529,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -489,6 +538,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
 <<<<<<< HEAD
       width: 469
       height: 316
@@ -500,12 +550,19 @@ MonoBehaviour:
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 612, y: 233.5}
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+      width: 865
+      height: 467
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 432.5, y: 233.5}
+>>>>>>> 71dcc57... movement fixed
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
       x: -234.5
       y: -158
@@ -516,13 +573,20 @@ MonoBehaviour:
   m_LastWindowPixelSize: {x: 469, y: 337}
 =======
       x: -612
+=======
+      x: -432.5
+>>>>>>> 71dcc57... movement fixed
       y: -233.5
-      width: 1224
+      width: 865
       height: 467
     m_MinimalGUI: 1
   m_defaultScale: 1
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 1224, y: 488}
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+  m_LastWindowPixelSize: {x: 865, y: 488}
+>>>>>>> 71dcc57... movement fixed
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -549,11 +613,16 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 19
     width: 1224
 <<<<<<< HEAD
     height: 560
 =======
+=======
+    y: 73
+    width: 865
+>>>>>>> 71dcc57... movement fixed
     height: 488
 >>>>>>> b68f39a... player movement animation done (idle not working)
   m_ViewDataDictionary: {fileID: 0}
@@ -786,8 +855,12 @@ MonoBehaviour:
 =======
     m_Target: {x: -0.5971103, y: -1.1733857, z: -0.001646532}
     speed: 2
+<<<<<<< HEAD
     m_Value: {x: -0.635445, y: -1.2509466, z: 0.00086750835}
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+    m_Value: {x: -0.5971103, y: -1.1733857, z: -0.001646532}
+>>>>>>> 71dcc57... movement fixed
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -845,8 +918,12 @@ MonoBehaviour:
 =======
     m_Target: 5.838163
     speed: 2
+<<<<<<< HEAD
     m_Value: 5.5867586
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+    m_Value: 5.838163
+>>>>>>> 71dcc57... movement fixed
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -891,10 +968,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 866
     y: 73
-    width: 1224
-    height: 590
+    width: 601
+    height: 500
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1010,11 +1087,11 @@ MonoBehaviour:
     - e00: 1.1072749
       e01: 0
       e02: 0
-      e03: 151.1789
+      e03: -68.546295
       e10: 0
       e11: 1.1072749
       e12: 0
-      e13: 42.841858
+      e13: 42.841995
       e20: 0
       e21: 0
       e22: 1
@@ -1023,14 +1100,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.74390566
+    - e00: 0.5643137
       e01: 0
       e02: 0
-      e03: 164.50568
+      e03: 48.409637
       e10: 0
-      e11: 0.74390566
+      e11: 0.5643137
       e12: 0
-      e13: 237.90979
+      e13: 174.98135
       e20: 0
       e21: 0
       e22: 1
@@ -1039,14 +1116,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.7939063
+    - e00: 0.6302872
       e01: 0
       e02: 0
-      e03: 128.38254
+      e03: -7.2875977
       e10: 0
-      e11: 0.7939063
+      e11: 0.6302872
       e12: 0
-      e13: 248.00343
+      e13: 191.50095
       e20: 0
       e21: 0
       e22: 1
@@ -1059,6 +1136,8 @@ MonoBehaviour:
   m_AnimatorController: {fileID: 9100000, guid: ce0d68cd4308b8346875c35327074a77, type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: 206146919224401512, guid: ce0d68cd4308b8346875c35327074a77, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  - m_Target: {fileID: -4095208024144645322, guid: ce0d68cd4308b8346875c35327074a77, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -3618,7 +3697,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 582
-    width: 1224
+    width: 865
     height: 457
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -3627,10 +3706,14 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastSelectedObjectID: 30638
 --- !u!114 &21
 =======
   m_LastSelectedObjectID: -98386
+=======
+  m_LastSelectedObjectID: 29438
+>>>>>>> 71dcc57... movement fixed
 --- !u!114 &19
 >>>>>>> b68f39a... player movement animation done (idle not working)
 MonoBehaviour:
@@ -3828,10 +3911,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1225
+    x: 576
     y: 73
+<<<<<<< HEAD
     width: 312
     height: 475
+=======
+    width: 617
+    height: 500
+>>>>>>> 71dcc57... movement fixed
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -3839,6 +3927,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
       m_SelectedIDs: 46800000
       m_LastClickedID: 0
@@ -3848,6 +3937,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: e6faffff12fbffff
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 12fbffff
+>>>>>>> 71dcc57... movement fixed
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -3892,6 +3986,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1225
     y: 569
 =======
@@ -3900,6 +3995,12 @@ MonoBehaviour:
 >>>>>>> b68f39a... player movement animation done (idle not working)
     width: 312
     height: 422
+=======
+    x: 866
+    y: 594
+    width: 601
+    height: 445
+>>>>>>> 71dcc57... movement fixed
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -3917,7 +4018,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Project/Sprites/1_Enviroment/2_Characters/Old/Single_Characters_Legacy/32x32
+    - Assets/Project/Scripts/Character
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -3936,10 +4037,14 @@ MonoBehaviour:
     m_SelectedIDs: 7c680000
     m_LastClickedID: 26748
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000e63a0000647f0000667f0000687f00006a7f00006c7f00006e7f0000707f0000727f0000747f0000
 =======
     m_ExpandedIDs: 000000008475000086750000887500008a7500008c750000
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+    m_ExpandedIDs: 000000000476000006760000087600000a7600000c7600000e76000010760000127600001476000016760000187600001a7600001c7600001e760000207600002276000024760000
+>>>>>>> 71dcc57... movement fixed
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3965,6 +4070,7 @@ MonoBehaviour:
       m_ResourceFile: 
   m_AssetTreeState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 700}
     m_SelectedIDs: 
     m_LastClickedID: 0
@@ -3975,6 +4081,12 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: ffffffff000000008475000086750000887500008a7500008c7500000a76000046760000e8760000f4760000147700001a77000036770000387700003e770000b8790000
 >>>>>>> b68f39a... player movement animation done (idle not working)
+=======
+    scrollPos: {x: 0, y: 288}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff000000000476000006760000087600000a7600000c7600000e76000010760000127600001476000016760000187600001a7600001c7600001e760000207600002276000024760000
+>>>>>>> 71dcc57... movement fixed
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4050,10 +4162,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1539
+    x: 1469
     y: 73
+<<<<<<< HEAD
     width: 380
     height: 918
+=======
+    width: 450
+    height: 966
+>>>>>>> 71dcc57... movement fixed
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -4065,7 +4182,11 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
+<<<<<<< HEAD
   m_LastVerticalScrollValue: 298
+=======
+  m_LastVerticalScrollValue: 0
+>>>>>>> 71dcc57... movement fixed
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

@@ -16,7 +16,8 @@ namespace Project.Scripts.Character
 
         [SerializeField] private float _currentSpeed = 75;
 
-        //public Rigidbody2D rgb;
+        [SerializeField] private bool _inverted;
+
         public Animator animator;
 
         private Vector2 movementDirection;
@@ -25,6 +26,12 @@ namespace Project.Scripts.Character
 
         private float _movementX;
         private float _movementY;
+
+        private float _lastX;
+        private float _lastY;
+
+        private bool _isMoving;
+        
 
         void Update()
         {
@@ -36,11 +43,9 @@ namespace Project.Scripts.Character
                 return;
             }
 
-            animator.SetFloat("Horizontal", _movementX);
-            animator.SetFloat("Vertical", _movementY);
-            animator.SetFloat("Speed", movementDirection.sqrMagnitude);
-
             Controls();
+
+            UpdateAnimationController();
         }
 
         private void FixedUpdate()
@@ -61,47 +66,42 @@ namespace Project.Scripts.Character
 
         private void MovementController()
         {
-            if (SceneManager.GetActiveScene().buildIndex == 5)
+            _isMoving = false;
+
+            if (Input.GetKey(KeyCode.A))
             {
-                if (Input.GetKey(KeyCode.A))
-                {
-                    _movementX += 1;
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    _movementX += -1;
-                }
-                if (Input.GetKey(KeyCode.W))
-                {
-                    _movementY += -1;
-                }
-                if (Input.GetKey(KeyCode.S))
-                {
-                    _movementY += 1;
-                }
+                _movementX = _inverted ? 1 : -1;
+                _lastX = _movementX;
+                _lastY = 0;
+                _isMoving = true;
             }
-            else {
-                if (Input.GetKey(KeyCode.A))
-                {
-                    _movementX += -1;
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    _movementX += 1;
-                }
-                if (Input.GetKey(KeyCode.W))
-                {
-                    _movementY += 1;
-                }
-                if (Input.GetKey(KeyCode.S))
-                {
-                    _movementY += -1;
-                }
+            if (Input.GetKey(KeyCode.D))
+            {
+                _movementX = _inverted ? -1 : 1;
+                _lastX = _movementX;
+                _lastY = 0;
+                _isMoving = true;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                _movementY = _inverted ? 1 : -1;
+                _lastY = _movementY;
+                _lastX = 0;
+                _isMoving = true;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                _movementY = _inverted ? -1 : 1;
+                _lastY = _movementY;
+                _lastX = 0;
+                _isMoving = true;
             }            
         }
 
         private void Movement() {
+            
             _movementDirection = new Vector3(_movementX, _movementY).normalized;
+
             if (_movementDirection != new Vector2(0,0))
             {
                 AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
@@ -110,7 +110,17 @@ namespace Project.Scripts.Character
             {
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
             }
+            
             _rigidbody2D.AddForce(_movementDirection * _currentSpeed, ForceMode2D.Force);
+        }
+
+        private void UpdateAnimationController(){
+
+            animator.SetFloat("Horizontal", _movementX);
+            animator.SetFloat("Vertical", _movementY);
+            animator.SetFloat("lastX", _lastX);
+            animator.SetFloat("lastY", _lastY);
+            animator.SetBool("isMoving", _isMoving);            
         }
 
         public void Pause()
