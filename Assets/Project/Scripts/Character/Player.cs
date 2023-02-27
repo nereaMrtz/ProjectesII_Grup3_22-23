@@ -20,8 +20,6 @@ namespace Project.Scripts.Character
 
         public Animator animator;
 
-        private Vector2 movementDirection;
-
         private Vector2 _movementDirection;
 
         private float _movementX;
@@ -84,14 +82,14 @@ namespace Project.Scripts.Character
             }
             if (Input.GetKey(KeyCode.W))
             {
-                _movementY = _inverted ? 1 : -1;
+                _movementY = _inverted ? -1 : 1;
                 _lastY = _movementY;
                 _lastX = 0;
                 _isMoving = true;
             }
             if (Input.GetKey(KeyCode.S))
             {
-                _movementY = _inverted ? -1 : 1;
+                _movementY = _inverted ? 1 : -1;
                 _lastY = _movementY;
                 _lastX = 0;
                 _isMoving = true;
