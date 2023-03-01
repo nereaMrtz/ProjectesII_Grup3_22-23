@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour
 {
-    [SerializeField] protected int _sala;
+    [SerializeField] protected string _sala;
     public void ChangeScene()
     {
         SceneManager.LoadScene(_sala);
