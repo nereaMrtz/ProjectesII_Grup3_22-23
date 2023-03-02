@@ -1,21 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CambiarSala : MonoBehaviour
+namespace Project.Scripts.Levels
 {
-    [SerializeField] protected string _sala;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class CambiarSala : MonoBehaviour
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        [SerializeField] protected string _sala;
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            ChangeScene();   
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                ChangeScene();   
+            }
         }
-    }
 
-    public void ChangeScene()
-    {
-        SceneManager.LoadScene(_sala);
+        public void ChangeScene()
+        {
+            SceneManager.LoadScene(_sala);
+        }
     }
 }

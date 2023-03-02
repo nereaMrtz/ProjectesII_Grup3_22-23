@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Project.Scripts.Level;
+using Project.Scripts.LevelElements;
 using UnityEngine;
 
 namespace Project.Scripts.Managers

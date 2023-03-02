@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 using Project.Scripts.Managers;
-using Project.Scripts.NoMonoBehaviourClass;
-using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Character
 {
@@ -135,11 +133,6 @@ namespace Project.Scripts.Character
         public float GetMovementY()
         {
             return _movementY;
-        }
-
-        public Rigidbody2D GetRigidbody2D() {
-        
-            return _rigidbody2D;
         }
     }
 }

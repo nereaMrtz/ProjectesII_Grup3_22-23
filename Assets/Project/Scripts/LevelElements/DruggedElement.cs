@@ -1,6 +1,6 @@
-using UnityEngine;
+using Project.Scripts.Level;
 
-namespace Project.Scripts.Level
+namespace Project.Scripts.LevelElements
 {
     public class DruggedElement : DrugSubjectElement
     {

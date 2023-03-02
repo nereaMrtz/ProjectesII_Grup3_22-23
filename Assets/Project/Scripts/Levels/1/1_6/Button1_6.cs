@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
 using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1._1
+namespace Project.Scripts.Levels._1._1_6
 {
     public class Button1_6 : MonoBehaviour
     {

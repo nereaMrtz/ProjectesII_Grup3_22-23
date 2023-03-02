@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Project.Scripts.Managers;
+using UnityEngine;
 
-public class HintButton : MonoBehaviour
+namespace Project.Scripts.UI
 {
+    public class HintButton : MonoBehaviour
+    {
  
-    public void StopPlayerMovement()
-    {
-        GameManager.Instance.SetZoomInState(true);
-    }
+        public void StopPlayerMovement()
+        {
+            GameManager.Instance.SetZoomInState(true);
+        }
 
-    public void ActivePlayerMovement()
-    {
-        GameManager.Instance.SetZoomInState(false);
+        public void ActivePlayerMovement()
+        {
+            GameManager.Instance.SetZoomInState(false);
 
+        }
     }
 }
