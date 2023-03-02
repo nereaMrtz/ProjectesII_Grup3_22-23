@@ -14,38 +14,42 @@ namespace Project.Scripts.Character
 
         [SerializeField] private float _currentSpeed = 75;
 
+        [SerializeField] private bool _moveWithKeyboard;
+        
+        [SerializeField] private bool _move;
+        
         [SerializeField] private bool _inverted;
 
         public Animator animator;
 
         private Vector2 _movementDirection;
+        private Vector2 _lastMovement;
 
-        private float _movementX;
-        private float _movementY;
-
-        private float _lastX;
-        private float _lastY;
-
-        private bool _isMoving;
+        [SerializeField] private bool _moving;
+        [SerializeField] private bool _movingWithOutKeyBoard;
         
 
         void Update()
         {
-            _movementX = 0;
-            _movementY = 0;
-            
             if (_pauseMenuPanel.activeSelf)
             {
                 return;
             }
 
-            Controls();
+            if (_moveWithKeyboard)
+            {
+                Controls();    
+            }
 
             UpdateAnimationController();
         }
 
         private void FixedUpdate()
         {
+            if (!_move)
+            {
+                return;
+            }
             Movement();
         }
 
@@ -62,42 +66,49 @@ namespace Project.Scripts.Character
 
         private void MovementController()
         {
-            _isMoving = false;
+            if (_moveWithKeyboard)
+            {
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+                {
+                    _moving = true;
+                }
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                _movementX = _inverted ? 1 : -1;
-                _lastX = _movementX;
-                _lastY = 0;
-                _isMoving = true;
+                if (_moving)
+                {
+                    if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+                    {
+                        _moving = false;
+                        _movementDirection = Vector2.zero;
+                    }   
+                }
+                
+                if (Input.GetKey(KeyCode.A))
+                {
+                    _movementDirection.x = _inverted ? 1 : -1;
+                    _lastMovement = _movementDirection;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    _movementDirection.x = _inverted ? -1 : 1;
+                    _lastMovement = _movementDirection;
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    _movementDirection.y = _inverted ? -1 : 1;
+                    _lastMovement = _movementDirection;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    _movementDirection.y = _inverted ? 1 : -1;
+                    _lastMovement = _movementDirection;
+                }
             }
-            if (Input.GetKey(KeyCode.D))
-            {
-                _movementX = _inverted ? -1 : 1;
-                _lastX = _movementX;
-                _lastY = 0;
-                _isMoving = true;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                _movementY = _inverted ? -1 : 1;
-                _lastY = _movementY;
-                _lastX = 0;
-                _isMoving = true;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                _movementY = _inverted ? 1 : -1;
-                _lastY = _movementY;
-                _lastX = 0;
-                _isMoving = true;
-            }            
         }
 
         private void Movement() {
             
-            _movementDirection = new Vector3(_movementX, _movementY).normalized;
-
+            _movementDirection = _movementDirection.normalized;
+            
             if (_movementDirection != new Vector2(0,0))
             {
                 AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
@@ -112,11 +123,11 @@ namespace Project.Scripts.Character
 
         private void UpdateAnimationController(){
 
-            animator.SetFloat("Horizontal", _movementX);
-            animator.SetFloat("Vertical", _movementY);
-            animator.SetFloat("lastX", _lastX);
-            animator.SetFloat("lastY", _lastY);
-            animator.SetBool("isMoving", _isMoving);            
+            animator.SetFloat("Horizontal", _movementDirection.x);
+            animator.SetFloat("Vertical", _movementDirection.y);
+            animator.SetFloat("lastX", _lastMovement.x);
+            animator.SetFloat("lastY", _lastMovement.y);
+            animator.SetBool("isMoving", _moving);            
         }
 
         public void Pause()
@@ -125,14 +136,35 @@ namespace Project.Scripts.Character
             GameManager.Instance.SetPause(true);
         }
 
-        public float GetMovementX()
+        public Vector2 GetMovement()
         {
-            return _movementX;
+            return _movementDirection;
         }
 
-        public float GetMovementY()
+        public void SetMovement(Vector2 movement)
         {
-            return _movementY;
+            _movementDirection = movement;
+            
+            if (_movementDirection.x != 0)
+            {
+                _lastMovement.x = _movementDirection.x;
+                _lastMovement.y = 0;
+            }
+            if(_movementDirection.y != 0)
+            {
+                _lastMovement.y = _movementDirection.y;
+                _lastMovement.x = 0;
+            }
+        }
+
+        public void SetMoving(bool moving)
+        {
+            _moving = moving;
+        }
+
+        public void SetMovementDirection(Vector2 movementDirection)
+        {
+            _movementDirection = movementDirection;
         }
     }
 }
