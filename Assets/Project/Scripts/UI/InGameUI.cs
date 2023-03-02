@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InGameUI : MonoBehaviour
+namespace Project.Scripts.UI
 {
-    private const string SHOW_INVENTORY = "ShowInventory";
-    [SerializeField] private Animator _animator;
-    private bool onInventory = false;
-
-    public void ShowInventory()
+    public class InGameUI : MonoBehaviour
     {
-        if (onInventory == false)
+        private const string SHOW_INVENTORY = "ShowInventory";
+        [SerializeField] private Animator _animator;
+        private bool onInventory = false;
+
+        public void ShowInventory()
         {
-            _animator.SetBool(SHOW_INVENTORY, true);
-            onInventory = true;
-        }
-        else
-        {
-            _animator.SetBool(SHOW_INVENTORY, false);
-            onInventory = false;
+            if (onInventory == false)
+            {
+                _animator.SetBool(SHOW_INVENTORY, true);
+                onInventory = true;
+            }
+            else
+            {
+                _animator.SetBool(SHOW_INVENTORY, false);
+                onInventory = false;
+            }
         }
     }
 }
