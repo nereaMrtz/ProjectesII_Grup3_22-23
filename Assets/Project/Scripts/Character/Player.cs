@@ -68,19 +68,9 @@ namespace Project.Scripts.Character
         {
             if (_moveWithKeyboard)
             {
-                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
-                {
-                    _moving = true;
-                }
+                _moving = (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S));
 
-                if (_moving)
-                {
-                    if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
-                    {
-                        _moving = false;
-                        _movementDirection = Vector2.zero;
-                    }   
-                }
+                _movementDirection = Vector2.zero;
                 
                 if (Input.GetKey(KeyCode.A))
                 {

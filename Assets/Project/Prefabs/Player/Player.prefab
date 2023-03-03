@@ -117,7 +117,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 15
+  m_LinearDrag: 50
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -139,11 +139,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pauseMenuPanel: {fileID: 0}
   _rigidbody2D: {fileID: 4798464189758458638}
-  _currentSpeed: 75
+  _currentSpeed: 200
   _moveWithKeyboard: 1
   _move: 1
   _inverted: 0
   animator: {fileID: 5135575102694113860}
+  _moving: 0
+  _movingWithOutKeyBoard: 0
 --- !u!95 &5135575102694113860
 Animator:
   serializedVersion: 4
