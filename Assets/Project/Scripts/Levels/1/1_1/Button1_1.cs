@@ -9,7 +9,7 @@ namespace Project.Scripts.Levels._1._1_1
         
         [SerializeField] protected UnlockableObject _door;
 
-        [SerializeField] protected bool _pressed;
+        protected bool _pressed;
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {

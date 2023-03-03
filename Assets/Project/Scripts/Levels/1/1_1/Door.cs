@@ -7,9 +7,9 @@ namespace Project.Scripts.Levels._1._1_1
 {
     public class Door : UnlockableObject
     {
-        private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
-        private const String OPEN_TRIGGER = "Open";
-        private const String CLOSE_TRIGGER = "Close";
+        protected const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
+        protected const String OPEN_TRIGGER = "Open";
+        protected const String CLOSE_TRIGGER = "Close";
         
         [SerializeField] protected Animator _animator;
 
