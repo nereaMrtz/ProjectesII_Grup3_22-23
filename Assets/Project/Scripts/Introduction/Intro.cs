@@ -93,10 +93,11 @@ namespace Project.Scripts.Introduction
         IEnumerator ShowCharacters(string textToShow)
         {
             writtingText = true;
-            screenText.text = "";
-            foreach (char character in textToShow.ToCharArray())
+            screenText.text = textToShow;
+            screenText.maxVisibleCharacters = 0;
+            while (screenText.maxVisibleCharacters < screenText.text.Length - 1)
             {
-                screenText.text += character;
+                screenText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(time);
             }
             clickSprite.SetActive(true);
