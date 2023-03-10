@@ -10,9 +10,14 @@ namespace Project.Scripts.Menus
         private const String SETTINGS_MENU_NAME = "Settings Menu";
         
         [SerializeField] private String _musicName;
+
         [SerializeField] private Slider _slider;
+
         [SerializeField] private AudioMixer _audioMixer;
+
         [SerializeField] private Toggle _muteToggle;
+
+        [SerializeField] private GameObject _muteIcon;
     
         private float _lastVolumeValue;
 
@@ -33,11 +38,13 @@ namespace Project.Scripts.Menus
             {
                 _audioMixer.SetFloat(_musicName, -80);
                 _muteToggle.isOn = true;
+                _muteIcon.SetActive(true);
             }
             else
             {
                 _audioMixer.SetFloat(_musicName, volume);
                 _muteToggle.isOn = false;
+                _muteIcon.SetActive(false);
             }
             _lastVolumeValue = volume;
             
@@ -48,10 +55,12 @@ namespace Project.Scripts.Menus
             if (mute)
             {
                 _audioMixer.SetFloat(_musicName, -80);
+                _muteIcon.SetActive(true);
             }
             else
             {
                 _audioMixer.SetFloat(_musicName, _lastVolumeValue);
+                _muteIcon.SetActive(false);
             }
         }
         

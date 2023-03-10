@@ -5,45 +5,37 @@ namespace Project.Scripts.Levels._1._1_13
 {
     public class Button1_13 : Button1_1
     {
-        private float _currentTime;
+        private const int PLAYER_LAYER = 6;
+
         [SerializeField] private float _timeToOpenDoor;
+
+        [SerializeField] private Door1_13 _door1_13;
+
+        private float _currentTime;
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer != 6)
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
             ButtonAction();
-        }
-
-        private void OnTriggerStay2D(Collider2D collider2D)
-        {
-            if (collider2D.gameObject.layer != 6)
-            {
-                return;
-            }
-
-            _currentTime += Time.deltaTime;
-
-            if (!(_currentTime >= _timeToOpenDoor))
-            {
-                return;
-            }
-            if (_door.IsUnlocked())
-            {
-                return;
-            }
-            _door.Unlock();
+            _door1_13.AnimatorStep(_pressed);
+            _currentTime = Time.time;
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer != 6)
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
             ButtonAction();
+            if (Time.time - _currentTime > _timeToOpenDoor && !_door1_13.IsUnlocked())
+            {
+                _door1_13.Unlock();
+            }
+            _door1_13.AnimatorStep(_pressed);
             _currentTime = 0;
         }
     }
