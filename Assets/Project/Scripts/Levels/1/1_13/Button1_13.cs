@@ -21,6 +21,7 @@ namespace Project.Scripts.Levels._1._1_13
             }
             ButtonAction();
             _door1_13.AnimatorStep(_pressed);
+            _currentTime = Time.time;
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
@@ -30,6 +31,10 @@ namespace Project.Scripts.Levels._1._1_13
                 return;
             }
             ButtonAction();
+            if (Time.time - _currentTime > _timeToOpenDoor && !_door1_13.IsUnlocked())
+            {
+                _door1_13.Unlock();
+            }
             _door1_13.AnimatorStep(_pressed);
             _currentTime = 0;
         }

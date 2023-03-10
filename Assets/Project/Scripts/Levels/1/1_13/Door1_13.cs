@@ -1,4 +1,5 @@
 using Project.Scripts.Levels._1._1_1;
+using UnityEngine;
 
 namespace Project.Scripts.Levels._1._1_13 
 {
@@ -6,11 +7,14 @@ namespace Project.Scripts.Levels._1._1_13
     {
         public void AnimatorStep(bool buttonPressed) {
 
-            if (_unlocked) 
+            Debug.Log("opened");
+            if (_unlocked)
             {
                 Destroy(this);
             }
-            _animator.SetBool("Open", buttonPressed);
+            else {
+                _animator.SetBool("Open", buttonPressed);
+            }            
         }
     }
 }
