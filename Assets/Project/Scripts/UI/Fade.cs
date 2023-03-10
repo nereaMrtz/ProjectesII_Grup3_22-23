@@ -18,6 +18,7 @@ namespace Project.Scripts.UI
 
         private void OnEnable()
         {
+            _image.enabled = true;
             FadeAnimation();
         }
 
