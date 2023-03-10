@@ -7,7 +7,7 @@ namespace Project.Scripts.Levels
 {
     public class CambiarSala : MonoBehaviour
     {
-        [SerializeField] protected string _sala;
+        [SerializeField] protected int _sala;
 
         [SerializeField] private Fade _fade;
 
@@ -28,7 +28,7 @@ namespace Project.Scripts.Levels
             ChangeScene();
         }
 
-        private void ChangeScene()
+        public void ChangeScene()
         {
             SceneManager.LoadScene(_sala);
         }
