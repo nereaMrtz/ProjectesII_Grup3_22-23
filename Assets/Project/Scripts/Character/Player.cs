@@ -40,7 +40,6 @@ namespace Project.Scripts.Character
             {
                 Controls();    
             }
-
             UpdateAnimationController();
         }
 
@@ -67,29 +66,27 @@ namespace Project.Scripts.Character
         private void MovementController()
         {
             if (_moveWithKeyboard)
-            {
-                _moving = (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S));
-
+            {                
                 _movementDirection = Vector2.zero;
                 
                 if (Input.GetKey(KeyCode.A))
                 {
-                    _movementDirection.x = _inverted ? 1 : -1;
+                    _movementDirection.x += _inverted ? 1 : -1;
                     _lastMovement = _movementDirection;
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    _movementDirection.x = _inverted ? -1 : 1;
+                    _movementDirection.x += _inverted ? -1 : 1;
                     _lastMovement = _movementDirection;
                 }
                 if (Input.GetKey(KeyCode.W))
                 {
-                    _movementDirection.y = _inverted ? -1 : 1;
+                    _movementDirection.y += _inverted ? -1 : 1;
                     _lastMovement = _movementDirection;
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    _movementDirection.y = _inverted ? 1 : -1;
+                    _movementDirection.y += _inverted ? 1 : -1;
                     _lastMovement = _movementDirection;
                 }
             }
@@ -98,7 +95,7 @@ namespace Project.Scripts.Character
         private void Movement() {
             
             _movementDirection = _movementDirection.normalized;
-            
+                        
             if (_movementDirection != new Vector2(0,0))
             {
                 AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
@@ -107,12 +104,22 @@ namespace Project.Scripts.Character
             {
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
             }
-            
-            _rigidbody2D.AddForce(_movementDirection * _currentSpeed, ForceMode2D.Force);
+
+            if (_movementDirection.magnitude == 0)
+            {
+                _moving = false;
+                _rigidbody2D.velocity = Vector2.zero;
+            }
+            else 
+            {
+                _rigidbody2D.AddForce(_movementDirection * _currentSpeed, ForceMode2D.Force);
+            }   
         }
 
         private void UpdateAnimationController(){
 
+            _moving = _rigidbody2D.velocity.magnitude > 0.01f;
+            
             animator.SetFloat("Horizontal", _movementDirection.x);
             animator.SetFloat("Vertical", _movementDirection.y);
             animator.SetFloat("lastX", _lastMovement.x);
