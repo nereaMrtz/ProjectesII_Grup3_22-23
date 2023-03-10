@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 73067263}
   - component: {fileID: 73067262}
   - component: {fileID: 73067261}
-  - component: {fileID: 73067260}
+  - component: {fileID: 73067264}
   m_Layer: 5
   m_Name: level11
   m_TagString: Untagged
@@ -299,19 +299,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12.518799, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &73067260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73067258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.11
 --- !u!114 &73067261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,8 +343,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 73067260}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 73067264}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -406,6 +393,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73067258}
   m_CullTransparentMesh: 1
+--- !u!114 &73067264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73067258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 11
+  _fade: {fileID: 1060238333}
 --- !u!1 &85978577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1168,7 @@ GameObject:
   - component: {fileID: 199463883}
   - component: {fileID: 199463882}
   - component: {fileID: 199463881}
-  - component: {fileID: 199463880}
+  - component: {fileID: 199463884}
   m_Layer: 5
   m_Name: level20
   m_TagString: Untagged
@@ -1196,19 +1197,6 @@ RectTransform:
   m_AnchoredPosition: {x: 524.51886, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &199463880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199463878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 
 --- !u!114 &199463881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,8 +1241,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 199463880}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 199463884}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -1303,6 +1291,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199463878}
   m_CullTransparentMesh: 1
+--- !u!114 &199463884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199463878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 20
+  _fade: {fileID: 1060238333}
 --- !u!1 &206855267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1317,7 @@ GameObject:
   - component: {fileID: 206855272}
   - component: {fileID: 206855271}
   - component: {fileID: 206855270}
-  - component: {fileID: 206855269}
+  - component: {fileID: 206855273}
   m_Layer: 5
   m_Name: level19
   m_TagString: Untagged
@@ -1344,19 +1346,6 @@ RectTransform:
   m_AnchoredPosition: {x: 396.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &206855269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206855267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 
 --- !u!114 &206855270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,8 +1390,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 206855269}
-        m_TargetAssemblyTypeName: Project.Scripts.Menus.LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 206855273}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -1451,6 +1440,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206855267}
   m_CullTransparentMesh: 1
+--- !u!114 &206855273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206855267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 19
+  _fade: {fileID: 1060238333}
 --- !u!1 &212256081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,7 +3249,7 @@ GameObject:
   - component: {fileID: 551130751}
   - component: {fileID: 551130750}
   - component: {fileID: 551130749}
-  - component: {fileID: 551130748}
+  - component: {fileID: 551130752}
   m_Layer: 5
   m_Name: level12
   m_TagString: Untagged
@@ -3275,19 +3278,6 @@ RectTransform:
   m_AnchoredPosition: {x: 140.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &551130748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551130746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.12
 --- !u!114 &551130749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3332,8 +3322,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 551130748}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 551130752}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -3382,6 +3372,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551130746}
   m_CullTransparentMesh: 1
+--- !u!114 &551130752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551130746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 12
+  _fade: {fileID: 1060238333}
 --- !u!1 &554567517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,7 +3398,7 @@ GameObject:
   - component: {fileID: 554567522}
   - component: {fileID: 554567521}
   - component: {fileID: 554567520}
-  - component: {fileID: 554567519}
+  - component: {fileID: 554567523}
   m_Layer: 5
   m_Name: level1
   m_TagString: Untagged
@@ -3423,19 +3427,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12.518799, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &554567519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554567517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.1
 --- !u!114 &554567520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3480,8 +3471,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 554567519}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 554567523}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -3530,6 +3521,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554567517}
   m_CullTransparentMesh: 1
+--- !u!114 &554567523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554567517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 1
+  _fade: {fileID: 1060238333}
 --- !u!1 &559819633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3835,6 +3840,7 @@ RectTransform:
   - {fileID: 120018319}
   - {fileID: 212256082}
   - {fileID: 795696360}
+  - {fileID: 1060238332}
   m_Father: {fileID: 987089693}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3893,7 +3899,7 @@ GameObject:
   - component: {fileID: 589074032}
   - component: {fileID: 589074031}
   - component: {fileID: 589074030}
-  - component: {fileID: 589074029}
+  - component: {fileID: 589074033}
   m_Layer: 5
   m_Name: level5
   m_TagString: Untagged
@@ -3922,19 +3928,6 @@ RectTransform:
   m_AnchoredPosition: {x: 524.51886, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &589074029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589074027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.5
 --- !u!114 &589074030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3979,8 +3972,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 589074029}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 589074033}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -4029,6 +4022,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589074027}
   m_CullTransparentMesh: 1
+--- !u!114 &589074033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589074027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 5
+  _fade: {fileID: 1060238333}
 --- !u!1 &590874802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4617,7 +4624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.00876, y: -23.466063}
+  m_AnchoredPosition: {x: 95.00879, y: -23.466063}
   m_SizeDelta: {x: 190.01753, y: 46.932125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617926642
@@ -4733,7 +4740,7 @@ GameObject:
   - component: {fileID: 661554775}
   - component: {fileID: 661554774}
   - component: {fileID: 661554773}
-  - component: {fileID: 661554772}
+  - component: {fileID: 661554776}
   m_Layer: 5
   m_Name: level6
   m_TagString: Untagged
@@ -4762,19 +4769,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12.518799, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &661554772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661554770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.6
 --- !u!114 &661554773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4819,8 +4813,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 661554772}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 661554776}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -4869,6 +4863,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661554770}
   m_CullTransparentMesh: 1
+--- !u!114 &661554776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661554770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 6
+  _fade: {fileID: 1060238333}
 --- !u!1 &685782356
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,7 +5112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.349}
   m_AnchorMax: {x: 1, y: 0.6798804}
-  m_AnchoredPosition: {x: -0.9000244, y: -0.1800003}
+  m_AnchoredPosition: {x: -0.9000244, y: -0.17999268}
   m_SizeDelta: {x: 0, y: 0.41999817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &740024077
@@ -5402,7 +5410,7 @@ GameObject:
   - component: {fileID: 779348499}
   - component: {fileID: 779348498}
   - component: {fileID: 779348497}
-  - component: {fileID: 779348496}
+  - component: {fileID: 779348500}
   m_Layer: 5
   m_Name: level15
   m_TagString: Untagged
@@ -5431,19 +5439,6 @@ RectTransform:
   m_AnchoredPosition: {x: 524.51886, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &779348496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779348494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.15
 --- !u!114 &779348497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5488,8 +5483,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 779348496}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 779348500}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -5538,6 +5533,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779348494}
   m_CullTransparentMesh: 1
+--- !u!114 &779348500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779348494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 15
+  _fade: {fileID: 1060238333}
 --- !u!1 &795696359
 GameObject:
   m_ObjectHideFlags: 0
@@ -5612,7 +5621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 283.3613, y: -23.466063}
+  m_AnchoredPosition: {x: 283.36133, y: -23.466063}
   m_SizeDelta: {x: 186.68753, y: 46.932125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802552804
@@ -5992,7 +6001,7 @@ GameObject:
   - component: {fileID: 843405144}
   - component: {fileID: 843405143}
   - component: {fileID: 843405142}
-  - component: {fileID: 843405141}
+  - component: {fileID: 843405145}
   m_Layer: 5
   m_Name: level9
   m_TagString: Untagged
@@ -6021,19 +6030,6 @@ RectTransform:
   m_AnchoredPosition: {x: 396.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &843405141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843405139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.9
 --- !u!114 &843405142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6078,8 +6074,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843405141}
-        m_TargetAssemblyTypeName: Project.Scripts.Menus.LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 843405145}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -6128,6 +6124,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843405139}
   m_CullTransparentMesh: 1
+--- !u!114 &843405145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843405139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 9
+  _fade: {fileID: 1060238333}
 --- !u!1 &848995740
 GameObject:
   m_ObjectHideFlags: 0
@@ -6589,7 +6599,7 @@ GameObject:
   - component: {fileID: 884538891}
   - component: {fileID: 884538890}
   - component: {fileID: 884538889}
-  - component: {fileID: 884538888}
+  - component: {fileID: 884538892}
   m_Layer: 5
   m_Name: level16
   m_TagString: Untagged
@@ -6618,19 +6628,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12.518799, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &884538888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884538886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.16
 --- !u!114 &884538889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6675,8 +6672,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 884538888}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 884538892}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -6725,6 +6722,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884538886}
   m_CullTransparentMesh: 1
+--- !u!114 &884538892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884538886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 16
+  _fade: {fileID: 1060238333}
 --- !u!1 &886451594
 GameObject:
   m_ObjectHideFlags: 0
@@ -7868,7 +7879,7 @@ GameObject:
   - component: {fileID: 1046021146}
   - component: {fileID: 1046021145}
   - component: {fileID: 1046021144}
-  - component: {fileID: 1046021143}
+  - component: {fileID: 1046021147}
   m_Layer: 5
   m_Name: level14
   m_TagString: Untagged
@@ -7897,19 +7908,6 @@ RectTransform:
   m_AnchoredPosition: {x: 396.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1046021143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046021141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.14
 --- !u!114 &1046021144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7954,8 +7952,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1046021143}
-        m_TargetAssemblyTypeName: Project.Scripts.Menus.LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1046021147}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -8004,6 +8002,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046021141}
   m_CullTransparentMesh: 1
+--- !u!114 &1046021147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046021141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 14
+  _fade: {fileID: 1060238333}
 --- !u!1 &1055056677
 GameObject:
   m_ObjectHideFlags: 0
@@ -8376,6 +8388,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058615442}
   m_CullTransparentMesh: 1
+--- !u!1 &1060238331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1060238332}
+  - component: {fileID: 1060238335}
+  - component: {fileID: 1060238334}
+  - component: {fileID: 1060238333}
+  m_Layer: 5
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1060238332
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060238331}
+  m_LocalRotation: {x: -0, y: 0.000000047647255, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1998689, y: 1.1998689, z: 1.1998689}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 582784209}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -8.747681, y: -39.59659}
+  m_SizeDelta: {x: 0.00012207031, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1060238333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060238331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da43ee663fcb4a44d98694458cbbefa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 1060238334}
+  _timeToChange: 0.5
+--- !u!114 &1060238334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060238331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0.050980393, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1060238335
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060238331}
+  m_CullTransparentMesh: 1
 --- !u!1 &1091828978
 GameObject:
   m_ObjectHideFlags: 0
@@ -8388,7 +8491,7 @@ GameObject:
   - component: {fileID: 1091828983}
   - component: {fileID: 1091828982}
   - component: {fileID: 1091828981}
-  - component: {fileID: 1091828980}
+  - component: {fileID: 1091828984}
   m_Layer: 5
   m_Name: level3
   m_TagString: Untagged
@@ -8417,19 +8520,6 @@ RectTransform:
   m_AnchoredPosition: {x: 268.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1091828980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091828978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.3
 --- !u!114 &1091828981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8474,8 +8564,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091828980}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1091828984}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -8524,6 +8614,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091828978}
   m_CullTransparentMesh: 1
+--- !u!114 &1091828984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091828978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 3
+  _fade: {fileID: 1060238333}
 --- !u!1 &1120403655
 GameObject:
   m_ObjectHideFlags: 0
@@ -8857,7 +8961,7 @@ GameObject:
   - component: {fileID: 1212705062}
   - component: {fileID: 1212705061}
   - component: {fileID: 1212705060}
-  - component: {fileID: 1212705059}
+  - component: {fileID: 1212705063}
   m_Layer: 5
   m_Name: level13
   m_TagString: Untagged
@@ -8886,19 +8990,6 @@ RectTransform:
   m_AnchoredPosition: {x: 268.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1212705059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212705057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.13
 --- !u!114 &1212705060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8943,8 +9034,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1212705059}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1212705063}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -8993,6 +9084,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212705057}
   m_CullTransparentMesh: 1
+--- !u!114 &1212705063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212705057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 13
+  _fade: {fileID: 1060238333}
 --- !u!1 &1212738789
 GameObject:
   m_ObjectHideFlags: 0
@@ -9005,7 +9110,7 @@ GameObject:
   - component: {fileID: 1212738794}
   - component: {fileID: 1212738793}
   - component: {fileID: 1212738792}
-  - component: {fileID: 1212738791}
+  - component: {fileID: 1212738795}
   m_Layer: 5
   m_Name: level18
   m_TagString: Untagged
@@ -9034,19 +9139,6 @@ RectTransform:
   m_AnchoredPosition: {x: 268.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1212738791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212738789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 
 --- !u!114 &1212738792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9091,8 +9183,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1212738791}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1212738795}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -9141,6 +9233,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212738789}
   m_CullTransparentMesh: 1
+--- !u!114 &1212738795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212738789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 18
+  _fade: {fileID: 1060238333}
 --- !u!1 &1274054057
 GameObject:
   m_ObjectHideFlags: 0
@@ -11323,7 +11429,7 @@ GameObject:
   - component: {fileID: 1547005509}
   - component: {fileID: 1547005508}
   - component: {fileID: 1547005507}
-  - component: {fileID: 1547005506}
+  - component: {fileID: 1547005510}
   m_Layer: 5
   m_Name: level8
   m_TagString: Untagged
@@ -11352,19 +11458,6 @@ RectTransform:
   m_AnchoredPosition: {x: 268.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1547005506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547005504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.8
 --- !u!114 &1547005507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11409,8 +11502,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1547005506}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1547005510}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -11459,6 +11552,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547005504}
   m_CullTransparentMesh: 1
+--- !u!114 &1547005510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547005504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 8
+  _fade: {fileID: 1060238333}
 --- !u!1 &1557823186
 GameObject:
   m_ObjectHideFlags: 0
@@ -12592,7 +12699,7 @@ GameObject:
   - component: {fileID: 1733989537}
   - component: {fileID: 1733989536}
   - component: {fileID: 1733989535}
-  - component: {fileID: 1733989534}
+  - component: {fileID: 1733989538}
   m_Layer: 5
   m_Name: level10
   m_TagString: Untagged
@@ -12621,19 +12728,6 @@ RectTransform:
   m_AnchoredPosition: {x: 524.51886, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1733989534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733989532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.10
 --- !u!114 &1733989535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12678,8 +12772,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1733989534}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1733989538}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -12728,6 +12822,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733989532}
   m_CullTransparentMesh: 1
+--- !u!114 &1733989538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733989532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 10
+  _fade: {fileID: 1060238333}
 --- !u!1 &1738838274
 GameObject:
   m_ObjectHideFlags: 0
@@ -12740,7 +12848,7 @@ GameObject:
   - component: {fileID: 1738838279}
   - component: {fileID: 1738838278}
   - component: {fileID: 1738838277}
-  - component: {fileID: 1738838276}
+  - component: {fileID: 1738838280}
   m_Layer: 5
   m_Name: level4
   m_TagString: Untagged
@@ -12769,19 +12877,6 @@ RectTransform:
   m_AnchoredPosition: {x: 396.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1738838276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738838274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.4
 --- !u!114 &1738838277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12826,8 +12921,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1738838276}
-        m_TargetAssemblyTypeName: Project.Scripts.Menus.LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1738838280}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -12876,6 +12971,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738838274}
   m_CullTransparentMesh: 1
+--- !u!114 &1738838280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738838274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 4
+  _fade: {fileID: 1060238333}
 --- !u!1 &1778083251
 GameObject:
   m_ObjectHideFlags: 0
@@ -13282,7 +13391,7 @@ GameObject:
   - component: {fileID: 1812163911}
   - component: {fileID: 1812163910}
   - component: {fileID: 1812163909}
-  - component: {fileID: 1812163908}
+  - component: {fileID: 1812163912}
   m_Layer: 5
   m_Name: level2
   m_TagString: Untagged
@@ -13311,19 +13420,6 @@ RectTransform:
   m_AnchoredPosition: {x: 140.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1812163908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812163906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.2
 --- !u!114 &1812163909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13368,8 +13464,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1812163908}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1812163912}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -13418,6 +13514,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812163906}
   m_CullTransparentMesh: 1
+--- !u!114 &1812163912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812163906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 2
+  _fade: {fileID: 1060238333}
 --- !u!1 &1826236264
 GameObject:
   m_ObjectHideFlags: 0
@@ -14760,7 +14870,7 @@ GameObject:
   - component: {fileID: 1975479459}
   - component: {fileID: 1975479458}
   - component: {fileID: 1975479457}
-  - component: {fileID: 1975479456}
+  - component: {fileID: 1975479460}
   m_Layer: 5
   m_Name: level17
   m_TagString: Untagged
@@ -14789,19 +14899,6 @@ RectTransform:
   m_AnchoredPosition: {x: 140.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1975479456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975479454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.17
 --- !u!114 &1975479457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14846,8 +14943,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1975479456}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 1975479460}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -14896,6 +14993,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975479454}
   m_CullTransparentMesh: 1
+--- !u!114 &1975479460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975479454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 17
+  _fade: {fileID: 1060238333}
 --- !u!1 &1996050210
 GameObject:
   m_ObjectHideFlags: 0
@@ -15177,7 +15288,7 @@ GameObject:
   - component: {fileID: 2017778158}
   - component: {fileID: 2017778157}
   - component: {fileID: 2017778156}
-  - component: {fileID: 2017778155}
+  - component: {fileID: 2017778159}
   m_Layer: 5
   m_Name: level7
   m_TagString: Untagged
@@ -15206,19 +15317,6 @@ RectTransform:
   m_AnchoredPosition: {x: 140.51883, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &2017778155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017778153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205abd79ff884054193a18cfaa03c88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sala: 1.7
 --- !u!114 &2017778156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15263,8 +15361,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2017778155}
-        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+      - m_Target: {fileID: 2017778159}
+        m_TargetAssemblyTypeName: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
@@ -15313,6 +15411,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017778153}
   m_CullTransparentMesh: 1
+--- !u!114 &2017778159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017778153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sala: 7
+  _fade: {fileID: 1060238333}
 --- !u!1 &2044383118
 GameObject:
   m_ObjectHideFlags: 0
@@ -15680,3 +15792,4 @@ MonoBehaviour:
   _slider: {fileID: 1576850019}
   _audioMixer: {fileID: 24100000, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
   _muteToggle: {fileID: 879366211}
+  _muteIcon: {fileID: 0}
