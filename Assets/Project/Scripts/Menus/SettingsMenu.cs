@@ -7,6 +7,8 @@ namespace Project.Scripts.Menus
 {
     public class SettingsMenu : MonoBehaviour
     {
+        private const String PLAYERS_PREFS_MUTE = "Player Prefs Mute";
+
         private const String SETTINGS_MENU_NAME = "Settings Menu";
         
         [SerializeField] private String _musicName;
@@ -38,12 +40,14 @@ namespace Project.Scripts.Menus
             {
                 _audioMixer.SetFloat(_musicName, -80);
                 _muteToggle.isOn = true;
+                PlayerPrefs.SetInt(PLAYERS_PREFS_MUTE, 1);
                 _muteIcon.SetActive(true);
             }
             else
             {
                 _audioMixer.SetFloat(_musicName, volume);
                 _muteToggle.isOn = false;
+                PlayerPrefs.SetInt(PLAYERS_PREFS_MUTE, 0);
                 _muteIcon.SetActive(false);
             }
             _lastVolumeValue = volume;

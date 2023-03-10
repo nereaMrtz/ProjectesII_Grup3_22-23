@@ -55,7 +55,7 @@ namespace Project.Scripts.Character
 
         private void Controls()
         {
-            if (GameManager.Instance.IsInZoomInState())
+            if (GameManager.Instance.IsInZoomInState() || GameManager.Instance.IsFading())
             {
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
                 return;
