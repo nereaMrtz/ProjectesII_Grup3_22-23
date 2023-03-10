@@ -11,6 +11,7 @@ namespace Project.Scripts.Managers
         private bool _interactableClicked;
         private bool _clickOnEdge;
         private bool _pause;
+        private bool _fading;
 
         private void Awake()
         {
@@ -78,6 +79,16 @@ namespace Project.Scripts.Managers
         public bool IsPause()
         {
             return _pause;
+        }
+
+        public void SetFading(bool fading) 
+        { 
+            _fading = fading;
+        }
+
+        public bool IsFading() 
+        {
+            return _fading;
         }
     }
 }
