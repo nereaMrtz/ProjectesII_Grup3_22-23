@@ -1,4 +1,6 @@
 using System;
+using Project.Scripts.Managers;
+using TMPro;
 using UnityEngine;
 
 namespace Project.Scripts.UI
@@ -13,13 +15,23 @@ namespace Project.Scripts.UI
 
         [SerializeField] private GameObject _muteIcon;
 
-        private bool onInventory = false;
+        [SerializeField] private TextMeshProUGUI _hintCoinsMarker;
+
+        private bool onInventory;
 
         private void OnEnable()
         {
-            bool mute = PlayerPrefs.GetInt(PLAYERS_PREFS_MUTE) == 1 ? true : false;
+            UpdateCoinsMarker();
+            
+            bool mute = PlayerPrefs.GetInt(PLAYERS_PREFS_MUTE) == 1;
 
             _muteIcon.SetActive(mute);
+        }
+
+        public void UpdateCoinsMarker()
+        {
+            Debug.Log(GameManager.Instance.GetHintCoins());
+            _hintCoinsMarker.text = GameManager.Instance.GetHintCoins().ToString();
         }
 
         public void ShowInventory()

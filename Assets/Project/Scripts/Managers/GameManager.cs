@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Managers
 {
@@ -13,6 +14,10 @@ namespace Project.Scripts.Managers
         private bool _pause;
         private bool _fading;
 
+        private bool[] _levelsWhereHintUsed;
+        
+        private int _hintCoins = 2; 
+
         private void Awake()
         {
             if (_instance == null)
@@ -24,6 +29,7 @@ namespace Project.Scripts.Managers
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(gameObject);
+            _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
         }
         
         public static GameManager Instance
@@ -89,6 +95,26 @@ namespace Project.Scripts.Managers
         public bool IsFading() 
         {
             return _fading;
+        }
+
+        public void SetHintCoins(int hintCoins)
+        {
+            _hintCoins = hintCoins;
+        }
+
+        public int GetHintCoins()
+        {
+            return _hintCoins;
+        }
+
+        public void SetHintUsedInLevel(int level)
+        {
+            _levelsWhereHintUsed[level] = true;
+        }
+
+        public bool IsHintUsedInLevel(int level)
+        {
+            return _levelsWhereHintUsed[level];
         }
     }
 }
