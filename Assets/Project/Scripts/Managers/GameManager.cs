@@ -7,6 +7,8 @@ namespace Project.Scripts.Managers
     {
         private static GameManager _instance;
 
+        private bool _firstLevelStarted;
+        
         private bool _drugged;
         private bool _zoomInState;
         private bool _interactableClicked;
@@ -115,6 +117,16 @@ namespace Project.Scripts.Managers
         public bool IsHintUsedInLevel(int level)
         {
             return _levelsWhereHintUsed[level];
+        }
+        
+        public void SetFirstLevelStarted()
+        {
+            _firstLevelStarted = true;
+        }
+
+        public bool IsFirstLevelStarted()
+        {
+            return _firstLevelStarted;
         }
     }
 }
