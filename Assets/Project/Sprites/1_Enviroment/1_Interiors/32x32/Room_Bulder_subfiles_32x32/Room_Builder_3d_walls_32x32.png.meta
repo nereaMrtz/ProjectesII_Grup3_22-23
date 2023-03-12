@@ -490,7 +490,7 @@ TextureImporter:
         width: 34
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -498,6 +498,27 @@ TextureImporter:
       bones: []
       spriteID: bd34cd22f9b5aab479009456cd684752
       internalID: 1066128892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top_Wall_Blue
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 512
+        width: 68
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626007a2b6dd21b48be53b26b9a3ef1b
+      internalID: 1708324286
       vertices: []
       indices: 
       edges: []
@@ -532,6 +553,7 @@ TextureImporter:
       Room_Builder_3d_walls_32x32_5: 1903200522
       Horizontal Wall With Edges: -112553818
       Vertical Wall Without Bottom Edge: 1137156210
+      Top_Wall_Blue: 1708324286
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
