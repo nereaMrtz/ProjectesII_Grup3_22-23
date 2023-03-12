@@ -1,12 +1,16 @@
 using System;
 using Project.Scripts.Interactable.Static;
 using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1._1_14
 {
     public class Button1_14Slave : MonoBehaviour
     {
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
 
         [SerializeField] private Animator _animator;
 
@@ -17,6 +21,7 @@ namespace Project.Scripts.Levels._1._1_14
         private bool _pressed;
         private void OnMouseDown()
         {
+            AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
             if (!_main.IsPressed())
             {
@@ -31,6 +36,7 @@ namespace Project.Scripts.Levels._1._1_14
 
         private void OnMouseUp()
         {
+            AudioManager.Instance.Play(SOLTAR_BOTON);
             ButtonAction();
         }
 

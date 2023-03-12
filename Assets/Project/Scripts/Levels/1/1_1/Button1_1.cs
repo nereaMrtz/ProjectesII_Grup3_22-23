@@ -1,4 +1,6 @@
+using System;
 using Project.Scripts.Interactable.Static;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1._1_1
@@ -6,6 +8,9 @@ namespace Project.Scripts.Levels._1._1_1
     public class Button1_1 : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
         
         [SerializeField] protected Animator _animator;
         
@@ -19,6 +24,7 @@ namespace Project.Scripts.Levels._1._1_1
             {
                 return;
             }
+            AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
             if (_door.IsUnlocked())
             {
@@ -33,6 +39,7 @@ namespace Project.Scripts.Levels._1._1_1
             {
                 return;
             }
+            AudioManager.Instance.Play(SOLTAR_BOTON);
             ButtonAction();
         }
 

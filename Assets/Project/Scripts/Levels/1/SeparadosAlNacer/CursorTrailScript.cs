@@ -1,10 +1,13 @@
 using System;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.SeparadosAlNacer
 {
     public class CursorTrailScript : MonoBehaviour
     {
+        private const String DRAW = "Draw";
+        
         [SerializeField] private TrailRenderer _trailRenderer;
 
         private bool _pressed;
@@ -14,12 +17,13 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
         {
             if (Input.GetMouseButton(0))
             {
+                AudioManager.Instance.UnPause(DRAW);
                 _pressed = true;
                 _trailRenderer.emitting = true;
-                
             }
             else
             {
+                AudioManager.Instance.Pause(DRAW);
                 _pressed = false;
                 _trailRenderer.emitting = false;
             }

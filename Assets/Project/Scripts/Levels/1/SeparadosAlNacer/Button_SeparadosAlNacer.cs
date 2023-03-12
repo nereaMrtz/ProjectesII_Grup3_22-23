@@ -1,4 +1,6 @@
+using System;
 using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -7,6 +9,9 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
     public class Button_SeparadosAlNacer : Button1_1
     {
         private const int PLAYER_LAYER = 6;
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
         
         [SerializeField] private CursorTrailScript _cursorTrail;
 
@@ -36,6 +41,7 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
         {
             if (!_enabled)
             {
+                AudioManager.Instance.Play(PULSAR_BOTON);
                 ButtonAction();
                 return;
             }
@@ -45,6 +51,7 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
                 return;
             }
             
+            AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
             _door.Unlock();
         }

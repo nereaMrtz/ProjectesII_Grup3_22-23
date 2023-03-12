@@ -1,10 +1,15 @@
+using System;
 using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1._1_2
 {
     public class Button1_2 : Button1_1
     {
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
 
         private int _pressCounter;
 
@@ -19,6 +24,7 @@ namespace Project.Scripts.Levels._1._1_2
             {
                 _door.Unlock();
             }
+            AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
         }
 
