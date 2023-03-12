@@ -20,7 +20,6 @@ namespace Project.Scripts.Menus
         }
 
         public void ExitButton() {
-            Debug.Log("Exit");
             Application.Quit();
         }
     }
