@@ -38,7 +38,10 @@ namespace Project.Scripts.Levels._1._1_24
                 _door.Unlock();
                 Destroy(this);
             }
-            transform.localPosition = new Vector3(_initialXPosition + _currentMouseXDistanceFromOrigin, transform.localPosition.y, 0);
+            else
+            {
+                transform.localPosition = new Vector3(_initialXPosition + _currentMouseXDistanceFromOrigin, transform.localPosition.y, 0);    
+            }
         }
     }
 }
