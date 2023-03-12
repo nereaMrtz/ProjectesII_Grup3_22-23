@@ -8,8 +8,6 @@ namespace Project.Scripts.UI
     public class HintButton : MonoBehaviour
     {
         [SerializeField] private Button _button;
-
-        [SerializeField] private Image _image;
         
         public void StopPlayerMovement()
         {
@@ -25,9 +23,8 @@ namespace Project.Scripts.UI
             {
                 return;    
             }
-            
-            _button.enabled = false;
-            _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, _image.color.a / 2);
+
+            _button.interactable = false;
         }
 
         public void ActivePlayerMovement()

@@ -13,8 +13,6 @@ namespace Project.Scripts.LevelElements
         
         [SerializeField] private Button _button;
 
-        [SerializeField] private Image _image;
-
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
             if (collider2D.gameObject.layer != PLAYER_LAYER)
@@ -24,8 +22,7 @@ namespace Project.Scripts.LevelElements
             
             if (GameManager.Instance.GetHintCoins() == 0)
             {
-                _button.enabled = true;
-                _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 1);
+                _button.interactable = true;
             }
             GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() + 1);
             _inGameUI.UpdateCoinsMarker();
