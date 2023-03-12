@@ -23,10 +23,8 @@ namespace Project.Scripts.Character
         public Animator animator;
 
         private Vector2 _movementDirection;
-        private Vector2 _lastMovement;
 
         [SerializeField] private bool _moving;
-        [SerializeField] private bool _movingWithOutKeyBoard;
         
 
         void Update()
@@ -72,22 +70,18 @@ namespace Project.Scripts.Character
                 if (Input.GetKey(KeyCode.A))
                 {
                     _movementDirection.x += _inverted ? 1 : -1;
-                    _lastMovement = _movementDirection;
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
                     _movementDirection.x += _inverted ? -1 : 1;
-                    _lastMovement = _movementDirection;
                 }
                 if (Input.GetKey(KeyCode.W))
                 {
                     _movementDirection.y += _inverted ? -1 : 1;
-                    _lastMovement = _movementDirection;
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
                     _movementDirection.y += _inverted ? 1 : -1;
-                    _lastMovement = _movementDirection;
                 }
             }
         }
@@ -120,10 +114,8 @@ namespace Project.Scripts.Character
 
             _moving = _rigidbody2D.velocity.magnitude > 0.01f;
             
-            animator.SetFloat("Horizontal", _movementDirection.x);
-            animator.SetFloat("Vertical", _movementDirection.y);
-            animator.SetFloat("lastX", _lastMovement.x);
-            animator.SetFloat("lastY", _lastMovement.y);
+            animator.SetInteger("Horizontal", (int)_movementDirection.x);
+            animator.SetInteger("Vertical", (int)_movementDirection.y);
             animator.SetBool("isMoving", _moving);            
         }
 
@@ -141,17 +133,6 @@ namespace Project.Scripts.Character
         public void SetMovement(Vector2 movement)
         {
             _movementDirection = movement;
-            
-            if (_movementDirection.x != 0)
-            {
-                _lastMovement.x = _movementDirection.x;
-                _lastMovement.y = 0;
-            }
-            if(_movementDirection.y != 0)
-            {
-                _lastMovement.y = _movementDirection.y;
-                _lastMovement.x = 0;
-            }
         }
 
         public void SetMoving(bool moving)

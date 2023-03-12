@@ -30,7 +30,6 @@ namespace Project.Scripts.UI
 
         public void UpdateCoinsMarker()
         {
-            Debug.Log(GameManager.Instance.GetHintCoins());
             _hintCoinsMarker.text = GameManager.Instance.GetHintCoins().ToString();
         }
 
