@@ -20,7 +20,8 @@ namespace Project.Scripts.Interactable.PickUps {
             _capsuleCollider2D.enabled = false;
             AudioManager.Instance.Play(LOOT_PICK_UP_SOUND);
             _spriteRenderer.enabled = false;
-            transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.layer = 0;
+            GetPointButton().SetActive(false);
         }
 
         public PickUp CombinePickUps(PickUp pickUp)

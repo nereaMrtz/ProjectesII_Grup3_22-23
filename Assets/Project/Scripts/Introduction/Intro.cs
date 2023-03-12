@@ -39,6 +39,11 @@ namespace Project.Scripts.Introduction
             {
                 time = 0.001f;
             }
+
+            if (OnDialog && Input.GetKey(KeyCode.Space))
+            {
+                SceneManager.LoadScene(2);
+            }
         }
 
         public void SetDialog(DialogText objectText)
@@ -88,10 +93,11 @@ namespace Project.Scripts.Introduction
         IEnumerator ShowCharacters(string textToShow)
         {
             writtingText = true;
-            screenText.text = "";
-            foreach (char character in textToShow.ToCharArray())
+            screenText.text = textToShow;
+            screenText.maxVisibleCharacters = 0;
+            while (screenText.maxVisibleCharacters < screenText.text.Length - 1)
             {
-                screenText.text += character;
+                screenText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(time);
             }
             clickSprite.SetActive(true);

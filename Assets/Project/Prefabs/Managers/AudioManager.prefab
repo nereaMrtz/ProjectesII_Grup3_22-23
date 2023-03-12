@@ -205,7 +205,7 @@ MonoBehaviour:
     _druggedPitch: 1
     _soberPitch: 1
     _loop: 0
-    _play: 0
+    _play: 1
   - _audioClip: {fileID: 8300000, guid: 900c9046ffa0af242aba0f842524a701, type: 3}
     _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
     _name: Voice
@@ -214,9 +214,129 @@ MonoBehaviour:
     _soberPitch: 1
     _loop: 0
     _play: 0
-  - _audioClip: {fileID: 8300000, guid: 0153c70245877d44ba07e055e9e40925, type: 3}
+  - _audioClip: {fileID: 8300000, guid: 9ef6f59c15cd67749bbe4b3f5e32abe4, type: 3}
     _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
-    _name: Correcto
+    _name: ArrastrarBoton(NoToques)
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 265b70ef290c29448a25216f014f16bd, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: BotonMenu
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 824cdd3cc31434c4391977d3cfa2f7de, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: Luces
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 9176f628c9ef1664ead6ef044743e709, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: MenuButton1
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: e31111de6403dd7448f05e3605a23375, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: PasarPorEncima
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 93c42d7e9827de842b112e8dc55c1a21, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: RedButton
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: d271e7eaec994904fb5a8e222dd46c96, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: Draw
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 7dcef245ab0b4eb4b96dd4f627d6b6b4, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: Fade
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: b755eef1c22f0d94c83f90376e6fe5ea, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: Planta
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 0d8b0502193a8954ab20088de56df9d8, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: ArrastrarPuerta
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 7abe0c51680223545a81276a8ab7353b, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: ChocarParedes
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: 4f4b0471166e7ec4e845cb47a47e5a4b, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: Pasos1
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: c499fa8da018b0e4783e7ac675db051c, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: Pasos2
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: f29218647ed00624f92dde40b616931b, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: Hipo
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: bb85b15ff04ed32489250bcc8c6138fe, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: TocToc
+    _volume: 1
+    _druggedPitch: 1
+    _soberPitch: 1
+    _loop: 0
+    _play: 0
+  - _audioClip: {fileID: 8300000, guid: ccd05c882cab0834b9b08dbbe2d14665, type: 3}
+    _audioMixerGroup: {fileID: 24300002, guid: a13ae2cf28c94484d8f6d95cba89d013, type: 2}
+    _name: MouseClick
     _volume: 1
     _druggedPitch: 1
     _soberPitch: 1

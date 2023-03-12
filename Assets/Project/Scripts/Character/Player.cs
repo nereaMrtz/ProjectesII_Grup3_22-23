@@ -1,128 +1,123 @@
 using System;
 using UnityEngine;
-using Project.Scripts.Interactable.Static.NotRequiredInventory;
-using Project.Scripts.Interactable.Static.RequiredInventory;
 using Project.Scripts.Managers;
-using UnityEngine.AI;
-using Vector2 = UnityEngine.Vector2;
 
 namespace Project.Scripts.Character
 {
     public class Player : MonoBehaviour
     {
         private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
-
-        private const string REQUIRED_INVENTORY_INTERACTABLE_LAYER = "RequiredInventoryInteractable";
-        private const string NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER = "NotRequiredInventoryInteractable";
         
         [SerializeField] private GameObject _pauseMenuPanel;
 
-        [SerializeField] private Inventory _inventory;
+        [SerializeField] private Rigidbody2D _rigidbody2D;
 
-        [SerializeField] private DrugEffect _drugEffect;
+        [SerializeField] private float _currentSpeed = 75;
 
-        [SerializeField] private Transform _targetTransform;
-
-        [SerializeField] private NavMeshAgent _agent;
-
-        private GameObject _gameObjectToInteract;
+        [SerializeField] private bool _moveWithKeyboard;
         
-        private float _distanceToInteractWithObject;
-
-        private bool _moving = true;
-        private bool _interactionStarted; 
+        [SerializeField] private bool _move;
         
-        void Start()
-        {
-            NavMeshManager.Instance.Bake();
-            _agent.updateRotation = false;
-            _agent.updateUpAxis = false;
-            _targetTransform.position = transform.position;
-        }
+        [SerializeField] private bool _inverted;
+
+        public Animator animator;
+
+        private Vector2 _movementDirection;
+
+        [SerializeField] private bool _moving;
+        
 
         void Update()
         {
-            
-            if (_drugEffect.IsChangingPeriod() || _pauseMenuPanel.activeSelf)
+            if (_pauseMenuPanel.activeSelf)
             {
                 return;
             }
-            
-            Controls();
+
+            if (_moveWithKeyboard)
+            {
+                Controls();    
+            }
+            UpdateAnimationController();
+        }
+
+        private void FixedUpdate()
+        {
+            if (!_move)
+            {
+                return;
+            }
+            Movement();
         }
 
         private void Controls()
         {
-            if (GameManager.Instance.IsInZoomInState())
+            if (GameManager.Instance.IsInZoomInState() || GameManager.Instance.IsFading())
             {
-                _targetTransform.position = transform.position;
+                _movementDirection = Vector2.zero;
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
                 return;
             }
 
             MovementController();
-            
-            InteractionController();
         }
 
         private void MovementController()
         {
-            if (_agent.velocity.magnitude != 0)
+            if (_moveWithKeyboard)
+            {                
+                _movementDirection = Vector2.zero;
+                
+                if (Input.GetKey(KeyCode.A))
+                {
+                    _movementDirection.x += _inverted ? 1 : -1;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    _movementDirection.x += _inverted ? -1 : 1;
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    _movementDirection.y += _inverted ? -1 : 1;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    _movementDirection.y += _inverted ? 1 : -1;
+                }
+            }
+        }
+
+        private void Movement() {
+            
+            _movementDirection = _movementDirection.normalized;
+                        
+            if (_movementDirection != new Vector2(0,0))
             {
-                _moving = true;
                 AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
             }
-            else if (_moving && _agent.velocity.magnitude == 0)
+            else
+            {
+                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+            }
+
+            if (_movementDirection.magnitude == 0)
             {
                 _moving = false;
-                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
-                _targetTransform.position = transform.position;
-                return;   
+                _rigidbody2D.velocity = Vector2.zero;
             }
-            
-            Movement();
+            else 
+            {
+                _rigidbody2D.AddForce(_movementDirection * _currentSpeed, ForceMode2D.Force);
+            }   
         }
 
-        private void InteractionController()
-        {
-            if (!_interactionStarted)
-            {
-                return;
-            }
+        private void UpdateAnimationController(){
+
+            _moving = _rigidbody2D.velocity.magnitude > 0.01f;
             
-            if (Vector2.Distance(transform.position, _gameObjectToInteract.transform.position) < _distanceToInteractWithObject)
-            {
-                InteractWithObject();
-            }
-            else if (_targetTransform.position != _gameObjectToInteract.transform.position)
-            {
-                _gameObjectToInteract = null;
-                _interactionStarted = false;
-            }
-        }
-
-        private void InteractWithObject() {
-            
-            if (_gameObjectToInteract.layer == LayerMask.NameToLayer(REQUIRED_INVENTORY_INTERACTABLE_LAYER))
-            {
-                _gameObjectToInteract.GetComponent<RequiredInventoryInteractable>().Interact(_inventory);
-            }
-            else if (_gameObjectToInteract.layer == LayerMask.NameToLayer(NOT_REQUIRED_INVENTORY_INTERACTABLE_LAYER))
-            {
-                _gameObjectToInteract.GetComponent<NotRequiredInventoryInteractable>().Interact();
-            }
-
-            _targetTransform.position = transform.position;
-            _gameObjectToInteract = null;
-            _interactionStarted = false;
-        }
-
-        public void DrugControls()
-        {
-            AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
-            _targetTransform.position = transform.position;
-            Movement();
-            _drugEffect.ChangeState();
+            animator.SetInteger("Horizontal", (int)_movementDirection.x);
+            animator.SetInteger("Vertical", (int)_movementDirection.y);
+            animator.SetBool("isMoving", _moving);            
         }
 
         public void Pause()
@@ -131,18 +126,24 @@ namespace Project.Scripts.Character
             GameManager.Instance.SetPause(true);
         }
 
-        private void Movement()
+        public Vector2 GetMovement()
         {
-            _agent.SetDestination(_targetTransform.position);
+            return _movementDirection;
         }
-        
-        public void SetGameObjectAndHisDistanceToInteract(GameObject gameObjectToInteract, float distanceToInteract)
+
+        public void SetMovement(Vector2 movement)
         {
-            _interactionStarted = true;
-            _gameObjectToInteract = gameObjectToInteract;
-            _distanceToInteractWithObject = distanceToInteract;
-            _targetTransform.position = _gameObjectToInteract.transform.position;
-            GameManager.Instance.SetInteractableClicked(true);
+            _movementDirection = movement;
+        }
+
+        public void SetMoving(bool moving)
+        {
+            _moving = moving;
+        }
+
+        public void SetMovementDirection(Vector2 movementDirection)
+        {
+            _movementDirection = movementDirection;
         }
     }
 }

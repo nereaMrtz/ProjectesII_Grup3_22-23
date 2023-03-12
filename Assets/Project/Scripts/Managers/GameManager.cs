@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Managers
 {
@@ -6,11 +7,18 @@ namespace Project.Scripts.Managers
     {
         private static GameManager _instance;
 
+        private bool _firstLevelStarted;
+        
         private bool _drugged;
         private bool _zoomInState;
         private bool _interactableClicked;
         private bool _clickOnEdge;
         private bool _pause;
+        private bool _fading;
+
+        private bool[] _levelsWhereHintUsed;
+        
+        private int _hintCoins = 2; 
 
         private void Awake()
         {
@@ -23,6 +31,7 @@ namespace Project.Scripts.Managers
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(gameObject);
+            _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
         }
         
         public static GameManager Instance
@@ -78,6 +87,46 @@ namespace Project.Scripts.Managers
         public bool IsPause()
         {
             return _pause;
+        }
+
+        public void SetFading(bool fading) 
+        { 
+            _fading = fading;
+        }
+
+        public bool IsFading() 
+        {
+            return _fading;
+        }
+
+        public void SetHintCoins(int hintCoins)
+        {
+            _hintCoins = hintCoins;
+        }
+
+        public int GetHintCoins()
+        {
+            return _hintCoins;
+        }
+
+        public void SetHintUsedInLevel(int level)
+        {
+            _levelsWhereHintUsed[level] = true;
+        }
+
+        public bool IsHintUsedInLevel(int level)
+        {
+            return _levelsWhereHintUsed[level];
+        }
+        
+        public void SetFirstLevelStarted()
+        {
+            _firstLevelStarted = true;
+        }
+
+        public bool IsFirstLevelStarted()
+        {
+            return _firstLevelStarted;
         }
     }
 }

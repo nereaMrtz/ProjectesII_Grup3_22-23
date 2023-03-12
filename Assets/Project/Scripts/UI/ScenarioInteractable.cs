@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Project.Prefabs.UI
+namespace Project.Scripts.UI
 {
     public class ScenarioInteractable : MonoBehaviour
     {

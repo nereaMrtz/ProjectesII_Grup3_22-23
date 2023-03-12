@@ -59,11 +59,6 @@ namespace Project.Scripts.Interactable
             }
         }
 
-        private void OnMouseDown()
-        {
-            Interact();            
-        }
-
         private void OnMouseEnter()
         {
             if (gameObject.layer == 0)
@@ -97,11 +92,6 @@ namespace Project.Scripts.Interactable
             _thicknessValue = 0;
             _spriteRenderer.material.SetFloat(SHADER_THICKNESS_VALUE, _thicknessValue);
             _spriteRenderer.material = _defaultShaderMaterial;
-        }
-
-        private void Interact()
-        {
-            _player.SetGameObjectAndHisDistanceToInteract(gameObject, _distanceToInteract);
         }
 
         public GameObject GetPointButton()

@@ -1,0 +1,48 @@
+using System;
+using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Managers;
+using UnityEngine;
+
+namespace Project.Scripts.Levels._1._1_6
+{
+    public class Button1_6 : MonoBehaviour
+    {
+        protected const int PLAYER_LAYER = 6;
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
+
+        [SerializeField] protected SpriteRenderer _spriteRenderer;
+
+        [SerializeField] protected Animator _animator;
+
+        [SerializeField] protected Door _door;
+
+        [SerializeField] protected bool _pressed;
+
+        [SerializeField] protected Sprite _openDoor;
+
+        private void OnTriggerEnter2D(Collider2D collider2D)
+        {
+            if (_pressed)
+            {
+                return;
+            }
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
+            {
+                return;
+            }
+            
+            AudioManager.Instance.Play(PULSAR_BOTON);
+            PressButton();
+            _door.CloseDoor();
+            _spriteRenderer.sprite = _openDoor;
+        }
+
+        protected void PressButton()
+        {
+            _pressed = true;
+            _animator.SetTrigger("Press");
+        }
+    }
+}

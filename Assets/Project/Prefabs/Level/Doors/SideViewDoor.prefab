@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4371218780234836094}
   - component: {fileID: 8740456273362405012}
   - component: {fileID: 5071763805908023173}
-  - component: {fileID: 7388139866261604850}
   m_Layer: 7
   m_Name: SideViewDoor
   m_TagString: Untagged
@@ -172,20 +171,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7388139866261604850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4371218780234836088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c72d60d70ed2f4da41ea0e10539643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text:
-    textArray: []
-  screenText: {fileID: 0}
-  clickSprite: {fileID: 0}
-  button: {fileID: 0}
