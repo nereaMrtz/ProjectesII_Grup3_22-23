@@ -5,10 +5,20 @@ namespace Project.Scripts.Menus
 {
     public class LevelSelector : MonoBehaviour
     {
-        [SerializeField] protected string _sala;
-        public void ChangeScene()
+        bool[] levels = new bool[30];
+
+        private void Start()
         {
-            SceneManager.LoadScene(_sala);
+            for(int i = 0; i < levels.Length; i++)
+            {
+                levels[i] = false;
+            }
         }
+
+        void UnlockLevel(int level)
+        {
+            levels[level] = true;
+        }
+
     }
 }
