@@ -11,6 +11,8 @@ namespace Project.Scripts.UI
         
         public void StopPlayerMovement()
         {
+            Time.timeScale = 0;
+            
             if (!GameManager.Instance.IsHintUsedInLevel(SceneManager.GetActiveScene().buildIndex))
             {
                 GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() - 1);
@@ -29,6 +31,7 @@ namespace Project.Scripts.UI
 
         public void ActivePlayerMovement()
         {
+            Time.timeScale = 1;
             GameManager.Instance.SetZoomInState(false);
         }
     }
