@@ -1,39 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Rindete : MonoBehaviour
+namespace Project.Scripts.Levels._1._1_15
 {
-    bool exitButton = false;
-
-    [SerializeField] GameObject openPopup;
-    [SerializeField] GameObject openDoor;
-    [SerializeField] GameObject pauseMenu;
-
-    public void DestroyPopup()
+    public class Rindete : MonoBehaviour
     {
-        Destroy(gameObject);
-    }
+        private bool exitButton;
 
-    public void EnableExitButton()
-    {
-        exitButton = true;
-    }
+        [SerializeField] GameObject openPopup;
+        [SerializeField] GameObject openDoor;
+        [SerializeField] GameObject pauseMenu;
 
-    public void ExitButton()
-
-    {   Debug.Log("pulsao");
-        if (!exitButton)
+        public void DestroyPopup()
         {
-            openPopup.SetActive(true);
-            pauseMenu.SetActive(false);
+            Destroy(gameObject);
         }
-        else
-        {
-            pauseMenu.SetActive(true);
-            SceneManager.LoadScene("MainMenu");
-        }    
-    }
 
+        public void EnableExitButton()
+        {
+            exitButton = true;
+        }
+
+        public void ExitButton()
+        {   
+            if (!exitButton)
+            {
+                openPopup.SetActive(true);
+                pauseMenu.SetActive(false);
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                SceneManager.LoadScene("MainMenu");
+            }    
+        }
+
+    }
 }
