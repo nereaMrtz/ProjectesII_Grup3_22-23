@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,15 @@ namespace Project.Scripts.UI
     public class HintButton : MonoBehaviour
     {
         [SerializeField] private Button _button;
-        
+
+        private void OnEnable()
+        {
+            if (GameManager.Instance.GetHintCoins() == 0)
+            {
+                _button.interactable = false;
+            }
+        }
+
         public void StopPlayerMovement()
         {
             Time.timeScale = 0;
