@@ -19,7 +19,7 @@ namespace Project.Scripts.Levels
             }
         }
 
-        public IEnumerator FadeTransition() {
+        private IEnumerator FadeTransition() {
 
             _fade.FadeAnimation();
 

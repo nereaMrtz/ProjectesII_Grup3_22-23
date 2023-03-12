@@ -54,6 +54,7 @@ namespace Project.Scripts.Character
         {
             if (GameManager.Instance.IsInZoomInState() || GameManager.Instance.IsFading())
             {
+                _movementDirection = Vector2.zero;
                 AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
                 return;
             }
