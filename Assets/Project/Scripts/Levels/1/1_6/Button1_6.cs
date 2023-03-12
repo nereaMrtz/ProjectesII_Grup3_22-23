@@ -6,7 +6,7 @@ namespace Project.Scripts.Levels._1._1_6
 {
     public class Button1_6 : MonoBehaviour
     {
-        protected const String PLAYER_LAYER = "Player";
+        protected const int PLAYER_LAYER = 6;
 
         [SerializeField] protected SpriteRenderer _spriteRenderer;
 
@@ -24,11 +24,11 @@ namespace Project.Scripts.Levels._1._1_6
             {
                 return;
             }
-            if (collider2D.gameObject.layer != LayerMask.NameToLayer(PLAYER_LAYER))
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
-
+            
             PressButton();
             _door.CloseDoor();
             _spriteRenderer.sprite = _openDoor;

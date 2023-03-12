@@ -5,6 +5,8 @@ namespace Project.Scripts.Levels._1._1_1
 {
     public class Button1_1 : MonoBehaviour
     {
+        private const int PLAYER_LAYER = 6;
+        
         [SerializeField] protected Animator _animator;
         
         [SerializeField] protected UnlockableObject _door;
@@ -13,7 +15,7 @@ namespace Project.Scripts.Levels._1._1_1
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer != 6)
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
@@ -27,7 +29,7 @@ namespace Project.Scripts.Levels._1._1_1
 
         private void OnTriggerExit2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer != 6)
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
