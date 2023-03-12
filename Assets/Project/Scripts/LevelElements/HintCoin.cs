@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Managers;
 using Project.Scripts.UI;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Project.Scripts.LevelElements
     public class HintCoin : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
+
+        private const String COIN = "Coin";
 
         [SerializeField] private InGameUI _inGameUI;
         
@@ -24,6 +27,7 @@ namespace Project.Scripts.LevelElements
             {
                 _button.interactable = true;
             }
+            AudioManager.Instance.Play(COIN);
             GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() + 1);
             _inGameUI.UpdateCoinsMarker();
             Destroy(gameObject);

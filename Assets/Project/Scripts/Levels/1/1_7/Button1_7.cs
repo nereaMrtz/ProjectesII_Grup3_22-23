@@ -1,4 +1,5 @@
 using System;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1._1_7 {
@@ -6,6 +7,9 @@ namespace Project.Scripts.Levels._1._1_7 {
     public class Button1_7 : MonoBehaviour
     {
         protected const String PLAYER_LAYER = "Player";
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
 
         [SerializeField] protected Animator _animator;
 
@@ -21,7 +25,8 @@ namespace Project.Scripts.Levels._1._1_7 {
             {
                 return;
             }
-
+            
+            AudioManager.Instance.Play(PULSAR_BOTON);
             ChangeButtonState();
         }
 
@@ -32,6 +37,7 @@ namespace Project.Scripts.Levels._1._1_7 {
                 return;
             }
 
+            AudioManager.Instance.Play(SOLTAR_BOTON);
             ChangeButtonState();
         }
 

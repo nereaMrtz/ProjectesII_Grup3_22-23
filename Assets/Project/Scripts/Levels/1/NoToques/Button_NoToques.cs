@@ -7,6 +7,10 @@ namespace Project.Scripts.Levels._1.NoToques
 {
     public class Button_NoToques : MonoBehaviour
     {
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
+        
         [SerializeField] private Player _player;
 
         [SerializeField] private float _timeToDisappear;
