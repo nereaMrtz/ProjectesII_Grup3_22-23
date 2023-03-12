@@ -2140,11 +2140,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3846082067783318041, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_fontSize
-      value: 35.5
+      value: 31.15
       objectReference: {fileID: 0}
     - target: {fileID: 3846082067783318041, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846082067783318054, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.895e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846082067783318054, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846082067783318054, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.299999
       objectReference: {fileID: 0}
     - target: {fileID: 3846082067783318055, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_IsActive
@@ -2157,6 +2169,10 @@ PrefabInstance:
     - target: {fileID: 3846082068116398147, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_text
       value: "Pasa por encima del bot\xF3n para abrir la puerta."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339851715009930479, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.87841797
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3350197422328322538, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
