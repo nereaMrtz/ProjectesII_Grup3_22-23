@@ -41,7 +41,7 @@ namespace Project.Scripts.Managers
             get { return _instance; }
         }
 
-        #pragma region DROGAS
+        #region DROGAS
         public void SetDrugged(bool drugged)
         {
             _drugged = drugged;
@@ -51,7 +51,7 @@ namespace Project.Scripts.Managers
         {
             return _drugged;
         }
-        #pragma endregion
+        #endregion
 
         public void SetZoomInState(bool zoomInState)
         {
