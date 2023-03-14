@@ -19,6 +19,7 @@ namespace Project.Scripts.UI
         private void OnEnable()
         {
             _currentActivePanel = gameObject;
+            Time.timeScale = 0;
         }
         
         public void ButtonSound()
