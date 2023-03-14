@@ -20,6 +20,7 @@ namespace Project.Scripts.Levels
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 StartCoroutine(FadeTransition());
+                GameManager.Instance.SetLevels(_sala - 1);
             }
         }
 
@@ -41,6 +42,7 @@ namespace Project.Scripts.Levels
 
         public void ChangeScene()
         {
+
             SceneManager.LoadScene(_sala);
         }
     }

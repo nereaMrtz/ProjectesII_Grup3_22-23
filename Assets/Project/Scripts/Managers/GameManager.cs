@@ -18,7 +18,9 @@ namespace Project.Scripts.Managers
 
         private bool[] _levelsWhereHintUsed;
         
-        private int _hintCoins = 2; 
+        private int _hintCoins = 2;
+
+        bool[] levels = new bool[30];
 
         private void Awake()
         {
@@ -39,6 +41,7 @@ namespace Project.Scripts.Managers
             get { return _instance; }
         }
 
+        #pragma region DROGAS
         public void SetDrugged(bool drugged)
         {
             _drugged = drugged;
@@ -48,6 +51,7 @@ namespace Project.Scripts.Managers
         {
             return _drugged;
         }
+        #pragma endregion
 
         public void SetZoomInState(bool zoomInState)
         {
@@ -127,6 +131,15 @@ namespace Project.Scripts.Managers
         public bool IsFirstLevelStarted()
         {
             return _firstLevelStarted;
+        }
+
+        public bool[] GetLevels()
+        {
+            return levels;
+        }
+        public void SetLevels(int level)
+        {
+            levels[level] = true;
         }
     }
 }
