@@ -8,8 +8,6 @@ namespace Project.Scripts.Managers
     {
 
         private static AudioManager _instance;
-
-        [SerializeField] private AudioMixerGroup _master;
         
         [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
         private void Awake()

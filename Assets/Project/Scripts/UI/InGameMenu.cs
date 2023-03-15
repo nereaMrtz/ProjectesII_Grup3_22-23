@@ -22,7 +22,7 @@ namespace Project.Scripts.UI
             Time.timeScale = 0;
         }
         
-        public void ButtonSound()
+        private void ButtonSound()
         {
             AudioManager.Instance.Play(BOTON_MENU);
         }
@@ -46,6 +46,7 @@ namespace Project.Scripts.UI
         public void GoToMainMenu()
         {
             ButtonSound();
+            Time.timeScale = 1;
             SceneManager.LoadScene(MAIN_MENU_BUILD_INDEX);
         }
     }

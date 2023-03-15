@@ -7,7 +7,7 @@ namespace Project.Scripts.Managers
     {
         private static GameManager _instance;
 
-        private bool _firstLevelStarted;
+        private Resolution _currentResolution;
         
         private bool _drugged;
         private bool _zoomInState;
@@ -41,7 +41,7 @@ namespace Project.Scripts.Managers
             get { return _instance; }
         }
 
-        #pragma region DROGAS
+        #region DROGAS
         public void SetDrugged(bool drugged)
         {
             _drugged = drugged;
@@ -51,7 +51,7 @@ namespace Project.Scripts.Managers
         {
             return _drugged;
         }
-        #pragma endregion
+        #endregion
 
         public void SetZoomInState(bool zoomInState)
         {
@@ -122,24 +122,25 @@ namespace Project.Scripts.Managers
         {
             return _levelsWhereHintUsed[level];
         }
-        
-        public void SetFirstLevelStarted()
-        {
-            _firstLevelStarted = true;
-        }
-
-        public bool IsFirstLevelStarted()
-        {
-            return _firstLevelStarted;
-        }
 
         public bool[] GetLevels()
         {
             return levels;
         }
+        
         public void SetLevels(int level)
         {
             levels[level] = true;
+        }
+
+        public void SetCurrentResolution(Resolution resolution)
+        {
+            _currentResolution = resolution;
+        }
+
+        public void ApplyResolution()
+        {
+            Screen.SetResolution(_currentResolution.width, _currentResolution.height, true);
         }
     }
 }

@@ -1,6 +1,7 @@
 using Project.Scripts.Managers;
 using Project.Scripts.ProjectMaths;
 using System.Collections;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +28,7 @@ namespace Project.Scripts.UI
             _currentTime = _timeToChange;
 
             if (_image.color.a == 1)
-            {                
+            {   
                 StartCoroutine(FadeAction(1, 0));
             }
             else 
@@ -44,14 +45,11 @@ namespace Project.Scripts.UI
             while (_currentTime > 0)
             {                
                 _currentTime -= Time.deltaTime;
-
                 _auxColor.a = CustomMath.Map(_currentTime, _timeToChange, 0, newMin, newMax);
-
                 _image.color = _auxColor;
-
+                
                 yield return null;
             }
-
             GameManager.Instance.SetFading(false);
         }
 
