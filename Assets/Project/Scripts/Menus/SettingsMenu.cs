@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Project.Scripts.Menus
@@ -23,14 +22,17 @@ namespace Project.Scripts.Menus
         [SerializeField] private Toggle _masterVolumeMute;
         [SerializeField] private Toggle _SFXVolumeMute;
         [SerializeField] private Toggle _musicVolumeMute;
+        [SerializeField] private Toggle _fullscreenToggle;
+
+        [SerializeField] private Image _fadeBrightness;
 
         [SerializeField] private AudioMixer _audioMixer;
 
         [SerializeField] private GameObject _muteIcon;
     
-        [SerializeField] private float _lastMasterVolumeValue;
-        [SerializeField] private float _lastSFXVolumeValue;
-        [SerializeField] private float _lastMusicVolumeValue;
+        private float _lastMasterVolumeValue;
+        private float _lastSFXVolumeValue;
+        private float _lastMusicVolumeValue;
 
         private void OnEnable()
         {
@@ -41,11 +43,20 @@ namespace Project.Scripts.Menus
             _masterVolumeSlider.value = masterVolumeValue;
             _SFXVolumeSlider.value = SFXVolumeValue;
             _musicVolumeSlider.value = musicVolumeValue;
+
+            _fullscreenToggle.isOn = Screen.fullScreen;
         }
 
         public void FullScreenToggle(bool fullScreen)
         {
             Screen.fullScreen = fullScreen;
+            Screen.fullScreenMode = fullScreen ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed;
+        }
+
+        public void SetBrightness(float brightness)
+        {
+            float auxAlpha = ProjectMaths.CustomMath.Map(brightness, 0, 1, 1, 0);
+            _fadeBrightness.color = new Color(0, 0, 0, auxAlpha);
         }
 
         public void SetMasterVolume(float volume)
