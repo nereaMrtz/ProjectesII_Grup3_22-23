@@ -1968,6 +1968,10 @@ PrefabInstance:
       propertyPath: _fadeBrightness
       value: 
       objectReference: {fileID: 182807216}
+    - target: {fileID: 5596260953651791364, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
+      propertyPath: _masterMuteIcon
+      value: 
+      objectReference: {fileID: 925584945}
     - target: {fileID: 5596260953734904710, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2020,7 +2024,7 @@ GameObject:
   - component: {fileID: 925584947}
   - component: {fileID: 925584946}
   m_Layer: 5
-  m_Name: Muteicon
+  m_Name: MasterMuteicon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

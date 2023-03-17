@@ -126,7 +126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.100250006, y: 0.03455605}
   m_AnchorMax: {x: 0.17125, y: 0.1091035}
-  m_AnchoredPosition: {x: -3.899994, y: -0.8784027}
+  m_AnchoredPosition: {x: -3.899994, y: -0.87841797}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5929937248267170013
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
-  _muteIcon: {fileID: 5389408317041451495}
+  _masterMuteIcon: {fileID: 5389408317041451495}
   _hintCoinsMarker: {fileID: 5486398436496257336}
 --- !u!114 &3846082066427686048
 MonoBehaviour:
@@ -1832,7 +1832,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3846082068229849728}
         m_TargetAssemblyTypeName: HintButton, Assembly-CSharp
-        m_MethodName: StopPlayerMovement
+        m_MethodName: SpendHint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1891,7 +1891,7 @@ GameObject:
   - component: {fileID: 8096566690702330612}
   - component: {fileID: 3941342301560907939}
   m_Layer: 5
-  m_Name: Muteicon
+  m_Name: MasterMuteicon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1914,8 +1914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0625, y: 0.8377753}
   m_AnchorMax: {x: 0.117750004, y: 0.9088763}
-  m_AnchoredPosition: {x: -22.100006, y: 2.100006}
-  m_SizeDelta: {x: -17.84, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8096566690702330612
 CanvasRenderer:

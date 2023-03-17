@@ -17,6 +17,8 @@ namespace Project.Scripts.Levels._1.NoToques
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
+        [SerializeField] private GameObject _boxCollider2D;
+
         private Color _color;
 
         private float _currentTime;
@@ -55,6 +57,7 @@ namespace Project.Scripts.Levels._1.NoToques
                 yield return null;
             }
             
+            Destroy(_boxCollider2D);
             Destroy(gameObject);
         }
     }

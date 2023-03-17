@@ -12,6 +12,8 @@ namespace Project.Scripts.Levels._1._1_17
         
         [SerializeField] private UnlockableObject _door;
 
+        [SerializeField] private BoxCollider2D _boxCollider2D;
+
         private int _timesKnocked;
 
         private void OnMouseDown()
@@ -30,6 +32,7 @@ namespace Project.Scripts.Levels._1._1_17
                     return;
                 }
                 _door.Unlock();
+                Destroy(_boxCollider2D);
             }
         }
 
