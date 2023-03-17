@@ -1,19 +1,21 @@
 using System;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Project.Scripts.Menus
 {
     public class SettingsMenu : MonoBehaviour
     {
-        private const String PLAYERS_PREFS_MUTE = "Player Prefs Mute";
-
-        private const String SETTINGS_MENU_NAME = "Settings Menu";
+        private const String PLAYERS_PREFS_MASTER_VOLUME_VALUE = "Player Prefs Master Volume Value";
+        private const String PLAYERS_PREFS_SFX_VOLUME_VALUE = "Player Prefs SFX Volume Value";
+        private const String PLAYERS_PREFS_MUSIC_VOLUME_VALUE = "Player Prefs Music Volume Value";
         
-        [SerializeField] private String _masterVolumeMixer;
-        [SerializeField] private String _SFXVolumeMixer;
-        [SerializeField] private String _musicVolumeMixer;
+        private const String PLAYERS_PREFS_MASTER_MUTE = "Player Prefs Master Mute";
+        private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
+        private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
 
         [SerializeField] private Slider _masterVolumeSlider;
         [SerializeField] private Slider _SFXVolumeSlider;
@@ -26,23 +28,24 @@ namespace Project.Scripts.Menus
 
         [SerializeField] private Image _fadeBrightness;
 
-        [SerializeField] private AudioMixer _audioMixer;
-
-        [SerializeField] private GameObject _muteIcon;
-    
-        private float _lastMasterVolumeValue;
-        private float _lastSFXVolumeValue;
-        private float _lastMusicVolumeValue;
+        [SerializeField] private GameObject _masterMuteIcon;
+        //[SerializeField] private GameObject _SFXMuteIcon;
+        //[SerializeField] private GameObject _musicMuteIcon;
 
         private void OnEnable()
         {
-            _audioMixer.GetFloat(_masterVolumeMixer, out var masterVolumeValue);
-            _audioMixer.GetFloat(_SFXVolumeMixer, out var SFXVolumeValue);
-            _audioMixer.GetFloat(_musicVolumeMixer, out var musicVolumeValue);
 
-            _masterVolumeSlider.value = masterVolumeValue;
-            _SFXVolumeSlider.value = SFXVolumeValue;
-            _musicVolumeSlider.value = musicVolumeValue;
+            bool auxMasterVolumeMute = PlayerPrefs.GetInt(PLAYERS_PREFS_MASTER_MUTE) == 1;
+            bool auxSFXVolumeMute = PlayerPrefs.GetInt(PLAYERS_PREFS_SFX_MUTE) == 1;
+            bool auxMusicVolumeMute = PlayerPrefs.GetInt(PLAYERS_PREFS_MUSIC_MUTE) == 1;
+            
+            _masterVolumeSlider.value = PlayerPrefs.GetFloat(PLAYERS_PREFS_MASTER_VOLUME_VALUE);
+            _SFXVolumeSlider.value = PlayerPrefs.GetFloat(PLAYERS_PREFS_SFX_VOLUME_VALUE);
+            _musicVolumeSlider.value = PlayerPrefs.GetFloat(PLAYERS_PREFS_MUSIC_VOLUME_VALUE);
+
+            _masterVolumeMute.isOn = auxMasterVolumeMute;
+            _SFXVolumeMute.isOn = auxSFXVolumeMute;
+            _musicVolumeMute.isOn = auxMusicVolumeMute;
 
             _fullscreenToggle.isOn = Screen.fullScreen;
         }
@@ -61,108 +64,102 @@ namespace Project.Scripts.Menus
 
         public void SetMasterVolume(float volume)
         {
-            SetVolume(volume, _masterVolumeMixer, _lastMasterVolumeValue);
+            SetVolume(volume, PLAYERS_PREFS_MASTER_VOLUME_VALUE, PLAYERS_PREFS_MASTER_MUTE);
         }
         
         public void SetSFXVolume(float volume)
         {
-            SetVolume(volume, _SFXVolumeMixer, _lastSFXVolumeValue);
+            SetVolume(volume, PLAYERS_PREFS_SFX_VOLUME_VALUE, PLAYERS_PREFS_SFX_MUTE);
         }
         
         public void SetMusicVolume(float volume)
         {
-            SetVolume(volume, _musicVolumeMixer, _lastMusicVolumeValue);
+            SetVolume(volume, PLAYERS_PREFS_MUSIC_VOLUME_VALUE, PLAYERS_PREFS_MUSIC_MUTE);
         }
 
-        public void SetVolume(float volume, String volumeMixer, float _lastVolumeValue)
+        public void SetVolume(float volume, String playerPrefsVolumeMixer, String playerPrefsMute/*, GameObject iconMute*/)
         {
             if (volume <= -50.0f)
             {
-                _audioMixer.SetFloat(volumeMixer, -80);
-                if (volumeMixer == _masterVolumeMixer)
+                AudioManager.Instance.SetVolumePrefs(playerPrefsVolumeMixer, -80);
+                SetMuteToggle(true, playerPrefsVolumeMixer);
+                PlayerPrefs.SetInt(playerPrefsMute, 1);
+                if (playerPrefsVolumeMixer != PLAYERS_PREFS_MASTER_VOLUME_VALUE)
                 {
-                    SetMuteToggle(true, volumeMixer);
-                    PlayerPrefs.SetInt(PLAYERS_PREFS_MUTE, 1);
-                    _muteIcon.SetActive(true);
+                    return;
                 }
+                _masterMuteIcon.SetActive(true);
+                //iconMute.SetActive(true);
             }
             else
             {
-                _audioMixer.SetFloat(volumeMixer, volume);
-                if (volumeMixer == _masterVolumeMixer)
+                AudioManager.Instance.SetVolumePrefs(playerPrefsVolumeMixer, volume);
+                SetMuteToggle(false, playerPrefsVolumeMixer);
+                PlayerPrefs.SetInt(playerPrefsMute, 0);
+                if (playerPrefsVolumeMixer != PLAYERS_PREFS_MASTER_VOLUME_VALUE)
                 {
-                    SetMuteToggle(false, volumeMixer);
-                    PlayerPrefs.SetInt(PLAYERS_PREFS_MUTE, 0);
-                    _muteIcon.SetActive(false);
+                    return;
                 }
-            }
-            SetLastVolumeValue(volume, volumeMixer);
-        }
-
-        private void SetMuteToggle(bool mute, String volumeMixer)
-        {
-            if (volumeMixer == _masterVolumeMixer)
-            {
-                _masterVolumeMute.isOn = mute;
-            }
-            else if (volumeMixer == _SFXVolumeMixer)
-            {
-                _SFXVolumeMute.isOn = mute;
-            }
-            else
-            {
-                _musicVolumeMute.isOn = mute;
+                _masterMuteIcon.SetActive(false);
+                //iconMute.SetActive(false);
             }
         }
 
-        private void SetLastVolumeValue(float lastVolumeValue, String volumeMixer)
+        private void SetMuteToggle(bool mute, String playerPrefsVolumeMixer)
         {
-            if (volumeMixer == _masterVolumeMixer)
+            switch (playerPrefsVolumeMixer)
             {
-                _lastMasterVolumeValue = lastVolumeValue;
-            }
-            else if (volumeMixer == _SFXVolumeMixer)
-            {
-                _lastSFXVolumeValue = lastVolumeValue;
-            }
-            else
-            {
-                _lastMusicVolumeValue = lastVolumeValue;
+                case PLAYERS_PREFS_MASTER_VOLUME_VALUE:
+                    _masterVolumeMute.isOn = mute;
+                    break;
+                case PLAYERS_PREFS_SFX_VOLUME_VALUE:
+                    _SFXVolumeMute.isOn = mute;
+                    break;
+                default:
+                    _musicVolumeMute.isOn = mute;
+                    break;
             }
         }
 
         public void MuteMaster(bool mute)
         {
-            Mute(mute, _masterVolumeMixer, _lastMasterVolumeValue);
+            Mute(mute, PLAYERS_PREFS_MASTER_VOLUME_VALUE, PLAYERS_PREFS_MASTER_MUTE/*, _masterMuteIcon*/);
         }
 
         public void MuteSFX(bool mute)
         {
-            Mute(mute, _SFXVolumeMixer, _lastSFXVolumeValue);
+            Mute(mute, PLAYERS_PREFS_SFX_VOLUME_VALUE, PLAYERS_PREFS_SFX_MUTE/*, _SFXMuteIcon*/);
         }
 
         public void MuteMusic(bool mute)
         {
-            Mute(mute, _musicVolumeMixer, _lastMusicVolumeValue);
+            Mute(mute, PLAYERS_PREFS_MUSIC_VOLUME_VALUE, PLAYERS_PREFS_MUSIC_MUTE/*, _musicMuteIcon*/);
         }
 
-        public void Mute(bool mute, String volumeMixer, float _lastVolumeValue)
+        public void Mute(bool mute, String playerPrefsVolumeMixer, String playerPrefsMute/*, GameObject iconMute*/)
         {
             if (mute)
             {
-                _audioMixer.SetFloat(volumeMixer, -80);
-                if (volumeMixer == _masterVolumeMixer)
+                AudioManager.Instance.SetVolumePrefs(playerPrefsVolumeMixer, PlayerPrefs.GetFloat(playerPrefsVolumeMixer));
+                AudioManager.Instance.SetVolumeValue(playerPrefsVolumeMixer, -80);
+                PlayerPrefs.SetInt(playerPrefsMute, 1);
+                if (playerPrefsVolumeMixer != PLAYERS_PREFS_MASTER_VOLUME_VALUE)
                 {
-                    _muteIcon.SetActive(true);
+                    return;
                 }
+                _masterMuteIcon.SetActive(true);
+                //iconMute.SetActive(true);
             }
             else
             {
-                _audioMixer.SetFloat(volumeMixer, _lastVolumeValue);
-                if (volumeMixer == _masterVolumeMixer)
+                AudioManager.Instance.SetVolumePrefs(playerPrefsVolumeMixer, PlayerPrefs.GetFloat(playerPrefsVolumeMixer));
+                PlayerPrefs.SetInt(playerPrefsMute, 0);
+                if (playerPrefsVolumeMixer != PLAYERS_PREFS_MASTER_VOLUME_VALUE)
                 {
-                    _muteIcon.SetActive(false);
+                    return;
                 }
+                _masterMuteIcon.SetActive(false);
+                //iconMute.SetActive(false);
             }
         }
     }

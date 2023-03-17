@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba48f23dd9f8fa4383cfc94ae792325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
+  _masterVolumeMixer: MasterSound
+  _SFXVolumeMixer: SFXSound
+  _musicVolumeMixer: MusicSound
   _sounds:
   - _audioClip: {fileID: 8300000, guid: 14685251affefe44995b346028dbead7, type: 3}
     _audioMixerGroup: {fileID: 2299499932932323075, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
@@ -51,7 +55,7 @@ MonoBehaviour:
     _volume: 1
     _druggedPitch: 1
     _soberPitch: 1
-    _loop: 0
+    _loop: 1
     _play: 1
   - _audioClip: {fileID: 8300000, guid: 8136cc258a407534c94e9b67a69cfb49, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}

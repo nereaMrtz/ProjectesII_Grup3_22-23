@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Project.Scripts.Managers;
+using Random = UnityEngine.Random;
 
 namespace Project.Scripts.Character
 {
@@ -12,20 +13,19 @@ namespace Project.Scripts.Character
 
         [SerializeField] private Rigidbody2D _rigidbody2D;
 
+        [SerializeField] private Animator animator;
+
         [SerializeField] private float _currentSpeed = 75;
 
         [SerializeField] private bool _moveWithKeyboard;
-        
-        [SerializeField] private bool _move;
-        
-        [SerializeField] private bool _inverted;
+        [SerializeField] private bool _randomMovement;
 
-        public Animator animator;
+        private int[] _randomMoves = new[] { 1, -1, -1, 1 };
+        private int[] _randomAxis = new[] { 0, 0, 1, 1 };
+        
+        private bool _moving;
 
         private Vector2 _movementDirection;
-
-        [SerializeField] private bool _moving;
-        
 
         void Update()
         {
@@ -43,10 +43,6 @@ namespace Project.Scripts.Character
 
         private void FixedUpdate()
         {
-            if (!_move)
-            {
-                return;
-            }
             Movement();
         }
 
@@ -67,22 +63,50 @@ namespace Project.Scripts.Character
             if (_moveWithKeyboard)
             {                
                 _movementDirection = Vector2.zero;
-                
+
                 if (Input.GetKey(KeyCode.A))
                 {
-                    _movementDirection.x += _inverted ? 1 : -1;
+                    if (_randomMovement)
+                    {
+                        _movementDirection[_randomAxis[0]] = _randomMoves[0];
+                    }
+                    else
+                    {
+                        _movementDirection.x += -1;    
+                    }
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    _movementDirection.x += _inverted ? -1 : 1;
+                    if (_randomMovement)
+                    {
+                        _movementDirection[_randomAxis[1]] = _randomMoves[1];
+                    }
+                    else
+                    {
+                        _movementDirection.x += 1;    
+                    }
                 }
                 if (Input.GetKey(KeyCode.W))
                 {
-                    _movementDirection.y += _inverted ? -1 : 1;
+                    if (_randomMovement)
+                    {
+                        _movementDirection[_randomAxis[2]] = _randomMoves[2];
+                    }
+                    else
+                    {
+                        _movementDirection.y += 1;
+                    }
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    _movementDirection.y += _inverted ? 1 : -1;
+                    if (_randomMovement)
+                    {
+                        _movementDirection[_randomAxis[3]] = _randomMoves[3];
+                    }
+                    else
+                    {
+                        _movementDirection.y += -1;
+                    }
                 }
             }
         }
@@ -144,6 +168,16 @@ namespace Project.Scripts.Character
         public void SetMovementDirection(Vector2 movementDirection)
         {
             _movementDirection = movementDirection;
+        }
+
+        public void SetRandomAxis(int[] randomAxis)
+        {
+            _randomAxis = randomAxis;
+        }
+
+        public int[] GetRandomAxis()
+        {
+            return _randomAxis;
         }
     }
 }
