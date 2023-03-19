@@ -1,11 +1,12 @@
 using System;
 using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Descubrelo
 {
-    public class Button_Descubrelo : Button1_1
+    public class Button_Descubrelo : Button_Logico
     {
         private const int PLAYER_LAYER = 6;
 

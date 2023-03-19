@@ -1,9 +1,8 @@
 using Project.Scripts.Levels._1._1_1;
-using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_13 
+namespace Project.Scripts.Levels._1.Manten 
 {
-    public class Door1_13 : Door
+    public class Door_Manten : Door
     {
         public void AnimatorStep(bool buttonPressed) {
                         

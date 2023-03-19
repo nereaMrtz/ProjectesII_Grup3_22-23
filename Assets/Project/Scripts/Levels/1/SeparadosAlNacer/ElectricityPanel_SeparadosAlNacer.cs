@@ -6,7 +6,7 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
     public class ElectricityPanel_SeparadosAlNacer : MonoBehaviour
     {
 
-        [SerializeField] private float _timeWhenClick;
+        private float _timeWhenClick;
 
         private void OnMouseEnter()
         {

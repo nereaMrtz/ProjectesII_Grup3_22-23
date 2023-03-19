@@ -1,11 +1,11 @@
 using System;
-using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_2
+namespace Project.Scripts.Levels._1.EstaAtascado
 {
-    public class Button1_2 : Button1_1
+    public class Button_EstaAtascado : Button_Logico
     {
 
         private const String PULSAR_BOTON = "PulsarBoton";

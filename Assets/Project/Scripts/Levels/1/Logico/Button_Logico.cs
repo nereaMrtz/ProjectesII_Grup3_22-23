@@ -1,19 +1,23 @@
 using System;
-using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Interactable.Static;
 using Project.Scripts.Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_14
+namespace Project.Scripts.Levels._1.Logico
 {
-    public class Button1_14Main : Button1_1
+    public class Button_Logico : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
 
         private const String PULSAR_BOTON = "PulsarBoton";
         private const String SOLTAR_BOTON = "SoltarBoton";
+        
+        [SerializeField] protected Animator _animator;
+        
+        [SerializeField] protected UnlockableObject _door;
 
-        [SerializeField] private Button1_14Slave _slave;
+        protected bool _pressed;
+
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
             if (collider2D.gameObject.layer != PLAYER_LAYER)
@@ -22,10 +26,6 @@ namespace Project.Scripts.Levels._1._1_14
             }
             AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
-            if (!_slave.IsPressed())
-            {
-                return;
-            }
             if (_door.IsUnlocked())
             {
                 return;
@@ -41,6 +41,27 @@ namespace Project.Scripts.Levels._1._1_14
             }
             AudioManager.Instance.Play(SOLTAR_BOTON);
             ButtonAction();
+        }
+
+        protected void ButtonAction()
+        {
+            _pressed = !_pressed;
+            ButtonAnimation();
+        }
+
+        private void ButtonAnimation()
+        {
+            _animator.SetTrigger("Press");
+        }
+
+        public bool IsPressed()
+        {
+            return _pressed;
+        }
+
+        public void SetPressed(bool pressed)
+        {
+            _pressed = pressed;
         }
     }
 }

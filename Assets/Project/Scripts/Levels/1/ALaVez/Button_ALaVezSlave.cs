@@ -1,12 +1,11 @@
 using System;
 using Project.Scripts.Interactable.Static;
-using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_14
+namespace Project.Scripts.Levels._1.ALaVez
 {
-    public class Button1_14Slave : MonoBehaviour
+    public class Button_ALaVezSlave : MonoBehaviour
     {
 
         private const String PULSAR_BOTON = "PulsarBoton";
@@ -14,9 +13,9 @@ namespace Project.Scripts.Levels._1._1_14
 
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private Button1_14Main _main;
-
         [SerializeField] private UnlockableObject _door;
+
+        [SerializeField] private Button_ALaVezMain _main;
 
         private bool _pressed;
         private void OnMouseDown()

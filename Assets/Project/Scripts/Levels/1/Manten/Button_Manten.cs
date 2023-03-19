@@ -1,11 +1,12 @@
 using System;
-using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Project.Scripts.Levels._1._1_13
+namespace Project.Scripts.Levels._1.Manten
 {
-    public class Button1_13 : Button1_1
+    public class Button_Manten : Button_Logico
     {
         private const int PLAYER_LAYER = 6;
 
@@ -14,7 +15,7 @@ namespace Project.Scripts.Levels._1._1_13
 
         [SerializeField] private float _timeToOpenDoor;
 
-        [SerializeField] private Door1_13 _door1_13;
+        [SerializeField] private Door_Manten _door_Manten;
 
         private float _currentTime;
 
@@ -26,7 +27,7 @@ namespace Project.Scripts.Levels._1._1_13
             }
             AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
-            _door1_13.AnimatorStep(_pressed);
+            _door_Manten.AnimatorStep(_pressed);
             _currentTime = Time.time;
         }
 
@@ -38,11 +39,11 @@ namespace Project.Scripts.Levels._1._1_13
             }
             AudioManager.Instance.Play(SOLTAR_BOTON);
             ButtonAction();
-            if (Time.time - _currentTime > _timeToOpenDoor && !_door1_13.IsUnlocked())
+            if (Time.time - _currentTime > _timeToOpenDoor && !_door_Manten.IsUnlocked())
             {
-                _door1_13.Unlock();
+                _door_Manten.Unlock();
             }
-            _door1_13.AnimatorStep(_pressed);
+            _door_Manten.AnimatorStep(_pressed);
             _currentTime = 0;
         }
     }
