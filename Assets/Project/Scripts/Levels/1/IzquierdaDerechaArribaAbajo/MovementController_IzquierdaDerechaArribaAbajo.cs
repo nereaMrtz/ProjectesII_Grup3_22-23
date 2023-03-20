@@ -4,9 +4,9 @@ using Project.Scripts.NoMonoBehaviourClass;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Project.Scripts.Levels._1._1_19
+namespace Project.Scripts.Levels._1.IzquierdaDerechaArribaAbajo
 {
-    public class MovementController1_19 : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+    public class MovementController_IzquierdaDerechaArribaAbajo : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
         [SerializeField] private Direction[] _directions;
 

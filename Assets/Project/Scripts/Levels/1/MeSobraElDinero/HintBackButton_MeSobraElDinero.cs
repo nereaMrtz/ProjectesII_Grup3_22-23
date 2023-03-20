@@ -1,9 +1,9 @@
 using Project.Scripts.Interactable.Static;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_7 {
+namespace Project.Scripts.Levels._1.MeSobraElDinero {
 
-    public class HintBackButton1_7 : MonoBehaviour
+    public class HintBackButton_MeSobraElDinero : MonoBehaviour
     {
 
         [SerializeField] private UnlockableObject _door;

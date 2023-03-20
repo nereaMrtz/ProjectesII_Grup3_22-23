@@ -2,7 +2,6 @@ using System;
 using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1.Manten
 {
@@ -42,6 +41,10 @@ namespace Project.Scripts.Levels._1.Manten
             if (Time.time - _currentTime > _timeToOpenDoor && !_door_Manten.IsUnlocked())
             {
                 _door_Manten.Unlock();
+            }
+            else
+            {
+                _door_Manten.ChangePolygonCollider(0);    
             }
             _door_Manten.AnimatorStep(_pressed);
             _currentTime = 0;

@@ -1,9 +1,9 @@
 using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_8
+namespace Project.Scripts.Levels._1.CuidaElPlaneta
 {
-    public class Flowerpot_1_8 : MonoBehaviour
+    public class Flowerpot_CuidaElPlaneta : MonoBehaviour
     {
         [SerializeField] private Door _door;
 

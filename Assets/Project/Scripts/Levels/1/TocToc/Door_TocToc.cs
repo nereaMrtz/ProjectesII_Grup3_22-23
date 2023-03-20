@@ -4,9 +4,9 @@ using Project.Scripts.Interactable.Static;
 using Project.Scripts.Managers;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_17
+namespace Project.Scripts.Levels._1.TocToc
 {
-    public class Door1_17 : MonoBehaviour
+    public class Door_TocToc : MonoBehaviour
     {
         private const String TOC = "Toc";
         

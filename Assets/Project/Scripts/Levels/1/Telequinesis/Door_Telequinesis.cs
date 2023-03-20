@@ -1,10 +1,9 @@
-using System;
 using Project.Scripts.Interactable.Static;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_24
+namespace Project.Scripts.Levels._1.Telequinesis
 {
-    public class Door1_24 : MonoBehaviour
+    public class Door_Telequinesis : MonoBehaviour
     {
         [SerializeField] private UnlockableObject _door;
         

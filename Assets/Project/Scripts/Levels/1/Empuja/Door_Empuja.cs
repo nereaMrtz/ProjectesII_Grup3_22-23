@@ -2,9 +2,9 @@ using Project.Scripts.Character;
 using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1._1_10
+namespace Project.Scripts.Levels._1.Empuja
 {
-    public class Door_1_10 : Door
+    public class Door_Empuja : Door
     {
         [SerializeField] private Player _player;
         
