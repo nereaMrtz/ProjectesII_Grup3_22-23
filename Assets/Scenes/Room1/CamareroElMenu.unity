@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sala: 2
+  _sala: 7
   _fade: {fileID: 670609831}
 --- !u!61 &133184256
 BoxCollider2D:
@@ -2236,7 +2236,7 @@ PrefabInstance:
       objectReference: {fileID: 1267020820}
     - target: {fileID: 3846082067783318041, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_text
-      value: "1. L\xF3gico"
+      value: "\xA1Camarero! \xBFEl men\xFA?"
       objectReference: {fileID: 0}
     - target: {fileID: 3846082067836111248, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_IsActive
@@ -5399,7 +5399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3864292576272621381, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.40992
+      value: -79.464325
       objectReference: {fileID: 0}
     - target: {fileID: 4719178061694108137, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_Name
@@ -5509,6 +5509,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1267020820}
+    - target: {fileID: 4719178062094956308, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719178062094956308, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719178062094956308, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719178062094956308, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Project.Scripts.Levels.CambiarSala, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4719178062094956309, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -5523,7 +5539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719178062094956309, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.40992
+      value: -79.464325
       objectReference: {fileID: 0}
     - target: {fileID: 4719178062458516682, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5535,11 +5551,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719178062458516682, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 35.22747
+      value: 35.227463
       objectReference: {fileID: 0}
     - target: {fileID: 4719178062458516682, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.40992
+      value: -79.464325
       objectReference: {fileID: 0}
     - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5571,7 +5587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4719178062628270993, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.40992
+      value: -79.464325
       objectReference: {fileID: 0}
     - target: {fileID: 4719178062693387510, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchoredPosition.y
