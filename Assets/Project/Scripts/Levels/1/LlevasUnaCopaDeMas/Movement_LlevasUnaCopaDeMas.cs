@@ -24,7 +24,7 @@ namespace Project.Scripts.Levels._1.LlevasUnaCopaDeMas
             {
                 return;
             }
-            _player.SetRandomAxis(Shuffle(_player.GetRandomAxis()));
+            //_player.SetRandomAxis(Shuffle(_player.GetRandomAxis()));
             _currentTime = _timeToChangeMoves;
         }
 

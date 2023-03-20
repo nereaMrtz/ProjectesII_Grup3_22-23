@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250142546416256618}
   - component: {fileID: 4605961259557706431}
-  - component: {fileID: 8040872914088918494}
+  - component: {fileID: 1908507858667358973}
   - component: {fileID: 4798464189758458638}
   - component: {fileID: 137631413151318116}
   - component: {fileID: 5135575102694113860}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &8040872914088918494
+--- !u!70 &1908507858667358973
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.32417}
-  m_Size: {x: 0.65165997, y: 0.65165997}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.56}
+  m_Size: {x: 0.29, y: 0.2}
+  m_Direction: 1
 --- !u!50 &4798464189758458638
 Rigidbody2D:
   serializedVersion: 4
@@ -139,13 +139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pauseMenuPanel: {fileID: 0}
   _rigidbody2D: {fileID: 4798464189758458638}
+  animator: {fileID: 5135575102694113860}
   _currentSpeed: 200
   _moveWithKeyboard: 1
-  _move: 1
   _inverted: 0
-  animator: {fileID: 5135575102694113860}
-  _moving: 0
-  _movingWithOutKeyBoard: 0
 --- !u!95 &5135575102694113860
 Animator:
   serializedVersion: 4

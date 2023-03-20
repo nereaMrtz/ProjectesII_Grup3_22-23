@@ -18,10 +18,10 @@ namespace Project.Scripts.Character
         [SerializeField] private float _currentSpeed = 75;
 
         [SerializeField] private bool _moveWithKeyboard;
-        [SerializeField] private bool _randomMovement;
+        [SerializeField] private bool _inverted;
 
-        private int[] _randomMoves = new[] { 1, -1, -1, 1 };
-        private int[] _randomAxis = new[] { 0, 0, 1, 1 };
+        /*private int[] _randomMoves = new[] { 1, -1, -1, 1 };
+        private int[] _randomAxis = new[] { 0, 0, 1, 1 };*/
         
         private bool _moving;
 
@@ -66,47 +66,55 @@ namespace Project.Scripts.Character
 
                 if (Input.GetKey(KeyCode.A))
                 {
-                    if (_randomMovement)
+                    _movementDirection.x += _inverted ? 1 : -1;
+
+                    /*if (_randomMovement)
                     {
                         _movementDirection[_randomAxis[0]] = _randomMoves[0];
                     }
                     else
                     {
                         _movementDirection.x += -1;    
-                    }
+                    }*/
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    if (_randomMovement)
+                    _movementDirection.x += _inverted ? -1 : 1;
+                    
+                    /*if (_randomMovement)
                     {
                         _movementDirection[_randomAxis[1]] = _randomMoves[1];
                     }
                     else
                     {
                         _movementDirection.x += 1;    
-                    }
+                    }*/
                 }
                 if (Input.GetKey(KeyCode.W))
                 {
-                    if (_randomMovement)
+                    _movementDirection.y += _inverted ? -1 : 1;
+
+                    /*if (_randomMovement)
                     {
                         _movementDirection[_randomAxis[2]] = _randomMoves[2];
                     }
                     else
                     {
                         _movementDirection.y += 1;
-                    }
+                    }*/
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    if (_randomMovement)
+                    _movementDirection.y += _inverted ? 1 : -1;
+
+                    /*if (_randomMovement)
                     {
                         _movementDirection[_randomAxis[3]] = _randomMoves[3];
                     }
                     else
                     {
                         _movementDirection.y += -1;
-                    }
+                    }*/
                 }
             }
         }
@@ -137,7 +145,7 @@ namespace Project.Scripts.Character
 
         private void UpdateAnimationController(){
 
-            _moving = _rigidbody2D.velocity.magnitude > 0.01f;
+            _moving = _rigidbody2D.velocity.magnitude > 0;
             
             animator.SetInteger("Horizontal", (int)_movementDirection.x);
             animator.SetInteger("Vertical", (int)_movementDirection.y);
@@ -170,7 +178,7 @@ namespace Project.Scripts.Character
             _movementDirection = movementDirection;
         }
 
-        public void SetRandomAxis(int[] randomAxis)
+        /*public void SetRandomAxis(int[] randomAxis)
         {
             _randomAxis = randomAxis;
         }
@@ -178,6 +186,6 @@ namespace Project.Scripts.Character
         public int[] GetRandomAxis()
         {
             return _randomAxis;
-        }
+        }*/
     }
 }

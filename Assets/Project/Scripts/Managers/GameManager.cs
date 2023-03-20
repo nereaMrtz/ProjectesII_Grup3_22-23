@@ -16,6 +16,7 @@ namespace Project.Scripts.Managers
         private bool _pause;
         private bool _fading;
 
+        private bool[] _levelsWhereHintTaken;
         private bool[] _levelsWhereHintUsed;
         
         private int _hintCoins = 2;
@@ -27,13 +28,15 @@ namespace Project.Scripts.Managers
             if (_instance == null)
             {
                 _instance = this;
+                _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
+                _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
             }
             else
             {
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(gameObject);
-            _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
+            
         }
         
         public static GameManager Instance
@@ -113,6 +116,16 @@ namespace Project.Scripts.Managers
             return _hintCoins;
         }
 
+        public void SetLevelWhereHintTaken(int level)
+        {
+            _levelsWhereHintTaken[level] = true;
+        }
+
+        public bool IsLevelHintTaken(int level)
+        {
+            return _levelsWhereHintTaken[level];
+        }
+
         public void SetHintUsedInLevel(int level)
         {
             _levelsWhereHintUsed[level] = true;
@@ -131,6 +144,13 @@ namespace Project.Scripts.Managers
         public void SetLevels(int level)
         {
             levels[level] = true;
+        }
+        
+        public void ResetLevels()
+        {
+            _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
+            _levelsWhereHintUsed  = new bool[SceneManager.sceneCountInBuildSettings];
+            levels = new bool[30];
         }
 
         public void SetCurrentResolution(Resolution resolution)

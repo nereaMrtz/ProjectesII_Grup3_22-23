@@ -1,13 +1,18 @@
 using System;
 using System.Collections;
 using Project.Scripts.Character;
+using Project.Scripts.Levels._1._1_1;
+using Project.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1.NoToques
 {
     public class Button_NoToques : MonoBehaviour
     {
-
+        protected const int PLAYER_LAYER = 6;
+        
+        private const String ARRASTRAR_BOTON = "ArrastrarBoton(NoToques)";
         private const String PULSAR_BOTON = "PulsarBoton";
         private const String SOLTAR_BOTON = "SoltarBoton";
         
@@ -17,22 +22,36 @@ namespace Project.Scripts.Levels._1.NoToques
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
-        [SerializeField] private GameObject _boxCollider2D;
+        [SerializeField] private GameObject _trigger;
 
+        private Vector3 _initialPosition;
+        
         private Color _color;
 
         private float _currentTime;
 
         private bool _moved;
+        private bool _collidedWithPlayer;
 
         private void Start()
         {
+            _initialPosition = transform.position;
             _currentTime = _timeToDisappear;
             _color = _spriteRenderer.color;
         }
 
         private void Update()
         {
+            if (_moved)
+            {
+                if (_collidedWithPlayer && _trigger == null)
+                {
+                    StartCoroutine(GoBack());
+                    _collidedWithPlayer = false;
+                }
+                return;
+            }
+            
             _currentTime -= Time.deltaTime;
 
             if (_player.GetMovement().magnitude != 0)
@@ -46,6 +65,16 @@ namespace Project.Scripts.Levels._1.NoToques
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collider2D)
+        {
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
+            {
+                return;
+            }
+
+            _collidedWithPlayer = true;
+        }
+
         private IEnumerator Disappear()
         {
             float auxAlpha = _color.a;
@@ -57,8 +86,20 @@ namespace Project.Scripts.Levels._1.NoToques
                 yield return null;
             }
             
-            Destroy(_boxCollider2D);
+            Destroy(_trigger);
             Destroy(gameObject);
+        }
+
+        private IEnumerator GoBack()
+        {
+            AudioManager.Instance.Play(ARRASTRAR_BOTON);
+            while (Vector3.Distance(transform.position, _initialPosition) > 0)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, _initialPosition, Time.deltaTime * 2);
+                yield return null;
+            }
+            
+            //Destroy(this);
         }
     }
 }
