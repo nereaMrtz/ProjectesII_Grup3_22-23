@@ -2424,10 +2424,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7e7105d3a99ed438f584fe258ef13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenController: {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
-  _redController: {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
-  _timeToChangeToGreen: 5
-  _timeToChangeToRed: 1
+  _animator: {fileID: 436343262}
+  _buttonControllers:
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  _timeToChange:
+  - 3
+  - 5
+  _correct: 0
+--- !u!95 &436343262 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 436343258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &450715918 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5047298322624875396, guid: de8da5438b8862a42be33154db74bcc9, type: 3}
@@ -4603,10 +4612,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7e7105d3a99ed438f584fe258ef13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenController: {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
-  _redController: {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
-  _timeToChangeToGreen: 5
-  _timeToChangeToRed: 1
+  _animator: {fileID: 1242572408}
+  _buttonControllers:
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  _timeToChange:
+  - 3
+  - 5
+  _correct: 0
+--- !u!95 &1242572408 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1242572404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1249983730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5798,10 +5816,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7e7105d3a99ed438f584fe258ef13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenController: {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
-  _redController: {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
-  _timeToChangeToGreen: 5
-  _timeToChangeToRed: 1
+  _animator: {fileID: 1699131440}
+  _buttonControllers:
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  _timeToChange:
+  - 3
+  - 5
+  _correct: 0
+--- !u!95 &1699131440 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1699131436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1765451345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,10 +5992,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7e7105d3a99ed438f584fe258ef13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenController: {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
-  _redController: {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
-  _timeToChangeToGreen: 5
-  _timeToChangeToRed: 1
+  _animator: {fileID: 1775522753}
+  _buttonControllers:
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  _timeToChange:
+  - 3
+  - 5
+  _correct: 0
+--- !u!95 &1775522753 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1775522749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1778511226
 GameObject:
   m_ObjectHideFlags: 0
@@ -6159,10 +6195,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7e7105d3a99ed438f584fe258ef13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenController: {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
-  _redController: {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
-  _timeToChangeToGreen: 5
-  _timeToChangeToRed: 1
+  _animator: {fileID: 1816394951}
+  _buttonControllers:
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  _timeToChange:
+  - 3
+  - 5
+  _correct: 0
+--- !u!95 &1816394951 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1816394947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1885786477
 GameObject:
   m_ObjectHideFlags: 0
