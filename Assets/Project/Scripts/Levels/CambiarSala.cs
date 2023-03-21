@@ -43,7 +43,7 @@ namespace Project.Scripts.Levels
         public void ChangeScene()
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene(_sala);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
