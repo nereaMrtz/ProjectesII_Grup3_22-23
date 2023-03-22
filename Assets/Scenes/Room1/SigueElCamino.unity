@@ -437,6 +437,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &29573514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1279115829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &57418831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,6 +4542,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734867393}
   m_CullTransparentMesh: 1
+--- !u!1 &748523268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1865880776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &755888280
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,6 +4720,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
   m_PrefabInstance: {fileID: 1865880776}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &823652107 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1865880776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &823652110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748523268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68cc4b68810c1264eb954c928fe4731f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 823652107}
+  _door: {fileID: 450715918}
 --- !u!1001 &832032860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6616,6 +6645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393634, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6667,6 +6700,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
   m_PrefabInstance: {fileID: 1279115829}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1279115832 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 1279115829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1279115835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29573514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0ac0464c5c8484e9927adfad2c848c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1279115832}
+  _button2: {fileID: 748523268}
 --- !u!1 &1289145968
 GameObject:
   m_ObjectHideFlags: 0
@@ -9231,6 +9283,14 @@ PrefabInstance:
     - target: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_Name
       value: Red Button (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393634, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_RootOrder
