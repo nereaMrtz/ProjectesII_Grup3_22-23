@@ -11,6 +11,7 @@ public class GreenButton : Combination
         {
             Debug.Log("Green");
             AddColor(0);
+            
         }
 
     }
