@@ -10,7 +10,9 @@ namespace Project.Scripts.Levels.TodoAlVerde
 
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private RuntimeAnimatorController[] _buttonControllers;
+        [SerializeField] private RuntimeAnimatorController[] _buttonAnimationControllers;
+
+        [SerializeField] private ButtonController_TodoAlVerde _buttonController;
 
         [SerializeField] private float[] _timeToChange;
 
@@ -18,29 +20,43 @@ namespace Project.Scripts.Levels.TodoAlVerde
 
         [SerializeField] private bool _correct;
 
-        private float _currentTime;
+        [SerializeField] private int _buttonIndex;
+
+        [SerializeField] private float _currentTime;
 
         private int _counter;
 
-        // Start is called before the first frame update
+
         void Start()
         {
             _activeButton[0] = true;
-            _currentTime = _timeToChange[1];
+            _currentTime = Random.Range(1, _timeToChange[1]);
         }
 
-        // Update is called once per frame
+
         void Update()
         {
+            if (_correct)
+            {
+                return;
+            }
+
             _currentTime -= Time.deltaTime;
 
             if (_currentTime <= 0)
             {
-                _animator.runtimeAnimatorController = _buttonControllers[_counter];
-                _currentTime = _timeToChange[_counter];
+                if (_counter == 0)
+                {          
+                    _currentTime = _timeToChange[_counter];
+                }
+                else
+                {
+                    _currentTime = Random.Range(1, _timeToChange[_counter]);  
+                }
                 _activeButton[_counter] = false;                
                 _counter = (_counter + 1) % 2;
                 _activeButton[_counter] = true;
+                _animator.runtimeAnimatorController = _buttonAnimationControllers[_counter];
             }
         }
 
@@ -55,9 +71,12 @@ namespace Project.Scripts.Levels.TodoAlVerde
 
             if (!_activeButton[1])
             {
+                _buttonController.SetFalseToAllButtons();
                 _correct = false;
                 return;
             }
+
+            _buttonController.SetCorrectButton(_buttonIndex);
             _correct = true;
         }
 
@@ -70,6 +89,11 @@ namespace Project.Scripts.Levels.TodoAlVerde
             }
 
             _animator.SetTrigger("Press");
+        }
+
+        public void SetCorrectFalse()
+        {
+            _correct = false;
         }
     }
 

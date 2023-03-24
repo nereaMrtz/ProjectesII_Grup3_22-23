@@ -2356,6 +2356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Button 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2425,13 +2429,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 436343262}
-  _buttonControllers:
-  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonAnimationControllers:
   - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonController: {fileID: 881250095}
   _timeToChange:
-  - 3
+  - 1
   - 5
   _correct: 0
+  _buttonIndex: 1
+  _currentTime: 0
 --- !u!95 &436343262 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
@@ -3752,6 +3759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 881250094}
+  - component: {fileID: 881250095}
   m_Layer: 0
   m_Name: BUTTONS
   m_TagString: Untagged
@@ -3779,6 +3787,26 @@ Transform:
   m_Father: {fileID: 1491411695}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881250095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881250093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f3165378843d74780801d052390e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttons:
+  - {fileID: 1775522752}
+  - {fileID: 436343261}
+  - {fileID: 1242572407}
+  - {fileID: 1699131439}
+  - {fileID: 1816394950}
+  _door: {fileID: 450715918}
+  _correctButtons: 
 --- !u!1 &882464508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4544,6 +4572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Button 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4613,13 +4645,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1242572408}
-  _buttonControllers:
-  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonAnimationControllers:
   - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonController: {fileID: 881250095}
   _timeToChange:
-  - 3
+  - 1
   - 5
   _correct: 0
+  _buttonIndex: 2
+  _currentTime: 0
 --- !u!95 &1242572408 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
@@ -5748,6 +5783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Button 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5817,13 +5856,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1699131440}
-  _buttonControllers:
-  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonAnimationControllers:
   - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonController: {fileID: 881250095}
   _timeToChange:
-  - 3
+  - 1
   - 5
   _correct: 0
+  _buttonIndex: 3
+  _currentTime: 0
 --- !u!95 &1699131440 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
@@ -5993,13 +6035,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1775522753}
-  _buttonControllers:
-  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonAnimationControllers:
   - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonController: {fileID: 881250095}
   _timeToChange:
-  - 3
+  - 1
   - 5
   _correct: 0
+  _buttonIndex: 0
+  _currentTime: 0
 --- !u!95 &1775522753 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
@@ -6127,6 +6172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Button 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6196,13 +6245,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1816394951}
-  _buttonControllers:
-  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonAnimationControllers:
   - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
+  - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  _buttonController: {fileID: 881250095}
   _timeToChange:
-  - 3
+  - 1
   - 5
   _correct: 0
+  _buttonIndex: 4
+  _currentTime: 0
 --- !u!95 &1816394951 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
