@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Levels._1._1_15
 {
-    public class Rindete : MonoBehaviour
+    public class MejorVete : MonoBehaviour
     {
         private bool exitButton;
 
