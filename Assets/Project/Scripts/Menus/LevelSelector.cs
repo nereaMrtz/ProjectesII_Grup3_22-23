@@ -9,7 +9,9 @@ namespace Project.Scripts.Menus
     {
         bool[] levels;
         [SerializeField] Button[] button;
-       
+
+
+
         private void Start()
         {
             levels = GameManager.Instance.GetLevels();
@@ -27,5 +29,6 @@ namespace Project.Scripts.Menus
                 }
             }
         }
+
     }
 }
