@@ -163,11 +163,6 @@ namespace Project.Scripts.Character
             return _movementDirection;
         }
 
-        public void SetMovement(Vector2 movement)
-        {
-            _movementDirection = movement;
-        }
-
         public void SetMoving(bool moving)
         {
             _moving = moving;
