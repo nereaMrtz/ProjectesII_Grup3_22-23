@@ -34,8 +34,6 @@ namespace Project.Scripts.Levels._1.IzquierdaDerechaArribaAbajo
         {
             while (_pressed)
             {
-                
-                _player.SetMovement(_movementDirection);
                 _player.SetMovementDirection(_movementDirection);
                 yield return null;
             }
