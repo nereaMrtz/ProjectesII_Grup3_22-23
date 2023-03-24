@@ -42,13 +42,10 @@ namespace Project.Scripts.Levels._1.NoToques
 
         private void Update()
         {
-            if (_moved)
+            if (_collidedWithPlayer && _trigger == null)
             {
-                if (_collidedWithPlayer && _trigger == null)
-                {
-                    StartCoroutine(GoBack());
-                    _collidedWithPlayer = false;
-                }
+                StartCoroutine(GoBack());
+                _collidedWithPlayer = false;
                 return;
             }
             
@@ -56,10 +53,10 @@ namespace Project.Scripts.Levels._1.NoToques
 
             if (_player.GetMovement().magnitude != 0)
             {
-                _moved = true;
+                _currentTime = _timeToDisappear;
             }
 
-            if (_currentTime<= 0 && !_moved)
+            if (_currentTime<= 0)
             {
                 StartCoroutine(Disappear());
             }
@@ -99,7 +96,7 @@ namespace Project.Scripts.Levels._1.NoToques
                 yield return null;
             }
             
-            //Destroy(this);
+            Destroy(this);
         }
     }
 }
