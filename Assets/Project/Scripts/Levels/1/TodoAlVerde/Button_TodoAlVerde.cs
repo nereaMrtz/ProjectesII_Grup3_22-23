@@ -1,5 +1,7 @@
+using Project.Scripts.Managers;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.TerrainTools;
 using UnityEngine;
 
 namespace Project.Scripts.Levels.TodoAlVerde 
@@ -7,6 +9,8 @@ namespace Project.Scripts.Levels.TodoAlVerde
     public class Button_TodoAlVerde : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
+
+        private const string PRESS_BUTTON = "RedButton";
 
         [SerializeField] private Animator _animator;
 
@@ -22,7 +26,7 @@ namespace Project.Scripts.Levels.TodoAlVerde
 
         [SerializeField] private int _buttonIndex;
 
-        [SerializeField] private float _currentTime;
+        private float _currentTime;
 
         private int _counter;
 
@@ -68,11 +72,11 @@ namespace Project.Scripts.Levels.TodoAlVerde
             }
 
             _animator.SetTrigger("Press");
+            AudioManager.Instance.Play(PRESS_BUTTON);
 
             if (!_activeButton[1])
             {
                 _buttonController.SetFalseToAllButtons();
-                _correct = false;
                 return;
             }
 
@@ -88,6 +92,8 @@ namespace Project.Scripts.Levels.TodoAlVerde
                 return;
             }
 
+            AudioManager.Instance.Play(PRESS_BUTTON);
+
             _animator.SetTrigger("Press");
         }
 
@@ -95,6 +101,12 @@ namespace Project.Scripts.Levels.TodoAlVerde
         {
             _correct = false;
         }
-    }
 
+        /*beatproximity: closer to 0 = closer to beat;
+        beatproximity: closer to 1 = further from beat;
+        float adjustedSongTime = AudioSource.time - songOffset;
+        float beatTime = BPM / 60f;
+        float beatProximity = Mathf.Sqrt(Mathf.Abs(Mathf.Sin(Mathf.Deg2Rad* (90f + 180f * (AdjustedSongTime / beatTime)))));
+        float currentBeat = adjustedSongTime / beatTime;*/
+    }
 }

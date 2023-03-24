@@ -10,8 +10,6 @@ namespace Project.Scripts.Levels
     {
         private const string BOTON_MENU = "BotonMenu";
         private const string FADE = "Fade";
-        
-        [SerializeField] protected int _sala;
 
         [SerializeField] private Fade _fade;
 
@@ -20,7 +18,6 @@ namespace Project.Scripts.Levels
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 StartCoroutine(FadeTransition());
-                GameManager.Instance.SetLevels(_sala - 1);
             }
         }
 
@@ -43,6 +40,7 @@ namespace Project.Scripts.Levels
         public void ChangeScene()
         {
             Time.timeScale = 1;
+            GameManager.Instance.SetLevels(SceneManager.GetActiveScene().buildIndex - 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
