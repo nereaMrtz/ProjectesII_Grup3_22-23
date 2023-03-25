@@ -1,5 +1,4 @@
 using System;
-using Project.Scripts.Managers;
 using Project.Scripts.Puzzle;
 using UnityEngine;
 

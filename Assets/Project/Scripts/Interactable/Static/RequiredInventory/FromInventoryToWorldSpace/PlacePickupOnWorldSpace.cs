@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Managers;

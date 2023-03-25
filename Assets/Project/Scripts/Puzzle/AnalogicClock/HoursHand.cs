@@ -1,5 +1,3 @@
-using Project.Scripts.ZoomInForPuzzles;
-using Project.Scripts.ZoomInForPuzzles.DraggableObject;
 using Project.Scripts.ZoomInForPuzzles.DraggableObject.Rotable;
 using UnityEngine;
 

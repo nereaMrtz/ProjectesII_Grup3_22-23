@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
-
 namespace Project.Scripts.NoMonoBehaviourClass
 {
-    [System.Serializable]
+    [Serializable]
     public class Sound
     {
         private AudioSource _source;

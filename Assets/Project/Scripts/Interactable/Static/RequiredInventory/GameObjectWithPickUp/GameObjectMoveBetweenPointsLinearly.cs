@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using Project.Scripts.UI;
 using UnityEngine;
-using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPickUp

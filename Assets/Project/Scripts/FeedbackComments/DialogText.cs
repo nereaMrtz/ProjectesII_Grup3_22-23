@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-[System.Serializable]   //Este script no se puede arraastrar en inspector, solo se puede llamar desde otros scripts
+[Serializable]   //Este script no se puede arraastrar en inspector, solo se puede llamar desde otros scripts
 
 public class DialogText
 {

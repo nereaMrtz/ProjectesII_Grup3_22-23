@@ -1,6 +1,6 @@
-using Project.Scripts.UI;
 using System.Collections;
 using Project.Scripts.Managers;
+using Project.Scripts.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

@@ -1,8 +1,6 @@
 using System;
-using Project.Scripts.Character;
 using Project.Scripts.Interactable.Static.RequiredInventory.FromInventoryToWorldSpace;
 using Project.Scripts.Managers;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Puzzle

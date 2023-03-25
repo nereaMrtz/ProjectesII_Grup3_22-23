@@ -1,6 +1,5 @@
 using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Project.Scripts.Character
 {

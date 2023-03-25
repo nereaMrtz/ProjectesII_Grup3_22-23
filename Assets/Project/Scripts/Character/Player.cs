@@ -1,7 +1,6 @@
 using System;
-using UnityEngine;
 using Project.Scripts.Managers;
-using Random = UnityEngine.Random;
+using UnityEngine;
 
 namespace Project.Scripts.Character
 {

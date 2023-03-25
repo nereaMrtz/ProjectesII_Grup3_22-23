@@ -1,14 +1,13 @@
-using System;
-using System.Collections;
 using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using Project.Scripts.NoMonoBehaviourClass;
 using UnityEngine;
+using Compass = Project.Scripts.Interactable.Static.NotRequiredInventory.Compass;
 
 namespace Project.Scripts.Puzzle.CrossCardinalDirections
 {
     public class CrossCardinalDirectionsPuzzle : PuzzleScript
     {
-        [SerializeField] private Interactable.Static.NotRequiredInventory.Compass _compass;
+        [SerializeField] private Compass _compass;
         
         [SerializeField] private GameObject _initialTile;
         [SerializeField] private GameObject _cross;

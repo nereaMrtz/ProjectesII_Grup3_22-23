@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using Project.Scripts.Character;
-using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1.NoToques
 {

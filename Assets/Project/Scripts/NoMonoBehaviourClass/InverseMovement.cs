@@ -1,11 +1,9 @@
-using Project.Scripts.NoMonoBehaviourClass;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace Project.Scripts.NoMonoBehaviourClass
 {
-    [System.Serializable]
+    [Serializable]
     public class InverseMovement : PlayerMovement
     {
         public override Vector2 MovementController()

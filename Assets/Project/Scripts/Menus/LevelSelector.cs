@@ -1,6 +1,5 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using Project.Scripts.Managers;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Project.Scripts.Menus

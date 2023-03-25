@@ -3,7 +3,6 @@ using Project.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace Project.Scripts.UI
 {

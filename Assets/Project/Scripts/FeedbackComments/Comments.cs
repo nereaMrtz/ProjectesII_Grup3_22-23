@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Project.Scripts.Managers;
 using UnityEngine;
-
 
 namespace Project.Scripts.FeedbackComments
 {

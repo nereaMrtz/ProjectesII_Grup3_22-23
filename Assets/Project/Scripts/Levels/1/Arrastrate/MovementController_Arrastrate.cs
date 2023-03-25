@@ -6,8 +6,6 @@ namespace Project.Scripts.Levels._1.Arrastrate
     public class MovementController_Arrastrate : MonoBehaviour
     {
         [SerializeField] private Player _player;
-        
-        [SerializeField] private Rigidbody2D _rigidbody2D;
 
         private Vector3 _playerOffset;
         private Vector3 _initialMousePosition;

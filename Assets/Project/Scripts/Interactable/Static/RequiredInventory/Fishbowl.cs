@@ -4,7 +4,6 @@ using Project.Scripts.Interactable.PickUps;
 using Project.Scripts.Interactable.Static.RequiredInventory.GameObjectWithPickUp;
 using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Interactable.Static.RequiredInventory
 {

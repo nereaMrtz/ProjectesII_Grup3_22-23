@@ -1,6 +1,4 @@
 using Project.Scripts.Character;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Project.Scritps.Levels.Apesta

@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Project.Scripts.Interactable.Static;
+using UnityEngine;
 
 public class ClickPlayer : MonoBehaviour
 {
