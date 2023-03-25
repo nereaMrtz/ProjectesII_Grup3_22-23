@@ -15,7 +15,7 @@ namespace Project.Scripts.Character
 
         [SerializeField] private Animator animator;
 
-        [SerializeField] private float _currentSpeed = 75;
+        [SerializeField] private float _currentSpeed;
 
         [SerializeField] private bool _moveWithKeyboard;
         [SerializeField] private bool _inverted;
@@ -171,6 +171,11 @@ namespace Project.Scripts.Character
         public void SetMovementDirection(Vector2 movementDirection)
         {
             _movementDirection = movementDirection;
+        }
+
+        public float GetCurrentSpeed()
+        {
+            return _currentSpeed;
         }
 
         /*public void SetRandomAxis(int[] randomAxis)
