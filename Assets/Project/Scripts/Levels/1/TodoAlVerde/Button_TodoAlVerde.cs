@@ -1,7 +1,4 @@
 using Project.Scripts.Managers;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.TerrainTools;
 using UnityEngine;
 
 namespace Project.Scripts.Levels.TodoAlVerde 
