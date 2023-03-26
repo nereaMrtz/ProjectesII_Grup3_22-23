@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 using Project.Scripts.Interactable.Static;
+using TMPro;
+using UnityEngine;
 
 public class Contrasena1627 : MonoBehaviour
 {

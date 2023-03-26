@@ -1,4 +1,3 @@
-using System;
 using Project.Scripts.NoMonoBehaviourClass;
 using UnityEngine;
 

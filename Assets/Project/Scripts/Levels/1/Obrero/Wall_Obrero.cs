@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Obrero

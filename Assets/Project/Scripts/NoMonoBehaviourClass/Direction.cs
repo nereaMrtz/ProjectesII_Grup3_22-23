@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
-
 
 namespace Project.Scripts.NoMonoBehaviourClass
 {
-    [System.Serializable]
+    [Serializable]
     public class Direction
     {
         private enum CardinalDirection { UP, DOWN, LEFT, RIGHT }

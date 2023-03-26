@@ -1,10 +1,8 @@
-using System;
-using Project.Scripts.Puzzle.Password;
-using UnityEngine;
 using Project.Scripts.FeedbackCircle;
 using Project.Scripts.Managers;
+using Project.Scripts.Puzzle.Password;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine;
 
 namespace Project.Scripts.Puzzle.MathsPuzzle {
     public class FirstPuzzle : PasswordPuzzle

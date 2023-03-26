@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Project.Scripts.NoMonoBehaviourClass {
     
-    [System.Serializable]
+    [Serializable]
     public abstract class PlayerMovement
     {
         protected float _movementX;

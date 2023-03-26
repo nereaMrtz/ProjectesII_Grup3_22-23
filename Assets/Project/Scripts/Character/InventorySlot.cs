@@ -1,8 +1,5 @@
-using System;
 using Project.Scripts.Interactable.PickUps;
-using Project.Scripts.Interactable.Static.RequiredInventory;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project.Scripts.Character
 {

@@ -1,5 +1,4 @@
 using Project.Scripts.Interactable.PickUps;
-using Project.Scripts.Interactable.Static.RequiredInventory;
 using UnityEngine;
 
 namespace Project.Scripts.Character {

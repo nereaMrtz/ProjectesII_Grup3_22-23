@@ -1,8 +1,7 @@
 using System;
 using Project.Scripts.Managers;
+using Project.Scripts.ProjectMaths;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Project.Scripts.Menus
@@ -58,7 +57,7 @@ namespace Project.Scripts.Menus
 
         public void SetBrightness(float brightness)
         {
-            float auxAlpha = ProjectMaths.CustomMath.Map(brightness, 0, 1, 1, 0);
+            float auxAlpha = CustomMath.Map(brightness, 0, 1, 1, 0);
             _fadeBrightness.color = new Color(0, 0, 0, auxAlpha);
         }
 

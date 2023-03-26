@@ -1,5 +1,5 @@
+using System;
 using Project.Scripts.Managers;
-using UnityEngine;
 
 namespace Project.Scripts.Interactable.Static
 {
@@ -7,7 +7,7 @@ namespace Project.Scripts.Interactable.Static
     {
         public override void Unlock()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         protected abstract void Lock(AudioManager audioManager);
