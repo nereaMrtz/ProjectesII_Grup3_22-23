@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Project.Scripts.Interactable.PickUps
 {
     public interface ICombinePickUps

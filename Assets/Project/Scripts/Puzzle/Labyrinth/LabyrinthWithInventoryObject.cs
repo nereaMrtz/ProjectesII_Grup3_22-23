@@ -1,9 +1,6 @@
-using System;
 using Project.Scripts.Character;
 using Project.Scripts.Interactable.PickUps;
-using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace Project.Scripts.Puzzle.Labyrinth
 {

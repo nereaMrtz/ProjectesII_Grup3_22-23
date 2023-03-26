@@ -1,5 +1,3 @@
-using System;
-using Project.Scripts.Interactable.Static.NotRequiredInventory;
 using UnityEngine;
 
 namespace Project.Scripts.Interactable

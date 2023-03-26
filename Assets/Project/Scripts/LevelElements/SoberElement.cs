@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Project.Scripts.Level
 {
     public class SoberElement : DrugSubjectElement

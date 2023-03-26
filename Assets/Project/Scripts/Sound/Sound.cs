@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
-
 
 namespace Project.Scripts.Sound
 {
-    [System.Serializable]
+    [Serializable]
     public class Sound
     {
         private AudioSource _source;

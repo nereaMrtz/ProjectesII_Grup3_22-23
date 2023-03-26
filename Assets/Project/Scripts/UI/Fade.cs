@@ -1,7 +1,6 @@
+using System.Collections;
 using Project.Scripts.Managers;
 using Project.Scripts.ProjectMaths;
-using System.Collections;
-using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 

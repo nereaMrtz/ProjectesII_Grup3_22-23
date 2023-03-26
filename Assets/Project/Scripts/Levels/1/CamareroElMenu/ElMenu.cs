@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using Project.Scripts.Interactable.Static;
 using UnityEngine;
 using UnityEngine.UI;
-using Project.Scripts.Interactable.Static;
 
 public class ElMenu : MonoBehaviour
 {

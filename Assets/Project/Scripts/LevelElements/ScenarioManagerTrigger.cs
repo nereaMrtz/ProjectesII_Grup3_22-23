@@ -1,6 +1,6 @@
 using System;
-using Project.Scripts.Managers;
 using UnityEngine;
+
 namespace Project.Scripts.Level
 {
     public class ScenarioManagerTrigger : DrugSubjectElement

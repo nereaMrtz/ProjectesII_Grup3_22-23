@@ -1,7 +1,5 @@
-using System;
 using Project.Scripts.Interactable.Static;
 using UnityEngine;
-using UnityEngine.Audio;
 
 namespace Project.Scripts.Levels._1.Shhhh
 {

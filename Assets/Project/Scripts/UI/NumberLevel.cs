@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class NumberLevel : MonoBehaviour
 {
-    [SerializeField] TMPro.TextMeshProUGUI level;
+    [SerializeField] TextMeshProUGUI level;
 
     private void Start()
     {
