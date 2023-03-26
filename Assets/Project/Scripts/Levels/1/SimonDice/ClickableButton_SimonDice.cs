@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.SimonDice
@@ -20,7 +21,6 @@ namespace Project.Scripts.Levels._1.SimonDice
                 return;
             }
             _animator.SetTrigger("Press");
-            _controllerSimonDice.CheckCombination(_buttonIndex);
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
@@ -30,6 +30,7 @@ namespace Project.Scripts.Levels._1.SimonDice
                 return;
             }
             _animator.SetTrigger("Press");
+            _controllerSimonDice.CheckCombination(_buttonIndex);
         }
     }
 }

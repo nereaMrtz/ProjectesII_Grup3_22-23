@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.SimonDice
@@ -5,20 +6,11 @@ namespace Project.Scripts.Levels._1.SimonDice
     public class UnclickableButton_SimonDice : MonoBehaviour
     {
 
-        [SerializeField] private Controller_SimonDice _controllerSimonDice;
+        [SerializeField] private Animator _animator;
 
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-        
-        [SerializeField] private int _buttonIndex;
-
-        public void TurnOn()
+        public void PressButton()
         {
-            //_spriteRenderer
-        }
-
-        public void TurnOff()
-        {
-            
+            _animator.SetTrigger("Press");
         }
     }
 }

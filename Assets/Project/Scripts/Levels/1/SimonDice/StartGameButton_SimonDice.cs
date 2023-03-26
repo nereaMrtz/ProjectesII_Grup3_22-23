@@ -12,9 +12,9 @@ namespace Project.Scripts.Levels._1.SimonDice
        
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
-        [SerializeField] private Animator _animator;
+        [SerializeField] private CapsuleCollider2D _capsuleCollider;
 
-        private bool _press;
+        [SerializeField] private Animator _animator;
 
         private void OnEnable()
         {
@@ -28,13 +28,6 @@ namespace Project.Scripts.Levels._1.SimonDice
                 return;
             }
             _animator.SetTrigger("Press");
-            if (_press)
-            {
-                return;
-            }
-            _press = true;
-            _controllerSimonDice.StartGame();
-            StartCoroutine(FadeOutButton());
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
@@ -44,6 +37,10 @@ namespace Project.Scripts.Levels._1.SimonDice
                 return;
             }
             _animator.SetTrigger("Press");
+
+            _capsuleCollider.enabled = false;
+            _controllerSimonDice.StartGame();
+            StartCoroutine(FadeOutButton());
         }
 
         private IEnumerator FadeOutButton()
@@ -73,7 +70,8 @@ namespace Project.Scripts.Levels._1.SimonDice
                 _spriteRenderer.color = new Color(color.r, color.g, color.b, auxAlpha);
                 yield return null;
             }
-            _press = false;
+
+            _capsuleCollider.enabled = true;
         }
     }
 }
