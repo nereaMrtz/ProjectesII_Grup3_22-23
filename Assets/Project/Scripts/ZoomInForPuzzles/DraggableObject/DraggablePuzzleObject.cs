@@ -4,8 +4,6 @@ namespace Project.Scripts.ZoomInForPuzzles.DraggableObject
 {
     public abstract class DraggablePuzzleObject : MonoBehaviour
     {
-        private Vector3 _screenOffsetPoint;
-
         private void OnMouseDrag()
         {
             Move();
