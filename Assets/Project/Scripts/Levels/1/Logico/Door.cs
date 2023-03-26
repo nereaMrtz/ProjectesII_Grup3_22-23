@@ -13,15 +13,14 @@ namespace Project.Scripts.Levels._1._1_1
         
         [SerializeField] protected Animator _animator;
 
-        [SerializeField] private PolygonCollider2D[] _polygonCollider2Ds;
+        [SerializeField] protected PolygonCollider2D[] _polygonCollider2Ds;
 
-        private int _currentPolygonColliderIndex;
+        protected int _currentPolygonColliderIndex;
         
         public override void Unlock()
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(OPEN_TRIGGER);
-            gameObject.layer = 0;
             _unlocked = true;
         }
 
@@ -29,20 +28,7 @@ namespace Project.Scripts.Levels._1._1_1
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(CLOSE_TRIGGER);
-            gameObject.layer = 0;
             _unlocked = false;
-        }
-
-        private AnimationClip ReturnAnimationClipByName(string name)
-        {
-            for (int i = 0; i < _animator.runtimeAnimatorController.animationClips.Length; i++)
-            {
-                if (_animator.runtimeAnimatorController.animationClips[i].name == name)
-                {
-                    return _animator.runtimeAnimatorController.animationClips[i];
-                }
-            }
-            return null;
         }
 
         public void ChangePolygonCollider(int index)
