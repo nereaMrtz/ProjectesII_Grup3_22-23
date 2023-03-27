@@ -14,5 +14,10 @@ namespace Project.Scripts.Interactable.Static
         {
             return _unlocked;
         }
+
+        public void SetUnlock(bool unlocked)
+        {
+            _unlocked = unlocked;
+        }
     }
 }

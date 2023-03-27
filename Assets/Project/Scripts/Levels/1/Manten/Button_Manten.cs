@@ -24,6 +24,13 @@ namespace Project.Scripts.Levels._1.Manten
             {
                 return;
             }
+
+            if (!_door_Manten.IsStartOpening())
+            {
+                AudioManager.Instance.Play("Simple Door Sound");
+                _door_Manten.SetStartOpening(true);
+            }
+            
             AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
             _door_Manten.AnimatorStep(_pressed);
@@ -40,13 +47,15 @@ namespace Project.Scripts.Levels._1.Manten
             ButtonAction();
             if (Time.time - _currentTime > _timeToOpenDoor && !_door_Manten.IsUnlocked())
             {
-                _door_Manten.Unlock();
+                _door.SetUnlock(true);
             }
             else
             {
                 _door_Manten.ChangePolygonCollider(0);    
+                _door_Manten.SetStartOpening(false);
             }
             _door_Manten.AnimatorStep(_pressed);
+            
             _currentTime = 0;
         }
     }

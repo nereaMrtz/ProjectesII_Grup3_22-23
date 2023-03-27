@@ -4,6 +4,9 @@ namespace Project.Scripts.Levels._1.Manten
 {
     public class Door_Manten : Door
     {
+
+        private bool _startOpening;
+        
         public void AnimatorStep(bool buttonPressed) {
                         
             if (_unlocked)
@@ -11,8 +14,22 @@ namespace Project.Scripts.Levels._1.Manten
                 Destroy(this);
             }
             else {
-                _animator.SetBool("Open", buttonPressed);
+                if (!buttonPressed)
+                {
+                    _animator.SetTrigger("Reset");
+                }
+                _animator.SetBool("Open", buttonPressed);    
             }            
+        }
+
+        public bool IsStartOpening()
+        {
+            return _startOpening;
+        }
+
+        public void SetStartOpening(bool startOpening)
+        {
+            _startOpening = startOpening;
         }
     }
 }
