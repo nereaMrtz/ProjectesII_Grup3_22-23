@@ -33,8 +33,8 @@ namespace Project.Scripts.Levels._1._1_1
 
         public void ChangePolygonCollider(int index)
         {
-            _polygonCollider2Ds[index].enabled = true;
             _polygonCollider2Ds[_currentPolygonColliderIndex].enabled = false;
+            _polygonCollider2Ds[index].enabled = true;
             _currentPolygonColliderIndex = index;
         }
     }
