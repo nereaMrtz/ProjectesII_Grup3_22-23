@@ -34,7 +34,7 @@ namespace Project.Scripts.Levels._1.Telequinesis
             if (_initialXPosition + _currentMouseXDistanceFromOrigin <= _goalXPosition)
             {
                 transform.localPosition = new Vector3(_goalXPosition, transform.localPosition.y, 0);
-                _door.Unlock();
+                _door.Unlock(0.1f);
                 Destroy(this);
             }
             else

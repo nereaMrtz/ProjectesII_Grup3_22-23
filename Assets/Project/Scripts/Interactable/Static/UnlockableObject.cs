@@ -8,7 +8,7 @@ namespace Project.Scripts.Interactable.Static
         private const String INCORRECT_SOUND = "Incorrect Sound";
         
         protected bool _unlocked;        
-        public abstract void Unlock();
+        public abstract void Unlock(float transitionTime);
 
         public bool IsUnlocked()
         {

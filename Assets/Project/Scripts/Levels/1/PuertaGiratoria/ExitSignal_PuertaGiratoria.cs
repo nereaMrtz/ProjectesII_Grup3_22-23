@@ -15,7 +15,7 @@ namespace Project.Scripts.Levels._1.PuertaGiratoria
             if (Math.Abs(transform.localEulerAngles.z) <= 1f )
             {
                 transform.localRotation = new Quaternion();
-                _door.Unlock();
+                _door.Unlock(0.1f);
                 Destroy(this);
             }
         }

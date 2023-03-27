@@ -98,7 +98,7 @@ namespace Project.Scripts.Levels._1.SimonDice
                 
                 if (_currentIndex == _maxCombinationLength)
                 {
-                    _door.Unlock();
+                    _door.Unlock(0.1f);
                 }
                 else if (_currentIndex == _currentCombinationLength)
                 {

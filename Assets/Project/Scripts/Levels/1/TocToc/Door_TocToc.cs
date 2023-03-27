@@ -31,7 +31,7 @@ namespace Project.Scripts.Levels._1.TocToc
                 {
                     return;
                 }
-                _door.Unlock();
+                _door.Unlock(0.1f);
                 Destroy(_boxCollider2D);
             }
         }

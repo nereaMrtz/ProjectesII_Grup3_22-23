@@ -13,7 +13,7 @@ namespace Project.Scripts.Levels._1.Shhhh
             {
                 return;
             }
-            _door.Unlock();
+            _door.Unlock(0.1f);
         }
     }
 }

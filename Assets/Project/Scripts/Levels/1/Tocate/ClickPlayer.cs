@@ -7,6 +7,6 @@ public class ClickPlayer : MonoBehaviour
 
     private void OnMouseDown()
     {
-        door.Unlock();
+        door.Unlock(0.1f);
     }
 }

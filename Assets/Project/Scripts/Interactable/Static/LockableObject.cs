@@ -5,7 +5,7 @@ namespace Project.Scripts.Interactable.Static
 {
     public abstract class LockableObject : UnlockableObject
     {
-        public override void Unlock()
+        public override void Unlock(float transitionTime)
         {
             throw new NotImplementedException();
         }

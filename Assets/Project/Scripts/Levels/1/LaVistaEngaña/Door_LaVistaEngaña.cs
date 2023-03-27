@@ -8,7 +8,7 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
 {
     public class Door_LaVistaEngaña : Door
     {
-        public override void Unlock()
+        public override void Unlock(float transitionTime)
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _unlocked = true;

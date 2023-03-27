@@ -20,7 +20,7 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
 
             if (!_door.IsUnlocked())
             {
-                _door.Unlock();
+                _door.Unlock(0.75f);
             }
         }
 

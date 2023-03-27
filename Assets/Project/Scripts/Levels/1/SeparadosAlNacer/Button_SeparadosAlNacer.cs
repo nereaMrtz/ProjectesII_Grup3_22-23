@@ -52,7 +52,7 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
             
             AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
-            _door.Unlock();
+            _door.Unlock(0.1f);
         }
     }
 }

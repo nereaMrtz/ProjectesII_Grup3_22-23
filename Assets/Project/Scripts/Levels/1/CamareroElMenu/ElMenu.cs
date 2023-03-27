@@ -37,7 +37,7 @@ public class ElMenu : MonoBehaviour
     {
         if(menu.image.sprite == openDoor)
         {
-            door.Unlock();
+            door.Unlock(0.1f);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Project.Scripts.Levels._1.MeSobraElDinero {
         [SerializeField] private UnlockableObject _door;
         
         public void OpenDoor() {
-            _door.Unlock();
+            _door.Unlock(0.1f);
         }
     }
 

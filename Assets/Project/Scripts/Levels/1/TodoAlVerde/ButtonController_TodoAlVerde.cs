@@ -33,7 +33,7 @@ namespace Project.Scripts.Levels.TodoAlVerde
             }
             if (_allCorrect)
             {
-                _door.Unlock();
+                _door.Unlock(0.1f);
             }                
         }
 

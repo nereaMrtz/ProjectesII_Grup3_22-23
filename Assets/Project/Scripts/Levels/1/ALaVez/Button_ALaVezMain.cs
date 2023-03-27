@@ -29,7 +29,7 @@ namespace Project.Scripts.Levels._1.ALaVez
             {
                 return;
             }
-            _door.Unlock();
+            _door.Unlock(0.1f);
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
