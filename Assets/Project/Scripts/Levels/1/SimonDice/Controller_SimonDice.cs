@@ -32,7 +32,7 @@ namespace Project.Scripts.Levels._1.SimonDice
         private int _currentIndex;
         
         private int _maxCombinationLength = ADD_INDEX * 3;
-        private int _currentCombinationLength = ADD_INDEX;
+        [SerializeField] private int _currentCombinationLength = ADD_INDEX;
 
         public void StartGame()
         {
@@ -98,7 +98,7 @@ namespace Project.Scripts.Levels._1.SimonDice
                 
                 if (_currentIndex == _maxCombinationLength)
                 {
-                    _door.Unlock(0.1f);
+                    _door.Unlock();
                 }
                 else if (_currentIndex == _currentCombinationLength)
                 {
@@ -114,6 +114,7 @@ namespace Project.Scripts.Levels._1.SimonDice
             _currentIndex = 0;
             _correctCombination = "";
             _currentCombination = "";
+            _currentCombinationLength = ADD_INDEX;
             
             for (int i = 0; i < _unclickableButtons.Length; i++)
             {
@@ -157,6 +158,8 @@ namespace Project.Scripts.Levels._1.SimonDice
                     yield return null;
                 }
                 
+                Debug.Log((int)char.GetNumericValue(_correctCombination[indexCounter]));
+                Debug.Log(indexCounter);
                 _unclickableButtons[(int)char.GetNumericValue(_correctCombination[indexCounter])].PressButton();
 
                 while (timeToChange > 0f)

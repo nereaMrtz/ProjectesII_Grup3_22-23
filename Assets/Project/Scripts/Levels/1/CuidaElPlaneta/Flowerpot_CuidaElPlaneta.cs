@@ -11,7 +11,7 @@ namespace Project.Scripts.Levels._1.CuidaElPlaneta
         {
             if (collision.gameObject.layer == 6)
             {
-                _door.Unlock(0.1f);    
+                _door.Unlock();    
             }
         }
     }

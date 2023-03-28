@@ -18,7 +18,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
         private bool _moved;
 
-        public override void Unlock(float transitionTime)
+        public override void Unlock()
         {
             MoveDoor();
         }

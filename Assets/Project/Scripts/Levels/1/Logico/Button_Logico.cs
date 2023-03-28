@@ -30,7 +30,7 @@ namespace Project.Scripts.Levels._1.Logico
             {
                 return;
             }
-            _door.Unlock(0.1f);
+            _door.Unlock();
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)

@@ -17,7 +17,7 @@ namespace Project.Scripts.Levels._1._1_1
 
         protected int _currentPolygonColliderIndex;
         
-        public override void Unlock(float transitionTime)
+        public override void Unlock()
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(OPEN_TRIGGER);

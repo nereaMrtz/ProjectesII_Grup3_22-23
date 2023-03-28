@@ -17,7 +17,7 @@ public class Contrasena1627 : MonoBehaviour
         {
             if (combination[0] == 1 && combination[1] == 6 && combination[2] == 2 && combination[3] == 7)
             {
-                door.Unlock(0.1f);
+                door.Unlock();
                 text.text = ";)";
             }
             else

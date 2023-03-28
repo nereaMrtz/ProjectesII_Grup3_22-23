@@ -901,7 +901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 637625829}
-  _rigidbody2D: {fileID: 637625830}
   _currentMousePosition: {x: 0, y: 0, z: 0}
 --- !u!70 &637625827
 CapsuleCollider2D:
@@ -930,11 +929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed5808c177a02f4195605588a1ccb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &637625830 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4798464189758458638, guid: 83ed1948ec7abc8429b6dd196063e5c0, type: 3}
-  m_PrefabInstance: {fileID: 241185681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &670609830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4476,22 +4470,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -79.51399
       objectReference: {fileID: 0}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1993342675}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CambiarSala, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 4719178062628270993, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4512,6 +4490,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25.256157
       objectReference: {fileID: 0}
+    - target: {fileID: 7507958660187457546, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: _fade
+      value: 
+      objectReference: {fileID: 670609831}
     - target: {fileID: 8075878665733962107, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: _muteIcon
       value: 
@@ -4629,17 +4611,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1993342675 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7507958660187457546, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-  m_PrefabInstance: {fileID: 1984321740}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2015020335
 GameObject:
   m_ObjectHideFlags: 0

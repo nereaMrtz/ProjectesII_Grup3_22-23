@@ -22,7 +22,7 @@ namespace Project.Scripts.Levels._1.EstaAtascado
             _pressCounter++;
             if (_pressCounter == 3)
             {
-                _door.Unlock(0.1f);
+                _door.Unlock();
             }
             AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();

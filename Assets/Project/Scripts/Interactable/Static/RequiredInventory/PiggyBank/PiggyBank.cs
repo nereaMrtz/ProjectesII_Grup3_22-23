@@ -10,7 +10,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.PiggyBank
         
         [SerializeField] private SpriteRenderer _bill;
         [SerializeField] private BoxCollider2D _boxCollider2D;
-        public override void Unlock(float transitionTime) 
+        public override void Unlock() 
         {
             AudioManager.Instance.Play(BROKEN_PIGGY_SOUND);
             _bill.gameObject.SetActive(true);

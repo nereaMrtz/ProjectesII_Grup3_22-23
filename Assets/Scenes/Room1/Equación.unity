@@ -401,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 1292716553114144281, guid: de8da5438b8862a42be33154db74bcc9, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8d2ef926203164d49bc2f681cf179260, type: 2}
+      objectReference: {fileID: 9100000, guid: d6fefa2f51cec154581696caba304559, type: 2}
     - target: {fileID: 1524787261296151208, guid: de8da5438b8862a42be33154db74bcc9, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.05
@@ -1992,9 +1992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e2293ffedc5364fba318f5e66e092f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileText: {fileID: 930761908}
+  _titleText: {fileID: 930761908}
   _door: {fileID: 1148887898}
-  _keyPressCounter: 00000000000000000000000000000000
 --- !u!114 &930761908 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3846082067783318041, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
@@ -2582,7 +2581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283709e5d4571674681a8b133e147578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlocked: 0
   _animator: {fileID: 1148887896}
   _polygonCollider2Ds:
   - {fileID: 1148887895}
@@ -2590,7 +2588,6 @@ MonoBehaviour:
   - {fileID: 1148887893}
   - {fileID: 1148887892}
   - {fileID: 1148887891}
-  _currentPolygonColliderIndex: 0
 --- !u!1 &1185134028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,22 +4411,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -79.51399
       objectReference: {fileID: 0}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1993342675}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 4719178062628270992, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CambiarSala, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 4719178062628270993, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4450,6 +4431,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25.256157
       objectReference: {fileID: 0}
+    - target: {fileID: 7507958660187457546, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: _fade
+      value: 
+      objectReference: {fileID: 670609831}
     - target: {fileID: 8075878665733962107, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: _muteIcon
       value: 
@@ -4567,17 +4552,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1993342675 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7507958660187457546, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
-  m_PrefabInstance: {fileID: 1984321740}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2015020335
 GameObject:
   m_ObjectHideFlags: 0

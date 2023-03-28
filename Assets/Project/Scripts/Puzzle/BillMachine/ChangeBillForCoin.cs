@@ -11,7 +11,7 @@ namespace Project.Scripts.Puzzle.BillMachine
         
         [SerializeField] private GameObject _coin;
 
-        public override void Unlock(float transitionTime)
+        public override void Unlock()
         {
             AudioManager.Instance.Play(BILL_MACHINE_SOUND);
             _coin.SetActive(true);

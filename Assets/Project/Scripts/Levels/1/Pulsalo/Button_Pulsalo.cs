@@ -21,7 +21,7 @@ namespace Project.Scripts.Levels._1.Pulsalo
         {
             if (!_door.IsUnlocked())
             {
-                _door.Unlock(0.1f);
+                _door.Unlock();
             }
             AudioManager.Instance.Play(PULSAR_BOTON);
             ButtonAction();
