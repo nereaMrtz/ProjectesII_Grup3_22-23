@@ -374,6 +374,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25.256157
       objectReference: {fileID: 0}
+    - target: {fileID: 7507958660187457546, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: _fade
+      value: 
+      objectReference: {fileID: 234000950}
     - target: {fileID: 8075878665733962107, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: _muteIcon
       value: 
@@ -1982,7 +1986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sala: 11
   _fade: {fileID: 234000950}
 --- !u!1 &617530666
 GameObject:

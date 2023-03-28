@@ -24,9 +24,9 @@ namespace Project.Scripts.Levels._1._1_1
             _unlocked = true;
         }
 
-        public void CloseDoor()
+        public void CloseDoor(float transitionTime)
         {
-            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
+            //AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(CLOSE_TRIGGER);
             _unlocked = false;
         }

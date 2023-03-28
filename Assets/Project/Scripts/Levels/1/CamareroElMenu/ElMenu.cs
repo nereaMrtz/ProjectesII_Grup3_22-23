@@ -8,7 +8,7 @@ public class ElMenu : MonoBehaviour
     [SerializeField] Button menu;
     [SerializeField] Sprite openDoor;
     [SerializeField] UnlockableObject door;
-    int actualSprite=0;
+    int actualSprite;
 
     private void Start()
     {

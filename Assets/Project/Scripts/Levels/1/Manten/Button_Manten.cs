@@ -47,7 +47,7 @@ namespace Project.Scripts.Levels._1.Manten
             ButtonAction();
             if (Time.time - _currentTime > _timeToOpenDoor && !_door_Manten.IsUnlocked())
             {
-                _door.SetUnlock(true);
+                _door_Manten.SetUnlock(true);
             }
             else
             {

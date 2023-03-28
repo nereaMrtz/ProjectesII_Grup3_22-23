@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sala: 8
   _fade: {fileID: 670609831}
 --- !u!61 &74002096
 BoxCollider2D:
@@ -763,6 +762,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 990138188}
     m_Modifications:
+    - target: {fileID: 1292716553114144281, guid: de8da5438b8862a42be33154db74bcc9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0df7e5f6468c71e4e96dca114702e13c, type: 2}
     - target: {fileID: 2712047919213835170, guid: de8da5438b8862a42be33154db74bcc9, type: 3}
       propertyPath: m_Size.x
       value: 1.487504

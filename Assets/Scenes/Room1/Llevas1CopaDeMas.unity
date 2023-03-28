@@ -2817,6 +2817,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25.256157
       objectReference: {fileID: 0}
+    - target: {fileID: 7507958660187457546, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: _fade
+      value: 
+      objectReference: {fileID: 644529877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
 --- !u!1 &989331729 stripped
@@ -3493,7 +3497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58f6d85461ba9743872671bb7f78f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sala: 6
   _fade: {fileID: 644529877}
 --- !u!61 &1300455252
 BoxCollider2D:
