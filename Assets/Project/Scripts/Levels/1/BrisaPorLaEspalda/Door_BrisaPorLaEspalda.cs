@@ -26,7 +26,7 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
                 AnimatorStep(false);
                 if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Closed Door" && _startOpening)
                 {
-                    ChangePolygonCollider(0);
+                    //ChangePolygonCollider(0);
                     _startOpening = false;
                 }
                 return;
