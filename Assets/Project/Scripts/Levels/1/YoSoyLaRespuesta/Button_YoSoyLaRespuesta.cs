@@ -89,7 +89,7 @@ public class Button_YoSoyLaRespuesta : MonoBehaviour
         }
 
         _animator.SetTrigger("Press");
-        AudioManager.Instance.Play("")
+        AudioManager.Instance.Play("");
     }
 
     public void SetCorrectFalse()
