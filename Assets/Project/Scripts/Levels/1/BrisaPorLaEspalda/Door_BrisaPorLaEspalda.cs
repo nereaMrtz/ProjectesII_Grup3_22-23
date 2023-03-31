@@ -1,5 +1,3 @@
-using System;
-using Project.Scripts.Character;
 using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
 using UnityEngine;
@@ -26,7 +24,7 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
                 AnimatorStep(false);
                 if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Closed Door" && _startOpening)
                 {
-                    ChangePolygonCollider(0);
+                    //ChangePolygonCollider(0);
                     _startOpening = false;
                 }
                 return;

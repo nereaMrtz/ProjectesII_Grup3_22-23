@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.SimonDice

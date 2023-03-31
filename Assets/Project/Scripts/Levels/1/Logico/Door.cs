@@ -13,7 +13,8 @@ namespace Project.Scripts.Levels._1._1_1
         
         [SerializeField] protected Animator _animator;
 
-        [SerializeField] protected PolygonCollider2D[] _polygonCollider2Ds;
+        [SerializeField] protected PolygonCollider2D[] _collisionPolygonCollider2Ds;
+        [SerializeField] protected PolygonCollider2D[] _triggerPolygonCollider2Ds;
 
         protected int _currentPolygonColliderIndex;
         
@@ -24,7 +25,7 @@ namespace Project.Scripts.Levels._1._1_1
             _unlocked = true;
         }
 
-        public void CloseDoor(float transitionTime)
+        public void CloseDoor()
         {
             //AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(CLOSE_TRIGGER);
@@ -33,8 +34,15 @@ namespace Project.Scripts.Levels._1._1_1
 
         public void ChangePolygonCollider(int index)
         {
-            _polygonCollider2Ds[_currentPolygonColliderIndex].enabled = false;
-            _polygonCollider2Ds[index].enabled = true;
+            _collisionPolygonCollider2Ds[_currentPolygonColliderIndex].enabled = false;
+            _collisionPolygonCollider2Ds[index].enabled = true;
+
+            if (_triggerPolygonCollider2Ds.Length != 0)
+            {
+                _triggerPolygonCollider2Ds[_currentPolygonColliderIndex].enabled = false;
+                _triggerPolygonCollider2Ds[index].enabled = true;
+            }
+
             _currentPolygonColliderIndex = index;
         }
     }

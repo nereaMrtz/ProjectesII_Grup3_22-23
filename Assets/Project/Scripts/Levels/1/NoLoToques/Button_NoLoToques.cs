@@ -31,7 +31,7 @@ namespace Project.Scripts.Levels._1.NoLoToques
             
             AudioManager.Instance.Play(PULSAR_BOTON);
             PressButton();
-            _door.CloseDoor(0.1f);
+            _door.CloseDoor();
         }
 
         protected void PressButton()

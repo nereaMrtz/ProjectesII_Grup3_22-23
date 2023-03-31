@@ -1,8 +1,5 @@
-using System;
-using Project.Scripts.Interactable.Static;
 using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
-using UnityEngine;
 
 namespace Project.Scripts.Levels._1.LaVistaEngaña
 {
@@ -12,7 +9,7 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
         {
             AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _unlocked = true;
-            ChangePolygonCollider(1);
+            ChangePolygonCollider(4);
         }
     }
 }
