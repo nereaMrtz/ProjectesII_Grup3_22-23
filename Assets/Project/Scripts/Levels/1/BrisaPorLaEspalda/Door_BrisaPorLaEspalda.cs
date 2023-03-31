@@ -1,5 +1,3 @@
-using System;
-using Project.Scripts.Character;
 using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
 using UnityEngine;

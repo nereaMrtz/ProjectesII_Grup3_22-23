@@ -1,9 +1,5 @@
-using System;
-using Project.Scripts.Levels._1._1_1;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1.Equacion
 {

@@ -1,6 +1,3 @@
-using System;
-using Project.Scripts.Levels._1._1_1;
-using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.LaVistaEngaña

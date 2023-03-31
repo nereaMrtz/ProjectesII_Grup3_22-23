@@ -2,7 +2,6 @@ using System;
 using Project.Scripts.Interactable.Static;
 using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1._1_1
 {

@@ -1,8 +1,6 @@
 using System.Collections;
 using Project.Scripts.Levels._1._1_1;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1.SimonDice
 {
@@ -157,9 +155,6 @@ namespace Project.Scripts.Levels._1.SimonDice
 
                     yield return null;
                 }
-                
-                Debug.Log((int)char.GetNumericValue(_correctCombination[indexCounter]));
-                Debug.Log(indexCounter);
                 _unclickableButtons[(int)char.GetNumericValue(_correctCombination[indexCounter])].PressButton();
 
                 while (timeToChange > 0f)
