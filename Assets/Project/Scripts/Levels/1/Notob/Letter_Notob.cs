@@ -29,6 +29,7 @@ namespace Project.Scripts.Levels._1.Notob
         {
             _controllerNotob.SetLetterClicked(false);
             _clicked = false;
+            _controllerNotob.CheckOrder();
         }
 
         public void OnPointerMove(PointerEventData eventData)
