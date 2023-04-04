@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,18 +45,6 @@ namespace Project.Scripts.Managers
         {
             get { return _instance; }
         }
-
-        #region DROGAS
-        public void SetDrugged(bool drugged)
-        {
-            _drugged = drugged;
-        }
-        
-        public bool IsDrugged()
-        {
-            return _drugged;
-        }
-        #endregion
 
         public void SetZoomInState(bool zoomInState)
         {

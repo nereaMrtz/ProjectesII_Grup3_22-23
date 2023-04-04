@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 3afe81ce1bc609541883ad97062cda52, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2128,3 +2128,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8482ebc965c8f47afa97b2f6994776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _blinkMaterial: {fileID: 2100000, guid: 3afe81ce1bc609541883ad97062cda52, type: 2}
+  _blinkSpeed: 1

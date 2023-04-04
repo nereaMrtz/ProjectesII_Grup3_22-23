@@ -954,6 +954,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5389408317041451495, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
   m_PrefabInstance: {fileID: 234000949}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &234000952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5961173404532955291, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+  m_PrefabInstance: {fileID: 234000949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8482ebc965c8f47afa97b2f6994776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &243668274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3945,6 +3956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1790683187}
   _door: {fileID: 1304050978}
+  _resetButton: {fileID: 234000952}
 --- !u!114 &1790683186
 MonoBehaviour:
   m_ObjectHideFlags: 0
