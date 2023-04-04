@@ -27,9 +27,11 @@ namespace Project.Scripts.ZoomInForPuzzles.DraggableObject
             Move();
         }
         
-        private Vector3 GetMouseWorldCoordinates()
+        public Vector3 GetMouseWorldCoordinates()
         {
-            return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+            return mousePosition;
         }
 
         protected abstract void Move();
