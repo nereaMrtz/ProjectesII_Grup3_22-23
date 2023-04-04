@@ -8,6 +8,8 @@ namespace Project.Scripts.UI
 {
     public class ResetLevelButton : MonoBehaviour
     {
+        private const String TINT_AMOUNT = "_TintAmount";
+        
         [SerializeField] private Material _blinkMaterial;
 
         [SerializeField] private float _blinkSpeed;
@@ -20,13 +22,13 @@ namespace Project.Scripts.UI
 
         private void Start()
         {
-            _blinkMaterial.SetFloat("_TintAmount", 0);
+            _blinkMaterial.SetFloat(TINT_AMOUNT, 0);
         }
 
         public void ResetLvl()
         {
             _blink = false;
-            _blinkMaterial.SetFloat("_TintAmount", 0);
+            _blinkMaterial.SetFloat(TINT_AMOUNT, 0);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
