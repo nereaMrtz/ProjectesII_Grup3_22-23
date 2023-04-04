@@ -1,6 +1,7 @@
 using System;
 using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
+using Project.Scripts.UI;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.NoLoToques
@@ -15,6 +16,8 @@ namespace Project.Scripts.Levels._1.NoLoToques
         [SerializeField] protected Animator _animator;
 
         [SerializeField] protected Door _door;
+
+        [SerializeField] private ResetLevelButton _resetButton;
 
         protected bool _pressed;
 
@@ -32,6 +35,7 @@ namespace Project.Scripts.Levels._1.NoLoToques
             AudioManager.Instance.Play(PULSAR_BOTON);
             PressButton();
             _door.CloseDoor();
+            StartCoroutine(_resetButton.FlashButton());
         }
 
         protected void PressButton()

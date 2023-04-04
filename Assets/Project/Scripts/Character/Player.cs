@@ -35,7 +35,9 @@ namespace Project.Scripts.Character
 
             if (_moveWithKeyboard)
             {
-                Controls();    
+                Controls();
+
+                
             }
             UpdateAnimationController();
         }
