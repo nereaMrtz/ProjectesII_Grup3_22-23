@@ -12,9 +12,8 @@ namespace Project.Scripts.Levels._1.LlevasUnaCopaDeMas
         
         private void Start()
         {
+            _audioSource = gameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, HICCUP);
-            
-            _audioSource.Play();
         }
     }
 }
