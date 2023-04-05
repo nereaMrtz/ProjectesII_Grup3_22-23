@@ -1,4 +1,3 @@
-using System;
 using Project.Scripts.Levels._1.Manten;
 using UnityEngine;
 using UnityEngine.SceneManagement;

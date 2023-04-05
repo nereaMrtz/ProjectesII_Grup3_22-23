@@ -1,7 +1,5 @@
 using Project.Scripts.Levels.TodoAlVerde;
 using Project.Scripts.Managers;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Button_YoSoyLaRespuesta : MonoBehaviour
