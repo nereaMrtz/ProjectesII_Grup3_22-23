@@ -4,14 +4,9 @@ namespace Project.Scripts.Levels._1.Equacion
 {
     public class Door_Equacion : Door
     {
-        public void OpenDoor()
+        public void DoorAction(bool open)
         {
-            _animator.SetBool("Open", true);
-        }
-
-        public void CloseDoor()
-        {
-            _animator.SetBool("Open", false);
+            _animator.SetBool("Open", open);
         }
     }
 }

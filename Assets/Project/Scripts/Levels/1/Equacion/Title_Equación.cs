@@ -26,7 +26,7 @@ namespace Project.Scripts.Levels._1.Equacion
             }
 
             _numberLevel = _titleText.text.Substring(0, _spaceIndex + 1);
-            _door.OpenDoor();
+            _door.DoorAction(true);
         }
 
         private void Update()
@@ -67,12 +67,12 @@ namespace Project.Scripts.Levels._1.Equacion
                 bool check = _keyPressCounter[i] == initialValue;
                 if (!check)
                 {
-                    _door.CloseDoor();
+                    _door.DoorAction(false);
                     return;
                 }
             }
 
-            _door.OpenDoor();
+            _door.DoorAction(true);
         }
     }
 }
