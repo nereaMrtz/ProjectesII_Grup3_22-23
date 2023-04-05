@@ -7,16 +7,22 @@ namespace Project.Scripts.Levels._1.Manten
 {
     public class Button_Manten : Button_Logico
     {
-        private const int PLAYER_LAYER = 6;
-
-        private const String PULSAR_BOTON = "Press Button";
-        private const String SOLTAR_BOTON = "Release Button";
-
         [SerializeField] private float _timeToOpenDoor;
 
         [SerializeField] private Door_Manten _door_Manten;
 
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
         private float _currentTime;
+
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
@@ -27,11 +33,10 @@ namespace Project.Scripts.Levels._1.Manten
 
             if (!_door_Manten.IsStartOpening())
             {
-                AudioManager.Instance.Play("Simple Door Sound", gameObject);
                 _door_Manten.SetStartOpening(true);
             }
             
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            _audioSourcePressButton.Play();
             ButtonAction();
             _door_Manten.AnimatorStep(_pressed);
             _currentTime = Time.time;
@@ -43,7 +48,7 @@ namespace Project.Scripts.Levels._1.Manten
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            _audioSourceReleaseButton.Play();
             ButtonAction();
             if (Time.time - _currentTime > _timeToOpenDoor && !_door_Manten.IsUnlocked())
             {

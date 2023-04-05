@@ -1,4 +1,5 @@
 using Project.Scripts.Levels._1._1_1;
+using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Manten 
 {
@@ -6,7 +7,7 @@ namespace Project.Scripts.Levels._1.Manten
     {
 
         private bool _startOpening;
-        
+
         public void AnimatorStep(bool buttonPressed) {
                         
             if (_unlocked)
@@ -29,6 +30,7 @@ namespace Project.Scripts.Levels._1.Manten
 
         public void SetStartOpening(bool startOpening)
         {
+            _audioSource.Play();
             _startOpening = startOpening;
         }
     }

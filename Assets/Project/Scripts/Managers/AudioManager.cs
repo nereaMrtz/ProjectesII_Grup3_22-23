@@ -20,6 +20,8 @@ namespace Project.Scripts.Managers
         [SerializeField] private String _musicVolumeMixer;
         
         [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
+
+        private AudioSource _audioSource;
         private void Awake()
         {
             if (_instance == null)
@@ -35,17 +37,18 @@ namespace Project.Scripts.Managers
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(gameObject);
-            
-            Play("Ambiente", gameObject);
-            Play("Steps Sound", gameObject);
+
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            SetAudioSourceComponent(_audioSource, "Ambiente");
+
         }
 
         public static AudioManager Instance
         {
             get { return _instance; }
         }
-
-        public void Play(string name, GameObject gameObjectToPlaySound)
+        
+        public void SetAudioSourceComponent(AudioSource audioSource, string name)
         {
             foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
@@ -53,8 +56,6 @@ namespace Project.Scripts.Managers
                 {
                     continue;
                 }
-
-                AudioSource audioSource = gameObjectToPlaySound.AddComponent<AudioSource>(); 
                 sound.SetAudioSource(audioSource);
                 sound.GetAudioSource().outputAudioMixerGroup = sound.GetAudioMixerGroup();
                 sound.GetAudioSource().clip = sound.GetClip();
@@ -65,56 +66,16 @@ namespace Project.Scripts.Managers
                 {
                     sound.GetAudioSource().rolloffMode = AudioRolloffMode.Linear;
                     sound.GetAudioSource().minDistance = 0;
-                    sound.GetAudioSource().maxDistance = sound.GetSoundMaxDistance();    
+                    sound.GetAudioSource().maxDistance = 30;    
                 }
-                sound.GetAudioSource().Play();
-                if (sound.GetLoop())
+
+                if (sound.GetPlay())
                 {
-                    return;
+                    sound.GetAudioSource().Play();
                 }
-                StartCoroutine(DestroyAudioSource(audioSource, ClipDuration(sound.GetName())));
+
                 return;
             }
-        }
-
-        public void UnPause(string name)
-        {
-            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
-            {
-                if (sound.GetName() != name)
-                {
-                    continue;
-                }
-                sound.GetAudioSource().UnPause();
-            }
-        }
-
-        public void Pause(string name)
-        {
-            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
-            {
-                if (sound.GetName() != name)
-                {
-                    continue;
-                }
-                sound.GetAudioSource().Play();
-                sound.GetAudioSource().Pause();
-            }
-        }
-
-        public float ClipDuration(string name)
-        {
-            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
-            {
-                if (sound.GetName() != name)
-                {
-                    continue;
-                }
-
-                return sound.GetClip().length;
-            }
-
-            return 0;
         }
 
         public void SetVolumePrefs(String playerPrefsVolumeName, float volumeValue)
@@ -137,12 +98,6 @@ namespace Project.Scripts.Managers
                     _audioMixer.SetFloat(_musicVolumeMixer, volumeValue);
                     break;
             }
-        }
-
-        private IEnumerator DestroyAudioSource(AudioSource audioSource, float clipDuration)
-        {
-            yield return new WaitForSecondsRealtime(clipDuration);
-            Destroy(audioSource);
         }
     }
 }

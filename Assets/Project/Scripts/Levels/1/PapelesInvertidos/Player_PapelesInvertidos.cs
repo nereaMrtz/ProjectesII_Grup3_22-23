@@ -9,14 +9,25 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
     {
         private const int PLAYER_LAYER = 6;
 
-        private const String PULSAR_BOTON = "PulsarBoton";
-        private const String SOLTAR_BOTON = "SoltarBoton";
+        private const String PRESS_BUTTON = "PulsarBoton";
+        private const String RELEASE_BUTTON = "SoltarBoton";
         
         [SerializeField] protected Animator _buttonAnimator;
         
         [SerializeField] protected UnlockableObject _door;
 
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
         private bool _pressed;
+
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
@@ -24,7 +35,8 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
             {
                 return;
             }
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            
+            _audioSourcePressButton.Play();
             ButtonAction();
             if (_door.IsUnlocked())
             {
@@ -39,7 +51,8 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+
+            _audioSourceReleaseButton.Play();
             ButtonAction();
         }
 

@@ -7,16 +7,27 @@ namespace Project.Scripts.Levels._1.Logico
 {
     public class Button_Logico : MonoBehaviour
     {
-        private const int PLAYER_LAYER = 6;
+        protected const int PLAYER_LAYER = 6;
 
-        private const String PULSAR_BOTON = "Press Button";
-        private const String SOLTAR_BOTON = "Release Button";
+        protected const String PRESS_BUTTON = "Press Button";
+        protected const String RELEASE_BUTTON = "Release Button";
         
         [SerializeField] protected Animator _animator;
         
         [SerializeField] protected UnlockableObject _door;
 
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
         protected bool _pressed;
+
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
@@ -24,7 +35,7 @@ namespace Project.Scripts.Levels._1.Logico
             {
                 return;
             }
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            _audioSourcePressButton.Play();
             ButtonAction();
             if (_door.IsUnlocked())
             {
@@ -39,7 +50,7 @@ namespace Project.Scripts.Levels._1.Logico
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            _audioSourceReleaseButton.Play();
             ButtonAction();
         }
 

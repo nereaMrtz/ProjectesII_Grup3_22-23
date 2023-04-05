@@ -11,9 +11,9 @@ namespace Project.Scripts.Levels._1.NoToques
     {
         protected const int PLAYER_LAYER = 6;
         
-        private const String ARRASTRAR_BOTON = "ArrastrarBoton(NoToques)";
-        private const String PULSAR_BOTON = "Press Button";
-        private const String SOLTAR_BOTON = "Release Button";
+        private const String PUSH_BUTTON = "ArrastrarBoton(NoToques)";
+        private const String PRESS_BUTTON = "Press Button";
+        private const String RELEASE_BUTTON = "Release Button";
         
         [SerializeField] private Player _player;
 
@@ -22,6 +22,10 @@ namespace Project.Scripts.Levels._1.NoToques
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
         [SerializeField] private GameObject _trigger;
+
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+        private AudioSource _audioSourcePushButton;
 
         private Vector3 _initialPosition;
         
@@ -37,6 +41,12 @@ namespace Project.Scripts.Levels._1.NoToques
             _initialPosition = transform.position;
             _currentTime = _timeToDisappear;
             _color = _spriteRenderer.color;
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            _audioSourcePushButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePushButton, PUSH_BUTTON);
         }
 
         private void Update()
@@ -68,7 +78,7 @@ namespace Project.Scripts.Levels._1.NoToques
                 return;
             }
 
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            _audioSourcePressButton.Play();
             _collidedWithPlayer = true;
         }
 
@@ -79,7 +89,7 @@ namespace Project.Scripts.Levels._1.NoToques
                 return;
             }
 
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            _audioSourceReleaseButton.Play();
         }
 
         private IEnumerator Disappear()
@@ -99,7 +109,7 @@ namespace Project.Scripts.Levels._1.NoToques
 
         private IEnumerator GoBack()
         {
-            AudioManager.Instance.Play(ARRASTRAR_BOTON, gameObject);
+            _audioSourcePushButton.Play();
             while (Vector3.Distance(transform.position, _initialPosition) > 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, _initialPosition, Time.deltaTime * 2);

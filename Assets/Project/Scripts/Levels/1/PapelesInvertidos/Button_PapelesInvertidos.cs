@@ -10,10 +10,18 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
         
         [SerializeField] private Rigidbody2D _rigidbody2D;
 
+        private AudioSource _audioSource;
+
         private readonly float _currentSpeed = 200;
 
         private Vector2 _movementDirection;
-        
+
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, STEPS_SOUND_CLIP_NAME);
+        }
+
         void Update()
         {
             Controls();
@@ -29,7 +37,7 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
             if (GameManager.Instance.IsPause() || GameManager.Instance.IsFading())
             {
                 _movementDirection = Vector2.zero;
-                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.Pause();
                 return;
             }
 
@@ -64,11 +72,11 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
                         
             if (_movementDirection != new Vector2(0,0))
             {
-                AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.UnPause();
             }
             else
             {
-                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.Pause();
             }
 
             if (_movementDirection.magnitude == 0)

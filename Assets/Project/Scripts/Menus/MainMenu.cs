@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,22 +11,29 @@ namespace Project.Scripts.Menus
         
         [SerializeField] private GameObject _actualPanel;
 
+        private AudioSource _audioSource;
+
+        private void Start()
+        {
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
+        }
+
         public void PlayButton()
         {
-            AudioManager.Instance.Play(BOTON_MENU, gameObject);
+            _audioSource.Play();
             SceneManager.LoadScene(1);
         }
 
         public void ChangePanelButton(GameObject menuToActivate)
         {
-            AudioManager.Instance.Play(BOTON_MENU, gameObject);
+            _audioSource.Play();
             menuToActivate.SetActive(true);
             _actualPanel.SetActive(false);
             _actualPanel = menuToActivate;
         }
 
         public void ExitButton() {
-            AudioManager.Instance.Play(BOTON_MENU, gameObject);
+            _audioSource.Play();
             Application.Quit();
         }
     }

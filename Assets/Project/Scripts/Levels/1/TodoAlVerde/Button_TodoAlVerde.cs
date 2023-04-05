@@ -1,13 +1,14 @@
 using Project.Scripts.Managers;
 using UnityEngine;
 
-namespace Project.Scripts.Levels.TodoAlVerde 
+namespace Project.Scripts.Levels._1.TodoAlVerde 
 {
     public class Button_TodoAlVerde : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
 
-        private const string PRESS_BUTTON = "RedButton";
+        private const string PRESS_BUTTON = "Press Button";
+        private const string RELEASE_BUTTON = "Release Button";
 
         [SerializeField] private Animator _animator;
 
@@ -17,11 +18,14 @@ namespace Project.Scripts.Levels.TodoAlVerde
 
         [SerializeField] private float[] _timeToChange;
 
-        private bool[] _activeButton = new bool[2];
-
         [SerializeField] private bool _correct;
 
         [SerializeField] private int _buttonIndex;
+        
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
+        private bool[] _activeButton = new bool[2];
 
         private float _currentTime;
 
@@ -32,6 +36,10 @@ namespace Project.Scripts.Levels.TodoAlVerde
         {
             _activeButton[0] = true;
             _currentTime = Random.Range(1, _timeToChange[1]);
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
         }
 
 
@@ -69,7 +77,7 @@ namespace Project.Scripts.Levels.TodoAlVerde
             }
 
             _animator.SetTrigger("Press");
-            AudioManager.Instance.Play(PRESS_BUTTON, gameObject);
+            _audioSourcePressButton.Play();
 
             if (!_activeButton[1])
             {
@@ -89,7 +97,7 @@ namespace Project.Scripts.Levels.TodoAlVerde
                 return;
             }
 
-            AudioManager.Instance.Play(PRESS_BUTTON, gameObject);
+            _audioSourceReleaseButton.Play();
 
             _animator.SetTrigger("Press");
         }

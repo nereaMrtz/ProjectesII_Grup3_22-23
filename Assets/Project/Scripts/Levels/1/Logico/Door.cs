@@ -17,10 +17,18 @@ namespace Project.Scripts.Levels._1._1_1
         [SerializeField] protected PolygonCollider2D[] _triggerPolygonCollider2Ds;
 
         protected int _currentPolygonColliderIndex;
-        
+
+        protected AudioSource _audioSource;
+
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, SIMPLE_DOOR_SOUND);
+        }
+
         public override void Unlock()
         {
-            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND, gameObject);
+            _audioSource.Play();
             _animator.SetTrigger(OPEN_TRIGGER);
             _unlocked = true;
         }

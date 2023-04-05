@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Project.Scripts.Managers;
 using Project.Scripts.UI;
 using UnityEngine;
@@ -13,9 +14,13 @@ namespace Project.Scripts.LevelElements
 
         private const String COIN = "Coin";
 
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+
         [SerializeField] private InGameUI _inGameUI;
         
         [SerializeField] private Button _button;
+
+        private AudioSource _audioSource;
 
         private void Start()
         {
@@ -23,6 +28,9 @@ namespace Project.Scripts.LevelElements
             {
                 Destroy(gameObject);
             }
+
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, COIN);
         }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
@@ -36,10 +44,17 @@ namespace Project.Scripts.LevelElements
             {
                 _button.interactable = true;
             }
-            AudioManager.Instance.Play(COIN, gameObject);
+            _audioSource.Play();
             GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() + 1);
             GameManager.Instance.SetLevelWhereHintTaken(SceneManager.GetActiveScene().buildIndex);
             _inGameUI.UpdateCoinsMarker();
+            _spriteRenderer.enabled = false;
+            StartCoroutine(DestroyCoin());
+        }
+
+        private IEnumerator DestroyCoin()
+        {
+            yield return new WaitForSecondsRealtime(_audioSource.clip.length);
             Destroy(gameObject);
         }
     }

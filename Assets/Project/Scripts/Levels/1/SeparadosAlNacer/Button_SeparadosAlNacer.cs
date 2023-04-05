@@ -7,18 +7,24 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
 {
     public class Button_SeparadosAlNacer : Button_Logico
     {
-        private const int PLAYER_LAYER = 6;
-
-        private const String PULSAR_BOTON = "PulsarBoton";
-        private const String SOLTAR_BOTON = "SoltarBoton";
-        
         [SerializeField] private CursorTrailScript _cursorTrail;
 
         [SerializeField] private ElectricityPanel_SeparadosAlNacer _electricityPanel;
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
         private bool _enabled;
+
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
         
         private void OnMouseEnter()
         {
@@ -38,21 +44,28 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (!_enabled)
-            {
-                AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
-                ButtonAction();
-                return;
-            }
-            
             if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
-            
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            _audioSourcePressButton.Play();
             ButtonAction();
+
+            if (!_enabled)
+            {
+                return;
+            }
             _door.Unlock();
+        }
+
+        private void OnTriggerExit2D(Collider2D collider2D)
+        {
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
+            {
+                return;
+            }
+            _audioSourceReleaseButton.Play();
+            ButtonAction();
         }
     }
 }

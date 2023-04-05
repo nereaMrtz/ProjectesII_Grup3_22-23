@@ -1,12 +1,15 @@
 using Project.Scripts.Interactable.Static;
 using UnityEngine;
 
-public class ClickPlayer : MonoBehaviour
+namespace Project.Scripts.Levels._1.Tocate
 {
-    [SerializeField] UnlockableObject door;
-
-    private void OnMouseDown()
+    public class ClickPlayer : MonoBehaviour
     {
-        door.Unlock();
+        [SerializeField] UnlockableObject door;
+
+        private void OnMouseDown()
+        {
+            door.Unlock();
+        }
     }
 }
