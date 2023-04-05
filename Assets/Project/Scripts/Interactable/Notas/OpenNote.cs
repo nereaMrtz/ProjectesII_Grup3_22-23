@@ -8,10 +8,12 @@ public class OpenNote : MonoBehaviour
     [SerializeField] GameObject Nota;
     [SerializeField] Sprite SobreAbierto;
 
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.Instance.SetAudioSourceComponent(_audioSource, "hoja");
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class OpenNote : MonoBehaviour
 
             //sonido
             //GetComponent<AudioSource>().Play();
-            AudioManager.Instance.Play("hoja", gameObject);
+            _audioSource.Play();
 
         }
     }

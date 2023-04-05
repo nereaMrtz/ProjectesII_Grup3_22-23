@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,14 @@ namespace Project.Scripts.UI
 
         private bool _active;
 
+        private AudioSource _audioSource;
+
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
+        }
+
         private void OnEnable()
         {
             _currentActivePanel = gameObject;
@@ -23,7 +32,7 @@ namespace Project.Scripts.UI
         
         private void ButtonSound()
         {
-            AudioManager.Instance.Play(BOTON_MENU, gameObject);
+            _audioSource.Play();
         }
 
         public void ResumeButton()

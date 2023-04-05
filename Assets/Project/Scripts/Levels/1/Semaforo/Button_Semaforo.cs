@@ -1,5 +1,6 @@
 using Project.Scripts.Character;
 using Project.Scripts.Levels._1.Logico;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,14 +12,22 @@ namespace Project.Scripts.Levels._1.Semaforo
         
         [SerializeField] private RuntimeAnimatorController[] _animatorControllers;
 
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
         private float _timeToChange = 0.75f;
         private float _currentTimeToChange;
 
-        [SerializeField] private int _currentAnimatorControllerIndex;
+        private int _currentAnimatorControllerIndex;
 
         private void Start()
         {
             _currentTimeToChange = _timeToChange;
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+         
         }
 
         private void Update()

@@ -7,15 +7,22 @@ namespace Project.Scripts.Levels._1.EstaAtascado
 {
     public class Button_EstaAtascado : Button_Logico
     {
-
-        private const String PULSAR_BOTON = "Press Button";
-        private const String SOLTAR_BOTON = "Release Button";
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
 
         private int _pressCounter;
 
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
+
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer != 6)
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
@@ -24,17 +31,17 @@ namespace Project.Scripts.Levels._1.EstaAtascado
             {
                 _door.Unlock();
             }
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            _audioSourcePressButton.Play();
             ButtonAction();
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.layer != 6)
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            _audioSourceReleaseButton.Play();
             ButtonAction();
         }
     }

@@ -7,19 +7,26 @@ namespace Project.Scripts.Levels._1.ALaVez
 {
     public class Button_ALaVezMain : Button_Logico
     {
-        private const int PLAYER_LAYER = 6;
-
-        private const String PULSAR_BOTON = "Press Button";
-        private const String SOLTAR_BOTON = "Release Button";
-
         [SerializeField] private Button_ALaVezSlave _slave;
+
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
+
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
             if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            _audioSourcePressButton.Play();
             ButtonAction();
             if (!_slave.IsPressed())
             {
@@ -38,7 +45,7 @@ namespace Project.Scripts.Levels._1.ALaVez
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            _audioSourceReleaseButton.Play();
             ButtonAction();
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Project.Scripts.Managers;
 using Project.Scripts.UI;
@@ -13,6 +14,17 @@ namespace Project.Scripts.Levels
 
         [SerializeField] private Fade _fade;
 
+        private AudioSource _audioSourceFade;
+        private AudioSource _audioSourceMenuButton;
+
+        private void Start()
+        {
+            _audioSourceFade = gameObject.AddComponent<AudioSource>();
+            _audioSourceMenuButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceFade, FADE);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceMenuButton, BOTON_MENU);
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -26,7 +38,7 @@ namespace Project.Scripts.Levels
 
             _fade.FadeAnimation();
             
-            AudioManager.Instance.Play(FADE, gameObject);
+            _audioSourceFade.Play();
             
             yield return new WaitUntil(() => _fade.IsFinished());
 
@@ -35,7 +47,7 @@ namespace Project.Scripts.Levels
 
         public void SoundChangeScene()
         {
-            AudioManager.Instance.Play(BOTON_MENU, gameObject);
+            _audioSourceMenuButton.Play();
         }
 
         public void ChangeScene()

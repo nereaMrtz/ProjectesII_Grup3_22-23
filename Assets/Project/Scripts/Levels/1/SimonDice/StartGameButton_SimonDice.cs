@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.SimonDice
 {
     public class StartGameButton_SimonDice : MonoBehaviour
     {
-
         private const int PLAYER_LAYER = 6;
+
+        private const String PRESS_BUTTON = "Press Button";
+        private const String RELEASE_BUTTON = "Release Button";
         
         [SerializeField] private Controller_SimonDice _controllerSimonDice;
        
@@ -15,6 +19,17 @@ namespace Project.Scripts.Levels._1.SimonDice
         [SerializeField] private CapsuleCollider2D _capsuleCollider;
 
         [SerializeField] private Animator _animator;
+        
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+        
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
 
         private void OnEnable()
         {
@@ -27,6 +42,7 @@ namespace Project.Scripts.Levels._1.SimonDice
             {
                 return;
             }
+            _audioSourcePressButton.Play();
             _animator.SetTrigger("Press");
         }
 
@@ -36,8 +52,8 @@ namespace Project.Scripts.Levels._1.SimonDice
             {
                 return;
             }
+            _audioSourceReleaseButton.Play();
             _animator.SetTrigger("Press");
-
             _capsuleCollider.enabled = false;
             _controllerSimonDice.StartGame();
             StartCoroutine(FadeOutButton());

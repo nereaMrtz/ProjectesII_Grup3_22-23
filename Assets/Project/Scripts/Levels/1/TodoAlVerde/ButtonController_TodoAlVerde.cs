@@ -1,7 +1,7 @@
 using Project.Scripts.Levels._1._1_1;
 using UnityEngine;
 
-namespace Project.Scripts.Levels.TodoAlVerde 
+namespace Project.Scripts.Levels._1.TodoAlVerde 
 {
     public class ButtonController_TodoAlVerde : MonoBehaviour
     {

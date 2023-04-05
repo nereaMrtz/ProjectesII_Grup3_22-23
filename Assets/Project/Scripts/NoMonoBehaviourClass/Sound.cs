@@ -22,8 +22,6 @@ namespace Project.Scripts.NoMonoBehaviourClass
         [SerializeField] private bool _play;
         [SerializeField] private bool _sound3D;
 
-        [SerializeField] private float _soundMaxDistance;
-
 
         public AudioSource GetAudioSource()
         {
@@ -78,11 +76,6 @@ namespace Project.Scripts.NoMonoBehaviourClass
         public bool GetSound3D()
         {
             return _sound3D;
-        }
-
-        public float GetSoundMaxDistance()
-        {
-            return _soundMaxDistance;
         }
     }
 }

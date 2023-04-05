@@ -7,7 +7,7 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
     {
         public override void Unlock()
         {
-            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND, gameObject);
+            _audioSource.Play();
             _unlocked = true;
             ChangePolygonCollider(4);
         }

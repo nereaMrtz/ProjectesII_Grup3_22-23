@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
 using UnityEngine;
@@ -12,6 +13,12 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
 
         private bool _startOpening;
 
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, SIMPLE_DOOR_SOUND);
+        }
+
         private void OnTriggerStay2D(Collider2D collider2D)
         {
             if (collider2D.gameObject.layer != PLAYER_LAYER)
@@ -24,7 +31,6 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
                 AnimatorStep(false);
                 if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Closed Door" && _startOpening)
                 {
-                    //ChangePolygonCollider(0);
                     _startOpening = false;
                 }
                 return;
@@ -32,7 +38,7 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
                 
             if (!_startOpening)
             {
-                AudioManager.Instance.Play(SIMPLE_DOOR_SOUND, gameObject);
+                _audioSource.Play();
                 _startOpening = true;
             }
             

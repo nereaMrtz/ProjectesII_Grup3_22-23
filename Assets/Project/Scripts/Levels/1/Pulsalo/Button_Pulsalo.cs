@@ -8,14 +8,25 @@ namespace Project.Scripts.Levels._1.Pulsalo
     public class Button_Pulsalo : MonoBehaviour
     {
 
-        private const String PULSAR_BOTON = "PulsarBoton";
-        private const String SOLTAR_BOTON = "SoltarBoton";
+        private const String PRESS_BUTTON = "PulsarBoton";
+        private const String RELEASE_BUTTON = "SoltarBoton";
         
         [SerializeField] protected Animator _animator;
         
         [SerializeField] protected UnlockableObject _door;
 
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
         protected bool _pressed;
+
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
 
         private void OnMouseDown()
         {
@@ -23,13 +34,13 @@ namespace Project.Scripts.Levels._1.Pulsalo
             {
                 _door.Unlock();
             }
-            AudioManager.Instance.Play(PULSAR_BOTON,gameObject);
+            _audioSourcePressButton.Play();
             ButtonAction();
         }
 
         private void OnMouseUp()
         {
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            _audioSourceReleaseButton.Play();
             ButtonAction();
         }
 

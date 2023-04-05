@@ -10,8 +10,8 @@ namespace Project.Scripts.Levels._1.NoLoToques
     {
         protected const int PLAYER_LAYER = 6;
 
-        private const String PULSAR_BOTON = "Press Button";
-        private const String SOLTAR_BOTON = "Release Button";
+        private const String PRESS_BUTTON = "Press Button";
+        private const String RELEASE_BUTTON = "Release Button";
 
         [SerializeField] protected Animator _animator;
 
@@ -19,7 +19,18 @@ namespace Project.Scripts.Levels._1.NoLoToques
 
         [SerializeField] private ResetLevelButton _resetButton;
 
+        private AudioSource _audioSourcePressButton;
+        private AudioSource _audioSourceReleaseButton;
+
         protected bool _pressed;
+
+        private void Start()
+        {
+            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
+            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
@@ -32,7 +43,7 @@ namespace Project.Scripts.Levels._1.NoLoToques
                 return;
             }
             
-            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
+            _audioSourcePressButton.Play();
             PressButton();
             _door.CloseDoor();
             StartCoroutine(_resetButton.FlashButton());
@@ -45,7 +56,7 @@ namespace Project.Scripts.Levels._1.NoLoToques
                 return;
             }
             
-            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            _audioSourceReleaseButton.Play();
             PressButton();
         }
 

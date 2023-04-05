@@ -14,6 +14,8 @@ namespace Project.Scripts.Character
 
         [SerializeField] private bool _moveWithKeyboard;
         [SerializeField] private bool _inverted;
+
+        private AudioSource _audioSource;
         
         private readonly float _currentSpeed = 200;
 
@@ -23,6 +25,12 @@ namespace Project.Scripts.Character
         private bool _moving;
 
         private Vector2 _movementDirection;
+
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, STEPS_SOUND_CLIP_NAME);
+        }
 
         void Update()
         {
@@ -44,7 +52,7 @@ namespace Project.Scripts.Character
             if (GameManager.Instance.IsPause() || GameManager.Instance.IsFading())
             {
                 _movementDirection = Vector2.zero;
-                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.Pause();
                 return;
             }
 
@@ -118,11 +126,11 @@ namespace Project.Scripts.Character
                         
             if (_movementDirection != new Vector2(0,0))
             {
-                AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.UnPause();
             }
             else
             {
-                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.Pause();
             }
 
             if (_movementDirection.magnitude == 0)
