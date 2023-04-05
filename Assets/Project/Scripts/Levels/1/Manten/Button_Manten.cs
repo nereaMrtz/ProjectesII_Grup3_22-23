@@ -9,8 +9,8 @@ namespace Project.Scripts.Levels._1.Manten
     {
         private const int PLAYER_LAYER = 6;
 
-        private const String PULSAR_BOTON = "PulsarBoton";
-        private const String SOLTAR_BOTON = "SoltarBoton";
+        private const String PULSAR_BOTON = "Press Button";
+        private const String SOLTAR_BOTON = "Release Button";
 
         [SerializeField] private float _timeToOpenDoor;
 
@@ -27,11 +27,11 @@ namespace Project.Scripts.Levels._1.Manten
 
             if (!_door_Manten.IsStartOpening())
             {
-                AudioManager.Instance.Play("Simple Door Sound");
+                AudioManager.Instance.Play("Simple Door Sound", gameObject);
                 _door_Manten.SetStartOpening(true);
             }
             
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
             ButtonAction();
             _door_Manten.AnimatorStep(_pressed);
             _currentTime = Time.time;
@@ -43,7 +43,7 @@ namespace Project.Scripts.Levels._1.Manten
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON);
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
             ButtonAction();
             if (Time.time - _currentTime > _timeToOpenDoor && !_door_Manten.IsUnlocked())
             {

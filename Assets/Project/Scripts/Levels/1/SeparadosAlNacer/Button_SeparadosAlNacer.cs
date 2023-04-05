@@ -40,7 +40,7 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
         {
             if (!_enabled)
             {
-                AudioManager.Instance.Play(PULSAR_BOTON);
+                AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
                 ButtonAction();
                 return;
             }
@@ -50,7 +50,7 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
                 return;
             }
             
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
             ButtonAction();
             _door.Unlock();
         }

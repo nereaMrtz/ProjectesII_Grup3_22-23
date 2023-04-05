@@ -8,8 +8,8 @@ namespace Project.Scripts.Levels._1.EstaAtascado
     public class Button_EstaAtascado : Button_Logico
     {
 
-        private const String PULSAR_BOTON = "PulsarBoton";
-        private const String SOLTAR_BOTON = "SoltarBoton";
+        private const String PULSAR_BOTON = "Press Button";
+        private const String SOLTAR_BOTON = "Release Button";
 
         private int _pressCounter;
 
@@ -24,7 +24,7 @@ namespace Project.Scripts.Levels._1.EstaAtascado
             {
                 _door.Unlock();
             }
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
             ButtonAction();
         }
 
@@ -34,6 +34,7 @@ namespace Project.Scripts.Levels._1.EstaAtascado
             {
                 return;
             }
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
             ButtonAction();
         }
     }

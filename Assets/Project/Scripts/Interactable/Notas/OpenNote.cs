@@ -34,7 +34,7 @@ public class OpenNote : MonoBehaviour
 
             //sonido
             //GetComponent<AudioSource>().Play();
-            AudioManager.Instance.Play("hoja");
+            AudioManager.Instance.Play("hoja", gameObject);
 
         }
     }

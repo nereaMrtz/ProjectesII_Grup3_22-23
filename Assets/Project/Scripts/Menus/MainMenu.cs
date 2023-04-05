@@ -12,20 +12,20 @@ namespace Project.Scripts.Menus
 
         public void PlayButton()
         {
-            AudioManager.Instance.Play(BOTON_MENU);
+            AudioManager.Instance.Play(BOTON_MENU, gameObject);
             SceneManager.LoadScene(1);
         }
 
         public void ChangePanelButton(GameObject menuToActivate)
         {
-            AudioManager.Instance.Play(BOTON_MENU);
+            AudioManager.Instance.Play(BOTON_MENU, gameObject);
             menuToActivate.SetActive(true);
             _actualPanel.SetActive(false);
             _actualPanel = menuToActivate;
         }
 
         public void ExitButton() {
-            AudioManager.Instance.Play(BOTON_MENU);
+            AudioManager.Instance.Play(BOTON_MENU, gameObject);
             Application.Quit();
         }
     }

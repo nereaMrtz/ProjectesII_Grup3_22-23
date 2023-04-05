@@ -20,7 +20,7 @@ namespace Project.Scripts.Levels._1._1_1
         
         public override void Unlock()
         {
-            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
+            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND, gameObject);
             _animator.SetTrigger(OPEN_TRIGGER);
             _unlocked = true;
         }

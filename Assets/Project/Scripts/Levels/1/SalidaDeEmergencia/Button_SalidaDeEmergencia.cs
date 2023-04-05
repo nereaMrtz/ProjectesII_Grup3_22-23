@@ -22,7 +22,7 @@ namespace Project.Scripts.Levels._1.SalidaDeEmergencia
             }
             
             _animator.SetTrigger("Press");
-            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
+            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND, gameObject);
             _triggerToNextLevel.SetActive(true);
         }
 

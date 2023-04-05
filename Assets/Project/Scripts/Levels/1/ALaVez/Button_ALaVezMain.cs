@@ -9,8 +9,8 @@ namespace Project.Scripts.Levels._1.ALaVez
     {
         private const int PLAYER_LAYER = 6;
 
-        private const String PULSAR_BOTON = "PulsarBoton";
-        private const String SOLTAR_BOTON = "SoltarBoton";
+        private const String PULSAR_BOTON = "Press Button";
+        private const String SOLTAR_BOTON = "Release Button";
 
         [SerializeField] private Button_ALaVezSlave _slave;
         private void OnTriggerEnter2D(Collider2D collider2D)
@@ -19,7 +19,7 @@ namespace Project.Scripts.Levels._1.ALaVez
             {
                 return;
             }
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
             ButtonAction();
             if (!_slave.IsPressed())
             {
@@ -38,7 +38,7 @@ namespace Project.Scripts.Levels._1.ALaVez
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON);
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
             ButtonAction();
         }
     }

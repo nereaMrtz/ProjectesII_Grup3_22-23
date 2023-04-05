@@ -1,3 +1,5 @@
+using System;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.LaVistaEngaña
@@ -5,6 +7,9 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
     public class Button_LaVistaEngaña : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
+
+        private const String PULSAR_BOTON = "PulsarBoton";
+        private const String SOLTAR_BOTON = "SoltarBoton";
         
         [SerializeField] private Door_LaVistaEngaña _door;
 
@@ -14,6 +19,7 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
             {
                 return;
             }
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
 
             if (!_door.IsUnlocked())
             {
@@ -27,8 +33,7 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
             {
                 return;
             }
-            
-            //AudioManager.Instance.Play();
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
         }
     }
 }

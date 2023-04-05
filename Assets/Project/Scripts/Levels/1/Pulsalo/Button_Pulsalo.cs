@@ -23,13 +23,13 @@ namespace Project.Scripts.Levels._1.Pulsalo
             {
                 _door.Unlock();
             }
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON,gameObject);
             ButtonAction();
         }
 
         private void OnMouseUp()
         {
-            AudioManager.Instance.Play(SOLTAR_BOTON);
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
             ButtonAction();
         }
 

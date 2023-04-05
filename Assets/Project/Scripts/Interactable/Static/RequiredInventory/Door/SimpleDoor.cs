@@ -25,7 +25,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
         private void MoveDoor()
         {
-            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
+            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND, gameObject);
             _animator.SetTrigger(OPEN_TRIGGER);
             gameObject.layer = 0;
         }

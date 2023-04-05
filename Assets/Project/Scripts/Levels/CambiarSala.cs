@@ -26,7 +26,7 @@ namespace Project.Scripts.Levels
 
             _fade.FadeAnimation();
             
-            AudioManager.Instance.Play(FADE);
+            AudioManager.Instance.Play(FADE, gameObject);
             
             yield return new WaitUntil(() => _fade.IsFinished());
 
@@ -35,7 +35,7 @@ namespace Project.Scripts.Levels
 
         public void SoundChangeScene()
         {
-            AudioManager.Instance.Play(BOTON_MENU);
+            AudioManager.Instance.Play(BOTON_MENU, gameObject);
         }
 
         public void ChangeScene()

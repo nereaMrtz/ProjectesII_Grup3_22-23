@@ -36,7 +36,7 @@ namespace Project.Scripts.LevelElements
             {
                 _button.interactable = true;
             }
-            AudioManager.Instance.Play(COIN);
+            AudioManager.Instance.Play(COIN, gameObject);
             GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() + 1);
             GameManager.Instance.SetLevelWhereHintTaken(SceneManager.GetActiveScene().buildIndex);
             _inGameUI.UpdateCoinsMarker();
