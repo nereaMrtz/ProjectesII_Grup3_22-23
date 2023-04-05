@@ -1,6 +1,7 @@
 using System;
 using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Descubrelo
@@ -9,8 +10,8 @@ namespace Project.Scripts.Levels._1.Descubrelo
     {
         private const int PLAYER_LAYER = 6;
 
-        private const String PULSAR_BOTON = "PulsarBoton";
-        private const String SOLTAR_BOTON = "SoltarBoton";
+        private const String PULSAR_BOTON = "Press Button";
+        private const String SOLTAR_BOTON = "Release Button";
         
         [SerializeField] private GameObject _flowerPotButton;
 
@@ -20,9 +21,19 @@ namespace Project.Scripts.Levels._1.Descubrelo
             {
                 return;
             }
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
             ButtonAction();
             _flowerPotButton.SetActive(true);
+        }
+
+        private void OnTriggerExit2D(Collider2D collider2D)
+        {
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
+            {
+                return;
+            }
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
+            ButtonAction();
         }
     }
 }

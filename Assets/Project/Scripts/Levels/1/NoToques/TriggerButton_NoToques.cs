@@ -27,7 +27,7 @@ namespace Project.Scripts.Levels._1.NoToques
 
         private IEnumerator AttractButton()
         {
-            AudioManager.Instance.Play(ARRASTRAR_BOTON);
+            AudioManager.Instance.Play(ARRASTRAR_BOTON, gameObject);
             while (Vector3.Distance(_button.transform.position, _playerTransform.position + _colliderOffset) > 0.1f)
             {
                 _button.transform.position = Vector3.MoveTowards(_button.transform.position,

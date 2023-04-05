@@ -18,7 +18,7 @@ namespace Project.Scripts.Levels._1.TocToc
 
         private void OnMouseDown()
         {
-            AudioManager.Instance.Play(TOC);
+            AudioManager.Instance.Play(TOC, gameObject);
             _timesKnocked++;
             if (_timesKnocked == 1)
             {

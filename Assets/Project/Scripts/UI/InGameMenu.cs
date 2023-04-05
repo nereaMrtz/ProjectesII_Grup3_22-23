@@ -23,7 +23,7 @@ namespace Project.Scripts.UI
         
         private void ButtonSound()
         {
-            AudioManager.Instance.Play(BOTON_MENU);
+            AudioManager.Instance.Play(BOTON_MENU, gameObject);
         }
 
         public void ResumeButton()

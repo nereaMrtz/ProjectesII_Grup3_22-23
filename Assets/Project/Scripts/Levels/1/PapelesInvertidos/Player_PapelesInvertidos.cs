@@ -24,7 +24,7 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
             {
                 return;
             }
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
             ButtonAction();
             if (_door.IsUnlocked())
             {
@@ -39,7 +39,7 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
             {
                 return;
             }
-            AudioManager.Instance.Play(SOLTAR_BOTON);
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
             ButtonAction();
         }
 

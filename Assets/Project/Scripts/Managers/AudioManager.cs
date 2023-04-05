@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -35,26 +36,8 @@ namespace Project.Scripts.Managers
             }
             DontDestroyOnLoad(gameObject);
             
-            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
-            {
-                sound.SetAudioSource(gameObject.AddComponent<AudioSource>());
-                sound.GetSource().outputAudioMixerGroup = sound.GetAudioMixerGroup();
-                sound.GetSource().clip = sound.GetClip();
-                sound.GetSource().volume = sound.GetVolume();
-                sound.GetSource().loop = sound.GetLoop();
-                if (sound.GetPlay())
-                {
-                    sound.GetSource().Play();
-                }
-            }
-        }
-
-        private void Update()
-        {
-            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
-            {
-                sound.GetSource().volume = sound.GetVolume();
-            }
+            Play("Ambiente", gameObject);
+            Play("Steps Sound", gameObject);
         }
 
         public static AudioManager Instance
@@ -62,7 +45,7 @@ namespace Project.Scripts.Managers
             get { return _instance; }
         }
 
-        public void Play(string name)
+        public void Play(string name, GameObject gameObjectToPlaySound)
         {
             foreach (NoMonoBehaviourClass.Sound sound in _sounds)
             {
@@ -70,7 +53,27 @@ namespace Project.Scripts.Managers
                 {
                     continue;
                 }
-                sound.GetSource().Play();
+
+                AudioSource audioSource = gameObjectToPlaySound.AddComponent<AudioSource>(); 
+                sound.SetAudioSource(audioSource);
+                sound.GetAudioSource().outputAudioMixerGroup = sound.GetAudioMixerGroup();
+                sound.GetAudioSource().clip = sound.GetClip();
+                sound.GetAudioSource().volume = sound.GetVolume();
+                sound.GetAudioSource().loop = sound.GetLoop();
+                sound.GetAudioSource().spatialBlend = Convert.ToSingle(sound.GetSound3D());
+                if (sound.GetSound3D())
+                {
+                    sound.GetAudioSource().rolloffMode = AudioRolloffMode.Linear;
+                    sound.GetAudioSource().minDistance = 0;
+                    sound.GetAudioSource().maxDistance = sound.GetSoundMaxDistance();    
+                }
+                sound.GetAudioSource().Play();
+                if (sound.GetLoop())
+                {
+                    return;
+                }
+                StartCoroutine(DestroyAudioSource(audioSource, ClipDuration(sound.GetName())));
+                return;
             }
         }
 
@@ -82,7 +85,7 @@ namespace Project.Scripts.Managers
                 {
                     continue;
                 }
-                sound.GetSource().UnPause();
+                sound.GetAudioSource().UnPause();
             }
         }
 
@@ -94,8 +97,8 @@ namespace Project.Scripts.Managers
                 {
                     continue;
                 }
-                sound.GetSource().Play();
-                sound.GetSource().Pause();
+                sound.GetAudioSource().Play();
+                sound.GetAudioSource().Pause();
             }
         }
 
@@ -112,14 +115,6 @@ namespace Project.Scripts.Managers
             }
 
             return 0;
-        }
-
-        public void ChangePitch(bool drugged)
-        {
-            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
-            {
-                sound.GetSource().pitch = drugged ? sound.GetDruggedPitch() : sound.GetSoberPitch();
-            }
         }
 
         public void SetVolumePrefs(String playerPrefsVolumeName, float volumeValue)
@@ -142,6 +137,12 @@ namespace Project.Scripts.Managers
                     _audioMixer.SetFloat(_musicVolumeMixer, volumeValue);
                     break;
             }
+        }
+
+        private IEnumerator DestroyAudioSource(AudioSource audioSource, float clipDuration)
+        {
+            yield return new WaitForSecondsRealtime(clipDuration);
+            Destroy(audioSource);
         }
     }
 }

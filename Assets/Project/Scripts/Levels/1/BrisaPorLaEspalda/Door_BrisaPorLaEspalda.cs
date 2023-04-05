@@ -32,7 +32,7 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
                 
             if (!_startOpening)
             {
-                AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
+                AudioManager.Instance.Play(SIMPLE_DOOR_SOUND, gameObject);
                 _startOpening = true;
             }
             

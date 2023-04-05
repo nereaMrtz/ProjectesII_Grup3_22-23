@@ -20,7 +20,7 @@ namespace Project.Scripts.Levels._1.ALaVez
         private bool _pressed;
         private void OnMouseDown()
         {
-            AudioManager.Instance.Play(PULSAR_BOTON);
+            AudioManager.Instance.Play(PULSAR_BOTON, gameObject);
             ButtonAction();
             if (!_main.IsPressed())
             {
@@ -35,7 +35,7 @@ namespace Project.Scripts.Levels._1.ALaVez
 
         private void OnMouseUp()
         {
-            AudioManager.Instance.Play(SOLTAR_BOTON);
+            AudioManager.Instance.Play(SOLTAR_BOTON, gameObject);
             ButtonAction();
         }
 

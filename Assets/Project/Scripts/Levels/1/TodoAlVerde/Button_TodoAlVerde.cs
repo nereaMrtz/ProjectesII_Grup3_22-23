@@ -69,7 +69,7 @@ namespace Project.Scripts.Levels.TodoAlVerde
             }
 
             _animator.SetTrigger("Press");
-            AudioManager.Instance.Play(PRESS_BUTTON);
+            AudioManager.Instance.Play(PRESS_BUTTON, gameObject);
 
             if (!_activeButton[1])
             {
@@ -89,7 +89,7 @@ namespace Project.Scripts.Levels.TodoAlVerde
                 return;
             }
 
-            AudioManager.Instance.Play(PRESS_BUTTON);
+            AudioManager.Instance.Play(PRESS_BUTTON, gameObject);
 
             _animator.SetTrigger("Press");
         }

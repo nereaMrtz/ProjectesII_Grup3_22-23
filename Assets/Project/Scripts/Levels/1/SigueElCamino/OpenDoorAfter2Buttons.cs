@@ -11,7 +11,7 @@ public class OpenDoorAfter2Buttons : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
-            AudioManager.Instance.Play("PulsarBoton");
+            AudioManager.Instance.Play("Press Button", gameObject);
             _animator.SetTrigger("Press");
             _button2.SetActive(true);
         }
