@@ -1,6 +1,5 @@
 using Project.Scripts.Character;
 using Project.Scripts.Levels._1.Logico;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +9,7 @@ namespace Project.Scripts.Levels._1.Semaforo
     {
         [SerializeField] private Player _player;
         
-        [SerializeField] private AnimatorController[] _animatorControllers;
+        [SerializeField] private RuntimeAnimatorController[] _animatorControllers;
 
         private float _timeToChange = 0.75f;
         private float _currentTimeToChange;
