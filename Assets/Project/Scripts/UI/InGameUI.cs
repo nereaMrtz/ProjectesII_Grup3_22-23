@@ -12,11 +12,10 @@ namespace Project.Scripts.UI
         private const String PLAYERS_PREFS_MASTER_MUTE = "Player Prefs Master Mute";
         private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
         private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
-        private const String SHOW_INVENTORY = "ShowInventory";
-
-        [SerializeField] private Animator _animator;
 
         [SerializeField] private GameObject _masterMuteIcon;
+        /*[SerializeField] private GameObject _SFXMuteIcon;
+        [SerializeField] private GameObject _musicMuteIcon;*/
 
         [SerializeField] private TextMeshProUGUI _hintCoinsMarker;
 
@@ -38,6 +37,8 @@ namespace Project.Scripts.UI
             bool musicMute = PlayerPrefs.GetInt(PLAYERS_PREFS_MUSIC_MUTE) == 1;
 
             _masterMuteIcon.SetActive(masterMute);
+            //_SFXMuteIcon.SetActive(SFXMute);
+            //_musicMuteIcon.SetActive(musicMute);
         }
 
         public void UpdateCoinsMarker()
@@ -45,18 +46,9 @@ namespace Project.Scripts.UI
             _hintCoinsMarker.text = GameManager.Instance.GetHintCoins().ToString();
         }
 
-        public void ShowInventory()
+        public void SetPause()
         {
-            if (onInventory == false)
-            {
-                _animator.SetBool(SHOW_INVENTORY, true);
-                onInventory = true;
-            }
-            else
-            {
-                _animator.SetBool(SHOW_INVENTORY, false);
-                onInventory = false;
-            }
+            GameManager.Instance.SetPause(true);
         }
     }
 }

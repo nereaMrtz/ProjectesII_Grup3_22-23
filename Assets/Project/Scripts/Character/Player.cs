@@ -7,17 +7,15 @@ namespace Project.Scripts.Character
     public class Player : MonoBehaviour
     {
         private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
-        
-        [SerializeField] private GameObject _pauseMenuPanel;
 
         [SerializeField] private Rigidbody2D _rigidbody2D;
 
         [SerializeField] private Animator animator;
 
-        [SerializeField] private float _currentSpeed;
-
         [SerializeField] private bool _moveWithKeyboard;
         [SerializeField] private bool _inverted;
+        
+        private readonly float _currentSpeed = 200;
 
         /*private int[] _randomMoves = new[] { 1, -1, -1, 1 };
         private int[] _randomAxis = new[] { 0, 0, 1, 1 };*/
@@ -28,16 +26,10 @@ namespace Project.Scripts.Character
 
         void Update()
         {
-            if (_pauseMenuPanel.activeSelf)
-            {
-                return;
-            }
-
             if (_moveWithKeyboard)
             {
                 Controls();
 
-                
             }
             UpdateAnimationController();
         }
@@ -151,12 +143,6 @@ namespace Project.Scripts.Character
             animator.SetInteger("Horizontal", (int)_movementDirection.x);
             animator.SetInteger("Vertical", (int)_movementDirection.y);
             animator.SetBool("isMoving", _moving);            
-        }
-
-        public void Pause()
-        {
-            _pauseMenuPanel.SetActive(true);
-            GameManager.Instance.SetPause(true);
         }
 
         public Vector2 GetMovement()
