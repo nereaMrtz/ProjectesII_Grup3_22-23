@@ -1,4 +1,3 @@
-using System;
 using Project.Scripts.Character;
 using Project.Scripts.Levels._1.Logico;
 using UnityEditor.Animations;

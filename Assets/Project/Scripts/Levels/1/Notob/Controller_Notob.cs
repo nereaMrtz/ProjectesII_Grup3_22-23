@@ -1,4 +1,3 @@
-using Project.Scripts.Levels._1.Logico;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Notob
