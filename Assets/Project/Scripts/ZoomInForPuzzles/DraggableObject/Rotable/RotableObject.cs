@@ -10,7 +10,6 @@ namespace Project.Scripts.ZoomInForPuzzles.DraggableObject.Rotable
         private Vector3 _screenOffsetPoint;
 
         private float _offsetAngle;
-
         private float _initialMouseAngle;
 
         private void OnMouseDown()
