@@ -15,6 +15,7 @@ namespace Project.Scripts.Menus
 
         private void Start()
         {
+            _audioSource = gameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
         }
 
