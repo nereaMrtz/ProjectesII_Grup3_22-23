@@ -21,7 +21,7 @@ namespace Project.Scripts.Managers
         
         private int _hintCoins = 2;
 
-        private bool[] levels = new bool[30];
+        private bool[] levels = new bool[50];
 
         private void Awake()
         {
