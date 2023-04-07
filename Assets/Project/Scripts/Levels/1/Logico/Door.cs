@@ -20,10 +20,14 @@ namespace Project.Scripts.Levels._1._1_1
 
         protected AudioSource _audioSource;
 
-        private void Start()
+        private void Awake()
         {
-            _audioSource = gameObject.AddComponent<AudioSource>();
+            GameObject audioGameObject = new GameObject();
+            audioGameObject.name = "AudioSource";
+            _audioSource = audioGameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, SIMPLE_DOOR_SOUND);
+            audioGameObject.transform.parent = gameObject.transform;
+            audioGameObject.transform.localPosition = new Vector3(0.725f, 0.985f, 0);
         }
 
         public override void Unlock()
@@ -35,7 +39,6 @@ namespace Project.Scripts.Levels._1._1_1
 
         public void CloseDoor()
         {
-            //AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
             _animator.SetTrigger(CLOSE_TRIGGER);
             _unlocked = false;
         }

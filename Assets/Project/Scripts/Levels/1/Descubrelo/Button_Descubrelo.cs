@@ -1,7 +1,5 @@
-using System;
 using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Descubrelo
@@ -9,9 +7,6 @@ namespace Project.Scripts.Levels._1.Descubrelo
     public class Button_Descubrelo : Button_Logico
     {
         [SerializeField] private GameObject _flowerPotButton;
-
-        private AudioSource _audioSourcePressButton;
-        private AudioSource _audioSourceReleaseButton;
 
         private void Start()
         {

@@ -7,6 +7,7 @@ namespace Project.Scripts.Levels._1.SeHaQuedadoBuenaNoche
         private const int PLAYER_LAYER = 6;
 
         [SerializeField] private GameObject _scenario;
+        [SerializeField] private GameObject _picture;
         [SerializeField] private GameObject _secretRoom;
 
         [SerializeField] private SpriteRenderer _doorSpriteRenderer;
@@ -18,6 +19,7 @@ namespace Project.Scripts.Levels._1.SeHaQuedadoBuenaNoche
                 return;
             }
 
+            _picture.SetActive(!_picture.activeSelf);
             _scenario.SetActive(!_scenario.activeSelf);  
             _secretRoom.SetActive(!_scenario.activeSelf);
             _doorSpriteRenderer.enabled = !_doorSpriteRenderer.enabled;

@@ -8,8 +8,8 @@ namespace Project.Scripts.Levels._1.Pulsalo
     public class Button_Pulsalo : MonoBehaviour
     {
 
-        private const String PRESS_BUTTON = "PulsarBoton";
-        private const String RELEASE_BUTTON = "SoltarBoton";
+        private const String PRESS_BUTTON = "Press Button";
+        private const String RELEASE_BUTTON = "Release Button";
         
         [SerializeField] protected Animator _animator;
         

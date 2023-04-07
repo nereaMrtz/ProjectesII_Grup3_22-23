@@ -10,6 +10,10 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
         
         [SerializeField] private TrailRenderer _trailRenderer;
 
+        [SerializeField] private Button_SeparadosAlNacer _button;
+
+        [SerializeField] private ElectricityPanel_SeparadosAlNacer _electricityPanel;
+
         private AudioSource _audioSource;
 
         private bool _pressed;
@@ -32,6 +36,7 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
             }
             else
             {
+                _electricityPanel.SetTime(0);
                 _audioSource.Pause();
                 _pressed = false;
                 _trailRenderer.emitting = false;

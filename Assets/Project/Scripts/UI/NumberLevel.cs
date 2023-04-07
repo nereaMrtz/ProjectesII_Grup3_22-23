@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class NumberLevel : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI level;
+    [SerializeField] protected TextMeshProUGUI level;
 
-    private void Start()
+    protected void Start()
     {
-        level.text = SceneManager.GetActiveScene().buildIndex.ToString() + ". " + level.text;
+        level.text = SceneManager.GetActiveScene().buildIndex + ". " + level.text;
     }
 
 }

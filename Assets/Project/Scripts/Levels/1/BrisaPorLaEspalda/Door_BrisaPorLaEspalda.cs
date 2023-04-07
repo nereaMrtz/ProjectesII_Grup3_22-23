@@ -1,6 +1,4 @@
-using System;
 using Project.Scripts.Levels._1._1_1;
-using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
@@ -13,12 +11,6 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
 
         private bool _startOpening;
 
-        private void Start()
-        {
-            _audioSource = gameObject.AddComponent<AudioSource>();
-            AudioManager.Instance.SetAudioSourceComponent(_audioSource, SIMPLE_DOOR_SOUND);
-        }
-
         private void OnTriggerStay2D(Collider2D collider2D)
         {
             if (collider2D.gameObject.layer != PLAYER_LAYER)
@@ -26,7 +18,8 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
                 return;
             }
 
-            if (_playerAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "idle_front")
+            if (_playerAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "idle_front" && 
+                _playerAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "walking_front")
             {
                 AnimatorStep(false);
                 if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Closed Door" && _startOpening)
@@ -44,7 +37,16 @@ namespace Project.Scripts.Levels._1.BrisaPorLaEspalda
             
             AnimatorStep(true);
         }
-        
+
+        private void OnTriggerExit2D(Collider2D collider2D)
+        {
+            if (collider2D.gameObject.layer != PLAYER_LAYER)
+            {
+                return;
+            }
+            AnimatorStep(false);
+        }
+
         private void AnimatorStep(bool turnBack) {
                         
             _animator.SetBool("Open", turnBack);          

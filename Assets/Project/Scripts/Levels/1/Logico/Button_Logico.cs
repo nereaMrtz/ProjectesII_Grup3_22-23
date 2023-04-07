@@ -16,8 +16,8 @@ namespace Project.Scripts.Levels._1.Logico
         
         [SerializeField] protected UnlockableObject _door;
 
-        private AudioSource _audioSourcePressButton;
-        private AudioSource _audioSourceReleaseButton;
+        protected AudioSource _audioSourcePressButton;
+        protected AudioSource _audioSourceReleaseButton;
 
         protected bool _pressed;
 

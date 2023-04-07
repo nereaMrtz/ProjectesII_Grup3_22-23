@@ -6,11 +6,10 @@ namespace Project.Scripts.Levels._1.Arrastrate
     public class MovementController_Arrastrate : MonoBehaviour
     {
         [SerializeField] private Player _player;
-
+        
+        private Vector3 _currentMousePosition;
         private Vector3 _playerOffset;
         private Vector3 _initialMousePosition;
-        [SerializeField] private Vector3 _currentMousePosition;
-
         private void OnMouseDown()
         {
             _initialMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -30,6 +29,11 @@ namespace Project.Scripts.Levels._1.Arrastrate
             }
             
             _player.SetMovementDirection(_currentMousePosition - (transform.position + _playerOffset));
+        }
+
+        private void OnMouseUp()
+        {
+            _player.SetMovementDirection(Vector2.zero);
         }
     }
 }

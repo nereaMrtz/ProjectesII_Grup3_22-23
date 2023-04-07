@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Tinder

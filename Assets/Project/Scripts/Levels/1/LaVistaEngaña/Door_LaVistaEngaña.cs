@@ -1,5 +1,4 @@
 using Project.Scripts.Levels._1._1_1;
-using Project.Scripts.Managers;
 
 namespace Project.Scripts.Levels._1.LaVistaEngaña
 {
