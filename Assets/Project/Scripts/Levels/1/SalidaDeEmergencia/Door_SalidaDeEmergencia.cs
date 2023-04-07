@@ -14,6 +14,7 @@ namespace Project.Scripts.Levels._1.SalidaDeEmergencia
 
         private void Start()
         {
+            _audioSource = gameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, SIMPLE_DOOR_SOUND);
         }
 

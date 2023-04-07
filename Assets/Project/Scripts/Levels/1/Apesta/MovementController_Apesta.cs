@@ -7,7 +7,7 @@ namespace Project.Scritps.Levels.Apesta
     {
         [SerializeField] private Player _player;
 
-        [SerializeField] private float _distance;
+        private float _distance = 4;
 
         private void Update()
         {

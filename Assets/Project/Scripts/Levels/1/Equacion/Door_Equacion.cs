@@ -6,6 +6,10 @@ namespace Project.Scripts.Levels._1.Equacion
     {
         public void DoorAction(bool open)
         {
+            if (open)
+            {
+                _audioSource.Play();
+            }
             _animator.SetBool("Open", open);
         }
     }

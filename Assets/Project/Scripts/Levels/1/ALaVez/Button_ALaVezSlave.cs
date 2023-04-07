@@ -8,8 +8,8 @@ namespace Project.Scripts.Levels._1.ALaVez
     public class Button_ALaVezSlave : MonoBehaviour
     {
 
-        private const String PRESS_BUTTON = "PulsarBoton";
-        private const String RELEASE_BUTTON = "SoltarBoton";
+        private const String PRESS_BUTTON = "Press Button";
+        private const String RELEASE_BUTTON = "Release Button";
 
         [SerializeField] private Animator _animator;
 
@@ -20,7 +20,7 @@ namespace Project.Scripts.Levels._1.ALaVez
         private AudioSource _audioSourcePressButton;
         private AudioSource _audioSourceReleaseButton;
 
-        private bool _pressed;
+        [SerializeField] private bool _pressed;
 
         private void Start()
         {

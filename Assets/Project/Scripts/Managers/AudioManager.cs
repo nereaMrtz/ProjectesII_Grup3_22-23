@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using Project.Scripts.NoMonoBehaviourClass;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -19,7 +19,7 @@ namespace Project.Scripts.Managers
         [SerializeField] private String _SFXVolumeMixer;
         [SerializeField] private String _musicVolumeMixer;
         
-        [SerializeField] private NoMonoBehaviourClass.Sound[] _sounds;
+        [SerializeField] private Sound[] _sounds;
 
         private AudioSource _audioSource;
         private void Awake()
@@ -50,7 +50,7 @@ namespace Project.Scripts.Managers
         
         public void SetAudioSourceComponent(AudioSource audioSource, string name)
         {
-            foreach (NoMonoBehaviourClass.Sound sound in _sounds)
+            foreach (Sound sound in _sounds)
             {
                 if (sound.GetName() != name)
                 {
@@ -68,6 +68,8 @@ namespace Project.Scripts.Managers
                     sound.GetAudioSource().minDistance = 0;
                     sound.GetAudioSource().maxDistance = 30;    
                 }
+
+                sound.GetAudioSource().playOnAwake = false;
 
                 if (sound.GetPlay())
                 {

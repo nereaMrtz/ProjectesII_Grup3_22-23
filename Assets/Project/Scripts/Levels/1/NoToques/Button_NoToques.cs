@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using Project.Scripts.Character;
 using Project.Scripts.Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.NoToques

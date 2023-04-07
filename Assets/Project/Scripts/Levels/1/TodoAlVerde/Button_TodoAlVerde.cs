@@ -31,6 +31,8 @@ namespace Project.Scripts.Levels._1.TodoAlVerde
 
         private int _counter;
 
+        private bool _pressed;
+
 
         void Start()
         {
@@ -45,7 +47,7 @@ namespace Project.Scripts.Levels._1.TodoAlVerde
 
         void Update()
         {
-            if (_correct)
+            if (_correct || _pressed)
             {
                 return;
             }
@@ -76,6 +78,7 @@ namespace Project.Scripts.Levels._1.TodoAlVerde
                 return;
             }
 
+            _pressed = true;
             _animator.SetTrigger("Press");
             _audioSourcePressButton.Play();
 
@@ -97,8 +100,8 @@ namespace Project.Scripts.Levels._1.TodoAlVerde
                 return;
             }
 
+            _pressed = false;
             _audioSourceReleaseButton.Play();
-
             _animator.SetTrigger("Press");
         }
 

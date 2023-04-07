@@ -12,7 +12,7 @@ namespace Project.Scripts.Levels._1.MantenPlanta
         
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private Door_Manten _door_MantenPlanta;
+        [SerializeField] private Door_Manten _door;
 
         [SerializeField] private Flowerpot_MantenPlanta _flowerpot;
 
@@ -34,9 +34,11 @@ namespace Project.Scripts.Levels._1.MantenPlanta
                 _flowerpot.SetCorrectPlace(true);
             }
 
+            _door.Open();
+            _audioSourcePressButton.Play();
             _animator.SetTrigger("Press");
             
-            _door_MantenPlanta.AnimatorStep(true);
+            _door.AnimatorStep(true);
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
@@ -46,10 +48,11 @@ namespace Project.Scripts.Levels._1.MantenPlanta
                 _flowerpot.SetCorrectPlace(false);
             }
             
+            _audioSourceReleaseButton.Play();
             _animator.SetTrigger("Press");
             
-            _door_MantenPlanta.AnimatorStep(false);
-            _door_MantenPlanta.ChangePolygonCollider(0);
+            _door.AnimatorStep(false);
+            _door.ChangePolygonCollider(0);
         }
 
         public void AnchorThePot()

@@ -1,4 +1,3 @@
-using System;
 using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
 using UnityEngine;
@@ -10,9 +9,6 @@ namespace Project.Scripts.Levels._1.Manten
         [SerializeField] private float _timeToOpenDoor;
 
         [SerializeField] private Door_Manten _door_Manten;
-
-        private AudioSource _audioSourcePressButton;
-        private AudioSource _audioSourceReleaseButton;
 
         private float _currentTime;
 
@@ -30,11 +26,8 @@ namespace Project.Scripts.Levels._1.Manten
             {
                 return;
             }
-
-            if (!_door_Manten.IsStartOpening())
-            {
-                _door_Manten.SetStartOpening(true);
-            }
+            
+            _door_Manten.Open();
             
             _audioSourcePressButton.Play();
             ButtonAction();
@@ -56,8 +49,7 @@ namespace Project.Scripts.Levels._1.Manten
             }
             else
             {
-                _door_Manten.ChangePolygonCollider(0);    
-                _door_Manten.SetStartOpening(false);
+                _door_Manten.ChangePolygonCollider(0);
             }
             _door_Manten.AnimatorStep(_pressed);
             

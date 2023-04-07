@@ -12,6 +12,7 @@ namespace Project.Scripts.UI
         private const String PLAYERS_PREFS_MASTER_MUTE = "Player Prefs Master Mute";
         private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
         private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
+        private const String COIN_SPRITE_CODE = "<sprite=0>";
 
         [SerializeField] private GameObject _masterMuteIcon;
         /*[SerializeField] private GameObject _SFXMuteIcon;
@@ -25,7 +26,8 @@ namespace Project.Scripts.UI
         {
             if (SceneManager.GetActiveScene().name == EXCLUDE_LEVEL)
             {
-                _hintCoinsMarker.text = "999";
+                Debug.Log(_hintCoinsMarker.text);
+                _hintCoinsMarker.text = "999" + COIN_SPRITE_CODE;
             }
             else
             {
@@ -43,7 +45,7 @@ namespace Project.Scripts.UI
 
         public void UpdateCoinsMarker()
         {
-            _hintCoinsMarker.text = GameManager.Instance.GetHintCoins().ToString();
+            _hintCoinsMarker.text = GameManager.Instance.GetHintCoins() + COIN_SPRITE_CODE;
         }
 
         public void SetPause()

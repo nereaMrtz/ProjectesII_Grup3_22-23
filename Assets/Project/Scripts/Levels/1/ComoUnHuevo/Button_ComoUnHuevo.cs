@@ -19,7 +19,7 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
 
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private float _currentTimeToHold;
+        private float _currentTimeToHold;
 
         private AudioSource _audioSourcePressButton;
         private AudioSource _audioSourceReleaseButton;
@@ -38,10 +38,11 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
             {
                 return;
             }
+            _audioSourcePressButton.Play();
             _animator.SetTrigger("Press");
             _currentTimeToHold = _timeToHold;
             _door.AnimatorStep(true);
-            
+            _door.Open();
         }
 
         private void OnTriggerStay2D(Collider2D collider2D)
@@ -50,7 +51,6 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
             {
                 return;
             }
-
             _currentTimeToHold -= Time.deltaTime;
 
             if (_currentTimeToHold <= 0)
@@ -65,6 +65,8 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
             {
                 return;
             }
+            _audioSourceReleaseButton.Play();
+            _animator.SetTrigger("Press");
             _currentTimeToHold = _timeToHold;
             _door.AnimatorStep(false);
             _door.ChangePolygonCollider(0);

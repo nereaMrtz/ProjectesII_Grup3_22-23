@@ -1,35 +1,27 @@
+using System;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
 {
     public class Door_DiseñadorDeInteriores : MonoBehaviour
     {
-        [SerializeField] private Button_DiseñadorDeInteriores _button;
+        [SerializeField] private Controller_DiseñadorDeInteriores _controller;
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
         private Vector3 _offset;
 
-        private Vector3 _teleportButtonPosition;
+        [SerializeField] private bool _justClicked;
 
-        private bool _clicked;
-
-        private void Start()
+        private void Awake()
         {
             _offset = new Vector3(_spriteRenderer.size.x / 2, _spriteRenderer.size.y / 2);
-            _teleportButtonPosition =
-                new Vector3(transform.position.x + _offset.x, transform.position.y, transform.position.y);
         }
 
         private void OnMouseDown()
         {
-            if (_button.GetClicked())
-            {
-                (transform.position, _button.transform.position) = (_button.transform.position - _offset, _teleportButtonPosition);
-                Destroy(this);
-            }
-
-            _clicked = true;
+            _controller.SetClickedOnDoorTrue();
+            _justClicked = true;
         }
 
         public Vector3 GetOffset()
@@ -37,14 +29,14 @@ namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
             return _offset;
         }
 
-        public Vector3 GetTeleportButtonPosition()
+        public bool IsJustClicked()
         {
-            return _teleportButtonPosition;
+            return _justClicked;
         }
 
-        public bool GetClicked()
+        public void DenyClick()
         {
-            return _clicked;
+            _justClicked = false;
         }
     }
 }

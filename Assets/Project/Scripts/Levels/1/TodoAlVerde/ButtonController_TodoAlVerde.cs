@@ -19,6 +19,7 @@ namespace Project.Scripts.Levels._1.TodoAlVerde
         }
 
         public void SetCorrectButton(int index) {
+            
             _correctButtons[index] = true;
 
             _allCorrect = true;
@@ -28,7 +29,6 @@ namespace Project.Scripts.Levels._1.TodoAlVerde
                 _allCorrect = _correctButtons[i];
                 if (!_allCorrect) {
                     i = _correctButtons.Length - 1;
-                    continue;
                 }
             }
             if (_allCorrect)

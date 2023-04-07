@@ -8,8 +8,8 @@ namespace Project.Scripts.Levels._1.LaVistaEngaña
     {
         private const int PLAYER_LAYER = 6;
 
-        private const String PRESS_BUTTON = "PulsarBoton";
-        private const String RELEASE_BUTTON = "SoltarBoton";
+        private const String PRESS_BUTTON = "Press Button";
+        private const String RELEASE_BUTTON = "Release Button";
         
         [SerializeField] private Door_LaVistaEngaña _door;
 

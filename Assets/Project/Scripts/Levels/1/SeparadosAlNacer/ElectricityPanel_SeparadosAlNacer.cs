@@ -25,5 +25,10 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
         {
             return _timeWhenClick;
         }
+
+        public void SetTime(float time)
+        {
+            _timeWhenClick = time;
+        }
     }
 }

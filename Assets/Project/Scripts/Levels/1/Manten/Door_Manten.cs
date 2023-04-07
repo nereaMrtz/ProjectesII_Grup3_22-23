@@ -1,13 +1,9 @@
 using Project.Scripts.Levels._1._1_1;
-using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Manten 
 {
     public class Door_Manten : Door
     {
-
-        private bool _startOpening;
-
         public void AnimatorStep(bool buttonPressed) {
                         
             if (_unlocked)
@@ -23,15 +19,9 @@ namespace Project.Scripts.Levels._1.Manten
             }            
         }
 
-        public bool IsStartOpening()
-        {
-            return _startOpening;
-        }
-
-        public void SetStartOpening(bool startOpening)
+        public void Open()
         {
             _audioSource.Play();
-            _startOpening = startOpening;
         }
     }
 }

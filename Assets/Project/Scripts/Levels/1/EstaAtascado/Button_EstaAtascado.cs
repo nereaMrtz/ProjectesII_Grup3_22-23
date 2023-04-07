@@ -1,4 +1,3 @@
-using System;
 using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
 using UnityEngine;
@@ -7,9 +6,6 @@ namespace Project.Scripts.Levels._1.EstaAtascado
 {
     public class Button_EstaAtascado : Button_Logico
     {
-        private AudioSource _audioSourcePressButton;
-        private AudioSource _audioSourceReleaseButton;
-
         private int _pressCounter;
 
         private void Start()

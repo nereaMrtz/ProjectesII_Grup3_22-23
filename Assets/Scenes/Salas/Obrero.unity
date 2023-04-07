@@ -1321,8 +1321,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -877714249, guid: 6d1b77572a1b73f48a395578f8dddf5d, type: 3}
     - target: {fileID: 3846082067526596622, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 5.454895
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3846082067733218162, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_Name
@@ -1449,12 +1449,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8339851715009930479, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -3.9000244
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8339851715009930479, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.87841797
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3350197422328322538, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
@@ -1940,7 +1940,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b73091cdd4d0247843b66d61dd35bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitsToBreak: 3
 --- !u!1 &961835712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,7 +3492,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.27, y: 0}
+  m_Offset: {x: 0.0013794899, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3504,7 +3503,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 2}
+  m_Size: {x: 5.542759, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &1641954145
 SpriteRenderer:
@@ -4698,7 +4697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b73091cdd4d0247843b66d61dd35bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitsToBreak: 3
 --- !u!1 &2026115858
 GameObject:
   m_ObjectHideFlags: 0

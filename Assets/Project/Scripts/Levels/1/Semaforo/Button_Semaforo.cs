@@ -12,9 +12,6 @@ namespace Project.Scripts.Levels._1.Semaforo
         
         [SerializeField] private RuntimeAnimatorController[] _animatorControllers;
 
-        private AudioSource _audioSourcePressButton;
-        private AudioSource _audioSourceReleaseButton;
-
         private float _timeToChange = 0.75f;
         private float _currentTimeToChange;
 
@@ -39,6 +36,10 @@ namespace Project.Scripts.Levels._1.Semaforo
                 _currentAnimatorControllerIndex = (_currentAnimatorControllerIndex + 1) % _animatorControllers.Length;
                 _animator.runtimeAnimatorController = _animatorControllers[_currentAnimatorControllerIndex];
                 _currentTimeToChange = _timeToChange;
+                if (_pressed)
+                {
+                    _animator.SetTrigger("Press");
+                }
             }
             
             

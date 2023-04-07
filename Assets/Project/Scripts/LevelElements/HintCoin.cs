@@ -13,6 +13,7 @@ namespace Project.Scripts.LevelElements
         private const int PLAYER_LAYER = 6;
 
         private const String COIN = "Coin";
+        private const String COIN_SPRITE_CODE = "<sprite=0>";
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
@@ -29,8 +30,12 @@ namespace Project.Scripts.LevelElements
                 Destroy(gameObject);
             }
 
-            _audioSource = gameObject.AddComponent<AudioSource>();
+            GameObject audioGameObject = new GameObject();
+            audioGameObject.name = "AudioSource";
+            _audioSource = audioGameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, COIN);
+            audioGameObject.transform.parent = gameObject.transform;
+            audioGameObject.transform.localPosition = new Vector3(0.25f, 0.25f, 0);
         }
 
         private void OnTriggerEnter2D(Collider2D collider2D)

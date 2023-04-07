@@ -1,31 +1,29 @@
-using TMPro;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Equacion
 {
-    public class Title_Equación : MonoBehaviour
+    public class Title_Equación : NumberLevel
     {
-        [SerializeField] private TextMeshProUGUI _titleText;
-
         [SerializeField] private Door_Equacion _door;
 
         private int[] _keyPressCounter = new int[4];
 
         private string _numberLevel;
 
-        private void Start()
+        private new void Start()
         {
+            base.Start();
             int _spaceIndex = 0;
-            for (int i = 0; i < _titleText.text.Length; i++)
+            for (int i = 0; i < level.text.Length; i++)
             {
-                if (_titleText.text[i] == ' ')
+                if (level.text[i] == ' ')
                 {
                     _spaceIndex = i;
                     break;
                 }
             }
 
-            _numberLevel = _titleText.text.Substring(0, _spaceIndex + 1);
+            _numberLevel = level.text.Substring(0, _spaceIndex + 1);
             _door.DoorAction(true);
         }
 
@@ -58,7 +56,7 @@ namespace Project.Scripts.Levels._1.Equacion
 
         private void RewriteTitle()
         {
-            _titleText.text = _numberLevel + _keyPressCounter[0] + " = " + _keyPressCounter[1] + " = " + _keyPressCounter[2] + " = " + _keyPressCounter[3];
+            level.text = _numberLevel + _keyPressCounter[0] + " = " + _keyPressCounter[1] + " = " + _keyPressCounter[2] + " = " + _keyPressCounter[3];
 
             int initialValue = _keyPressCounter[0];
 

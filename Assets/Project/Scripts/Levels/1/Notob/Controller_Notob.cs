@@ -7,9 +7,6 @@ namespace Project.Scripts.Levels._1.Notob
         [SerializeField] private Letter_Notob[] _letters;
 
         [SerializeField] private GameObject _button;
-
-        private bool _letterClicked;
-
         public void CheckOrder() 
         {
             for (int i = 0; i < _letters.Length - 1; i++)
@@ -26,16 +23,6 @@ namespace Project.Scripts.Levels._1.Notob
                 Destroy(_letters[i].gameObject);
             }
             Destroy(this);
-        }
-
-        public bool IsLetterClicked()
-        {
-            return _letterClicked;
-        }
-
-        public void SetLetterClicked(bool letterClicked)
-        {
-            _letterClicked = letterClicked;
         }
     }
 }

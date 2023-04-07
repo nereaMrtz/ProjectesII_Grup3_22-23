@@ -1,27 +1,30 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
 {
     public class Button_DiseñadorDeInteriores : MonoBehaviour
     {
-        [SerializeField] private Door_DiseñadorDeInteriores _door;
+        [SerializeField] private Controller_DiseñadorDeInteriores _controller;
+        
+        [SerializeField] private bool _justClicked;
 
-        private bool _clicked;
 
         private void OnMouseDown()
         {
-            if (_door.GetClicked())
-            {
-                (transform.position, _door.transform.position) = (_door.GetTeleportButtonPosition(), transform.position - _door.GetOffset());    
-                Destroy(this);
-            }
-
-            _clicked = true;
+            _controller.SetClickedOnButtonTrue();
+            _justClicked = true;
         }
 
-        public bool GetClicked()
+        public bool IsJustClicked()
         {
-            return _clicked;
+            return _justClicked;
+        }
+
+        public void DenyClick()
+        {
+            _justClicked = false;
         }
     }
 }
