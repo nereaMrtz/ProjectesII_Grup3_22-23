@@ -21,7 +21,7 @@ namespace Project.Scripts.Managers
         
         private int _hintCoins = 2;
 
-        private bool[] levels;
+        private bool[] levels = new bool[30];
 
         private void Awake()
         {
@@ -30,7 +30,7 @@ namespace Project.Scripts.Managers
                 _instance = this;
                 _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
                 _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
-                levels = new bool[SceneManager.sceneCountInBuildSettings];
+               // levels = new bool[SceneManager.sceneCountInBuildSettings];
             }
             else
             {
