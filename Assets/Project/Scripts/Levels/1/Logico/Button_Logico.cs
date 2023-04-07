@@ -21,7 +21,7 @@ namespace Project.Scripts.Levels._1.Logico
 
         protected bool _pressed;
 
-        private void Start()
+        protected void Start()
         {
             _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
             _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();

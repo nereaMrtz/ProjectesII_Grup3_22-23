@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
 {

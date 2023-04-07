@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.Tinder
 {
     public class Mobile_Tinder : MonoBehaviour
     {
-        private const String MOBILE_BUZZ = "Mobile Buzz";
+        private const String PHONE_BUZZ = "Phone Buzz";
 
         private AudioSource _audioSource;
         
@@ -19,7 +20,7 @@ namespace Project.Scripts.Levels._1.Tinder
             _initialZRotation = transform.localEulerAngles.z;
             _currentTimeToBuzz = 1;
             _audioSource = gameObject.AddComponent<AudioSource>();
-            //AudioManager.Instance.SetAudioSourceComponent(_audioSource, MOBILE_BUZZ);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, PHONE_BUZZ);
         }
 
         private void Update()
@@ -36,6 +37,7 @@ namespace Project.Scripts.Levels._1.Tinder
 
         private IEnumerator BuzzMobile()
         {
+            _audioSource.Play();
             float degreesToRotate = 0;
 
             float maximumRotateDegrees = 15;

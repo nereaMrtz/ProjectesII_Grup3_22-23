@@ -1,5 +1,4 @@
 using Project.Scripts.Levels._1.Logico;
-using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.ALaVez
@@ -9,14 +8,6 @@ namespace Project.Scripts.Levels._1.ALaVez
         [SerializeField] private Button_ALaVezMain _main;
         [SerializeField] private Button_ALaVezSlave _slave;
         [SerializeField] private Button_ALaVezSlave _mySlave;
-
-        private void Start()
-        {
-            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
-            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
-            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
-            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
-        }
 
         private void OnMouseDown()
         {

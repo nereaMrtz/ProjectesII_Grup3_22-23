@@ -17,6 +17,8 @@ namespace Project.Scripts.LevelElements
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
+        [SerializeField] private CapsuleCollider2D _capsuleCollider2D;
+
         [SerializeField] private InGameUI _inGameUI;
         
         [SerializeField] private Button _button;
@@ -54,6 +56,7 @@ namespace Project.Scripts.LevelElements
             GameManager.Instance.SetLevelWhereHintTaken(SceneManager.GetActiveScene().buildIndex);
             _inGameUI.UpdateCoinsMarker();
             _spriteRenderer.enabled = false;
+            _capsuleCollider2D.enabled = false;
             StartCoroutine(DestroyCoin());
         }
 

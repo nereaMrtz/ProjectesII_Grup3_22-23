@@ -623,7 +623,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trailRenderer: {fileID: 106311007}
-  _button: {fileID: 174746441}
   _electricityPanel: {fileID: 2092024652}
 --- !u!96 &106311007
 TrailRenderer:
@@ -699,7 +698,7 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 0.965804, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 1, g: 1, b: 1, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -707,7 +706,7 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -715,13 +714,13 @@ TrailRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -3336,7 +3335,6 @@ GameObject:
   - component: {fileID: 1145168207}
   - component: {fileID: 1145168211}
   - component: {fileID: 1145168210}
-  - component: {fileID: 1145168209}
   - component: {fileID: 1145168208}
   m_Layer: 0
   m_Name: FlowerpotAnim
@@ -3380,18 +3378,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1145168209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145168206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb266285ed48db7498aec861c9afd147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1145168210
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4244,7 +4230,6 @@ Transform:
   - {fileID: 461532400}
   - {fileID: 1186217676}
   - {fileID: 1145168207}
-  - {fileID: 1454915135}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4768,10 +4753,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.45
       objectReference: {fileID: 0}
@@ -5243,6 +5224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e6db2aaa6bf1f44a1b42eb365c7824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cursorTrail: {fileID: 106311006}
 --- !u!61 &2092024653
 BoxCollider2D:
   m_ObjectHideFlags: 0

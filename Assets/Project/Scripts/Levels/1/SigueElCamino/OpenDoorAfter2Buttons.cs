@@ -6,6 +6,7 @@ public class OpenDoorAfter2Buttons : MonoBehaviour
 {
     private const String PRESS_BUTTON = "Press Button";
     private const String RELEASE_BUTTON = "Release Button";
+    private const String DISCOVERY = "Discovery";
     
     [SerializeField] protected Animator _animator;
 
@@ -13,6 +14,7 @@ public class OpenDoorAfter2Buttons : MonoBehaviour
 
     private AudioSource _audioSourcePressButton;
     private AudioSource _audioSourceReleaseButton;
+    private AudioSource _audioSourceDiscovery;
 
     private bool _pressed;
 
@@ -20,8 +22,10 @@ public class OpenDoorAfter2Buttons : MonoBehaviour
     {
         _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
         _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
+        _audioSourceDiscovery = gameObject.AddComponent<AudioSource>();
         AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
         AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+        AudioManager.Instance.SetAudioSourceComponent(_audioSourceDiscovery, DISCOVERY);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -30,7 +34,11 @@ public class OpenDoorAfter2Buttons : MonoBehaviour
         {
             _audioSourcePressButton.Play();
             _animator.SetTrigger("Press");
-            _button2.SetActive(true);
+            if (!_button2.activeSelf)
+            {
+                _audioSourceDiscovery.Play();
+                _button2.SetActive(true);
+            }
         }
     }
 

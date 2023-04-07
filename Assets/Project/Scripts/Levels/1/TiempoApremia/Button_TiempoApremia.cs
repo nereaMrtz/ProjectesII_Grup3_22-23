@@ -1,4 +1,6 @@
 using System;
+using Project.Scripts.Levels._1.BrisaPorLaEspalda;
+using Project.Scripts.Levels._1.Manten;
 using Project.Scripts.Managers;
 using UnityEngine;
 
@@ -34,7 +36,7 @@ namespace Project.Scripts.Levels._1.TiempoApremia
             }
             _audioSourcePressButton.Play();
             _animator.SetTrigger("Press");
-            _door.AnimatorStep();
+            _door.AnimatorStep(true);
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
@@ -45,6 +47,7 @@ namespace Project.Scripts.Levels._1.TiempoApremia
             }
             _audioSourceReleaseButton.Play();
             _animator.SetTrigger("Press");
+            _door.AnimatorStep(false);
         }
     }
 }
