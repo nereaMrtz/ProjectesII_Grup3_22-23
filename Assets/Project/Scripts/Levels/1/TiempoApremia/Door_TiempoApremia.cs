@@ -5,18 +5,10 @@ namespace Project.Scripts.Levels._1.TiempoApremia
 {
     public class Door_TiempoApremia : Door
     {
-        private int _currentAnimatorStep; 
         
-        public void AnimatorStep()
-        {
-            _currentAnimatorStep = Mathf.Clamp(_currentAnimatorStep + 2, 2, 4);
-            _animator.SetTrigger("Step");
-            _animator.SetInteger("Animator Step", _currentAnimatorStep);
-        }
-
-        public void SetCurrentAnimatorStep(int currentAnimatorStep)
-        {
-            _currentAnimatorStep = currentAnimatorStep;
+        public void AnimatorStep(bool pressing) {
+                        
+            _animator.SetBool("Open", pressing);          
         }
     }
 }

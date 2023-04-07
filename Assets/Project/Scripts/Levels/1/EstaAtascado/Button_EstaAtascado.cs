@@ -1,5 +1,4 @@
 using Project.Scripts.Levels._1.Logico;
-using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.EstaAtascado
@@ -7,14 +6,6 @@ namespace Project.Scripts.Levels._1.EstaAtascado
     public class Button_EstaAtascado : Button_Logico
     {
         private int _pressCounter;
-
-        private void Start()
-        {
-            _audioSourcePressButton = gameObject.AddComponent<AudioSource>();
-            _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
-            AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
-            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
-        }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {

@@ -6612,7 +6612,6 @@ GameObject:
   - component: {fileID: 2068678850}
   - component: {fileID: 2068678854}
   - component: {fileID: 2068678853}
-  - component: {fileID: 2068678852}
   - component: {fileID: 2068678851}
   m_Layer: 0
   m_Name: FlowerpotAnim
@@ -6656,18 +6655,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2068678852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068678849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb266285ed48db7498aec861c9afd147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2068678853
 BoxCollider2D:
   m_ObjectHideFlags: 0
