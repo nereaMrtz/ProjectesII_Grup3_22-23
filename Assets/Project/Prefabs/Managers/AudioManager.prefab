@@ -87,7 +87,7 @@ MonoBehaviour:
   - _audioClip: {fileID: 8300000, guid: 0c3a2736c5db82b4cbd763475f03d0da, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
     _name: Coin
-    _volume: 1
+    _volume: 0.65
     _loop: 0
     _play: 0
     _sound3D: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   - _audioClip: {fileID: 8300000, guid: a2a3481ebea27bd4c91269cf33bf9d93, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
     _name: Press Button
-    _volume: 1
+    _volume: 0.5
     _loop: 0
     _play: 0
     _sound3D: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
   - _audioClip: {fileID: 8300000, guid: c96dbd17e0c1724419a3ed2ba28d28e6, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
     _name: Toc
-    _volume: 1
+    _volume: 0.6
     _loop: 0
     _play: 0
     _sound3D: 1
@@ -210,41 +210,41 @@ MonoBehaviour:
     _loop: 1
     _play: 1
     _sound3D: 0
-  - _audioClip: {fileID: 8300000, guid: cc11a1bce35defc459535dc350e4570e, type: 3}
+  - _audioClip: {fileID: 8300000, guid: 422c471a8523aca45baf1dccaeaf8449, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
-    _name: Release Button
+    _name: Discovery
     _volume: 1
     _loop: 0
     _play: 0
     _sound3D: 1
-  - _audioClip: {fileID: 8300000, guid: ccd05c882cab0834b9b08dbbe2d14665, type: 3}
+  - _audioClip: {fileID: 8300000, guid: c3f13346ffa1fb94685e15665152f7dc, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
-    _name: MouseClick
+    _name: Destroy Wall
     _volume: 1
     _loop: 0
     _play: 0
     _sound3D: 1
-  - _audioClip: {fileID: 8300000, guid: ccd05c882cab0834b9b08dbbe2d14665, type: 3}
+  - _audioClip: {fileID: 8300000, guid: 4148520e0b901bd449d81c69f373e12e, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
-    _name: MouseClick
+    _name: Button Power On
     _volume: 1
     _loop: 0
     _play: 0
     _sound3D: 1
-  - _audioClip: {fileID: 8300000, guid: ccd05c882cab0834b9b08dbbe2d14665, type: 3}
+  - _audioClip: {fileID: 8300000, guid: 9df002426a446d349800b6777072e7d8, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
-    _name: MouseClick
+    _name: Electricity Panel
     _volume: 1
     _loop: 0
     _play: 0
-    _sound3D: 0
-  - _audioClip: {fileID: 8300000, guid: ccd05c882cab0834b9b08dbbe2d14665, type: 3}
+    _sound3D: 1
+  - _audioClip: {fileID: 8300000, guid: 0ca3ed87e8af1ec44ba64f6486eab283, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
-    _name: MouseClick
-    _volume: 1
+    _name: Phone Buzz
+    _volume: 0.5
     _loop: 0
     _play: 0
-    _sound3D: 0
+    _sound3D: 1
   - _audioClip: {fileID: 8300000, guid: 56763ea9cd23cf541819f5902f9568cb, type: 3}
     _audioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
     _name: Reverse Fade

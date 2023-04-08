@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,8 @@ namespace Project.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
+        
+        private const String PLAYER_PREFS_BRIGHTNESS = "Player Prefs Brightness";
 
         private Resolution _currentResolution;
         
@@ -31,6 +34,11 @@ namespace Project.Scripts.Managers
                 _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
                 _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
                 levels = new bool[SceneManager.sceneCountInBuildSettings];
+                levels[0] = true;
+                if (!PlayerPrefs.HasKey(PLAYER_PREFS_BRIGHTNESS))
+                {
+                    PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, 1);    
+                }
             }
             else
             {
@@ -139,7 +147,7 @@ namespace Project.Scripts.Managers
         {
             _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
             _levelsWhereHintUsed  = new bool[SceneManager.sceneCountInBuildSettings];
-            levels = new bool[30];
+            levels = new bool[SceneManager.sceneCountInBuildSettings];
         }
 
         public void SetCurrentResolution(Resolution resolution)

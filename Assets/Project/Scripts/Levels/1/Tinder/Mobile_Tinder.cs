@@ -9,6 +9,8 @@ namespace Project.Scripts.Levels._1.Tinder
     {
         private const String PHONE_BUZZ = "Phone Buzz";
 
+        [SerializeField] private GameObject _zoomMobile;
+
         private AudioSource _audioSource;
         
         private float _initialZRotation;
@@ -25,6 +27,11 @@ namespace Project.Scripts.Levels._1.Tinder
 
         private void Update()
         {
+            if (_zoomMobile.activeSelf)
+            {
+                return;
+            }
+            
             _currentTimeToBuzz -= Time.deltaTime;
 
             if (_currentTimeToBuzz > 0)

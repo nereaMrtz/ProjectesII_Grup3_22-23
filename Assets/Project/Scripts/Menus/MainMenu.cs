@@ -26,7 +26,7 @@ namespace Project.Scripts.Menus
             {
                 if (!levels[i])
                 {
-                    SceneManager.LoadScene(i + 1);
+                    SceneManager.LoadScene(i);
                     return;
                 }
             }

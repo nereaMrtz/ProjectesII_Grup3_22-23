@@ -39,9 +39,9 @@ namespace Project.Scripts.Managers
 
                 if (!PlayerPrefs.HasKey(PLAYERS_PREFS_MASTER_VOLUME_VALUE))
                 {
-                    PlayerPrefs.SetFloat(PLAYERS_PREFS_MASTER_VOLUME_VALUE, -8);
-                    PlayerPrefs.SetFloat(PLAYERS_PREFS_SFX_VOLUME_VALUE, -8);
-                    PlayerPrefs.SetFloat(PLAYERS_PREFS_MUSIC_VOLUME_VALUE, -8);
+                    PlayerPrefs.SetFloat(PLAYERS_PREFS_MASTER_VOLUME_VALUE, -15);
+                    PlayerPrefs.SetFloat(PLAYERS_PREFS_SFX_VOLUME_VALUE, -15);
+                    PlayerPrefs.SetFloat(PLAYERS_PREFS_MUSIC_VOLUME_VALUE, -15);
                 }
             }
             else
@@ -54,7 +54,6 @@ namespace Project.Scripts.Managers
             _audioSourceMenuButton = gameObject.AddComponent<AudioSource>();
             SetAudioSourceComponent(_audioSourceAmbient, AMBIENT);
             SetAudioSourceComponent(_audioSourceMenuButton, BOTON_MENU);
-
         }
 
         private void Start()

@@ -1072,7 +1072,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 71.53}
+  m_SizeDelta: {x: 0, y: 56.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5596260952528319338
 CanvasRenderer:
@@ -3554,6 +3554,7 @@ MonoBehaviour:
   _masterVolumeSlider: {fileID: 5596260953113105826}
   _SFXVolumeSlider: {fileID: 5596260953902499449}
   _musicVolumeSlider: {fileID: 5596260954035342894}
+  _brightnessSlider: {fileID: 5596260953779339839}
   _masterVolumeMute: {fileID: 5596260952589268956}
   _SFXVolumeMute: {fileID: 5596260953784004319}
   _musicVolumeMute: {fileID: 5596260953941869215}
@@ -4645,10 +4646,10 @@ RectTransform:
   m_Father: {fileID: 5596260953073396171}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5596260953933275306
 CanvasRenderer:

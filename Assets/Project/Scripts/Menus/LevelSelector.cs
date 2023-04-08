@@ -12,7 +12,6 @@ namespace Project.Scripts.Menus
         private void Start()
         {
             levels = GameManager.Instance.GetLevels();
-            levels[0] = true;
 
             for(int i = 1; i < levels.Length; i++)
             {

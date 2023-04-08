@@ -69,10 +69,5 @@ namespace Project.Scripts.Levels._1.Logico
         {
             return _pressed;
         }
-
-        public void SetPressed(bool pressed)
-        {
-            _pressed = pressed;
-        }
     }
 }

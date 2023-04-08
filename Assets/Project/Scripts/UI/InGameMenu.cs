@@ -45,6 +45,7 @@ namespace Project.Scripts.UI
         {
             ButtonSound();
             Time.timeScale = 1;
+            GameManager.Instance.SetPause(false);
             SceneManager.LoadScene(MAIN_MENU_BUILD_INDEX);
         }
     }
