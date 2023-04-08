@@ -10,6 +10,8 @@ namespace Project.Scripts.Levels._1._1_15
         [SerializeField] GameObject openPopup;
         [SerializeField] GameObject openDoor;
         [SerializeField] GameObject pauseMenu;
+        [SerializeField] GameObject optionsMenu;
+        [SerializeField] GameObject LvlSelectorMenu;
 
         public void DestroyPopup()
         {
@@ -27,6 +29,8 @@ namespace Project.Scripts.Levels._1._1_15
             {
                 openPopup.SetActive(true);
                 pauseMenu.SetActive(false);
+                optionsMenu.SetActive(false);
+                LvlSelectorMenu.SetActive(false);
             }
             else
             {
