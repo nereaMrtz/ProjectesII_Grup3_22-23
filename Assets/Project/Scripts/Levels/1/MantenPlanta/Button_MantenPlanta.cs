@@ -14,7 +14,7 @@ namespace Project.Scripts.Levels._1.MantenPlanta
 
         [SerializeField] private Door_Manten _door;
 
-        [SerializeField] private Flowerpot_MantenPlanta _flowerpot;
+        [SerializeField] private Collider2D _dragCollider;
 
         private AudioSource _audioSourcePressButton;
         private AudioSource _audioSourceReleaseButton;
@@ -25,14 +25,11 @@ namespace Project.Scripts.Levels._1.MantenPlanta
             _audioSourceReleaseButton = gameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSourcePressButton, PRESS_BUTTON);
             AudioManager.Instance.SetAudioSourceComponent(_audioSourceReleaseButton, RELEASE_BUTTON);
+            Physics2D.IgnoreCollision(_dragCollider,GetComponent<Collider2D>());
         }
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.name == "Flowerpot")
-            { 
-                _flowerpot.SetCorrectPlace(true);
-            }
 
             _door.Open();
             _audioSourcePressButton.Play();
@@ -43,22 +40,11 @@ namespace Project.Scripts.Levels._1.MantenPlanta
 
         private void OnTriggerExit2D(Collider2D collider2D)
         {
-            if (collider2D.gameObject.name == "Flowerpot")
-            {
-                _flowerpot.SetCorrectPlace(false);
-            }
-            
             _audioSourceReleaseButton.Play();
             _animator.SetTrigger("Press");
             
             _door.AnimatorStep(false);
             _door.ChangePolygonCollider(0);
-        }
-
-        public void AnchorThePot()
-        {
-            Destroy(_flowerpot);
-            Destroy(this);
         }
     }
 }

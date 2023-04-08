@@ -8,9 +8,7 @@ namespace Project.Scripts.Menus
     {
         bool[] levels;
         [SerializeField] Button[] button;
-
-
-
+        
         private void Start()
         {
             levels = GameManager.Instance.GetLevels();
@@ -18,6 +16,7 @@ namespace Project.Scripts.Menus
 
             for(int i = 1; i < levels.Length; i++)
             {
+                //Aqui te peta porque hay 30 elementos en "button" y este en un for de tantas iteraciones como niveles tengamos
                 if (!levels[i])
                 {
                     button[i].interactable = false;

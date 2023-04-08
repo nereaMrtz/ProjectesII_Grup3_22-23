@@ -9,19 +9,15 @@ namespace Project.Scripts.Levels
     public class CambiarSala : MonoBehaviour
     {
         private const string BOTON_MENU = "BotonMenu";
-        private const string FADE = "Fade";
 
         [SerializeField] private Fade _fade;
 
-        private AudioSource _audioSourceFade;
-        private AudioSource _audioSourceMenuButton;
+        private AudioSource _audioSource;
 
         private void Start()
         {
-            _audioSourceFade = gameObject.AddComponent<AudioSource>();
-            _audioSourceMenuButton = gameObject.AddComponent<AudioSource>();
-            AudioManager.Instance.SetAudioSourceComponent(_audioSourceFade, FADE);
-            AudioManager.Instance.SetAudioSourceComponent(_audioSourceMenuButton, BOTON_MENU);
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -35,9 +31,7 @@ namespace Project.Scripts.Levels
 
         private IEnumerator FadeTransition() {
 
-            _fade.FadeAnimation();
-            
-            _audioSourceFade.Play();
+            _fade.FadeAnimation(true);
             
             yield return new WaitUntil(() => _fade.IsFinished());
 
@@ -46,13 +40,18 @@ namespace Project.Scripts.Levels
 
         public void SoundChangeScene()
         {
-            _audioSourceMenuButton.Play();
+            _audioSource.Play();
         }
 
         public void ChangeScene()
         {
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        public void GoToMainMenu()
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

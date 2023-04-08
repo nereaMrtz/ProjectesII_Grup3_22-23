@@ -12,6 +12,13 @@ namespace Project.Scripts.Managers
         private const String PLAYERS_PREFS_MASTER_VOLUME_VALUE = "Player Prefs Master Volume Value";
         private const String PLAYERS_PREFS_SFX_VOLUME_VALUE = "Player Prefs SFX Volume Value";
         private const String PLAYERS_PREFS_MUSIC_VOLUME_VALUE = "Player Prefs Music Volume Value";
+        
+        private const String PLAYERS_PREFS_MASTER_MUTE = "Player Prefs Master Mute";
+        private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
+        private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
+
+        private const String AMBIENT = "Ambiente";
+        private const string BOTON_MENU = "BotonMenu";
 
         [SerializeField] private AudioMixer _audioMixer;
         
@@ -21,16 +28,21 @@ namespace Project.Scripts.Managers
         
         [SerializeField] private Sound[] _sounds;
 
-        private AudioSource _audioSource;
+        private AudioSource _audioSourceAmbient;
+        private AudioSource _audioSourceMenuButton;
+        
         private void Awake()
         {
             if (_instance == null)
             {
                 _instance = this;
-            
-                PlayerPrefs.SetFloat(PLAYERS_PREFS_MASTER_VOLUME_VALUE, -8);
-                PlayerPrefs.SetFloat(PLAYERS_PREFS_SFX_VOLUME_VALUE, -8);
-                PlayerPrefs.SetFloat(PLAYERS_PREFS_MUSIC_VOLUME_VALUE, -8);
+
+                if (!PlayerPrefs.HasKey(PLAYERS_PREFS_MASTER_VOLUME_VALUE))
+                {
+                    PlayerPrefs.SetFloat(PLAYERS_PREFS_MASTER_VOLUME_VALUE, -8);
+                    PlayerPrefs.SetFloat(PLAYERS_PREFS_SFX_VOLUME_VALUE, -8);
+                    PlayerPrefs.SetFloat(PLAYERS_PREFS_MUSIC_VOLUME_VALUE, -8);
+                }
             }
             else
             {
@@ -38,9 +50,42 @@ namespace Project.Scripts.Managers
             }
             DontDestroyOnLoad(gameObject);
 
-            _audioSource = gameObject.AddComponent<AudioSource>();
-            SetAudioSourceComponent(_audioSource, "Ambiente");
+            _audioSourceAmbient = gameObject.AddComponent<AudioSource>();
+            _audioSourceMenuButton = gameObject.AddComponent<AudioSource>();
+            SetAudioSourceComponent(_audioSourceAmbient, AMBIENT);
+            SetAudioSourceComponent(_audioSourceMenuButton, BOTON_MENU);
 
+        }
+
+        private void Start()
+        {
+            if (PlayerPrefs.GetInt(PLAYERS_PREFS_MASTER_MUTE) == 1)
+            {
+                SetVolumeValue(PLAYERS_PREFS_MASTER_VOLUME_VALUE, -80);
+            }
+            else
+            {
+                SetVolumeValue(PLAYERS_PREFS_MASTER_VOLUME_VALUE, PlayerPrefs.GetFloat(PLAYERS_PREFS_MASTER_VOLUME_VALUE));
+            }
+
+            if (PlayerPrefs.GetInt(PLAYERS_PREFS_SFX_MUTE) == 1)
+            {
+                SetVolumeValue(PLAYERS_PREFS_SFX_VOLUME_VALUE, -80);
+            }
+            else
+            {
+                SetVolumeValue(PLAYERS_PREFS_SFX_VOLUME_VALUE, PlayerPrefs.GetFloat(PLAYERS_PREFS_SFX_VOLUME_VALUE));
+            }
+
+            if (PlayerPrefs.GetInt(PLAYERS_PREFS_MUSIC_MUTE) == 1)
+            {
+                SetVolumeValue(PLAYERS_PREFS_MUSIC_VOLUME_VALUE, -80);
+            }
+            else
+            {
+                SetVolumeValue(PLAYERS_PREFS_MUSIC_VOLUME_VALUE, PlayerPrefs.GetFloat(PLAYERS_PREFS_MUSIC_VOLUME_VALUE));
+            }
+            
         }
 
         public static AudioManager Instance
@@ -78,6 +123,11 @@ namespace Project.Scripts.Managers
 
                 return;
             }
+        }
+
+        public void PlayMenuButtonSound()
+        {
+            _audioSourceMenuButton.Play();
         }
 
         public void SetVolumePrefs(String playerPrefsVolumeName, float volumeValue)

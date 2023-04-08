@@ -7,21 +7,12 @@ namespace Project.Scripts.UI
     public class InGameMenu : MonoBehaviour
     {
         private const int MAIN_MENU_BUILD_INDEX = 0;
-        private const string BOTON_MENU = "BotonMenu";
 
         [SerializeField] private GameObject _pauseMenuPanel;
 
         private GameObject _currentActivePanel;
 
         private bool _active;
-
-        private AudioSource _audioSource;
-
-        private void Start()
-        {
-            _audioSource = gameObject.AddComponent<AudioSource>();
-            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
-        }
 
         private void OnEnable()
         {
@@ -31,7 +22,7 @@ namespace Project.Scripts.UI
         
         private void ButtonSound()
         {
-            _audioSource.Play();
+            AudioManager.Instance.PlayMenuButtonSound();
         }
 
         public void ResumeButton()
