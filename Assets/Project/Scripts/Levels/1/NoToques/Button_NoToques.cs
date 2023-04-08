@@ -77,6 +77,10 @@ namespace Project.Scripts.Levels._1.NoToques
                 return;
             }
 
+            if (_trigger != null)
+            {
+                Destroy(_trigger);
+            }
             _audioSourcePressButton.Play();
             _collidedWithPlayer = true;
         }

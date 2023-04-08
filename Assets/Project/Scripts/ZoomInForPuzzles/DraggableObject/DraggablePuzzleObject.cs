@@ -9,13 +9,13 @@ namespace Project.Scripts.ZoomInForPuzzles.DraggableObject
         protected Vector3 _initialMousePosition;
         protected Vector3 _currentMousePosition;
 
-        private void Start()
+        protected void Start()
         {
             _initialPosition = transform.localPosition;
             _currentPosition = _initialPosition;
         }
         
-        private void OnMouseDown()
+        protected void OnMouseDown()
         {
             _initialMousePosition = GetMouseWorldCoordinates();
             _currentPosition = transform.localPosition;

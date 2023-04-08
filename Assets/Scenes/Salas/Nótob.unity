@@ -152,6 +152,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
   m_PrefabInstance: {fileID: 182669032}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &2383116 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5469646361359393634, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+  m_PrefabInstance: {fileID: 182669032}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &133184253
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +242,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393632, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393634, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5469646361359393635, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
@@ -4371,7 +4380,6 @@ Transform:
   - {fileID: 1437018021}
   - {fileID: 237088423}
   - {fileID: 133184254}
-  - {fileID: 1556175670}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4903,7 +4911,14 @@ MonoBehaviour:
   - {fileID: 1467480753}
   - {fileID: 399231729}
   - {fileID: 1739094998}
+  _lettersImage:
+  - {fileID: 1298312833}
+  - {fileID: 262434799}
+  - {fileID: 1467480751}
+  - {fileID: 399231727}
+  - {fileID: 1739094999}
   _button: {fileID: 2383111}
+  _buttonSpriteRenderer: {fileID: 2383116}
 --- !u!1 &1965989207
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,41 +1,36 @@
+using System;
+using Project.Scripts.ZoomInForPuzzles.DraggableObject.Movable;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
 {
-    public class Door_DiseñadorDeInteriores : MonoBehaviour
+    public class Door_DiseñadorDeInteriores : MovableObject
     {
-        [SerializeField] private Controller_DiseñadorDeInteriores _controller;
+        [SerializeField] private Rigidbody2D _rigidbody2D;
 
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-
-        private Vector3 _offset;
-
-        [SerializeField] private bool _justClicked;
-
-        private void Awake()
+        private new void OnMouseDown()
         {
-            _offset = new Vector3(_spriteRenderer.size.x / 2, _spriteRenderer.size.y / 2);
+            base.OnMouseDown();
+            RigidbodyConstraints2D constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+            _rigidbody2D.constraints = constraints;
         }
 
-        private void OnMouseDown()
+        protected override void Move()
         {
-            _controller.SetClickedOnDoorTrue();
-            _justClicked = true;
+            Vector3 mousePosition = GetMouseWorldCoordinates();
+            Vector3 dragPosition = (_initialMousePosition - _currentPosition) + transform.localPosition;
+            if (Vector3.Distance(mousePosition, dragPosition) < 0.1f)
+            {
+                return;
+            }
+            _rigidbody2D.AddForce((mousePosition - dragPosition).normalized, ForceMode2D.Impulse);
         }
 
-        public Vector3 GetOffset()
+        private void OnMouseUp()
         {
-            return _offset;
-        }
-
-        public bool IsJustClicked()
-        {
-            return _justClicked;
-        }
-
-        public void DenyClick()
-        {
-            _justClicked = false;
+            RigidbodyConstraints2D constraints = RigidbodyConstraints2D.FreezeAll;
+            _rigidbody2D.constraints = constraints;
+            _rigidbody2D.velocity = Vector2.zero;
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Project.Scripts.Levels._1.Semaforo
 
         private new void Start()
         {
+            base.Start();
             _currentTimeToChange = _timeToChange;
         }
 
@@ -35,14 +36,13 @@ namespace Project.Scripts.Levels._1.Semaforo
                     _animator.SetTrigger("Press");
                 }
             }
-            
-            
+
             if (_player.GetMovement() == Vector2.zero)
             {
                 return;
             }
             
-            if (_currentAnimatorControllerIndex == _animatorControllers.Length - 1)
+            if (_currentAnimatorControllerIndex == 0)
             {
                 return;
             }

@@ -255,7 +255,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5469646361359393638, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+    - {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
 --- !u!1001 &241185681
 PrefabInstance:
@@ -1473,14 +1475,14 @@ PrefabInstance:
     - target: {fileID: 5111217959759430807, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1148887890}
+      objectReference: {fileID: 1577140309}
     - target: {fileID: 5111217959759430807, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Unlock
+      value: ResetButtonAction
       objectReference: {fileID: 0}
     - target: {fileID: 5111217959759430807, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Project.Scripts.Levels._1._1_1.Door, Assembly-CSharp
+      value: "Project.Scripts.Levels._1.R\xEDndete.ResetButton_Rindete, Assembly-CSharp"
       objectReference: {fileID: 0}
     - target: {fileID: 5111217959759430807, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -3632,6 +3634,24 @@ Transform:
   m_Father: {fileID: 1491411695}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1577140302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5740675091346957271, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+  m_PrefabInstance: {fileID: 670609830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577140309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577140302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589f120190bb0cd42913499b677d34c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _door: {fileID: 1148887890}
 --- !u!1 &1596053763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4719178061816243985, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}

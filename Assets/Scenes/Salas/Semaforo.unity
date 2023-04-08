@@ -154,9 +154,9 @@ MonoBehaviour:
   _door: {fileID: 1148887890}
   _player: {fileID: 94833954}
   _animatorControllers:
-  - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
-  - {fileID: 9100000, guid: 9aa971b1f9df25747bdf02e7fed67eed, type: 2}
   - {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
+  - {fileID: 9100000, guid: 9aa971b1f9df25747bdf02e7fed67eed, type: 2}
+  - {fileID: 9100000, guid: 1318f5068b6f88e4795e5807f5bd882e, type: 2}
 --- !u!114 &94833954 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 137631413151318116, guid: 83ed1948ec7abc8429b6dd196063e5c0, type: 3}
@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5469646361359393639, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 52b0d1ab50ad411458792092b318cd02, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d74e96c3a5085ef43a943cd77f6f97ac, type: 3}
 --- !u!1001 &241185681

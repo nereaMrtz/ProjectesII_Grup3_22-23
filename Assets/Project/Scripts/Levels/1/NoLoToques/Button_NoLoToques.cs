@@ -34,19 +34,18 @@ namespace Project.Scripts.Levels._1.NoLoToques
 
         private void OnTriggerEnter2D(Collider2D collider2D)
         {
-            if (_pressed)
-            {
-                return;
-            }
             if (collider2D.gameObject.layer != PLAYER_LAYER)
             {
                 return;
             }
             
+            if (!_pressed)
+            {
+                StartCoroutine(_resetButton.FlashButton());    
+            }
             _audioSourcePressButton.Play();
             PressButton();
             _door.CloseDoor();
-            StartCoroutine(_resetButton.FlashButton());
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)

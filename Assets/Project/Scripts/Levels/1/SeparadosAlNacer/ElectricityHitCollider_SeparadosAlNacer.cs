@@ -11,8 +11,6 @@ namespace Project.Scripts.Levels._1.SeparadosAlNacer
 
         private void OnMouseEnter()
         {
-            Debug.Log("Holi");
-            
             if (Time.time - _electricityPanel.GetTime() > _timeToConnect)
             {
                 return;
