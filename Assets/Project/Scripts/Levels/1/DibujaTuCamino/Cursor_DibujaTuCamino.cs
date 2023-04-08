@@ -45,6 +45,5 @@ namespace Project.Scripts.Levels._1.DibujaTuCamino
                 Random.Range(bounds.min.z, bounds.max.z)
             );
         }
-
     }
 }

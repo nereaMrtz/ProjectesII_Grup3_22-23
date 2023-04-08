@@ -1,12 +1,12 @@
 using UnityEngine;
 
-namespace Project.Scripts.Levels._1.RealidadCuantica
+namespace Project.Scripts.Levels._1.BajaHaciaArriba
 {
-    public class Teleport_RealidadCuantica : MonoBehaviour
+    public class Teleport_BajaHaciaArriba : MonoBehaviour
     {
         private const int PLAYER_LAYER = 6;
 
-        [SerializeField] private Teleport_RealidadCuantica _pointToTeleport;
+        [SerializeField] private Teleport_BajaHaciaArriba _pointToTeleport;
 
         [SerializeField] private GameObject _player;
 

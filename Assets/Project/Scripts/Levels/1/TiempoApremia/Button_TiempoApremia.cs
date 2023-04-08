@@ -1,6 +1,4 @@
 using System;
-using Project.Scripts.Levels._1.BrisaPorLaEspalda;
-using Project.Scripts.Levels._1.Manten;
 using Project.Scripts.Managers;
 using UnityEngine;
 

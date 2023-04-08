@@ -11,7 +11,7 @@ namespace Project.Scripts.Levels._1.MantenPlanta
         
         private Vector3 _targetPosition;
 
-        [SerializeField] private bool _correctPlace;
+        private bool _correctPlace;
 
         private void OnMouseDown()
         {

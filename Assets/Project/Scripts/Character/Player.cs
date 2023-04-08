@@ -31,9 +31,22 @@ namespace Project.Scripts.Character
             _audioSource = gameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, STEPS_SOUND_CLIP_NAME);
         }
+        
+        void UnityApiMouseEvents()
+        {
+            Ray ray = new Ray(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
+            
+            if (Physics.Raycast(ray, out RaycastHit hitObject))
+            {
+                Debug.Log(hitObject.collider.gameObject.name);
+            }
+     
+        }
 
         void Update()
         {
+            UnityApiMouseEvents();
+            
             if (_moveWithKeyboard)
             {
                 Controls();
