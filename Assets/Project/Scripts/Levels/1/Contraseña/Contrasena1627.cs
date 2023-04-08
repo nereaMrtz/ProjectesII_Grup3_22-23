@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Contrasena1627 : MonoBehaviour
 {
-    [SerializeField] int level;
+    int level;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] UnlockableObject door;
     int[] combination = new int[4];
