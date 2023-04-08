@@ -37,7 +37,6 @@ namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
 
         private void OnMouseUp()
         {
-            
             RigidbodyConstraints2D constraints = RigidbodyConstraints2D.FreezeAll;
             _rigidbody2D.constraints = constraints;
             _rigidbody2D.velocity = Vector2.zero;

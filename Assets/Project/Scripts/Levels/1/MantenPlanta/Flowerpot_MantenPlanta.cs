@@ -5,45 +5,35 @@ namespace Project.Scripts.Levels._1.MantenPlanta
 {
     public class Flowerpot_MantenPlanta : MovableObject
     {
-        [SerializeField] private CapsuleCollider2D _capsuleCollider2D;
+        [SerializeField] private Rigidbody2D _rigidbody2D;
 
-        [SerializeField] private Button_MantenPlanta _button;
-        
-        private Vector3 _targetPosition;
+        [SerializeField] private Collider2D _playerCollider2D;
 
-        private bool _correctPlace;
-
-        private void OnMouseDown()
+        private new void OnMouseDown()
         {
-            _capsuleCollider2D.enabled = false;
+            base.OnMouseDown();
+            RigidbodyConstraints2D constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+            _rigidbody2D.constraints = constraints;
+            Physics2D.IgnoreCollision(_playerCollider2D, GetComponent<Collider2D>());
         }
 
         protected override void Move()
         {
-            _targetPosition = GetMouseWorldCoordinates();
-
-            Vector3 nextPosition = Vector2.MoveTowards(transform.position, _targetPosition, Time.deltaTime * 10);
-            
-            if (nextPosition.x < -5.34f || nextPosition.x > 4.9f || nextPosition.y < -2.72f || nextPosition.y > 1.5f)
+            Vector3 mousePosition = GetMouseWorldCoordinates();
+            Vector3 dragPosition = (_initialMousePosition - _currentPosition) + transform.localPosition;
+            if (Vector3.Distance(mousePosition, dragPosition) < 0.1f)
             {
                 return;
             }
-
-            transform.position = nextPosition;
+            _rigidbody2D.AddForce((mousePosition - dragPosition).normalized, ForceMode2D.Impulse);
         }
 
         private void OnMouseUp()
         {
-            _capsuleCollider2D.enabled = true;
-            if (_correctPlace)
-            {
-                _button.AnchorThePot();
-            }
-        }
-
-        public void SetCorrectPlace(bool correctPlace)
-        {
-            _correctPlace = correctPlace;
+            RigidbodyConstraints2D constraints = RigidbodyConstraints2D.FreezeAll;
+            _rigidbody2D.constraints = constraints;
+            _rigidbody2D.velocity = Vector2.zero;
+            Physics2D.IgnoreCollision(_playerCollider2D, GetComponent<Collider2D>(), false);
         }
     }
 }

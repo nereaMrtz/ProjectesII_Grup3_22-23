@@ -654,6 +654,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25.256157
       objectReference: {fileID: 0}
+    - target: {fileID: 5853661706570828557, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: _fadeBrightness
+      value: 
+      objectReference: {fileID: 1330149412}
+    - target: {fileID: 5853661706570828557, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
+      propertyPath: _masterMuteIcon
+      value: 
+      objectReference: {fileID: 234000951}
     - target: {fileID: 7507958660187457546, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}
       propertyPath: _fade
       value: 
@@ -1809,10 +1817,6 @@ PrefabInstance:
       propertyPath: m_text
       value: "Encuentra el camino a la puerta \rdespu\xE9s de haber pulsado los 2
         \rbotones"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5389408317041451495, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8339851715009930479, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_LocalPosition.x

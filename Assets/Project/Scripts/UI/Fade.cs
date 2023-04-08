@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Project.Scripts.Managers;
 using Project.Scripts.ProjectMaths;
@@ -8,22 +9,44 @@ namespace Project.Scripts.UI
 {
     public class Fade : MonoBehaviour
     {
+        private const string FADE = "Fade";
+        private const string REVERSE_FADE = "Reverse Fade";
+        
         [SerializeField] private Image _image;
 
-        [SerializeField] private float _timeToChange;
+        private AudioSource _audioSourceFade;
+        private AudioSource _audioSourceReverseFade;
 
+        private float _timeToChange;
+        
         private float _currentTime;
 
-        private Color _auxColor;
+        private void Awake()
+        {
+            _audioSourceFade = gameObject.AddComponent<AudioSource>();
+            _audioSourceReverseFade = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceFade, FADE);
+            AudioManager.Instance.SetAudioSourceComponent(_audioSourceReverseFade, REVERSE_FADE);
+            _timeToChange = _audioSourceFade.clip.length;
+        }
 
         private void OnEnable()
         {
             _image.enabled = true;
-            FadeAnimation();
+            FadeAnimation(false);
         }
 
-        public void FadeAnimation() {
+        public void FadeAnimation(bool reverseFade) {
 
+            if (reverseFade)
+            {
+                _audioSourceReverseFade.Play();
+            }
+            else
+            {
+                _audioSourceFade.Play();    
+            }
+            
             _currentTime = _timeToChange;
 
             if (_image.color.a == 1)
@@ -41,11 +64,13 @@ namespace Project.Scripts.UI
 
             GameManager.Instance.SetFading(true);
 
+            Color auxColor = new Color();
+
             while (_currentTime > 0)
             {                
                 _currentTime -= Time.deltaTime;
-                _auxColor.a = CustomMath.Map(_currentTime, _timeToChange, 0, newMin, newMax);
-                _image.color = _auxColor;
+                auxColor.a = CustomMath.Map(_currentTime, _timeToChange, 0, newMin, newMax);
+                _image.color = auxColor;
                 
                 yield return null;
             }
@@ -53,7 +78,7 @@ namespace Project.Scripts.UI
         }
 
         public bool IsFinished() {
-            return _currentTime < 0;
+            return _currentTime <= 0;
         }
     }
 }

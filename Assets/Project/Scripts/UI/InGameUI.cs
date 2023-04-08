@@ -13,6 +13,7 @@ namespace Project.Scripts.UI
         private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
         private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
         private const String COIN_SPRITE_CODE = "<sprite=0>";
+        private const String BOTON_MENU = "BotonMenu";
 
         [SerializeField] private GameObject _masterMuteIcon;
         /*[SerializeField] private GameObject _SFXMuteIcon;
@@ -20,7 +21,13 @@ namespace Project.Scripts.UI
 
         [SerializeField] private TextMeshProUGUI _hintCoinsMarker;
 
-        private bool onInventory;
+        private AudioSource _audioSource;
+
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
+        }
 
         private void OnEnable()
         {
@@ -46,6 +53,11 @@ namespace Project.Scripts.UI
         public void UpdateCoinsMarker()
         {
             _hintCoinsMarker.text = GameManager.Instance.GetHintCoins() + COIN_SPRITE_CODE;
+        }
+
+        public void PlaySoundUIButton()
+        {
+            _audioSource.Play();
         }
 
         public void SetPause()

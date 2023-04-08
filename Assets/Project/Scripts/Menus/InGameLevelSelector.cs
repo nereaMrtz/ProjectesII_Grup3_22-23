@@ -1,3 +1,4 @@
+using Project.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class InGameLevelSelector : MonoBehaviour
     public void ChangeScene()
     {
         Time.timeScale = 1;
+        GameManager.Instance.SetPause(false);
         SceneManager.LoadScene(int.Parse(level.text));
     }
 }

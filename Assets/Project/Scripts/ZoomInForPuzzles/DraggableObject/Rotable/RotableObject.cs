@@ -12,7 +12,7 @@ namespace Project.Scripts.ZoomInForPuzzles.DraggableObject.Rotable
         private float _offsetAngle;
         private float _initialMouseAngle;
 
-        private void OnMouseDown()
+        private new void OnMouseDown()
         {
             _offsetAngle = transform.localEulerAngles.z;
             _screenOffsetPoint = Camera.main.WorldToScreenPoint(_gameObjectReference.transform.position);
