@@ -1,3 +1,4 @@
+using System;
 using Project.Scripts.Levels._1._1_1;
 using Project.Scripts.Managers;
 using UnityEngine;
@@ -24,6 +25,11 @@ namespace Project.Scripts.Levels._1.Tinder
         private void Start()
         {
             _mobileGameObject = _mobile.gameObject;
+        }
+
+        private void OnEnable()
+        {
+            _mobile.transform.localRotation = Quaternion.Euler(0,0,270);
         }
 
         public void UnPauseGame()

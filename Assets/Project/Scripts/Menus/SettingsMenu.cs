@@ -16,9 +16,12 @@ namespace Project.Scripts.Menus
         private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
         private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
 
+        private const String PLAYER_PREFS_BRIGHTNESS = "Player Prefs Brightness";
+
         [SerializeField] private Slider _masterVolumeSlider;
         [SerializeField] private Slider _SFXVolumeSlider;
         [SerializeField] private Slider _musicVolumeSlider;
+        [SerializeField] private Slider _brightnessSlider;
 
         [SerializeField] private Toggle _masterVolumeMute;
         [SerializeField] private Toggle _SFXVolumeMute;
@@ -46,19 +49,22 @@ namespace Project.Scripts.Menus
             _SFXVolumeMute.isOn = auxSFXVolumeMute;
             _musicVolumeMute.isOn = auxMusicVolumeMute;
 
+            _brightnessSlider.value = PlayerPrefs.GetFloat(PLAYER_PREFS_BRIGHTNESS);
+
             _fullscreenToggle.isOn = Screen.fullScreen;
         }
 
         public void FullScreenToggle(bool fullScreen)
         {
             Screen.fullScreen = fullScreen;
-            Screen.fullScreenMode = fullScreen ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed;
+            //Screen.fullScreenMode = fullScreen ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed;
         }
 
         public void SetBrightness(float brightness)
         {
             float auxAlpha = CustomMath.Map(brightness, 0, 1, 1, 0);
             _fadeBrightness.color = new Color(0, 0, 0, auxAlpha);
+            PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, brightness);
         }
 
         public void SetMasterVolume(float volume)
@@ -78,7 +84,7 @@ namespace Project.Scripts.Menus
 
         public void SetVolume(float volume, String playerPrefsVolumeMixer, String playerPrefsMute/*, GameObject iconMute*/)
         {
-            if (volume <= -50.0f)
+            if (volume <= -30.0f)
             {
                 AudioManager.Instance.SetVolumePrefs(playerPrefsVolumeMixer, -80);
                 SetMuteToggle(true, playerPrefsVolumeMixer);

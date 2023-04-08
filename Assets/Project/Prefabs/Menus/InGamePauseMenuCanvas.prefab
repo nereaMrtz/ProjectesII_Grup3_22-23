@@ -1753,6 +1753,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5596260953113105826, guid: 4c7a94aa8d0289d4791d326652124d49, type: 3}
+      propertyPath: m_MinValue
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 5596260953651791360, guid: 4c7a94aa8d0289d4791d326652124d49, type: 3}
       propertyPath: m_Name
       value: InGameOptionsMenu
@@ -1872,6 +1876,14 @@ PrefabInstance:
     - target: {fileID: 5596260953886018433, guid: 4c7a94aa8d0289d4791d326652124d49, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596260953902499449, guid: 4c7a94aa8d0289d4791d326652124d49, type: 3}
+      propertyPath: m_MinValue
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596260954035342894, guid: 4c7a94aa8d0289d4791d326652124d49, type: 3}
+      propertyPath: m_MinValue
+      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c7a94aa8d0289d4791d326652124d49, type: 3}

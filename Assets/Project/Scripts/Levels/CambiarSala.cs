@@ -24,7 +24,7 @@ namespace Project.Scripts.Levels
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                GameManager.Instance.SetLevels(SceneManager.GetActiveScene().buildIndex - 1);
+                GameManager.Instance.SetLevels(SceneManager.GetActiveScene().buildIndex);
                 StartCoroutine(FadeTransition());
             }
         }
