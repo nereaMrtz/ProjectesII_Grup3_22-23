@@ -22,7 +22,7 @@ namespace Project.Scripts.Levels._1.Notob
 
         private void Start()
         {
-            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource = _button.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, DISCOVERY);
         }
 
@@ -36,8 +36,8 @@ namespace Project.Scripts.Levels._1.Notob
                     return;
                 }
             }
-            _audioSource.Play();
             _button.SetActive(true);
+            _audioSource.Play();
             StartCoroutine(FadeInButton());
             for (int i = 0; i < _letters.Length; i++)
             {

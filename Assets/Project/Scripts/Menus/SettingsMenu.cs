@@ -26,7 +26,6 @@ namespace Project.Scripts.Menus
         [SerializeField] private Toggle _masterVolumeMute;
         [SerializeField] private Toggle _SFXVolumeMute;
         [SerializeField] private Toggle _musicVolumeMute;
-        [SerializeField] private Toggle _fullscreenToggle;
 
         [SerializeField] private Image _fadeBrightness;
 
@@ -50,19 +49,11 @@ namespace Project.Scripts.Menus
             _musicVolumeMute.isOn = auxMusicVolumeMute;
 
             _brightnessSlider.value = PlayerPrefs.GetFloat(PLAYER_PREFS_BRIGHTNESS);
-
-            _fullscreenToggle.isOn = Screen.fullScreen;
-        }
-
-        public void FullScreenToggle(bool fullScreen)
-        {
-            Screen.fullScreen = fullScreen;
-            //Screen.fullScreenMode = fullScreen ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed;
         }
 
         public void SetBrightness(float brightness)
         {
-            float auxAlpha = CustomMath.Map(brightness, 0, 1, 1, 0);
+            float auxAlpha = CustomMath.Map(brightness, 0, 1, 0.35f, 0);
             _fadeBrightness.color = new Color(0, 0, 0, auxAlpha);
             PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, brightness);
         }

@@ -9,6 +9,11 @@ namespace Project.Scripts.Levels._1.MeSobraElDinero {
         [SerializeField] private UnlockableObject _door;
         
         public void OpenDoor() {
+            
+            if (_door.IsUnlocked())
+            {
+                return;    
+            }
             _door.Unlock();
         }
     }

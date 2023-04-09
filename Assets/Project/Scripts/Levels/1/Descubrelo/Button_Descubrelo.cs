@@ -16,7 +16,7 @@ namespace Project.Scripts.Levels._1.Descubrelo
         private new void Start()
         {
             base.Start();
-            _audioSourceDiscovery = gameObject.AddComponent<AudioSource>();
+            _audioSourceDiscovery = _flowerPotButton.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSourceDiscovery, DISCOVERY);
         }
 
@@ -31,8 +31,8 @@ namespace Project.Scripts.Levels._1.Descubrelo
 
             if (!_flowerPotButton.activeSelf)
             {
-                _audioSourceDiscovery.Play();
                 _flowerPotButton.SetActive(true);
+                _audioSourceDiscovery.Play();
             }
         }
 

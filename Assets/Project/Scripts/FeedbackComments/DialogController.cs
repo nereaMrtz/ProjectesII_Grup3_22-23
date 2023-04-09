@@ -23,7 +23,7 @@ namespace Project.Scripts.FeedbackComments
         private void Update()
         {
 
-            if (GameManager.Instance.IsInZoomInState()) 
+            if (GameManager.Instance.IsPause()) 
             {
                 pressKey.SetActive(false);
                 CloseDialogBox();

@@ -33,7 +33,6 @@ namespace Project.Scripts.UI
         {
             if (SceneManager.GetActiveScene().name == EXCLUDE_LEVEL)
             {
-                Debug.Log(_hintCoinsMarker.text);
                 _hintCoinsMarker.text = "999" + COIN_SPRITE_CODE;
             }
             else

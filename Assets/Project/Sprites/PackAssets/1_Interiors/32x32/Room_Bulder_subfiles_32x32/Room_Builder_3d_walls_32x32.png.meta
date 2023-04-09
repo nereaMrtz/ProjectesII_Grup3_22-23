@@ -511,7 +511,7 @@ TextureImporter:
         width: 68
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -519,6 +519,27 @@ TextureImporter:
       bones: []
       spriteID: 626007a2b6dd21b48be53b26b9a3ef1b
       internalID: 1708324286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outside Wall
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1632
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9e658058e25f6429d3e04ee0e46255
+      internalID: -529510943
       vertices: []
       indices: 
       edges: []
@@ -548,6 +569,7 @@ TextureImporter:
       Room_Builder_3d_walls_32x32_0: -1033373873
       Room_Builder_3d_walls_32x32_1: -978741803
       Brown Horizontal Wall Without Edge: -1162917899
+      Outside Wall: -529510943
       Room_Builder_3d_walls_32x32_13: -1694987661
       Room_Builder_3d_walls_32x32_4: 936129524
       Room_Builder_3d_walls_32x32_5: 1903200522

@@ -25,6 +25,26 @@ namespace Project.Scripts.Levels._1.PapelesInvertidos
         void Update()
         {
             Controls();
+            
+            Cheats();
+        }
+        
+        private void Cheats()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                GameManager.Instance.UnlockAllLevels();
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                GameManager.Instance.GoNextLevel();
+            }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                GameManager.Instance.GoLastLevel();
+            }
         }
 
         private void FixedUpdate()

@@ -15,6 +15,9 @@ namespace Project.Scripts.Levels._1.Matalo
         [SerializeField] private CapsuleCollider2D _catCapsuleCollider2D;
 
         [SerializeField] private SpriteRenderer[] _hiddenScenario;
+        [SerializeField] private SpriteRenderer[] _scenarioToHide;
+        [SerializeField] private SpriteRenderer[] _lightsOut;
+        [SerializeField] private SpriteRenderer _dark;
 
         [SerializeField] private Cat_Matalo _cat;
 
@@ -22,7 +25,7 @@ namespace Project.Scripts.Levels._1.Matalo
         [SerializeField] private GameObject _trapFloor;
         [SerializeField] private GameObject _fakeWall;
 
-        [SerializeField] private Image _image;
+        
 
         private AudioSource _audioSource;
 
@@ -123,7 +126,10 @@ namespace Project.Scripts.Levels._1.Matalo
 
         private IEnumerator KillCat()
         {
-            _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 1);
+            for (int i = 0; i < _lightsOut.Length; i++)
+            {
+                _lightsOut[i].color = new Color(_lightsOut[i].color.r, _lightsOut[i].color.g, _lightsOut[i].color.b, 1);
+            }
             float transitionTime = 2;
             _trapFloor.SetActive(true);
             _audioSource.Play();
@@ -139,7 +145,10 @@ namespace Project.Scripts.Levels._1.Matalo
             
             _cat.gameObject.SetActive(false);
             _audioSource.Play();
-            _image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
+            for (int i = 0; i < _lightsOut.Length; i++)
+            {
+                _lightsOut[i].color = new Color(_lightsOut[i].color.r, _lightsOut[i].color.g, _lightsOut[i].color.b, 0);
+            }
             _capsuleCollider2D.enabled = true;
             _animator.SetTrigger("Press");
         }
@@ -148,18 +157,34 @@ namespace Project.Scripts.Levels._1.Matalo
         {
             float timeToFade = 1;
 
+            float initialAlphaDark = _dark.color.a;
+
+            Color auxColor;
+
             while (timeToFade > 0)
             {
                 timeToFade -= Time.deltaTime;
 
-                float auxAlpha = ProjectMaths.CustomMath.Map(timeToFade, 1, 0, 0, 1);
-
+                float auxAlphaToReveal = ProjectMaths.CustomMath.Map(timeToFade, 1, 0, 0, 1);
                 for (int i = 0; i < _hiddenScenario.Length; i++)
                 {
-                    Color auxColor = _hiddenScenario[i].color;
-                    auxColor = new Color(auxColor.r, auxColor.g, auxColor.b, auxAlpha);
+                    auxColor = _hiddenScenario[i].color;
+                    auxColor = new Color(auxColor.r, auxColor.g, auxColor.b, auxAlphaToReveal);
                     _hiddenScenario[i].color = auxColor;
                 }
+
+                float auxAlphaToHide = ProjectMaths.CustomMath.Map(timeToFade, 1, 0, 1, 0);
+                for (int i = 0; i < _scenarioToHide.Length; i++)
+                {
+                    auxColor = _scenarioToHide[i].color;
+                    auxColor = new Color(auxColor.r, auxColor.g, auxColor.b, auxAlphaToHide);
+                    _scenarioToHide[i].color = auxColor; 
+                }
+
+                float auxAlphaDark = ProjectMaths.CustomMath.Map(timeToFade, 1, 0, initialAlphaDark, 0);
+                auxColor = _dark.color;
+                auxColor = new Color(auxColor.r, auxColor.g, auxColor.b, auxAlphaDark);
+                _dark.color = auxColor; 
 
                 yield return null;
             }

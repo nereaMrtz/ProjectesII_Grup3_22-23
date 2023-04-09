@@ -31,7 +31,7 @@ namespace Project.Scripts.UI
                 GameManager.Instance.SetHintUsedInLevel(SceneManager.GetActiveScene().buildIndex);
             }
             
-            GameManager.Instance.SetZoomInState(true);
+            GameManager.Instance.SetPause(true);
             
             if (GameManager.Instance.GetHintCoins() != 0)
             {
@@ -44,7 +44,7 @@ namespace Project.Scripts.UI
         public void ActivePlayerMovement()
         {
             Time.timeScale = 1;
-            GameManager.Instance.SetZoomInState(false);
+            GameManager.Instance.SetPause(false);
         }
     }
 }

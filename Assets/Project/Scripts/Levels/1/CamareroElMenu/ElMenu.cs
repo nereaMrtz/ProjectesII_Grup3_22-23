@@ -17,7 +17,7 @@ public class ElMenu : MonoBehaviour
 
     public void NextMenu()
     {
-        if (actualSprite+1 <= menuSprites.Length)
+        if (actualSprite+1 <= menuSprites.Length - 1)
         {
             menu.image.sprite = menuSprites[actualSprite + 1];
             actualSprite++;

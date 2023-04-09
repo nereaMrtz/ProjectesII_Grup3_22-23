@@ -15,7 +15,6 @@ namespace Project.Scripts.Managers
         private bool _drugged;
         private bool _zoomInState;
         private bool _interactableClicked;
-        private bool _clickOnEdge;
         private bool _pause;
         private bool _fading;
 
@@ -33,11 +32,11 @@ namespace Project.Scripts.Managers
                 _instance = this;
                 _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
                 _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
-                levels = new bool[SceneManager.sceneCountInBuildSettings];
+                levels = new bool[SceneManager.sceneCountInBuildSettings - 1];
                 levels[0] = true;
                 if (!PlayerPrefs.HasKey(PLAYER_PREFS_BRIGHTNESS))
                 {
-                    PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, 1);    
+                    PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, 1);
                 }
             }
             else
@@ -51,36 +50,6 @@ namespace Project.Scripts.Managers
         public static GameManager Instance
         {
             get { return _instance; }
-        }
-
-        public void SetZoomInState(bool zoomInState)
-        {
-            _zoomInState = zoomInState;
-        }
-        
-        public bool IsInZoomInState()
-        {
-            return _zoomInState;
-        }
-
-        public void SetInteractableClicked(bool interactableClicked)
-        {
-            _interactableClicked = interactableClicked;
-        }
-
-        public bool IsInteractableClicked()
-        {
-            return _interactableClicked;
-        }
-        
-        public bool IsClickingOnEdge() 
-        { 
-            return _clickOnEdge; 
-        } 
- 
-        public void SetClickOnEdge(bool clickOnEdge) 
-        { 
-            _clickOnEdge = clickOnEdge; 
         }
 
         public void SetPause(bool pause)
@@ -158,6 +127,25 @@ namespace Project.Scripts.Managers
         public void ApplyResolution()
         {
             Screen.SetResolution(_currentResolution.width, _currentResolution.height, true);
+        }
+
+        public void UnlockAllLevels()
+        {
+            for (int i = 0; i < levels.Length; i++)
+            {
+                levels[i] = true;
+            }
+        }
+
+        public void GoNextLevel()
+        {
+            levels[SceneManager.GetActiveScene().buildIndex] = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        public void GoLastLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 }

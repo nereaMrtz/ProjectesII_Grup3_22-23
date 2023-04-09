@@ -18,9 +18,6 @@ namespace Project.Scripts.Character
         private AudioSource _audioSource;
         
         private readonly float _currentSpeed = 200;
-
-        /*private int[] _randomMoves = new[] { 1, -1, -1, 1 };
-        private int[] _randomAxis = new[] { 0, 0, 1, 1 };*/
         
         private bool _moving;
 
@@ -31,21 +28,9 @@ namespace Project.Scripts.Character
             _audioSource = gameObject.AddComponent<AudioSource>();
             AudioManager.Instance.SetAudioSourceComponent(_audioSource, STEPS_SOUND_CLIP_NAME);
         }
-        
-        void UnityApiMouseEvents()
-        {
-            Ray ray = new Ray(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
-            
-            if (Physics.Raycast(ray, out RaycastHit hitObject))
-            {
-                Debug.Log(hitObject.collider.gameObject.name);
-            }
-     
-        }
 
         void Update()
         {
-            UnityApiMouseEvents();
             
             if (_moveWithKeyboard)
             {
@@ -53,6 +38,27 @@ namespace Project.Scripts.Character
 
             }
             UpdateAnimationController();
+
+            Cheats();
+
+        }
+
+        private void Cheats()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                GameManager.Instance.UnlockAllLevels();
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                GameManager.Instance.GoNextLevel();
+            }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                GameManager.Instance.GoLastLevel();
+            }
         }
 
         private void FixedUpdate()
@@ -81,54 +87,18 @@ namespace Project.Scripts.Character
                 if (Input.GetKey(KeyCode.A))
                 {
                     _movementDirection.x += _inverted ? 1 : -1;
-
-                    /*if (_randomMovement)
-                    {
-                        _movementDirection[_randomAxis[0]] = _randomMoves[0];
-                    }
-                    else
-                    {
-                        _movementDirection.x += -1;    
-                    }*/
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
                     _movementDirection.x += _inverted ? -1 : 1;
-                    
-                    /*if (_randomMovement)
-                    {
-                        _movementDirection[_randomAxis[1]] = _randomMoves[1];
-                    }
-                    else
-                    {
-                        _movementDirection.x += 1;    
-                    }*/
                 }
                 if (Input.GetKey(KeyCode.W))
                 {
                     _movementDirection.y += _inverted ? -1 : 1;
-
-                    /*if (_randomMovement)
-                    {
-                        _movementDirection[_randomAxis[2]] = _randomMoves[2];
-                    }
-                    else
-                    {
-                        _movementDirection.y += 1;
-                    }*/
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
                     _movementDirection.y += _inverted ? 1 : -1;
-
-                    /*if (_randomMovement)
-                    {
-                        _movementDirection[_randomAxis[3]] = _randomMoves[3];
-                    }
-                    else
-                    {
-                        _movementDirection.y += -1;
-                    }*/
                 }
             }
         }
@@ -180,20 +150,5 @@ namespace Project.Scripts.Character
         {
             _movementDirection = movementDirection;
         }
-
-        public float GetCurrentSpeed()
-        {
-            return _currentSpeed;
-        }
-
-        /*public void SetRandomAxis(int[] randomAxis)
-        {
-            _randomAxis = randomAxis;
-        }
-
-        public int[] GetRandomAxis()
-        {
-            return _randomAxis;
-        }*/
     }
 }
