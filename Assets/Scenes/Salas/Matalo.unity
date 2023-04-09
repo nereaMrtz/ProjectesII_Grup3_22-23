@@ -1941,10 +1941,6 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 471432407370249758, guid: 8c3dd0879a596384f86ec2f5b3275b51, type: 3}
-      propertyPath: _sounds.Array.data[31]._name
-      value: MouseClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 471432407370249758, guid: 8c3dd0879a596384f86ec2f5b3275b51, type: 3}
       propertyPath: _sounds.Array.data[32]._name
       value: MouseClick
       objectReference: {fileID: 0}
@@ -1960,10 +1956,6 @@ PrefabInstance:
       propertyPath: _sounds.Array.data[35]._name
       value: MouseClick
       objectReference: {fileID: 0}
-    - target: {fileID: 471432407370249758, guid: 8c3dd0879a596384f86ec2f5b3275b51, type: 3}
-      propertyPath: _sounds.Array.data[31]._audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ccd05c882cab0834b9b08dbbe2d14665, type: 3}
     - target: {fileID: 471432407370249758, guid: 8c3dd0879a596384f86ec2f5b3275b51, type: 3}
       propertyPath: _sounds.Array.data[32]._audioClip
       value: 
@@ -2574,7 +2566,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.09375}
+    oldSize: {x: 0.9375, y: 1.03125}
     newSize: {x: 1, y: 1.09375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

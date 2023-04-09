@@ -39,7 +39,7 @@ namespace Project.Scripts.Levels._1.Tinder
 
         public void ShowNextMatch()
         {
-            if (_currentIndex == _sprites.Length - 1)
+            if (_currentIndex == _sprites.Length)
             {
                 UnPauseGame();
                 gameObject.SetActive(false);
