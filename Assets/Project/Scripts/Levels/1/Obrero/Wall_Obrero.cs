@@ -20,6 +20,8 @@ namespace Project.Scripts.Levels._1.Obrero
 
         [SerializeField] private Sprite _finalCrash;
 
+        [SerializeField] private GameObject _oscuro;
+
         private AudioSource _audioSourceHit;
         private AudioSource _audioSourceDestroy;
         
@@ -61,8 +63,10 @@ namespace Project.Scripts.Levels._1.Obrero
 
         private IEnumerator DestroyWall()
         {
+            _oscuro.SetActive(false);
             yield return new WaitForSecondsRealtime(_audioSourceDestroy.clip.length);
-            Destroy(gameObject);
+            Destroy(gameObject); 
+
         }
     }
 }
