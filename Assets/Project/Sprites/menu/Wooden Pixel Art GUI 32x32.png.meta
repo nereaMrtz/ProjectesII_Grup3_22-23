@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,8 +107,8 @@ TextureImporter:
       name: Wooden Pixel Art GUI 32x32_0
       rect:
         serializedVersion: 2
-        x: 434
-        y: 687
+        x: 432
+        y: 559
         width: 124
         height: 32
       alignment: 0
@@ -146,7 +146,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wooden Pixel Art GUI 32x32_2
+      name: Pause Button
       rect:
         serializedVersion: 2
         x: 1
@@ -230,7 +230,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wooden Pixel Art GUI 32x32_6
+      name: Reset Button
       rect:
         serializedVersion: 2
         x: 33
@@ -338,10 +338,10 @@ TextureImporter:
       name: Wooden Pixel Art GUI 32x32_11
       rect:
         serializedVersion: 2
-        x: 161
-        y: 287
-        width: 93
-        height: 98
+        x: 162
+        y: 288
+        width: 92
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,7 +461,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wooden Pixel Art GUI 32x32_17
+      name: sdfg
       rect:
         serializedVersion: 2
         x: 226
@@ -503,7 +503,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wooden Pixel Art GUI 32x32_19
+      name: UnMutedIcon
       rect:
         serializedVersion: 2
         x: 194
@@ -524,7 +524,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wooden Pixel Art GUI 32x32_20
+      name: MutedIcon
       rect:
         serializedVersion: 2
         x: 226
@@ -595,7 +595,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -603,6 +603,111 @@ TextureImporter:
       bones: []
       spriteID: 914d08e5eddc7594a9810b735fd55418
       internalID: -28071180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dfgh
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 512
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8396398f32f8354ca3895dee9cc7d2b
+      internalID: -1893948517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropdownArrow
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1088
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d592e5dea3082d4899ccf34da92663b
+      internalID: 1988915174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PanelOptions
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 32
+        width: 92
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de4b287b3f64ac46a244598fcaf5f0a
+      internalID: 448414850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropdownResolutionPanel
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 397
+        width: 74
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51ce120f7dbace46ac3cb4479fde8c5
+      internalID: -4236428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Pixel Art GUI 32x32_7
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 512
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244bf484578ead14ba6c6778e44c0850
+      internalID: 623110118
       vertices: []
       indices: 
       edges: []
@@ -620,28 +725,33 @@ TextureImporter:
     nameFileIdTable:
       Wooden Pixel Art GUI 32x32_0: 1170770439
       Wooden Pixel Art GUI 32x32_14: 92149896
+      DropdownArrow: 1988915174
+      PanelOptions: 448414850
       Wooden Pixel Art GUI 32x32_15: -413268836
       Wooden Pixel Art GUI 32x32_1: -1294795298
       Wooden Pixel Art GUI 32x32_18: 631527697
       Wooden Pixel Art GUI 32x32_13: 1949258971
       Wooden Pixel Art GUI 32x32_16: 61768876
+      MutedIcon: 1040293349
       Wooden Pixel Art GUI 32x32_3: -551976125
       Wooden Pixel Art GUI 32x32_5: -1662557582
       la_otraaa: -2109559434
+      dfgh: -1893948517
+      UnMutedIcon: 964600631
       Wooden Pixel Art GUI 32x32_10: 1296263288
-      Wooden Pixel Art GUI 32x32_2: -877714249
+      sdfg: 112975199
+      Pause Button: -877714249
       Wooden Pixel Art GUI 32x32_8: 782203970
       otra_flecha: 1110174052
       levelButton: -1749189293
+      Wooden Pixel Art GUI 32x32_7: 623110118
       Wooden Pixel Art GUI 32x32_11: -704328572
-      Wooden Pixel Art GUI 32x32_17: 112975199
-      Wooden Pixel Art GUI 32x32_19: 964600631
-      Wooden Pixel Art GUI 32x32_6: 558619610
-      Wooden Pixel Art GUI 32x32_4: -1135305195
+      Reset Button: 558619610
       back: -28071180
       Wooden Pixel Art GUI 32x32_9: 796713910
-      Wooden Pixel Art GUI 32x32_20: 1040293349
+      Wooden Pixel Art GUI 32x32_4: -1135305195
       Wooden Pixel Art GUI 32x32_12: -1580391852
+      DropdownResolutionPanel: -4236428
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

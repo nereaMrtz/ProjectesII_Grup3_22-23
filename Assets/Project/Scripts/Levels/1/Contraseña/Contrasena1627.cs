@@ -1,15 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 using Project.Scripts.Interactable.Static;
+using TMPro;
+using UnityEngine;
 
 public class Contrasena1627 : MonoBehaviour
 {
-    [SerializeField] int level;
+    int level;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] UnlockableObject door;
     int[] combination = new int[4];

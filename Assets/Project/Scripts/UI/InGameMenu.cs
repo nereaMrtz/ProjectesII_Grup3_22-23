@@ -1,4 +1,3 @@
-using System;
 using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +7,6 @@ namespace Project.Scripts.UI
     public class InGameMenu : MonoBehaviour
     {
         private const int MAIN_MENU_BUILD_INDEX = 0;
-        private const string BOTON_MENU = "BotonMenu";
 
         [SerializeField] private GameObject _pauseMenuPanel;
 
@@ -19,11 +17,12 @@ namespace Project.Scripts.UI
         private void OnEnable()
         {
             _currentActivePanel = gameObject;
+            Time.timeScale = 0;
         }
         
-        public void ButtonSound()
+        private void ButtonSound()
         {
-            AudioManager.Instance.Play(BOTON_MENU);
+            AudioManager.Instance.PlayMenuButtonSound();
         }
 
         public void ResumeButton()
@@ -45,6 +44,8 @@ namespace Project.Scripts.UI
         public void GoToMainMenu()
         {
             ButtonSound();
+            Time.timeScale = 1;
+            GameManager.Instance.SetPause(false);
             SceneManager.LoadScene(MAIN_MENU_BUILD_INDEX);
         }
     }

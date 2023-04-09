@@ -1,22 +1,37 @@
 using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Project.Scripts.ZoomInForPuzzles.DraggableObject
 {
     public abstract class DraggablePuzzleObject : MonoBehaviour
     {
-        private Vector3 _screenOffsetPoint;
+        protected Vector3 _initialPosition;
+        protected Vector3 _currentPosition;
+        protected Vector3 _initialMousePosition;
+        protected Vector3 _currentMousePosition;
 
+        protected void Start()
+        {
+            _initialPosition = transform.localPosition;
+            _currentPosition = _initialPosition;
+        }
+        
+        protected void OnMouseDown()
+        {
+            _initialMousePosition = GetMouseWorldCoordinates();
+            _currentPosition = transform.localPosition;
+        }
+        
         private void OnMouseDrag()
         {
+            _currentMousePosition = GetMouseWorldCoordinates();
             Move();
         }
         
-        protected Vector3 GetMouseWorldCoordinates()
+        public Vector3 GetMouseWorldCoordinates()
         {
-            return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+            return mousePosition;
         }
 
         protected abstract void Move();

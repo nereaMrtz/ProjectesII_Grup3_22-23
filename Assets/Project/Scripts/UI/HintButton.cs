@@ -8,27 +8,30 @@ namespace Project.Scripts.UI
 {
     public class HintButton : MonoBehaviour
     {
+        private const String EXCLUDE_LEVEL = "MeSobraElDinero";
+        
         [SerializeField] private Button _button;
 
         private void OnEnable()
         {
-            if (GameManager.Instance.GetHintCoins() == 0)
+            if (GameManager.Instance.GetHintCoins() == 0 && SceneManager.GetActiveScene().name != EXCLUDE_LEVEL)
             {
                 _button.interactable = false;
             }
         }
 
-        public void StopPlayerMovement()
+        public void SpendHint()
         {
             Time.timeScale = 0;
             
-            if (!GameManager.Instance.IsHintUsedInLevel(SceneManager.GetActiveScene().buildIndex))
+            if (!GameManager.Instance.IsHintUsedInLevel(SceneManager.GetActiveScene().buildIndex) &&
+                SceneManager.GetActiveScene().name != EXCLUDE_LEVEL)
             {
                 GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() - 1);
                 GameManager.Instance.SetHintUsedInLevel(SceneManager.GetActiveScene().buildIndex);
             }
             
-            GameManager.Instance.SetZoomInState(true);
+            GameManager.Instance.SetPause(true);
             
             if (GameManager.Instance.GetHintCoins() != 0)
             {
@@ -41,7 +44,7 @@ namespace Project.Scripts.UI
         public void ActivePlayerMovement()
         {
             Time.timeScale = 1;
-            GameManager.Instance.SetZoomInState(false);
+            GameManager.Instance.SetPause(false);
         }
     }
 }

@@ -1,13 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
-
 namespace Project.Scripts.NoMonoBehaviourClass
 {
-    [System.Serializable]
+    [Serializable]
     public class Sound
     {
-        private AudioSource _source;
+        private AudioSource _audioSource;
         [SerializeField] private AudioClip _audioClip;
 
         [SerializeField] private AudioMixerGroup _audioMixerGroup;
@@ -17,21 +17,19 @@ namespace Project.Scripts.NoMonoBehaviourClass
         [Range(0, 1)]
         [SerializeField] private float _volume;
         
-        [SerializeField] private float _druggedPitch;
-        [SerializeField] private float _soberPitch;
-        
         [SerializeField] private bool _loop;
         [SerializeField] private bool _play;
+        [SerializeField] private bool _sound3D;
 
 
-        public AudioSource GetSource()
+        public AudioSource GetAudioSource()
         {
-            return _source;
+            return _audioSource;
         }
 
         public void SetAudioSource(AudioSource source)
         {
-            _source = source;
+            _audioSource = source;
         }
 
         public AudioClip GetClip()
@@ -59,19 +57,9 @@ namespace Project.Scripts.NoMonoBehaviourClass
             return _volume;
         }
 
-        public void SetVolume(float volume)
-        {
-            _volume = volume;
-        }
-
         public string GetName()
         {
             return _name;
-        }
-
-        public void SetName(string name)
-        {
-            _name = name;
         }
 
         public bool GetLoop()
@@ -79,29 +67,14 @@ namespace Project.Scripts.NoMonoBehaviourClass
             return _loop;
         }
 
-        public void SetLoop(bool loop)
-        {
-            _loop = loop;
-        }
-
         public bool GetPlay()
         {
             return _play;
         }
 
-        public void SetPLay(bool play)
+        public bool GetSound3D()
         {
-            _play = play;
-        }
-
-        public float GetSoberPitch()
-        {
-            return _soberPitch;
-        }
-
-        public float GetDruggedPitch()
-        {
-            return _druggedPitch;
+            return _sound3D;
         }
     }
 }

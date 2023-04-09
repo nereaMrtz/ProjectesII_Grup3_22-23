@@ -2,7 +2,6 @@ using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 namespace Project.Scripts.Menus
 {
     public class MainMenu : MonoBehaviour
@@ -11,22 +10,38 @@ namespace Project.Scripts.Menus
         
         [SerializeField] private GameObject _actualPanel;
 
+        private AudioSource _audioSource;
+
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
+        }
+
         public void PlayButton()
         {
-            AudioManager.Instance.Play(BOTON_MENU);
-            SceneManager.LoadScene(1);
+            _audioSource.Play();
+            bool[] levels = GameManager.Instance.GetLevels();
+            for (int i = 0; i < levels.Length; i++)
+            {
+                if (!levels[i])
+                {
+                    SceneManager.LoadScene(i);
+                    return;
+                }
+            }
         }
 
         public void ChangePanelButton(GameObject menuToActivate)
         {
-            AudioManager.Instance.Play(BOTON_MENU);
+            _audioSource.Play();
             menuToActivate.SetActive(true);
             _actualPanel.SetActive(false);
             _actualPanel = menuToActivate;
         }
 
         public void ExitButton() {
-            AudioManager.Instance.Play(BOTON_MENU);
+            _audioSource.Play();
             Application.Quit();
         }
     }

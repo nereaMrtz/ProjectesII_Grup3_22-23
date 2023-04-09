@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
 using Project.Scripts.Managers;
+using TMPro;
+using UnityEngine;
 
 namespace Project.Scripts.FeedbackComments 
 {
@@ -23,7 +23,7 @@ namespace Project.Scripts.FeedbackComments
         private void Update()
         {
 
-            if (GameManager.Instance.IsInZoomInState()) 
+            if (GameManager.Instance.IsPause()) 
             {
                 pressKey.SetActive(false);
                 CloseDialogBox();

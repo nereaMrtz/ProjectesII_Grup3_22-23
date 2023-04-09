@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using Project.Scripts.Managers;
 using UnityEngine;
 
@@ -8,16 +7,20 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
     public class SimpleDoor : UnlockableObject
     {
         private const String SIMPLE_DOOR_SOUND = "Simple Door Sound";
-        private const String SLIDE_SIMPLE_DOOR_SOUND = "Slide Simple Door Sound";
         
         private const String OPEN_TRIGGER = "Open";
         private const String CLOSE_TRIGGER = "Close";
 
-        private const String VERTICAL_OPENING_DOOR_STATE = "VerticalOpeningDoor";
-
         [SerializeField] private Animator _animator;
 
+        private AudioSource _audioSource;
+
         private bool _moved;
+
+        private void Start()
+        {
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, SIMPLE_DOOR_SOUND);
+        }
 
         public override void Unlock()
         {
@@ -26,7 +29,7 @@ namespace Project.Scripts.Interactable.Static.RequiredInventory.Door
 
         private void MoveDoor()
         {
-            AudioManager.Instance.Play(SIMPLE_DOOR_SOUND);
+            _audioSource.Play();
             _animator.SetTrigger(OPEN_TRIGGER);
             gameObject.layer = 0;
         }

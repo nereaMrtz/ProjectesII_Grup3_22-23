@@ -1,23 +1,30 @@
+using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Project.Scripts.Menus
 {
     public class LevelSelector : MonoBehaviour
     {
-        bool[] levels = new bool[30];
-
+        bool[] levels;
+        [SerializeField] Button[] button;
+        
         private void Start()
         {
-            for(int i = 0; i < levels.Length; i++)
-            {
-                levels[i] = false;
-            }
-        }
+            levels = GameManager.Instance.GetLevels();
 
-        void UnlockLevel(int level)
-        {
-            levels[level] = true;
+            for(int i = 1; i < levels.Length; i++)
+            {
+                //Aqui te peta porque hay 30 elementos en "button" y este en un for de tantas iteraciones como niveles tengamos
+                if (!levels[i])
+                {
+                    button[i].interactable = false;
+                }
+                else
+                {
+                    button[i].interactable = true;                 
+                }
+            }
         }
 
     }

@@ -2,49 +2,66 @@ using System;
 using Project.Scripts.Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.UI
 {
     public class InGameUI : MonoBehaviour
     {
-        private const String PLAYERS_PREFS_MUTE = "Player Prefs Mute";
+        private const String EXCLUDE_LEVEL = "MeSobraElDinero";
+        private const String PLAYERS_PREFS_MASTER_MUTE = "Player Prefs Master Mute";
+        private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
+        private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
+        private const String COIN_SPRITE_CODE = "<sprite=0>";
+        private const String BOTON_MENU = "BotonMenu";
 
-        private const string SHOW_INVENTORY = "ShowInventory";
-
-        [SerializeField] private Animator _animator;
-
-        [SerializeField] private GameObject _muteIcon;
+        [SerializeField] private GameObject _masterMuteIcon;
+        /*[SerializeField] private GameObject _SFXMuteIcon;
+        [SerializeField] private GameObject _musicMuteIcon;*/
 
         [SerializeField] private TextMeshProUGUI _hintCoinsMarker;
 
-        private bool onInventory;
+        private AudioSource _audioSource;
+
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
+        }
 
         private void OnEnable()
         {
-            UpdateCoinsMarker();
-            
-            bool mute = PlayerPrefs.GetInt(PLAYERS_PREFS_MUTE) == 1;
+            if (SceneManager.GetActiveScene().name == EXCLUDE_LEVEL)
+            {
+                _hintCoinsMarker.text = "999" + COIN_SPRITE_CODE;
+            }
+            else
+            {
+                UpdateCoinsMarker();    
+            }
 
-            _muteIcon.SetActive(mute);
+            bool masterMute = PlayerPrefs.GetInt(PLAYERS_PREFS_MASTER_MUTE) == 1;
+            bool SFXMute = PlayerPrefs.GetInt(PLAYERS_PREFS_SFX_MUTE) == 1;
+            bool musicMute = PlayerPrefs.GetInt(PLAYERS_PREFS_MUSIC_MUTE) == 1;
+
+            _masterMuteIcon.SetActive(masterMute);
+            //_SFXMuteIcon.SetActive(SFXMute);
+            //_musicMuteIcon.SetActive(musicMute);
         }
 
         public void UpdateCoinsMarker()
         {
-            _hintCoinsMarker.text = GameManager.Instance.GetHintCoins().ToString();
+            _hintCoinsMarker.text = GameManager.Instance.GetHintCoins() + COIN_SPRITE_CODE;
         }
 
-        public void ShowInventory()
+        public void PlaySoundUIButton()
         {
-            if (onInventory == false)
-            {
-                _animator.SetBool(SHOW_INVENTORY, true);
-                onInventory = true;
-            }
-            else
-            {
-                _animator.SetBool(SHOW_INVENTORY, false);
-                onInventory = false;
-            }
+            _audioSource.Play();
+        }
+
+        public void SetPause()
+        {
+            GameManager.Instance.SetPause(true);
         }
     }
 }

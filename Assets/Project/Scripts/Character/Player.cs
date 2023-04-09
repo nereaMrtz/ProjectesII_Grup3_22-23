@@ -1,61 +1,82 @@
 using System;
-using UnityEngine;
 using Project.Scripts.Managers;
+using UnityEngine;
 
 namespace Project.Scripts.Character
 {
     public class Player : MonoBehaviour
     {
         private const String STEPS_SOUND_CLIP_NAME = "Steps Sound";
-        
-        [SerializeField] private GameObject _pauseMenuPanel;
 
         [SerializeField] private Rigidbody2D _rigidbody2D;
 
-        [SerializeField] private float _currentSpeed = 75;
+        [SerializeField] private Animator animator;
 
         [SerializeField] private bool _moveWithKeyboard;
-        
-        [SerializeField] private bool _move;
-        
         [SerializeField] private bool _inverted;
 
-        public Animator animator;
+        private AudioSource _audioSource;
+        
+        private readonly float _currentSpeed = 200;
+        
+        private bool _moving;
 
         private Vector2 _movementDirection;
 
-        [SerializeField] private bool _moving;
-        
+        private void Start()
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            AudioManager.Instance.SetAudioSourceComponent(_audioSource, STEPS_SOUND_CLIP_NAME);
+        }
 
         void Update()
         {
-            if (_pauseMenuPanel.activeSelf)
-            {
-                return;
-            }
-
+            
             if (_moveWithKeyboard)
             {
-                Controls();    
+                Controls();
+
             }
             UpdateAnimationController();
+
+            Cheats();
+
+        }
+
+        private void Cheats()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                GameManager.Instance.UnlockAllLevels();
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                GameManager.Instance.GoNextLevel();
+            }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                GameManager.Instance.GoLastLevel();
+            }
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                GameManager.Instance.AddCoin();
+            }
         }
 
         private void FixedUpdate()
         {
-            if (!_move)
-            {
-                return;
-            }
             Movement();
         }
 
         private void Controls()
         {
-            if (GameManager.Instance.IsInZoomInState() || GameManager.Instance.IsFading())
+            if (GameManager.Instance.IsPause() || GameManager.Instance.IsFading())
             {
                 _movementDirection = Vector2.zero;
-                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.Pause();
                 return;
             }
 
@@ -67,7 +88,7 @@ namespace Project.Scripts.Character
             if (_moveWithKeyboard)
             {                
                 _movementDirection = Vector2.zero;
-                
+
                 if (Input.GetKey(KeyCode.A))
                 {
                     _movementDirection.x += _inverted ? 1 : -1;
@@ -93,11 +114,11 @@ namespace Project.Scripts.Character
                         
             if (_movementDirection != new Vector2(0,0))
             {
-                AudioManager.Instance.UnPause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.UnPause();
             }
             else
             {
-                AudioManager.Instance.Pause(STEPS_SOUND_CLIP_NAME);
+                _audioSource.Pause();
             }
 
             if (_movementDirection.magnitude == 0)
@@ -113,27 +134,16 @@ namespace Project.Scripts.Character
 
         private void UpdateAnimationController(){
 
-            _moving = _rigidbody2D.velocity.magnitude > 0.01f;
+            _moving = _rigidbody2D.velocity.magnitude > 0;
             
             animator.SetInteger("Horizontal", (int)_movementDirection.x);
             animator.SetInteger("Vertical", (int)_movementDirection.y);
             animator.SetBool("isMoving", _moving);            
         }
 
-        public void Pause()
-        {
-            _pauseMenuPanel.SetActive(true);
-            GameManager.Instance.SetPause(true);
-        }
-
         public Vector2 GetMovement()
         {
             return _movementDirection;
-        }
-
-        public void SetMovement(Vector2 movement)
-        {
-            _movementDirection = movement;
         }
 
         public void SetMoving(bool moving)
