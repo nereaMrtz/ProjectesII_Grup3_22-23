@@ -67,7 +67,7 @@ namespace Project.Scripts.Levels._1.SimonDice
             
             while (auxAlpha > 0f)
             {
-                auxAlpha -= Time.deltaTime;
+                auxAlpha -= Time.deltaTime / 1.1f;
                 _spriteRenderer.color = new Color(color.r, color.g, color.b, auxAlpha);
                 yield return null;
             }
@@ -82,7 +82,7 @@ namespace Project.Scripts.Levels._1.SimonDice
             
             while (auxAlpha < 1f)
             {
-                auxAlpha += Time.deltaTime;
+                auxAlpha += Time.deltaTime / 1.1f;
                 _spriteRenderer.color = new Color(color.r, color.g, color.b, auxAlpha);
                 yield return null;
             }

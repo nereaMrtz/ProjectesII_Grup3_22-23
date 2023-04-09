@@ -8,17 +8,7 @@ namespace Project.Scripts.Levels
 {
     public class CambiarSala : MonoBehaviour
     {
-        private const string BOTON_MENU = "BotonMenu";
-
         [SerializeField] private Fade _fade;
-
-        private AudioSource _audioSource;
-
-        private void Start()
-        {
-            _audioSource = gameObject.AddComponent<AudioSource>();
-            AudioManager.Instance.SetAudioSourceComponent(_audioSource, BOTON_MENU);
-        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -40,7 +30,7 @@ namespace Project.Scripts.Levels
 
         public void SoundChangeScene()
         {
-            _audioSource.Play();
+            AudioManager.Instance.PlayMenuButtonSound();
         }
 
         public void ChangeScene()
