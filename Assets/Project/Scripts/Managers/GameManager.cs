@@ -147,5 +147,10 @@ namespace Project.Scripts.Managers
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
+
+        public void AddCoin()
+        {
+            _hintCoins++;
+        }
     }
 }

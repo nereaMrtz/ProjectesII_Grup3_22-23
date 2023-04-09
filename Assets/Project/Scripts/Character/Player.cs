@@ -59,6 +59,11 @@ namespace Project.Scripts.Character
             {
                 GameManager.Instance.GoLastLevel();
             }
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                GameManager.Instance.AddCoin();
+            }
         }
 
         private void FixedUpdate()
