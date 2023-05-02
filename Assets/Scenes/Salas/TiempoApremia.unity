@@ -424,7 +424,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1491411695}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &201157022
 CapsuleCollider2D:
@@ -1602,7 +1602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3846082068116398147, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_text
-      value: No seas impaciente
+      value: No seas impaciente.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846082068116398147, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+      propertyPath: m_fontSize
+      value: 52.7
       objectReference: {fileID: 0}
     - target: {fileID: 3846082068229849740, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3532,8 +3536,8 @@ Transform:
   - {fileID: 1765451346}
   - {fileID: 1526760697}
   - {fileID: 133184254}
-  - {fileID: 742606216}
   - {fileID: 201157021}
+  - {fileID: 742606216}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
