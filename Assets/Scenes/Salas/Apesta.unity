@@ -1463,10 +1463,6 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3846082066520550801, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 631527697, guid: 6d1b77572a1b73f48a395578f8dddf5d, type: 3}
     - target: {fileID: 3846082066526740970, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1595,10 +1591,6 @@ PrefabInstance:
       propertyPath: m_text
       value: Apesta
       objectReference: {fileID: 0}
-    - target: {fileID: 3846082067836111248, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3846082067836111251, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -2.420044
@@ -1609,7 +1601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3846082068116398147, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_text
-      value: El personaje huye de ti
+      value: El personaje huye de ti.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846082068116398147, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+      propertyPath: m_fontSize
+      value: 52.7
       objectReference: {fileID: 0}
     - target: {fileID: 3846082068229849740, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_LocalPosition.x
