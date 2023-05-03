@@ -15,11 +15,12 @@ namespace Project.Scripts.Levels
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 GameManager.Instance.SetLevels(SceneManager.GetActiveScene().buildIndex);
+                SaveManager.Instance.SaveToJSON();
                 StartCoroutine(FadeTransition());
             }
         }
 
-        private IEnumerator FadeTransition() {
+        public IEnumerator FadeTransition() {
 
             _fade.FadeAnimation(true);
             
