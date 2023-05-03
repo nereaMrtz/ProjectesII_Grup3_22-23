@@ -9,6 +9,7 @@ namespace Project.Scripts.Managers
         private static GameManager _instance;
         
         private const String PLAYER_PREFS_BRIGHTNESS = "Player Prefs Brightness";
+        private const String PLAYER_PREFS_COINS = "Player Prefs Coins";
 
         private Resolution _currentResolution;
         
@@ -20,8 +21,6 @@ namespace Project.Scripts.Managers
 
         private bool[] _levelsWhereHintTaken;
         private bool[] _levelsWhereHintUsed;
-        
-        private int _hintCoins = 2;
 
         private bool[] levels;
 
@@ -38,6 +37,11 @@ namespace Project.Scripts.Managers
                 {
                     PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, 1);
                 }
+
+                if (!PlayerPrefs.HasKey(PLAYER_PREFS_COINS))
+                {
+                    PlayerPrefs.SetInt(PLAYER_PREFS_COINS, 2);
+                }
             }
             else
             {
@@ -52,6 +56,15 @@ namespace Project.Scripts.Managers
             get { return _instance; }
         }
 
+        public void LoadToGame()
+        {
+            
+        }
+
+        public void SaveFromGame()
+        {
+        }
+        
         public void SetPause(bool pause)
         {
             _pause = pause;
@@ -74,12 +87,12 @@ namespace Project.Scripts.Managers
 
         public void SetHintCoins(int hintCoins)
         {
-            _hintCoins = hintCoins;
+            PlayerPrefs.SetInt(PLAYER_PREFS_COINS, hintCoins);
         }
 
         public int GetHintCoins()
         {
-            return _hintCoins;
+            return PlayerPrefs.GetInt(PLAYER_PREFS_COINS);
         }
 
         public void SetLevelWhereHintTaken(int level)
@@ -150,7 +163,7 @@ namespace Project.Scripts.Managers
 
         public void AddCoin()
         {
-            _hintCoins++;
+            PlayerPrefs.SetInt(PLAYER_PREFS_COINS, PlayerPrefs.GetInt(PLAYER_PREFS_COINS) + 1);
         }
     }
 }

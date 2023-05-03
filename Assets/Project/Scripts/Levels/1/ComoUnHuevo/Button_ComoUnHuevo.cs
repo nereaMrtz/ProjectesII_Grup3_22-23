@@ -15,6 +15,8 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
         
         [SerializeField] private Door_Manten _door;
 
+        [SerializeField] private CambiarSala _changeRoom;
+
         [SerializeField] private float _timeToHold;
 
         [SerializeField] private Animator _animator;
@@ -53,10 +55,12 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
             }
             _currentTimeToHold -= Time.deltaTime;
 
-            if (_currentTimeToHold <= 0)
+            if (!(_currentTimeToHold <= 0))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                return;
             }
+            GameManager.Instance.SetLevels(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(_changeRoom.FadeTransition());
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)
