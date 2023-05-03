@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using Project.Scripts.NoMonoBehaviourClass;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,41 +9,39 @@ namespace Project.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
-        
-        private const String PLAYER_PREFS_BRIGHTNESS = "Player Prefs Brightness";
-        private const String PLAYER_PREFS_COINS = "Player Prefs Coins";
 
         private Resolution _currentResolution;
+
+        private bool[] _levelsWhereHintTaken;
+        private bool[] _levelsWhereHintUsed;
         
-        private bool _drugged;
+        private bool[] levels;
+        
         private bool _zoomInState;
         private bool _interactableClicked;
         private bool _pause;
         private bool _fading;
 
-        private bool[] _levelsWhereHintTaken;
-        private bool[] _levelsWhereHintUsed;
+        private int _coins;
 
-        private bool[] levels;
+        private float _brightness; 
 
         private void Awake()
         {
             if (_instance == null)
             {
                 _instance = this;
-                _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
-                _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
-                levels = new bool[SceneManager.sceneCountInBuildSettings - 1];
-                levels[0] = true;
-                if (!PlayerPrefs.HasKey(PLAYER_PREFS_BRIGHTNESS))
+                if (!File.Exists(Application.streamingAssetsPath + SaveManager.SAVE_PATH))
                 {
-                    PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, 1);
+                    _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
+                    _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
+                    levels = new bool[SceneManager.sceneCountInBuildSettings - 1];
+                    levels[0] = true;
+                    _coins = 2;
+                    _brightness = 1;
+                    SaveFromGame();
                 }
-
-                if (!PlayerPrefs.HasKey(PLAYER_PREFS_COINS))
-                {
-                    PlayerPrefs.SetInt(PLAYER_PREFS_COINS, 2);
-                }
+                LoadToGame();
             }
             else
             {
@@ -58,13 +58,76 @@ namespace Project.Scripts.Managers
 
         public void LoadToGame()
         {
+            SaveManager.Instance.LoadFromJSON();
             
+            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+
+            levels = saveFile.levels;
+            _levelsWhereHintUsed = saveFile.levelsWhereHintUsed;
+            _levelsWhereHintTaken = saveFile.levelsWhereHintTaken;
+            _coins = saveFile.coins;
+            _brightness = saveFile.brightness;
+
         }
 
-        public void SaveFromGame()
+        private void SaveFromGame()
         {
+            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+
+            saveFile.levels = levels;
+            saveFile.levelsWhereHintUsed = _levelsWhereHintUsed;
+            saveFile.levelsWhereHintTaken = _levelsWhereHintTaken;
+            saveFile.coins = _coins;
+            saveFile.brightness = _brightness;
+            
+            SaveManager.Instance.SaveToJSON();
         }
-        
+
+        public void SaveLevelsFromGame()
+        {
+            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+
+            saveFile.levels = levels;
+            
+            SaveManager.Instance.SaveToJSON();
+        }
+
+        public void SaveLevelsWhereHintUsedFromGame()
+        {
+            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+
+            saveFile.levelsWhereHintUsed = _levelsWhereHintUsed;
+            
+            SaveManager.Instance.SaveToJSON();
+        }
+
+        public void SaveLevelsWhereHintTakenFromGame()
+        {
+            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+
+            saveFile.levelsWhereHintTaken = _levelsWhereHintTaken;
+            
+            SaveManager.Instance.SaveToJSON();
+        }
+
+        public void SaveCoinsFromGame()
+        {
+            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+
+            saveFile.coins = _coins;
+            
+            SaveManager.Instance.SaveToJSON();
+        }
+
+        public void SaveBrightnessFromGame()
+        {
+            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+
+            saveFile.brightness = _brightness;
+            
+            SaveManager.Instance.SaveToJSON();
+        }
+
         public void SetPause(bool pause)
         {
             _pause = pause;
@@ -85,19 +148,21 @@ namespace Project.Scripts.Managers
             return _fading;
         }
 
-        public void SetHintCoins(int hintCoins)
+        public bool[] GetLevels()
         {
-            PlayerPrefs.SetInt(PLAYER_PREFS_COINS, hintCoins);
+            return levels;
         }
-
-        public int GetHintCoins()
+        
+        public void SetLevels(int level)
         {
-            return PlayerPrefs.GetInt(PLAYER_PREFS_COINS);
+            levels[level] = true;
+            SaveLevelsFromGame();
         }
 
         public void SetLevelWhereHintTaken(int level)
         {
             _levelsWhereHintTaken[level] = true;
+            SaveLevelsWhereHintTakenFromGame();
         }
 
         public bool IsLevelHintTaken(int level)
@@ -108,6 +173,7 @@ namespace Project.Scripts.Managers
         public void SetHintUsedInLevel(int level)
         {
             _levelsWhereHintUsed[level] = true;
+            SaveLevelsWhereHintUsedFromGame();
         }
 
         public bool IsHintUsedInLevel(int level)
@@ -115,21 +181,36 @@ namespace Project.Scripts.Managers
             return _levelsWhereHintUsed[level];
         }
 
-        public bool[] GetLevels()
+        public void AlterCoins(int alterValue)
         {
-            return levels;
+            _coins += alterValue;
+            SaveCoinsFromGame();
         }
-        
-        public void SetLevels(int level)
+
+        public int GetHintCoins()
         {
-            levels[level] = true;
+            return _coins;
         }
-        
+
+        public void SetBrightness(float brightness)
+        {
+            _brightness = brightness;
+            SaveBrightnessFromGame();
+        }
+
+        public float GetBrightness()
+        {
+            return _brightness;
+        }
+
         public void ResetLevels()
         {
             _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
             _levelsWhereHintUsed  = new bool[SceneManager.sceneCountInBuildSettings];
             levels = new bool[SceneManager.sceneCountInBuildSettings];
+            SaveLevelsWhereHintTakenFromGame();
+            SaveLevelsWhereHintUsedFromGame();
+            SaveLevelsFromGame();
         }
 
         public void SetCurrentResolution(Resolution resolution)
@@ -159,11 +240,6 @@ namespace Project.Scripts.Managers
         public void GoLastLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
-
-        public void AddCoin()
-        {
-            PlayerPrefs.SetInt(PLAYER_PREFS_COINS, PlayerPrefs.GetInt(PLAYER_PREFS_COINS) + 1);
         }
     }
 }

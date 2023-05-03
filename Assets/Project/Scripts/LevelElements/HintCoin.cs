@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Project.Scripts.Managers;
+using Project.Scripts.NoMonoBehaviourClass;
 using Project.Scripts.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -46,13 +47,13 @@ namespace Project.Scripts.LevelElements
             {
                 return;
             }
-            
+
             if (GameManager.Instance.GetHintCoins() == 0)
             {
                 _button.interactable = true;
             }
             _audioSource.Play();
-            GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() + 1);
+            GameManager.Instance.AlterCoins(1);
             GameManager.Instance.SetLevelWhereHintTaken(SceneManager.GetActiveScene().buildIndex);
             _inGameUI.UpdateCoinsMarker();
             _spriteRenderer.enabled = false;

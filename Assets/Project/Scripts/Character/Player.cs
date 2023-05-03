@@ -62,7 +62,7 @@ namespace Project.Scripts.Character
 
             if (Input.GetKeyDown(KeyCode.I))
             {
-                GameManager.Instance.AddCoin();
+                GameManager.Instance.AlterCoins(1);
             }
         }
 
