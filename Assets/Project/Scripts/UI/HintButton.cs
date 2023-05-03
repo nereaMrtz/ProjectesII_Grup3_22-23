@@ -1,5 +1,6 @@
 using System;
 using Project.Scripts.Managers;
+using Project.Scripts.NoMonoBehaviourClass;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,7 +15,8 @@ namespace Project.Scripts.UI
 
         private void OnEnable()
         {
-            if (GameManager.Instance.GetHintCoins() == 0 && SceneManager.GetActiveScene().name != EXCLUDE_LEVEL)
+            if (!GameManager.Instance.IsHintUsedInLevel(SceneManager.GetActiveScene().buildIndex) &&
+                GameManager.Instance.GetHintCoins() == 0 && SceneManager.GetActiveScene().name != EXCLUDE_LEVEL)
             {
                 _button.interactable = false;
             }
@@ -27,18 +29,11 @@ namespace Project.Scripts.UI
             if (!GameManager.Instance.IsHintUsedInLevel(SceneManager.GetActiveScene().buildIndex) &&
                 SceneManager.GetActiveScene().name != EXCLUDE_LEVEL)
             {
-                GameManager.Instance.SetHintCoins(GameManager.Instance.GetHintCoins() - 1);
+                GameManager.Instance.AlterCoins(-1);
                 GameManager.Instance.SetHintUsedInLevel(SceneManager.GetActiveScene().buildIndex);
             }
             
             GameManager.Instance.SetPause(true);
-            
-            if (GameManager.Instance.GetHintCoins() != 0)
-            {
-                return;    
-            }
-
-            _button.interactable = false;
         }
 
         public void ActivePlayerMovement()

@@ -2171,6 +2171,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5596260953651791362, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596260953651791362, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596260953651791362, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5596260953651791363, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2290,6 +2302,10 @@ PrefabInstance:
     - target: {fileID: 5596260953779339836, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.035980225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596260953779339839, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
+      propertyPath: m_MinValue
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5596260953784004316, guid: 5da36903d38d2ce46a4b80d5eac1d07c, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2718,7 +2734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4293,10 +4309,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8004416412933482242, guid: 4647e8c5e48fe0d448ae3a950c332a14, type: 3}
-      propertyPath: _saveFile.coins
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8923102992737647328, guid: 4647e8c5e48fe0d448ae3a950c332a14, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4377,6 +4389,18 @@ PrefabInstance:
     - target: {fileID: 4832933994549958499, guid: 7335ac4239c95e745afa24fef02e9467, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 552.00006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832933994577219036, guid: 7335ac4239c95e745afa24fef02e9467, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832933994577219036, guid: 7335ac4239c95e745afa24fef02e9467, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832933994577219036, guid: 7335ac4239c95e745afa24fef02e9467, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4832933994577219038, guid: 7335ac4239c95e745afa24fef02e9467, type: 3}
       propertyPath: m_Pivot.x

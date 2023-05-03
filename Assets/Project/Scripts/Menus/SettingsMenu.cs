@@ -16,8 +16,6 @@ namespace Project.Scripts.Menus
         private const String PLAYERS_PREFS_SFX_MUTE = "Player Prefs SFX Mute";
         private const String PLAYERS_PREFS_MUSIC_MUTE = "Player Prefs Music Mute";
 
-        private const String PLAYER_PREFS_BRIGHTNESS = "Player Prefs Brightness";
-
         [SerializeField] private Slider _masterVolumeSlider;
         [SerializeField] private Slider _SFXVolumeSlider;
         [SerializeField] private Slider _musicVolumeSlider;
@@ -48,14 +46,14 @@ namespace Project.Scripts.Menus
             _SFXVolumeMute.isOn = auxSFXVolumeMute;
             _musicVolumeMute.isOn = auxMusicVolumeMute;
 
-            _brightnessSlider.value = PlayerPrefs.GetFloat(PLAYER_PREFS_BRIGHTNESS);
+            _brightnessSlider.value = GameManager.Instance.GetBrightness();
         }
 
         public void SetBrightness(float brightness)
         {
-            float auxAlpha = CustomMath.Map(brightness, 0, 1, 0.35f, 0);
+            float auxAlpha = CustomMath.Map(brightness, 0, 1, 0.85f, 0);
             _fadeBrightness.color = new Color(0, 0, 0, auxAlpha);
-            PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, brightness);
+            GameManager.Instance.SetBrightness(brightness);
         }
 
         public void SetMasterVolume(float volume)
