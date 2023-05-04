@@ -1,5 +1,6 @@
 using Project.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Project.Scripts.Menus
@@ -13,11 +14,10 @@ namespace Project.Scripts.Menus
         {
             _levels = GameManager.Instance.GetLevelsUnlocked();
 
-            for(int i = 0; i < _levels; i++)
+            for(int i = 0; i < _levels && i < SceneManager.sceneCountInBuildSettings - 2; i++)
             {
                 button[i].interactable = true;
             }
         }
-
     }
 }

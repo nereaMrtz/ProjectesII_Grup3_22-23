@@ -20,7 +20,7 @@ namespace Project.Scripts.Managers
         private bool _pause;
         private bool _fading;
 
-        private int _levels;
+        private int _levelsCompleted;
         private int _coins;
 
         private float _brightness; 
@@ -30,11 +30,11 @@ namespace Project.Scripts.Managers
             if (_instance == null)
             {
                 _instance = this;
-                if (!File.Exists(Application.streamingAssetsPath + SaveManager.SAVE_PATH))
+                if (!File.Exists(Application.streamingAssetsPath + SaveManager.SAVE_FILE_PATH))
                 {
                     _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
                     _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
-                    _levels = 1;
+                    _levelsCompleted = 1;
                     _coins = 2;
                     _brightness = 1;
                     SaveFromGame();
@@ -60,7 +60,7 @@ namespace Project.Scripts.Managers
             
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
-            _levels = saveFile.levels;
+            _levelsCompleted = saveFile.levelsCompleted;
             _levelsWhereHintUsed = saveFile.levelsWhereHintUsed;
             _levelsWhereHintTaken = saveFile.levelsWhereHintTaken;
             _coins = saveFile.coins;
@@ -72,7 +72,7 @@ namespace Project.Scripts.Managers
         {
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
-            saveFile.levels = _levels;
+            saveFile.levelsCompleted = _levelsCompleted;
             saveFile.levelsWhereHintUsed = _levelsWhereHintUsed;
             saveFile.levelsWhereHintTaken = _levelsWhereHintTaken;
             saveFile.coins = _coins;
@@ -81,16 +81,16 @@ namespace Project.Scripts.Managers
             SaveManager.Instance.SaveToJSON();
         }
 
-        public void SaveLevelsFromGame()
+        private void SaveLevelsFromGame()
         {
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
-            saveFile.levels = _levels;
+            saveFile.levelsCompleted = _levelsCompleted;
             
             SaveManager.Instance.SaveToJSON();
         }
 
-        public void SaveLevelsWhereHintUsedFromGame()
+        private void SaveLevelsWhereHintUsedFromGame()
         {
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
@@ -99,7 +99,7 @@ namespace Project.Scripts.Managers
             SaveManager.Instance.SaveToJSON();
         }
 
-        public void SaveLevelsWhereHintTakenFromGame()
+        private void SaveLevelsWhereHintTakenFromGame()
         {
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
@@ -108,7 +108,7 @@ namespace Project.Scripts.Managers
             SaveManager.Instance.SaveToJSON();
         }
 
-        public void SaveCoinsFromGame()
+        private void SaveCoinsFromGame()
         {
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
@@ -117,7 +117,7 @@ namespace Project.Scripts.Managers
             SaveManager.Instance.SaveToJSON();
         }
 
-        public void SaveBrightnessFromGame()
+        private void SaveBrightnessFromGame()
         {
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
@@ -148,13 +148,13 @@ namespace Project.Scripts.Managers
         
         public void UnlockNextLevel()
         {
-            _levels++;
+            _levelsCompleted++;
             SaveLevelsFromGame();
         }
 
         public int GetLevelsUnlocked()
         {
-            return _levels;
+            return _levelsCompleted;
         }
 
         public void SetLevelWhereHintTaken(int level)
@@ -205,7 +205,7 @@ namespace Project.Scripts.Managers
         {
             _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
             _levelsWhereHintUsed  = new bool[SceneManager.sceneCountInBuildSettings];
-            _levels = 1;
+            _levelsCompleted = 1;
             SaveLevelsWhereHintTakenFromGame();
             SaveLevelsWhereHintUsedFromGame();
             SaveLevelsFromGame();
@@ -223,12 +223,13 @@ namespace Project.Scripts.Managers
 
         public void UnlockAllLevels()
         {
-            _levels = SceneManager.sceneCountInBuildSettings - 1;
+            _levelsCompleted = SceneManager.sceneCountInBuildSettings - 1;
         }
 
         public void GoNextLevel()
         {
-            _levels++;
+            _levelsCompleted++;
+            SaveLevelsFromGame();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 

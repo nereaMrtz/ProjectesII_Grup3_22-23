@@ -14,7 +14,7 @@ namespace Project.Scripts.NoMonoBehaviourClass
 
         public float brightness;
 
-        public int levels;
+        public int levelsCompleted;
         public int coins;
     }
 }

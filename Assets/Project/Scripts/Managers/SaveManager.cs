@@ -9,7 +9,7 @@ namespace Project.Scripts.Managers
     {
         private static SaveManager _instance;
 
-        public const String SAVE_PATH = "/Save/Save.json";
+        public const String SAVE_FILE_PATH = "/Save/Save.json";
         
         [SerializeField] private SaveFile _saveFile;
         
@@ -34,11 +34,11 @@ namespace Project.Scripts.Managers
 
         public void LoadFromJSON()
         {
-            if (!File.Exists(Application.streamingAssetsPath + SAVE_PATH))
+            if (!File.Exists(Application.streamingAssetsPath + SAVE_FILE_PATH))
             {
                 return;
             }
-            string json = File.ReadAllText(Application.streamingAssetsPath + SAVE_PATH);
+            string json = File.ReadAllText(Application.streamingAssetsPath + SAVE_FILE_PATH);
             _saveFile = JsonUtility.FromJson<SaveFile>(json);
         }
 
@@ -49,7 +49,7 @@ namespace Project.Scripts.Managers
                 return;
             }
             string json = JsonUtility.ToJson(_saveFile);
-            string path = Application.streamingAssetsPath + SAVE_PATH;
+            string path = Application.streamingAssetsPath + SAVE_FILE_PATH;
             if (async)
             {
                 File.WriteAllTextAsync(path, json);
