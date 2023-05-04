@@ -81,7 +81,7 @@ namespace Project.Scripts.Managers
             SaveManager.Instance.SaveToJSON();
         }
 
-        private void SaveLevelsFromGame()
+        private void SaveLevelsCompletedFromGame()
         {
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
@@ -149,7 +149,7 @@ namespace Project.Scripts.Managers
         public void UnlockNextLevel()
         {
             _levelsCompleted++;
-            SaveLevelsFromGame();
+            SaveLevelsCompletedFromGame();
         }
 
         public int GetLevelsUnlocked()
@@ -208,7 +208,7 @@ namespace Project.Scripts.Managers
             _levelsCompleted = 1;
             SaveLevelsWhereHintTakenFromGame();
             SaveLevelsWhereHintUsedFromGame();
-            SaveLevelsFromGame();
+            SaveLevelsCompletedFromGame();
         }
 
         public void SetCurrentResolution(Resolution resolution)
@@ -229,7 +229,7 @@ namespace Project.Scripts.Managers
         public void GoNextLevel()
         {
             _levelsCompleted++;
-            SaveLevelsFromGame();
+            SaveLevelsCompletedFromGame();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
