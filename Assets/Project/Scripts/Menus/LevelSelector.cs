@@ -19,5 +19,13 @@ namespace Project.Scripts.Menus
                 button[i].interactable = true;
             }
         }
+
+        public void Reset()
+        {
+            for (int i = 1; i < button.Length; i++)
+            {
+                button[i].interactable = false;
+            }
+        }
     }
 }
