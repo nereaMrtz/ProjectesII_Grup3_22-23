@@ -9,12 +9,12 @@ namespace Project.Scripts.NoMonoBehaviourClass
     
     public class SaveFile
     {
-        public bool[] levels;
         public bool[] levelsWhereHintUsed;
         public bool[] levelsWhereHintTaken;
 
         public float brightness;
-        
+
+        public int levelsCompleted;
         public int coins;
     }
 }

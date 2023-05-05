@@ -59,7 +59,7 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
             {
                 return;
             }
-            GameManager.Instance.SetLevels(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.UnlockNextLevel();
             StartCoroutine(_changeRoom.FadeTransition());
         }
 
