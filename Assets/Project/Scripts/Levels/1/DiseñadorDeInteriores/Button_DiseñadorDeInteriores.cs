@@ -1,6 +1,4 @@
-using System;
 using Project.Scripts.ZoomInForPuzzles.DraggableObject.Movable;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.DiseñadorDeInteriores

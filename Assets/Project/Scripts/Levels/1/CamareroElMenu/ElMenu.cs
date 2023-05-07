@@ -42,8 +42,12 @@ public class ElMenu : MonoBehaviour
             pauseMenu.SetActive(false);
             GameManager.Instance.SetPause(false);
             Time.timeScale = 1;
-            door.Unlock();
 
+            if (door.IsUnlocked())
+            {
+                return;
+            }
+            door.Unlock();
         }
     }
 }

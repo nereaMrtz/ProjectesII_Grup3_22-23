@@ -1,9 +1,6 @@
-using Project.Scripts.Interactable.Static;
 using System.Collections;
-using System.Collections.Generic;
-using System.Security;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
+using Project.Scripts.Interactable.Static;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 public class muerte : MonoBehaviour
@@ -16,30 +13,33 @@ public class muerte : MonoBehaviour
 
     [SerializeField] SpriteRenderer player;
     [SerializeField] Animator playerNormal;
-    [SerializeField] AnimatorController playerGhost;
+    [SerializeField] RuntimeAnimatorController[] playerGhost;
     [SerializeField] Sprite ghost;
     [SerializeField] UnlockableObject door;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.layer == 6)
-        StartCoroutine(Blanket());
+            StartCoroutine(Blanket());
     }
 
     IEnumerator Blanket()
     {
         blanket.SetActive(true);
         gun.Play();
+        GameManager.Instance.SetFading(true);
         yield return new WaitForSeconds(3);
+        GameManager.Instance.SetFading(false);
         Destroy(button);
         door.Unlock();
         ChangeScenario();
         blanket.SetActive(false);
+        GameManager.Instance.SetGhost(true);
     }
 
     void ChangeScenario()
     {
         blood.SetActive(true);
         player.sprite = ghost;
-        playerNormal.runtimeAnimatorController = playerGhost;
+        playerNormal.runtimeAnimatorController = playerGhost[0];
     }
 }

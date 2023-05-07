@@ -2,7 +2,6 @@ using System;
 using Project.Scripts.Levels._1.Manten;
 using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Levels._1.ComoUnHuevo
 {

@@ -1,7 +1,4 @@
 using System;
-using Project.Scripts.Managers;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.NoMonoBehaviourClass
 {
@@ -11,9 +8,7 @@ namespace Project.Scripts.NoMonoBehaviourClass
     {
         public bool[] levelsWhereHintUsed;
         public bool[] levelsWhereHintTaken;
-
-        public float brightness;
-
+        
         public int levelsCompleted;
         public int coins;
     }

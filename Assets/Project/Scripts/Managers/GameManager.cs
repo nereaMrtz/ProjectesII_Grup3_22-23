@@ -9,6 +9,8 @@ namespace Project.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
+        
+        private const String PLAYER_PREFS_BRIGHTNESS = "Player Prefs Brightness"; 
 
         private Resolution _currentResolution;
 
@@ -19,11 +21,11 @@ namespace Project.Scripts.Managers
         private bool _interactableClicked;
         private bool _pause;
         private bool _fading;
+        private bool _outside;
+        private bool _ghost;
 
         private int _levelsCompleted;
         private int _coins;
-
-        private float _brightness; 
 
         private void Awake()
         {
@@ -36,9 +38,14 @@ namespace Project.Scripts.Managers
                     _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
                     _levelsCompleted = 1;
                     _coins = 2;
-                    _brightness = 1;
                     SaveFromGame();
                 }
+
+                if (!PlayerPrefs.HasKey(PLAYER_PREFS_BRIGHTNESS))
+                {
+                    PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, 1);
+                }
+
                 LoadToGame();
             }
             else
@@ -64,7 +71,6 @@ namespace Project.Scripts.Managers
             _levelsWhereHintUsed = saveFile.levelsWhereHintUsed;
             _levelsWhereHintTaken = saveFile.levelsWhereHintTaken;
             _coins = saveFile.coins;
-            _brightness = saveFile.brightness;
 
         }
 
@@ -76,7 +82,6 @@ namespace Project.Scripts.Managers
             saveFile.levelsWhereHintUsed = _levelsWhereHintUsed;
             saveFile.levelsWhereHintTaken = _levelsWhereHintTaken;
             saveFile.coins = _coins;
-            saveFile.brightness = _brightness;
             
             SaveManager.Instance.SaveToJSON();
         }
@@ -117,13 +122,24 @@ namespace Project.Scripts.Managers
             SaveManager.Instance.SaveToJSON();
         }
 
-        private void SaveBrightnessFromGame()
+        public void SetOutside(bool outside)
         {
-            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
+            _outside = outside;
+        }
 
-            saveFile.brightness = _brightness;
-            
-            SaveManager.Instance.SaveToJSON();
+        public bool IsOutside()
+        {
+            return _outside;
+        }
+
+        public void SetGhost(bool ghost)
+        {
+            _ghost = ghost;
+        }
+
+        public bool IsGhost()
+        {
+            return _ghost;
         }
 
         public void SetPause(bool pause)
@@ -190,25 +206,16 @@ namespace Project.Scripts.Managers
             return _coins;
         }
 
-        public void SetBrightness(float brightness)
-        {
-            _brightness = brightness;
-            SaveBrightnessFromGame();
-        }
-
-        public float GetBrightness()
-        {
-            return _brightness;
-        }
-
         public void ResetLevels()
         {
             _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
             _levelsWhereHintUsed  = new bool[SceneManager.sceneCountInBuildSettings];
             _levelsCompleted = 1;
+            _coins = 2;            
             SaveLevelsWhereHintTakenFromGame();
             SaveLevelsWhereHintUsedFromGame();
             SaveLevelsCompletedFromGame();
+            SaveCoinsFromGame();
         }
 
         public void SetCurrentResolution(Resolution resolution)
