@@ -25,7 +25,7 @@ namespace Project.Scripts.Levels._1.MantenPlanta
             {
                 return;
             }
-            _rigidbody2D.AddForce((mousePosition - dragPosition).normalized, ForceMode2D.Impulse);
+            _rigidbody2D.AddForce(((mousePosition - dragPosition).normalized * Time.deltaTime) * 60, ForceMode2D.Impulse);
         }
 
         private void OnMouseUp()

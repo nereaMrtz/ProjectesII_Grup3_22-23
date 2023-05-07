@@ -42,7 +42,7 @@ namespace Project.Scripts.Levels._1.Semaforo
                 return;
             }
             
-            if (_currentAnimatorControllerIndex == 0)
+            if (_currentAnimatorControllerIndex != 2)
             {
                 return;
             }

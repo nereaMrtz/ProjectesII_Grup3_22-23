@@ -1,4 +1,5 @@
 using Project.Scripts.Interactable.Static;
+using Project.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class ElMenu : MonoBehaviour
     [SerializeField] Button menu;
     [SerializeField] Sprite openDoor;
     [SerializeField] UnlockableObject door;
+    [SerializeField] GameObject pauseMenu;
     int actualSprite;
 
     private void Start()
@@ -37,6 +39,14 @@ public class ElMenu : MonoBehaviour
     {
         if(menu.image.sprite == openDoor)
         {
+            pauseMenu.SetActive(false);
+            GameManager.Instance.SetPause(false);
+            Time.timeScale = 1;
+
+            if (door.IsUnlocked())
+            {
+                return;
+            }
             door.Unlock();
         }
     }

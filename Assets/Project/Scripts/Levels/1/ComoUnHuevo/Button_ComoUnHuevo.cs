@@ -2,7 +2,6 @@ using System;
 using Project.Scripts.Levels._1.Manten;
 using Project.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Project.Scripts.Levels._1.ComoUnHuevo
 {
@@ -14,6 +13,8 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
         private const String RELEASE_BUTTON = "Release Button";
         
         [SerializeField] private Door_Manten _door;
+
+        [SerializeField] private CambiarSala _changeRoom;
 
         [SerializeField] private float _timeToHold;
 
@@ -53,10 +54,12 @@ namespace Project.Scripts.Levels._1.ComoUnHuevo
             }
             _currentTimeToHold -= Time.deltaTime;
 
-            if (_currentTimeToHold <= 0)
+            if (!(_currentTimeToHold <= 0))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                return;
             }
+            GameManager.Instance.UnlockNextLevel();
+            StartCoroutine(_changeRoom.FadeTransition());
         }
 
         private void OnTriggerExit2D(Collider2D collider2D)

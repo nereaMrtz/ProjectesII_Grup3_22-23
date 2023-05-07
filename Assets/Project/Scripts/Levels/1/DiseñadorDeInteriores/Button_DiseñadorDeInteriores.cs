@@ -1,6 +1,4 @@
-using System;
 using Project.Scripts.ZoomInForPuzzles.DraggableObject.Movable;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
@@ -32,7 +30,7 @@ namespace Project.Scripts.Levels._1.DiseñadorDeInteriores
             {
                 return;
             }
-            _rigidbody2D.AddForce((mousePosition - dragPosition).normalized, ForceMode2D.Impulse);
+            _rigidbody2D.AddForce((mousePosition - dragPosition).normalized * Time.deltaTime * 60, ForceMode2D.Impulse);
         }
 
         private void OnMouseUp()

@@ -21,15 +21,7 @@ namespace Project.Scripts.Menus
         public void PlayButton()
         {
             _audioSource.Play();
-            bool[] levels = GameManager.Instance.GetLevels();
-            for (int i = 0; i < levels.Length; i++)
-            {
-                if (!levels[i])
-                {
-                    SceneManager.LoadScene(i);
-                    return;
-                }
-            }
+            SceneManager.LoadScene(GameManager.Instance.GetLevelsUnlocked());
         }
 
         public void ChangePanelButton(GameObject menuToActivate)
