@@ -112,7 +112,7 @@ TextureImporter:
         width: 65
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -125,15 +125,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 19_Hospital_Shadowless_32x32_1
+      name: deadBody
       rect:
         serializedVersion: 2
-        x: 227
-        y: 223
+        x: 163
+        y: 255
         width: 55
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,6 +141,48 @@ TextureImporter:
       bones: []
       spriteID: 32af512fc516b15469d33c1b364c0d51
       internalID: -1609434026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wallThings
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 287
+        width: 102
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c03cd323c3a394ab5ef2a808823725
+      internalID: -547047055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aguja
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 250
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5de1bccec3afd4eb39b3174c08ef26
+      internalID: -1640437874
       vertices: []
       indices: 
       edges: []
@@ -156,8 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      aguja: -1640437874
+      deadBody: -1609434026
+      wallThings: -547047055
       19_Hospital_Shadowless_32x32_0: 197385774
-      19_Hospital_Shadowless_32x32_1: -1609434026
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
