@@ -1883,7 +1883,7 @@ PrefabInstance:
       objectReference: {fileID: 1267020820}
     - target: {fileID: 3846082067783318041, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_text
-      value: "L\xF3gico"
+      value: "1. L\xF3gico"
       objectReference: {fileID: 0}
     - target: {fileID: 3846082067836111248, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
       propertyPath: m_IsActive
@@ -1953,9 +1953,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8833617559057400710, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3350197422328322538, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
     - {fileID: 3846082066526740975, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
+    - {fileID: 8833617559057400710, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b296411530ebfd4582fb3c3930d2ad5, type: 3}
 --- !u!224 &670609831 stripped
 RectTransform:
@@ -4177,7 +4182,7 @@ AudioSource:
   m_GameObject: {fileID: 1468895734}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7810890006595470100, guid: a881f4cca32b9ce49b74a488fcd688d1, type: 2}
   m_audioClip: {fileID: 8300000, guid: be9592424b6b6204d8b3b00b0a4a58b1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
