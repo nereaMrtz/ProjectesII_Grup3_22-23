@@ -395,6 +395,8 @@ MonoBehaviour:
   gun: {fileID: 1468895736}
   button: {fileID: 182669033}
   player: {fileID: 8490513}
+  playerNormal: {fileID: 1558371879}
+  playerGhost: {fileID: 9100000, guid: 9222f893469fb824f9e6442ad4870ac2, type: 2}
   ghost: {fileID: 1894263090, guid: 1476976f6e61c3740b0119223a2259d8, type: 3}
   door: {fileID: 1544233927}
 --- !u!1 &209791469
@@ -524,10 +526,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4605961259557706431, guid: 83ed1948ec7abc8429b6dd196063e5c0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4798464189758458638, guid: 83ed1948ec7abc8429b6dd196063e5c0, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5135575102694113860, guid: 83ed1948ec7abc8429b6dd196063e5c0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ce0d68cd4308b8346875c35327074a77, type: 2}
     - target: {fileID: 5776534675673923630, guid: 83ed1948ec7abc8429b6dd196063e5c0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4481,6 +4491,11 @@ Transform:
   m_Father: {fileID: 1491411695}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1558371879 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5135575102694113860, guid: 83ed1948ec7abc8429b6dd196063e5c0, type: 3}
+  m_PrefabInstance: {fileID: 241185681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1596053763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4719178061816243985, guid: 3fb8128806a781c44a9c9a6105d5946b, type: 3}

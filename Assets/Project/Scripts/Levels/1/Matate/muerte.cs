@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class muerte : MonoBehaviour
@@ -14,6 +15,8 @@ public class muerte : MonoBehaviour
     [SerializeField] GameObject button;
 
     [SerializeField] SpriteRenderer player;
+    [SerializeField] Animator playerNormal;
+    [SerializeField] AnimatorController playerGhost;
     [SerializeField] Sprite ghost;
     [SerializeField] UnlockableObject door;
     private void OnTriggerEnter2D(Collider2D collider)
@@ -37,5 +40,6 @@ public class muerte : MonoBehaviour
     {
         blood.SetActive(true);
         player.sprite = ghost;
+        playerNormal.runtimeAnimatorController = playerGhost;
     }
 }
