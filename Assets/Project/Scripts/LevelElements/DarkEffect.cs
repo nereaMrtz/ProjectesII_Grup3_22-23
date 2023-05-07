@@ -1,4 +1,5 @@
 using System;
+using Project.Scripts.Managers;
 using UnityEngine;
 
 namespace Project.Scripts.LevelElements
@@ -17,6 +18,7 @@ namespace Project.Scripts.LevelElements
                 return;
             }
 
+            GameManager.Instance.SetOutside(false);
             _spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
         }
 
@@ -26,7 +28,8 @@ namespace Project.Scripts.LevelElements
             {
                 return;
             }
-
+            
+            GameManager.Instance.SetOutside(true);
             _spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
         }
     }

@@ -19,6 +19,8 @@ namespace Project.Scripts.Managers
         private bool _interactableClicked;
         private bool _pause;
         private bool _fading;
+        private bool _outside;
+        private bool _ghost;
 
         private int _levelsCompleted;
         private int _coins;
@@ -126,6 +128,26 @@ namespace Project.Scripts.Managers
             SaveManager.Instance.SaveToJSON();
         }
 
+        public void SetOutside(bool outside)
+        {
+            _outside = outside;
+        }
+
+        public bool IsOutside()
+        {
+            return _outside;
+        }
+
+        public void SetGhost(bool ghost)
+        {
+            _ghost = ghost;
+        }
+
+        public bool IsGhost()
+        {
+            return _ghost;
+        }
+
         public void SetPause(bool pause)
         {
             _pause = pause;
@@ -206,9 +228,11 @@ namespace Project.Scripts.Managers
             _levelsWhereHintTaken = new bool[SceneManager.sceneCountInBuildSettings];
             _levelsWhereHintUsed  = new bool[SceneManager.sceneCountInBuildSettings];
             _levelsCompleted = 1;
+            _coins = 2;            
             SaveLevelsWhereHintTakenFromGame();
             SaveLevelsWhereHintUsedFromGame();
             SaveLevelsCompletedFromGame();
+            SaveCoinsFromGame();
         }
 
         public void SetCurrentResolution(Resolution resolution)
