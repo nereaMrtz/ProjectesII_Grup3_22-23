@@ -1,6 +1,7 @@
 using System.Collections;
 using Project.Scripts.Interactable.Static;
 using Project.Scripts.Managers;
+using TMPro;
 using UnityEngine;
 
 public class muerte : MonoBehaviour
@@ -16,6 +17,8 @@ public class muerte : MonoBehaviour
     [SerializeField] RuntimeAnimatorController[] playerGhost;
     [SerializeField] Sprite ghost;
     [SerializeField] UnlockableObject door;
+    [SerializeField] private TextMeshProUGUI _text;
+    
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.layer == 6)
@@ -34,6 +37,7 @@ public class muerte : MonoBehaviour
         ChangeScenario();
         blanket.SetActive(false);
         GameManager.Instance.SetGhost(true);
+        _text.text = "51. Matate";
     }
 
     void ChangeScenario()
