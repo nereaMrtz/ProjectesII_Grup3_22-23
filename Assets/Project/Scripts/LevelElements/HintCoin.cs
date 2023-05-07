@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using Project.Scripts.Managers;
-using Project.Scripts.NoMonoBehaviourClass;
 using Project.Scripts.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;

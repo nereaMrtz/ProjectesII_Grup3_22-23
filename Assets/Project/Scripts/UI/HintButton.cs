@@ -1,6 +1,5 @@
 using System;
 using Project.Scripts.Managers;
-using Project.Scripts.NoMonoBehaviourClass;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;

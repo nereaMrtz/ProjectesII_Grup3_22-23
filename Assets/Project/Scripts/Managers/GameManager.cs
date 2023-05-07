@@ -9,6 +9,8 @@ namespace Project.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
+        
+        private const String PLAYER_PREFS_BRIGHTNESS = "Player Prefs Brightness"; 
 
         private Resolution _currentResolution;
 
@@ -25,8 +27,6 @@ namespace Project.Scripts.Managers
         private int _levelsCompleted;
         private int _coins;
 
-        private float _brightness; 
-
         private void Awake()
         {
             if (_instance == null)
@@ -38,9 +38,14 @@ namespace Project.Scripts.Managers
                     _levelsWhereHintUsed = new bool[SceneManager.sceneCountInBuildSettings];
                     _levelsCompleted = 1;
                     _coins = 2;
-                    _brightness = 1;
                     SaveFromGame();
                 }
+
+                if (!PlayerPrefs.HasKey(PLAYER_PREFS_BRIGHTNESS))
+                {
+                    PlayerPrefs.SetFloat(PLAYER_PREFS_BRIGHTNESS, 1);
+                }
+
                 LoadToGame();
             }
             else
@@ -66,7 +71,6 @@ namespace Project.Scripts.Managers
             _levelsWhereHintUsed = saveFile.levelsWhereHintUsed;
             _levelsWhereHintTaken = saveFile.levelsWhereHintTaken;
             _coins = saveFile.coins;
-            _brightness = saveFile.brightness;
 
         }
 
@@ -78,7 +82,6 @@ namespace Project.Scripts.Managers
             saveFile.levelsWhereHintUsed = _levelsWhereHintUsed;
             saveFile.levelsWhereHintTaken = _levelsWhereHintTaken;
             saveFile.coins = _coins;
-            saveFile.brightness = _brightness;
             
             SaveManager.Instance.SaveToJSON();
         }
@@ -115,15 +118,6 @@ namespace Project.Scripts.Managers
             SaveFile saveFile = SaveManager.Instance.GetSaveFile();
 
             saveFile.coins = _coins;
-            
-            SaveManager.Instance.SaveToJSON();
-        }
-
-        private void SaveBrightnessFromGame()
-        {
-            SaveFile saveFile = SaveManager.Instance.GetSaveFile();
-
-            saveFile.brightness = _brightness;
             
             SaveManager.Instance.SaveToJSON();
         }
@@ -210,17 +204,6 @@ namespace Project.Scripts.Managers
         public int GetHintCoins()
         {
             return _coins;
-        }
-
-        public void SetBrightness(float brightness)
-        {
-            _brightness = brightness;
-            SaveBrightnessFromGame();
-        }
-
-        public float GetBrightness()
-        {
-            return _brightness;
         }
 
         public void ResetLevels()

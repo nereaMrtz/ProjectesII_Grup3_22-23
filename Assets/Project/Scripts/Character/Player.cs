@@ -87,18 +87,8 @@ namespace Project.Scripts.Character
             if (GameManager.Instance.IsPause() || GameManager.Instance.IsFading())
             {
                 _movementDirection = Vector2.zero;
-                if (!GameManager.Instance.IsOutside() && !GameManager.Instance.IsGhost())
-                {
-                    _audioSourceSoundSteps.Pause();    
-                }
-                else if (GameManager.Instance.IsOutside())
-                {
-                    _audioSourceSoundGrassSteps.Pause();
-                }
-                else if (GameManager.Instance.IsGhost())
-                {
-                    _audioSourceSoundGhost.Pause();
-                }
+                
+                PauseStepsSound();
                 
                 return;
             }
@@ -137,8 +127,16 @@ namespace Project.Scripts.Character
             
             _movementDirection = _movementDirection.normalized;
                         
-            if (_movementDirection != new Vector2(0,0))
+            if (_movementDirection.magnitude != 0)
             {
+                _rigidbody2D.AddForce(_movementDirection * _currentSpeed, ForceMode2D.Force);
+
+                if (_rigidbody2D.velocity.magnitude == 0)
+                {
+                    PauseStepsSound();
+                    return;
+                }
+                
                 if (!GameManager.Instance.IsOutside() && !GameManager.Instance.IsGhost())
                 {
                     _audioSourceSoundSteps.UnPause();
@@ -156,29 +154,11 @@ namespace Project.Scripts.Character
             }
             else
             {
-                if (!GameManager.Instance.IsOutside() && !GameManager.Instance.IsGhost())
-                {
-                    _audioSourceSoundSteps.Pause();    
-                }
-                else if (GameManager.Instance.IsOutside())
-                {
-                    _audioSourceSoundGrassSteps.Pause();
-                }
-                else if (GameManager.Instance.IsGhost())
-                {
-                    _audioSourceSoundGhost.Pause();
-                }
-            }
-
-            if (_movementDirection.magnitude == 0)
-            {
                 _moving = false;
                 _rigidbody2D.velocity = Vector2.zero;
-            }
-            else 
-            {
-                _rigidbody2D.AddForce(_movementDirection * _currentSpeed, ForceMode2D.Force);
-            }   
+                
+                PauseStepsSound();
+            }  
         }
 
         private void UpdateAnimationController(){
@@ -203,6 +183,22 @@ namespace Project.Scripts.Character
         public void SetMovementDirection(Vector2 movementDirection)
         {
             _movementDirection = movementDirection;
+        }
+
+        private void PauseStepsSound()
+        {
+            if (!GameManager.Instance.IsOutside() && !GameManager.Instance.IsGhost())
+            {
+                _audioSourceSoundSteps.Pause();    
+            }
+            else if (GameManager.Instance.IsOutside())
+            {
+                _audioSourceSoundGrassSteps.Pause();
+            }
+            else if (GameManager.Instance.IsGhost())
+            {
+                _audioSourceSoundGhost.Pause();
+            }
         }
     }
 }

@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using Project.Scripts.Levels._1.Logico;
 using Project.Scripts.Managers;
+using Project.Scripts.ProjectMaths;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project.Scripts.Levels._1.Matalo
 {
@@ -68,9 +68,6 @@ namespace Project.Scripts.Levels._1.Matalo
                 
                 case 3:
                     StartCoroutine(RevealExit());
-                    break;
-                
-                case 4:
                     _door.Unlock();
                     break;
             }
@@ -155,6 +152,8 @@ namespace Project.Scripts.Levels._1.Matalo
 
         private IEnumerator RevealExit()
         {
+            Destroy(_fakeWall);
+            
             float timeToFade = 1;
 
             float initialAlphaDark = _dark.color.a;
@@ -165,7 +164,7 @@ namespace Project.Scripts.Levels._1.Matalo
             {
                 timeToFade -= Time.deltaTime;
 
-                float auxAlphaToReveal = ProjectMaths.CustomMath.Map(timeToFade, 1, 0, 0, 1);
+                float auxAlphaToReveal = CustomMath.Map(timeToFade, 1, 0, 0, 1);
                 for (int i = 0; i < _hiddenScenario.Length; i++)
                 {
                     auxColor = _hiddenScenario[i].color;
@@ -173,7 +172,7 @@ namespace Project.Scripts.Levels._1.Matalo
                     _hiddenScenario[i].color = auxColor;
                 }
 
-                float auxAlphaToHide = ProjectMaths.CustomMath.Map(timeToFade, 1, 0, 1, 0);
+                float auxAlphaToHide = CustomMath.Map(timeToFade, 1, 0, 1, 0);
                 for (int i = 0; i < _scenarioToHide.Length; i++)
                 {
                     auxColor = _scenarioToHide[i].color;
@@ -181,15 +180,13 @@ namespace Project.Scripts.Levels._1.Matalo
                     _scenarioToHide[i].color = auxColor; 
                 }
 
-                float auxAlphaDark = ProjectMaths.CustomMath.Map(timeToFade, 1, 0, initialAlphaDark, 0);
+                float auxAlphaDark = CustomMath.Map(timeToFade, 1, 0, initialAlphaDark, 0);
                 auxColor = _dark.color;
                 auxColor = new Color(auxColor.r, auxColor.g, auxColor.b, auxAlphaDark);
                 _dark.color = auxColor; 
 
                 yield return null;
             }
-            
-            Destroy(_fakeWall);
         }
     }
 }
