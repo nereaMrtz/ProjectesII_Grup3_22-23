@@ -243,8 +243,8 @@ RectTransform:
   m_Father: {fileID: 5596260953200071656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.16129032, y: 0}
+  m_AnchorMax: {x: 0.16129032, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -454,8 +454,8 @@ RectTransform:
   m_Father: {fileID: 5596260952309947794}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.16129032, y: 0}
+  m_AnchorMax: {x: 0.16129032, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1330,8 +1330,8 @@ RectTransform:
   m_Father: {fileID: 5596260954006327777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.998, y: 0}
+  m_AnchorMax: {x: 0.998, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1407,7 +1407,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.16129032, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1559,7 +1559,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.16129032, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2158,13 +2158,14 @@ GameObject:
   - component: {fileID: 5596260953651791365}
   - component: {fileID: 5596260953651791362}
   - component: {fileID: 5596260953651791364}
+  - component: {fileID: 7173710437748950925}
   m_Layer: 5
   m_Name: InGameOptionsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5596260953651791363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2259,6 +2260,26 @@ MonoBehaviour:
   _musicVolumeMute: {fileID: 5596260953941869215}
   _fadeBrightness: {fileID: 0}
   _masterMuteIcon: {fileID: 0}
+--- !u!114 &7173710437748950925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596260953651791360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7edf8cb711e4754f93649df97661855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsTitleText: {fileID: 5596260953743814206}
+  volumeText: {fileID: 5596260952235338321}
+  videoText: {fileID: 5596260953015713072}
+  masterVolumeText: {fileID: 5596260952282397210}
+  musicVolumeText: {fileID: 5596260953558525690}
+  sfxVolumeText: {fileID: 5596260953522946454}
+  brightnessText: {fileID: 3050225396882595899}
+  backText: {fileID: 5596260953834883301}
 --- !u!1 &5596260953734904711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,7 +2314,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.998, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2503,8 +2524,8 @@ RectTransform:
   m_Father: {fileID: 5596260954035648296}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.16129032, y: 0}
+  m_AnchorMax: {x: 0.16129032, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2992,7 +3013,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.16129032, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
