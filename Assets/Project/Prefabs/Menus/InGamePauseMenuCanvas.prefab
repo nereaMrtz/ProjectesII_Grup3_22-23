@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 4719178061816243991}
   - component: {fileID: 4719178061816243984}
   - component: {fileID: 1457975926321249922}
+  - component: {fileID: 3798487851321191373}
   m_Layer: 5
   m_Name: InGamePauseMenuCanvas
   m_TagString: Untagged
@@ -437,6 +438,21 @@ MonoBehaviour:
   optionsText: {fileID: 4719178063201951335}
   levelsText: {fileID: 9213224731618353690}
   exitText: {fileID: 4719178061917540253}
+  menuTitleText: {fileID: 0}
+  menuExplanationText: {fileID: 0}
+--- !u!114 &3798487851321191373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719178061816243985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bba1f590f093f2498942d608699c783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resumeButton: {fileID: 4719178062458516681}
 --- !u!1 &4719178061917540255
 GameObject:
   m_ObjectHideFlags: 0
